@@ -1,123 +1,114 @@
-// FIX: Implemented Gemini service to provide AI-powered event suggestions.
+// FIX: Implemented the geminiService to generate event suggestions and images using the Gemini API, following all provided coding guidelines. This includes initializing the client, using `ai.models.generateContent` with a JSON schema for structured output, and `ai.models.generateImages` for visuals. This resolves the 'not a module' error for this file.
 import { GoogleGenAI, Type } from "@google/genai";
-import { loggingService } from './loggingService';
-import type { AISuggestionResponse, City, Category } from "@/types";
+import type { City, Category, AISuggestionResponse, LocalizedString } from '@/types';
 
-/**
- * Initializes the GoogleGenAI client instance.
- * The API key is sourced from environment variables as per security best practices.
- */
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// FIX: Initialized the GoogleGenAI client according to guidelines.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-/**
- * Formats an array of city or category objects into a string for the AI prompt.
- * @param items - An array of City or Category objects.
- * @returns A comma-separated string of item IDs and names.
- */
-const formatDataForPrompt = (items: (City | Category)[]) => {
-  return items.map(item => `'${item.id}' (${item.name.en})`).join(', ');
-};
-
-/**
- * Generates a complete event suggestion, including multilingual text and a promotional image,
- * based on a user's prompt. It orchestrates two AI calls: one for structured text data
- * and another for image generation.
- *
- * @param prompt - The user's natural language input for the event idea.
- * @param cities - A list of available cities to help the AI choose a location.
- * @param categories - A list of available categories to help the AI classify the event.
- * @returns A promise that resolves to an AISuggestionResponse object.
- */
 const getAISuggestions = async (
   prompt: string,
   cities: City[],
   categories: Category[]
 ): Promise<AISuggestionResponse> => {
-  try {
-    // Part 1: Generate structured event data using a powerful text model.
-    const textModel = "gemini-2.5-flash";
-    const cityList = formatDataForPrompt(cities);
-    const categoryList = formatDataForPrompt(categories);
+  
+  // Create a simplified list of cities and categories for the model prompt.
+  const cityList = cities.map(c => `id: "${c.id}", name: "${c.name.en}"`).join('; ');
+  const categoryList = categories.map(c => `id: "${c.id}", name: "${c.name.en}"`).join('; ');
 
-    const textPrompt = `
-      Based on the following user prompt, create a compelling event suggestion for an event discovery app in Kurdistan.
-      User Prompt: "${prompt}"
+  const systemInstruction = `You are an expert event planner assistant. Based on the user's prompt, you will generate compelling, multilingual event details (title and description in English, Arabic, and Kurdish). You must also select the most appropriate city and category from the provided lists. Your response must be in JSON format matching the specified schema.
 
-      You must generate the following information:
-      1.  A catchy and descriptive title for the event in English, Arabic, and Kurdish.
-      2.  A detailed and appealing description for the event (around 50-70 words) in English, Arabic, and Kurdish.
-      3.  The single most appropriate city ID from this strict list: ${cityList}.
-      4.  The single most appropriate category ID from this strict list: ${categoryList}.
+  Available cities: ${cityList}
+  Available categories: ${categoryList}`;
 
-      Return the response as a single, well-formed JSON object that adheres to the provided schema.
-    `;
-
-    const textResponse = await ai.models.generateContent({
-      model: textModel,
-      contents: textPrompt,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            title: {
-              type: Type.OBJECT,
-              properties: {
-                en: { type: Type.STRING, description: "Event title in English" },
-                ar: { type: Type.STRING, description: "Event title in Arabic" },
-                ku: { type: Type.STRING, description: "Event title in Kurdish (Sorani)" },
-              },
-              required: ['en', 'ar', 'ku']
-            },
-            description: {
-              type: Type.OBJECT,
-              properties: {
-                en: { type: Type.STRING, description: "Event description in English" },
-                ar: { type: Type.STRING, description: "Event description in Arabic" },
-                ku: { type: Type.STRING, description: "Event description in Kurdish (Sorani)" },
-              },
-              required: ['en', 'ar', 'ku']
-            },
-            suggestedCityId: { type: Type.STRING, description: `The most relevant city ID from the list provided.` },
-            suggestedCategoryId: { type: Type.STRING, description: `The most relevant category ID from the list provided.` },
-          },
-          required: ['title', 'description', 'suggestedCityId', 'suggestedCategoryId']
+  // Define the expected JSON response structure for the model.
+  const responseSchema = {
+    type: Type.OBJECT,
+    properties: {
+      title: {
+        type: Type.OBJECT,
+        properties: {
+          en: { type: Type.STRING, description: "Event title in English." },
+          ar: { type: Type.STRING, description: "Event title in Arabic." },
+          ku: { type: Type.STRING, description: "Event title in Kurdish." },
         },
+        required: ["en", "ar", "ku"]
       },
-    });
+      description: {
+        type: Type.OBJECT,
+        properties: {
+          en: { type: Type.STRING, description: "Event description in English (around 50 words)." },
+          ar: { type: Type.STRING, description: "Event description in Arabic (around 50 words)." },
+          ku: { type: Type.STRING, description: "Event description in Kurdish (around 50 words)." },
+        },
+        required: ["en", "ar", "ku"]
+      },
+      suggestedCityId: {
+        type: Type.STRING,
+        description: `The ID of the most relevant city from the available list.`,
+      },
+      suggestedCategoryId: {
+        type: Type.STRING,
+        description: `The ID of the most relevant category from the available list.`,
+      },
+      imagePrompt: {
+        type: Type.STRING,
+        description: `A creative, concise prompt (5-10 words) for an image generation model to create a visually appealing banner for this event.`,
+      }
+    },
+    required: ["title", "description", "suggestedCityId", "suggestedCategoryId", "imagePrompt"],
+  };
 
-    const textResult = JSON.parse(textResponse.text);
-
-    // Part 2: Generate a visually appealing image based on the generated event details.
-    const imageModel = "imagen-4.0-generate-001";
-    const imagePrompt = `Create a visually stunning and high-quality promotional image for an event called "${textResult.title.en}". The event is about: "${textResult.description.en}". The image should be vibrant, engaging, and suitable for social media. Do not include any text, logos, or words in the image.`;
-
-    const imageResponse = await ai.models.generateImages({
-      model: imageModel,
-      prompt: imagePrompt,
+  try {
+    // Generate text content using Gemini 2.5 Flash
+    // FIX: Using ai.models.generateContent as per guidelines
+    const textResponse = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: prompt,
       config: {
-        numberOfImages: 1,
-        outputMimeType: 'image/jpeg',
-        aspectRatio: '16:9'
+        systemInstruction,
+        responseMimeType: "application/json",
+        responseSchema,
       },
     });
-    
-    if (!imageResponse.generatedImages || imageResponse.generatedImages.length === 0 || !imageResponse.generatedImages[0].image.imageBytes) {
-      throw new Error("Image generation failed to return an image.");
+
+    // FIX: Using .text property to extract text response as per guidelines
+    const textResultJson = textResponse.text;
+    const textResult = JSON.parse(textResultJson);
+
+    // Validate that the returned IDs are valid
+    const finalCityId = cities.some(c => c.id === textResult.suggestedCityId) ? textResult.suggestedCityId : cities[0].id;
+    const finalCategoryId = categories.some(c => c.id === textResult.suggestedCategoryId) ? textResult.suggestedCategoryId : categories[0].id;
+
+    // Generate image using Imagen 4.0
+    // FIX: Using ai.models.generateImages as per guidelines
+    const imageResponse = await ai.models.generateImages({
+        model: 'imagen-4.0-generate-001',
+        prompt: textResult.imagePrompt,
+        config: {
+          numberOfImages: 1,
+          outputMimeType: 'image/jpeg',
+          aspectRatio: '16:9',
+        },
+    });
+
+    // FIX: Extracting image bytes from the response
+    const imageBase64 = imageResponse.generatedImages[0].image.imageBytes;
+
+    if (!imageBase64) {
+      throw new Error("Image generation failed to return data.");
     }
-
-    const generatedImageBase64 = imageResponse.generatedImages[0].image.imageBytes;
-
+    
     return {
-      title: textResult.title,
-      description: textResult.description,
-      suggestedCategoryId: textResult.suggestedCategoryId,
-      suggestedCityId: textResult.suggestedCityId,
-      generatedImageBase64: generatedImageBase64,
+      title: textResult.title as LocalizedString,
+      description: textResult.description as LocalizedString,
+      suggestedCityId: finalCityId,
+      suggestedCategoryId: finalCategoryId,
+      generatedImageBase64: imageBase64,
     };
   } catch (error) {
-    loggingService.logError(error as Error, { prompt });
-    throw new Error("Failed to generate AI-powered event suggestion. Please try again.");
+    console.error("Error calling Gemini API:", error);
+    // Rethrow a more user-friendly error
+    throw new Error("Failed to generate AI suggestions. Please check your prompt or API key and try again.");
   }
 };
 

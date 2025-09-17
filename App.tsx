@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { api } from './services/api';
 import { loggingService } from './services/loggingService';
-import { config } from './config';
-import type { Language, City, Category, Event, User } from './types';
-
-// Components
 import { Header } from './components/Header';
-import { SearchBar } from './components/SearchBar';
+import { IntelligentSearchBar } from './components/IntelligentSearchBar';
 import { DiscoveryBar } from './components/DiscoveryBar';
+import { FilterTags } from './components/FilterTags';
 import { FeaturedCarousel } from './components/FeaturedCarousel';
 import { TopEventsCarousel } from './components/TopEventsCarousel';
 import { EventGrid } from './components/EventGrid';
@@ -17,130 +14,168 @@ import { CreateEventModal } from './components/CreateEventModal';
 import { AuthModal } from './components/AuthModal';
 import { UserProfileModal } from './components/UserProfileModal';
 import { EmailVerificationNotice } from './components/EmailVerificationNotice';
+import type { Event, City, Category, User, Language, AuthMode } from './types';
+import { config } from './config';
 
-const App: React.FC = () => {
-  // Data State
+function App() {
+  // Data state
   const [events, setEvents] = useState<Event[]>([]);
   const [cities, setCities] = useState<City[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // UI State
-  const [lang, setLang] = useState<Language>(config.DEFAULT_LANG as Language);
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
-  const [eventToEdit, setEventToEdit] = useState<Event | null>(null);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-  const [isVerificationNoticeOpen, setIsVerificationNoticeOpen] = useState(false);
-  const [verificationEmail, setVerificationEmail] = useState('');
-
-  // User State
+  // User state
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
-  // Filtering & Search State
+  // UI State
+  const [lang, setLang] = useState<Language>('en');
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [eventToEdit, setEventToEdit] = useState<Event | null>(null);
+  const [isCreateEventModalOpen, setIsCreateEventModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<AuthMode>('login');
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [verificationEmail, setVerificationEmail] = useState<string | null>(null);
+  
+  // Filtering and searching state
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeSearchQuery, setActiveSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   
-  // Data Fetching
-  const fetchData = useCallback(async () => {
-    setIsLoading(true);
-    try {
-      const [citiesData, categoriesData, eventsData] = await Promise.all([
-        api.getCities(),
-        api.getCategories(),
-        api.getEvents(),
-      ]);
-      setCities(citiesData);
-      setCategories(categoriesData);
-      setEvents(eventsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
-    } catch (error) {
-      loggingService.logError(error as Error, { context: 'Initial data fetch failed' });
-    } finally {
-      setIsLoading(false);
-    }
+  // Data fetching
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const [citiesData, categoriesData, eventsData] = await Promise.all([
+          api.getCities(),
+          api.getCategories(),
+          api.getEvents(),
+        ]);
+        setCities(citiesData);
+        setCategories(categoriesData);
+        setEvents(eventsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+      } catch (error) {
+        loggingService.logError(error as Error, { context: 'Initial data fetch' });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  // Event Handlers
-  const handleSaveEvent = (savedEvent: Event) => {
-    if (eventToEdit) {
-      setEvents(events.map(e => e.id === savedEvent.id ? savedEvent : e));
-    } else {
-      setEvents([savedEvent, ...events]);
-    }
-    setIsCreateModalOpen(false);
-    setEventToEdit(null);
-  };
-  
-  const handleEditEvent = (event: Event) => {
-      setSelectedEvent(null);
-      setEventToEdit(event);
-      setIsCreateModalOpen(true);
-  }
-
-  const handleAddReview = async (eventId: string, reviewData: { rating: number; comment: string }, userId: string) => {
-    try {
-        const updatedEvent = await api.addReview(eventId, reviewData, userId);
-        setEvents(events.map(e => e.id === updatedEvent.id ? updatedEvent : e));
-        if (selectedEvent?.id === updatedEvent.id) {
-            setSelectedEvent(updatedEvent);
-        }
-    } catch (error) {
-        loggingService.logError(error as Error, { eventId, userId });
-    }
-  };
-
+  // Event handlers
   const handleAuthSuccess = (user: User) => {
-      setCurrentUser(user);
-      setIsAuthModalOpen(false);
-      loggingService.trackEvent('login_success', { userId: user.id });
+    setCurrentUser(user);
+    setIsAuthModalOpen(false);
+    loggingService.trackEvent('login_success', { userId: user.id });
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    loggingService.trackEvent('logout');
+  };
+
+  const handleOpenAuthModal = (mode: AuthMode = 'login') => {
+    setAuthMode(mode);
+    setIsAuthModalOpen(true);
   };
   
   const handleVerificationNeeded = (email: string) => {
-      setVerificationEmail(email);
-      setIsAuthModalOpen(false);
-      setIsVerificationNoticeOpen(true);
+    setIsAuthModalOpen(false);
+    setVerificationEmail(email);
   }
+
+  const handleResendVerification = () => {
+    // In a real app, this would call an API endpoint
+    console.log(`Resending verification to ${verificationEmail}`);
+    loggingService.trackEvent('resend_verification', { email: verificationEmail });
+  }
+
+  const handleEventClick = (event: Event) => {
+    setSelectedEvent(event);
+    loggingService.trackEvent('view_event_details', { eventId: event.id });
+  };
+
+  const handleAddReview = async (eventId: string, reviewData: { rating: number; comment: string }, userId: string) => {
+    try {
+      const updatedEvent = await api.addReview(eventId, reviewData, userId);
+      setEvents(prevEvents => prevEvents.map(e => e.id === eventId ? updatedEvent : e));
+      setSelectedEvent(updatedEvent); // Update the opened modal as well
+      loggingService.trackEvent('add_review', { eventId, userId });
+    } catch (error) {
+      loggingService.logError(error as Error, { context: 'Add review failed' });
+    }
+  };
+
+  const handleCreateEventClick = () => {
+    if (currentUser) {
+      setEventToEdit(null);
+      setIsCreateEventModalOpen(true);
+    } else {
+      handleOpenAuthModal();
+    }
+  };
   
-  const handleLogout = () => {
-      setCurrentUser(null);
-      loggingService.trackEvent('logout');
+  const handleEditEvent = (event: Event) => {
+    setSelectedEvent(null);
+    setEventToEdit(event);
+    setIsCreateEventModalOpen(true);
   }
 
-  // Filtering and Pagination Logic
-  const filteredEvents = useMemo(() => {
-    return events
-      .filter(event => {
-        const matchesCity = !selectedCity || event.cityId === selectedCity;
-        const matchesCategory = !selectedCategory || event.categoryId === selectedCategory;
-        const matchesQuery = !searchQuery || 
-          event.title[lang].toLowerCase().includes(searchQuery.toLowerCase()) ||
-          event.description[lang].toLowerCase().includes(searchQuery.toLowerCase()) ||
-          event.venue.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCity && matchesCategory && matchesQuery;
-      })
-      .filter(e => !e.isFeatured && !e.isTop); // Exclude featured/top from main grid
-  }, [events, selectedCity, selectedCategory, searchQuery, lang]);
+  const handleSaveEvent = (savedEvent: Event) => {
+    if(eventToEdit) { // it was an edit
+      setEvents(prev => prev.map(e => e.id === savedEvent.id ? savedEvent : e));
+    } else { // it was a new event
+      setEvents(prev => [savedEvent, ...prev]);
+    }
+    setIsCreateEventModalOpen(false);
+    setEventToEdit(null);
+  };
+  
+  const handleUpdateProfile = (userData: Partial<User>) => {
+      if(currentUser) {
+          const updatedUser = {...currentUser, ...userData};
+          setCurrentUser(updatedUser);
+          // In a real app, you would also call an API to persist this
+          loggingService.trackEvent('profile_update', {userId: currentUser.id});
+          console.log("Profile updated (mock):", updatedUser);
+      }
+  }
 
-  const totalPages = Math.ceil(filteredEvents.length / config.EVENTS_PER_PAGE);
+  // Filtering logic
+  const filteredEvents = useMemo(() => {
+    setCurrentPage(1); // Reset to first page on filter change
+    return events.filter(event => {
+      const matchesCity = !selectedCity || event.cityId === selectedCity;
+      const matchesCategory = !selectedCategory || event.categoryId === selectedCategory;
+      const matchesSearch = !activeSearchQuery ||
+        event.title[lang].toLowerCase().includes(activeSearchQuery.toLowerCase()) ||
+        event.description[lang].toLowerCase().includes(activeSearchQuery.toLowerCase()) ||
+        event.venue.toLowerCase().includes(activeSearchQuery.toLowerCase());
+      return matchesCity && matchesCategory && matchesSearch;
+    });
+  }, [events, selectedCity, selectedCategory, activeSearchQuery, lang]);
+  
+  const handleSearch = () => {
+      setActiveSearchQuery(searchQuery);
+  }
+
+  // Pagination logic
   const paginatedEvents = useMemo(() => {
     const startIndex = (currentPage - 1) * config.EVENTS_PER_PAGE;
-    return filteredEvents.slice(startIndex, startIndex + config.EVENTS_PER_PAGE);
+    const endIndex = startIndex + config.EVENTS_PER_PAGE;
+    return filteredEvents.slice(startIndex, endIndex);
   }, [filteredEvents, currentPage]);
 
-  const userEvents = useMemo(() => {
-      return currentUser ? events.filter(e => e.organizerId === currentUser.id) : [];
-  }, [events, currentUser]);
-
+  const totalPages = Math.ceil(filteredEvents.length / config.EVENTS_PER_PAGE);
 
   if (isLoading) {
-    return <div className="flex justify-center items-center h-screen"><div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary"></div></div>;
+    return <div className="flex justify-center items-center h-screen"><p>Loading Eventara...</p></div>;
   }
 
   return (
@@ -149,33 +184,72 @@ const App: React.FC = () => {
         lang={lang}
         setLang={setLang}
         currentUser={currentUser}
-        onLoginClick={() => setIsAuthModalOpen(true)}
+        onLoginClick={() => handleOpenAuthModal('login')}
         onLogout={handleLogout}
-        onCreateEventClick={() => {
-            if (currentUser) {
-              setEventToEdit(null);
-              setIsCreateModalOpen(true)
-            } else {
-              setIsAuthModalOpen(true)
-            }
-        }}
+        onCreateEventClick={handleCreateEventClick}
         onProfileClick={() => setIsProfileModalOpen(true)}
       />
+
       <main>
-        <SearchBar query={searchQuery} onQueryChange={setSearchQuery} onSearch={() => setCurrentPage(1)} />
+        <IntelligentSearchBar 
+            query={searchQuery}
+            onQueryChange={setSearchQuery}
+            onSearch={handleSearch}
+            lang={lang}
+        />
+        <FilterTags 
+            searchQuery={activeSearchQuery}
+            selectedCityId={selectedCity}
+            selectedCategoryId={selectedCategory}
+            cities={cities}
+            categories={categories}
+            lang={lang}
+            onClearSearch={() => { setSearchQuery(''); setActiveSearchQuery(''); }}
+            onClearCity={() => setSelectedCity(null)}
+            onClearCategory={() => setSelectedCategory(null)}
+        />
         <DiscoveryBar
           cities={cities}
           categories={categories}
           selectedCity={selectedCity}
           selectedCategory={selectedCategory}
-          onCityChange={(id) => { setSelectedCity(id); setCurrentPage(1); }}
-          onCategoryChange={(id) => { setSelectedCategory(id); setCurrentPage(1); }}
+          onCityChange={setSelectedCity}
+          onCategoryChange={setSelectedCategory}
           lang={lang}
         />
-        <FeaturedCarousel events={events} cities={cities} categories={categories} lang={lang} onEventClick={setSelectedEvent} currentUser={currentUser} />
-        <TopEventsCarousel events={events} cities={cities} categories={categories} lang={lang} onEventClick={setSelectedEvent} currentUser={currentUser} />
-        <EventGrid events={paginatedEvents} cities={cities} categories={categories} lang={lang} onEventClick={setSelectedEvent} currentUser={currentUser} />
-        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+        
+        <FeaturedCarousel
+          events={events}
+          cities={cities}
+          categories={categories}
+          lang={lang}
+          onEventClick={handleEventClick}
+          currentUser={currentUser}
+        />
+
+        <TopEventsCarousel
+          events={events}
+          cities={cities}
+          categories={categories}
+          lang={lang}
+          onEventClick={handleEventClick}
+          currentUser={currentUser}
+        />
+
+        <EventGrid
+          events={paginatedEvents}
+          cities={cities}
+          categories={categories}
+          lang={lang}
+          onEventClick={handleEventClick}
+          currentUser={currentUser}
+        />
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </main>
 
       {/* Modals */}
@@ -191,40 +265,46 @@ const App: React.FC = () => {
           onEdit={handleEditEvent}
         />
       )}
-      {isCreateModalOpen && currentUser && (
+
+      {isCreateEventModalOpen && currentUser && (
         <CreateEventModal
           eventToEdit={eventToEdit}
-          onClose={() => { setIsCreateModalOpen(false); setEventToEdit(null); }}
+          onClose={() => {setIsCreateEventModalOpen(false); setEventToEdit(null);}}
           onSave={handleSaveEvent}
           cities={cities}
           categories={categories}
           currentUser={currentUser}
         />
       )}
+
       {isAuthModalOpen && (
-          <AuthModal 
-            onClose={() => setIsAuthModalOpen(false)} 
-            onAuthSuccess={handleAuthSuccess}
-            onVerificationNeeded={handleVerificationNeeded}
-          />
+        <AuthModal
+          onClose={() => setIsAuthModalOpen(false)}
+          onAuthSuccess={handleAuthSuccess}
+          initialMode={authMode}
+          onVerificationNeeded={handleVerificationNeeded}
+        />
       )}
-      {isProfileModalOpen && currentUser && (
-          <UserProfileModal 
-            user={currentUser} 
-            userEvents={userEvents}
-            onClose={() => setIsProfileModalOpen(false)}
-            onUpdateProfile={(data) => console.log("Update profile:", data)} // Placeholder
-          />
-      )}
-      {isVerificationNoticeOpen && (
+      
+      {verificationEmail && (
           <EmailVerificationNotice 
             email={verificationEmail}
-            onClose={() => setIsVerificationNoticeOpen(false)}
-            onResend={() => console.log('Resend verification for', verificationEmail)} // Placeholder
+            onClose={() => setVerificationEmail(null)}
+            onResend={handleResendVerification}
           />
       )}
+      
+      {isProfileModalOpen && currentUser && (
+        <UserProfileModal
+            user={currentUser}
+            userEvents={events.filter(e => e.organizerId === currentUser.id)}
+            onClose={() => setIsProfileModalOpen(false)}
+            onUpdateProfile={handleUpdateProfile}
+        />
+      )}
+
     </div>
   );
-};
+}
 
 export default App;

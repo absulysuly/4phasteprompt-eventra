@@ -1,11 +1,20 @@
-
+// FIX: Created the full type definitions for the application, including User, Event, City, Category, and types for the AI service. This resolves numerous module and type errors across the application.
 export type Language = 'en' | 'ar' | 'ku';
-export type AuthMode = 'login' | 'signup' | 'forgot-password';
 
 export interface LocalizedString {
   en: string;
   ar: string;
   ku: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  avatarUrl: string;
+  phone: string;
+  email: string;
+  isVerified: boolean;
+  password?: string; // Should not be sent to client, but needed for signup
 }
 
 export interface City {
@@ -20,22 +29,17 @@ export interface Category {
   image: string;
 }
 
-export interface User {
-  id: string;
-  name: string;
-  avatarUrl: string;
-  phone: string;
-  email: string;
-  password?: string;
-  isVerified: boolean;
+export interface Coordinates {
+  lat: number;
+  lon: number;
 }
 
 export interface Review {
   id: string;
   user: User;
-  rating: number;
+  rating: number; // 1-5
   comment: string;
-  timestamp: string;
+  timestamp: string; // ISO 8601
 }
 
 export interface Event {
@@ -46,9 +50,9 @@ export interface Event {
   organizerName: string;
   categoryId: string;
   cityId: string;
-  date: string;
+  date: string; // ISO 8601
   venue: string;
-  coordinates?: { lat: number; lon: number };
+  coordinates?: Coordinates;
   organizerPhone: string;
   whatsappNumber?: string;
   imageUrl: string;
@@ -58,18 +62,19 @@ export interface Event {
   isTop?: boolean;
 }
 
-export interface AISuggestionResponse {
-  title: LocalizedString;
-  description: LocalizedString;
-  suggestedCategoryId: string;
-  suggestedCityId: string;
-  generatedImageBase64: string;
-}
+export type AuthMode = 'login' | 'signup' | 'forgot-password';
 
+// For AI Assistant
 export interface AIAutofillData {
   title: LocalizedString;
   description: LocalizedString;
-  categoryId: string;
   cityId: string;
+  categoryId: string;
   imageBase64: string;
+}
+
+export interface AISuggestionResponse extends Omit<AIAutofillData, 'cityId' | 'categoryId' | 'imageBase64'>{
+    suggestedCityId: string;
+    suggestedCategoryId: string;
+    generatedImageBase64: string;
 }
