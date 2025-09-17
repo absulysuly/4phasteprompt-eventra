@@ -1,0 +1,14 @@
+Placeholder file for icons directory.
+
+To complete your PWA setup:
+1. Open generate-pwa-icons.html in your browser
+2. Click "Generate All Icons" 
+3. Download each icon and save it to this directory
+
+Required icons:
+- icon-192x192.png
+- icon-512x512.png  
+- maskable-icon-192x192.png
+- maskable-icon-512x512.png
+- shortcut-events.png
+- shortcut-create.png
