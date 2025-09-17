@@ -22,6 +22,8 @@ import { AuthModal } from './components/AuthModal';
 import { EnhancedAuthModal } from './components/EnhancedAuthModal';
 import { UserProfileModal } from './components/UserProfileModal';
 import { EmailVerificationNotice } from './components/EmailVerificationNotice';
+import { PWAInstallBanner } from './components/PWAInstallBanner';
+import { FloatingInstallButton } from './components/FloatingInstallButton';
 import type { Event, City, Category, User, Language, AuthMode, PricingTier } from './types';
 import { config } from './config';
 
@@ -204,6 +206,9 @@ function App() {
 
   return (
     <div className="bg-white min-h-screen">
+      {/* PWA Install Notification Banner */}
+      <PWAInstallBanner lang={lang} />
+      
       <Header
         lang={lang}
         setLang={setLang}
@@ -214,7 +219,9 @@ function App() {
         onProfileClick={() => setIsProfileModalOpen(true)}
       />
 
-      <main>
+      <main style={{ paddingTop: '0px' }} className="relative">
+        {/* Add spacing for the install banner if it appears */}
+        <div className="h-0 md:h-0" id="banner-spacer"></div>
         {/* 1. Hero Carousel for Sponsors/Promotions */}
         <HeroCarousel 
           banners={[
@@ -374,6 +381,9 @@ function App() {
             onUpdateProfile={handleUpdateProfile}
         />
       )}
+      
+      {/* Floating Install Button */}
+      <FloatingInstallButton lang={lang} />
 
     </div>
   );
