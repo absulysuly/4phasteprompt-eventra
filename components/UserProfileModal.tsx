@@ -1,47 +1,52 @@
+
 import React from 'react';
-import type { User, Event, Language } from '../types';
-import { EventCard } from './EventCard';
+import type { User, Event } from '@/types';
 import { ProfileHeader } from './ProfileHeader';
+import { XIcon } from './icons';
 
 interface UserProfileModalProps {
-  user: User | null;
-  events: Event[];
+  user: User;
+  userEvents: Event[];
   onClose: () => void;
-  onSelectEvent: (event: Event) => void;
-  lang: Language;
+  onUpdateProfile: (userData: Partial<User>) => void;
 }
 
-export const UserProfileModal: React.FC<UserProfileModalProps> = ({ user, events, onClose, onSelectEvent, lang }) => {
-  if (!user) return null;
-
-  const userEvents = events.filter(event => event.organizerId === user.id);
-  
-  const t = {
-    eventsBy: { en: 'Events organized by', ar: 'فعاليات من تنظيم', ku: 'ڕووداوەکانی ڕێکخراوی' },
-    noEvents: { en: 'This user has not organized any events yet.', ar: 'لم يقم هذا المستخدم بتنظيم أي فعاليات بعد.', ku: 'ئەم بەکارهێنەرە هێشتا هیچ ڕووداوێکی ڕێکنەخستووە.' },
+export const UserProfileModal: React.FC<UserProfileModalProps> = ({ user, userEvents, onClose, onUpdateProfile }) => {
+  // Placeholder handler for future implementation
+  const handleUpdate = () => {
+    onUpdateProfile({ name: "Updated Name" }); // Example update
   };
-
+  
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-start z-50 p-4 overflow-y-auto" role="dialog" aria-modal="true">
-      <div className="bg-neutral-container text-neutral-text rounded-lg shadow-xl w-full max-w-4xl my-8 border border-neutral-border">
-        <div className="relative p-6">
-            <button onClick={onClose} className="absolute top-4 right-4 rtl:left-4 rtl:right-auto bg-neutral/80 text-neutral-text-soft rounded-full p-1 leading-none text-2xl hover:bg-neutral-border">&times;</button>
-            <ProfileHeader user={user} onBack={onClose} lang={lang} />
-        </div>
-        
-        <div className="px-6 pb-6">
-            <h3 className="text-2xl font-bold text-neutral-text mb-4">{t.eventsBy[lang]} {user.name}</h3>
-            {userEvents.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {userEvents.map(event => (
-                        <EventCard key={event.id} event={event} lang={lang} onSelect={onSelectEvent} />
-                    ))}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+      <div className="bg-neutral-50 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-6 relative">
+          <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+            <XIcon className="w-6 h-6" />
+          </button>
+          
+          <ProfileHeader user={user} eventCount={userEvents.length} />
+          
+          <div className="mt-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">My Events</h3>
+            <div className="space-y-4">
+              {userEvents.length > 0 ? userEvents.map(event => (
+                <div key={event.id} className="bg-white p-4 rounded-lg shadow-sm flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{event.title.en}</p>
+                    <p className="text-sm text-gray-500">{new Date(event.date).toLocaleDateString()}</p>
+                  </div>
+                  <button className="text-sm text-primary hover:underline">View</button>
                 </div>
-            ) : (
-                <div className="text-center py-16 bg-neutral rounded-lg border border-neutral-border">
-                    <p className="text-xl text-neutral-text-soft">{t.noEvents[lang]}</p>
-                </div>
-            )}
+              )) : (
+                <p className="text-gray-500">You haven't created any events yet.</p>
+              )}
+            </div>
+          </div>
+          
+          <div className="mt-8">
+             <button onClick={handleUpdate} className="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-indigo-700">Update Profile (Demo)</button>
+          </div>
         </div>
       </div>
     </div>

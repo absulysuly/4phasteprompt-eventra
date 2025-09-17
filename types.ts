@@ -1,3 +1,4 @@
+
 export type Language = 'en' | 'ar' | 'ku';
 export type AuthMode = 'login' | 'signup' | 'forgot-password';
 
@@ -25,7 +26,7 @@ export interface User {
   avatarUrl: string;
   phone: string;
   email: string;
-  password?: string; // Should not be sent to client
+  password?: string;
   isVerified: boolean;
 }
 
@@ -58,17 +59,17 @@ export interface Event {
 }
 
 export interface AISuggestionResponse {
-    title: LocalizedString;
-    description: LocalizedString;
-    suggestedCategoryId: string;
-    suggestedCityId: string;
-    generatedImageBase64: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  suggestedCategoryId: string;
+  suggestedCityId: string;
+  generatedImageBase64: string;
 }
 
 export interface AIAutofillData {
-    title: LocalizedString;
-    description: LocalizedString;
-    categoryId: string;
-    cityId: string;
-    imageBase64: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  categoryId: string;
+  cityId: string;
+  imageBase64: string;
 }

@@ -1,37 +1,46 @@
+
 import React from 'react';
-import type { Event } from '../types';
-import type { Language } from '../types';
+import type { Event, City, Category, Language } from '@/types';
+import { MapPinIcon, CalendarIcon } from './icons';
 
 interface EventCardProps {
   event: Event;
+  city?: City;
+  category?: Category;
   lang: Language;
-  onSelect: (event: Event) => void;
+  onClick: () => void;
+  isLoggedIn: boolean;
 }
 
-export const EventCard: React.FC<EventCardProps> = ({ event, lang, onSelect }) => {
+export const EventCard: React.FC<EventCardProps> = ({ event, city, lang, onClick }) => {
+  const eventDate = new Date(event.date);
+  const formattedDate = eventDate.toLocaleDateString(lang, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
-    <div 
-      className="bg-neutral-container rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 cursor-pointer group border border-neutral-border hover:border-secondary"
-      onClick={() => onSelect(event)}
+    <div
+      onClick={onClick}
+      className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer group"
     >
-      <div className="h-48 w-full overflow-hidden">
-        <img className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" src={event.imageUrl} alt={event.title[lang]} />
+      <div className="relative">
+        <img className="w-full h-48 object-cover" src={event.imageUrl} alt={event.title[lang]} />
+        <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-2 py-1 m-2 rounded">
+          {city?.name[lang]}
+        </div>
       </div>
       <div className="p-4">
-        <h4 className="text-lg font-bold text-neutral-text truncate">{event.title[lang]}</h4>
-        <p className="text-sm text-neutral-text-soft mt-1">
-          {new Date(event.date).toLocaleDateString(lang === 'en' ? 'en-US' : lang === 'ku' ? 'ku-IQ' : 'ar-IQ', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </p>
-        <p className="text-sm text-neutral-text-soft mt-1 truncate">{event.venue}</p>
-        <div className="flex items-center mt-3">
-          <span className="text-xs font-semibold text-accent bg-accent/20 rounded-full px-2 py-0.5">
-            {event.organizerName}
-          </span>
+        <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary transition-colors">{event.title[lang]}</h3>
+        <p className="text-sm text-gray-500 mt-1 line-clamp-2">{event.description[lang]}</p>
+        <div className="flex items-center text-sm text-gray-600 mt-4">
+          <CalendarIcon className="w-4 h-4 mr-2" />
+          <span>{formattedDate}</span>
+        </div>
+        <div className="flex items-center text-sm text-gray-600 mt-2">
+          <MapPinIcon className="w-4 h-4 mr-2" />
+          <span>{event.venue}</span>
         </div>
       </div>
     </div>

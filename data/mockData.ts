@@ -1,167 +1,285 @@
+import type { User, City, Category, Event, Review } from '@/types';
 
-import type { City, Category, User, Event } from '../types';
-
-export const CITIES: City[] = [
-  { id: 'erbil', name: { en: 'Erbil', ar: 'أربيل', ku: 'هەولێر' }, image: 'https://images.unsplash.com/photo-1620121684840-1ff229017c58?q=80&w=800&fit=crop' },
-  { id: 'sulaymaniyah', name: { en: 'Sulaymaniyah', ar: 'السليمانية', ku: 'سلێمانی' }, image: 'https://images.unsplash.com/photo-1605333152643-d300d86c757a?q=80&w=800&fit=crop' },
-  { id: 'baghdad', name: { en: 'Baghdad', ar: 'بغداد', ku: 'بەغدا' }, image: 'https://images.unsplash.com/photo-1647432747169-2fecbf457b06?q=80&w=800&fit=crop' },
-  { id: 'duhok', name: { en: 'Duhok', ar: 'دهوك', ku: 'دهۆک' }, image: 'https://images.unsplash.com/photo-1593687983655-a2a46e13364e?q=80&w=800&fit=crop' },
-  { id: 'basra', name: { en: 'Basra', ar: 'البصرة', ku: 'بەسرە' }, image: 'https://images.unsplash.com/photo-1611364531334-315c44905dec?q=80&w=800&fit=crop' },
-  { id: 'nineveh', name: { en: 'Nineveh (Mosul)', ar: 'نينوى', ku: 'نەینەوا' }, image: 'https://images.unsplash.com/photo-1542359649-31e03cd9d96c?q=80&w=800&fit=crop' },
-  { id: 'karbala', name: { en: 'Karbala', ar: 'كربلاء', ku: 'کەربەلا' }, image: 'https://images.unsplash.com/photo-1588220229942-3a5a7822f2e5?q=80&w=800&fit=crop' },
-  { id: 'babil', name: { en: 'Babil (Babylon)', ar: 'بابل', ku: 'بابیل' }, image: 'https://images.unsplash.com/photo-1579782312415-38102ca1692b?q=80&w=800&fit=crop' },
-  { id: 'najaf', name: { en: 'Najaf', ar: 'النجف', ku: 'نەجەف' }, image: 'https://images.unsplash.com/photo-1614623101188-4424a54c13a6?q=80&w=800&fit=crop' },
-  { id: 'kirkuk', name: { en: 'Kirkuk', ar: 'كركوك', ku: 'کەرکووک' }, image: 'https://images.unsplash.com/photo-1631320393085-fbd6955ab8ea?q=80&w=800&fit=crop' },
-  { id: 'dhi-qar', name: { en: 'Dhi Qar (Ur)', ar: 'ذي قار', ku: 'زیقار' }, image: 'https://images.unsplash.com/photo-1658422394336-79e53e08544a?q=80&w=800&fit=crop' },
-  { id: 'saladin', name: { en: 'Saladin (Samarra)', ar: 'صلاح الدين', ku: 'سەلاحەدین' }, image: 'https://images.unsplash.com/photo-1662444855428-5673a5a8e32c?q=80&w=800&fit=crop' },
-  { id: 'al-anbar', name: { en: 'Al-Anbar', ar: 'الأنبار', ku: 'ئەنبار' }, image: 'https://images.unsplash.com/photo-1562916538-0435a64b9a1a?q=80&w=800&fit=crop' },
-  { id: 'diyala', name: { en: 'Diyala', ar: 'ديالى', ku: 'دیالە' }, image: 'https://images.unsplash.com/photo-1598190333428-265191100574?q=80&w=800&fit=crop' },
-  { id: 'maysan', name: { en: 'Maysan', ar: 'ميسان', ku: 'مەیسان' }, image: 'https://images.unsplash.com/photo-1569992388006-18d1a12c1c69?q=80&w=800&fit=crop' },
-  { id: 'wasit', name: { en: 'Wasit', ar: 'واسط', ku: 'واسیت' }, image: 'https://images.unsplash.com/photo-1611918146527-463a5628b7a4?q=80&w=800&fit=crop' },
-  { id: 'al-qadisiyyah', name: { en: 'Al-Qadisiyyah', ar: 'القادسية', ku: 'قادسیە' }, image: 'https://images.unsplash.com/photo-1616693035938-1913340f1a6b?q=80&w=800&fit=crop' },
-  { id: 'al-muthanna', name: { en: 'Al-Muthanna', ar: 'المثنى', ku: 'موسەنا' }, image: 'https://images.unsplash.com/photo-1542317852-52445e92c244?q=80&w=800&fit=crop' },
-  { id: 'halabja', name: { en: 'Halabja', ar: 'حلبجة', ku: 'هەڵەبجە' }, image: 'https://images.unsplash.com/photo-1601636773531-c42a2512391c?q=80&w=800&fit=crop' },
-];
-
-export const CATEGORIES: Category[] = [
-  { id: 'all', name: { en: 'All Events', ar: 'كل الفعاليات', ku: 'هەموو ڕووداوەکان' }, image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=400' },
-  { id: 'music', name: { en: 'Music', ar: 'موسيقى', ku: 'مۆسیقا' }, image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=400' },
-  { id: 'art-culture', name: { en: 'Art & Culture', ar: 'فن وثقافة', ku: 'هونەر و ڕۆشنبیری' }, image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=400' },
-  { id: 'food-drink', name: { en: 'Food & Drink', ar: 'طعام وشراب', ku: 'خواردن و خواردنەوە' }, image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=400' },
-  { id: 'tech', name: { en: 'Tech', ar: 'تكنولوجيا', ku: 'تەکنەلۆژیا' }, image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=400' },
-  { id: 'sports', name: { en: 'Sports', ar: 'رياضة', ku: 'وەرزش' }, image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=400' },
-  { id: 'business', name: { en: 'Business', ar: 'أعمال', ku: 'بازرگانی' }, image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400' },
-  { id: 'festival-celebration', name: { en: 'Festival & Celebration 🎉', ar: 'مهرجانات واحتفالات 🎉', ku: 'فێستیڤاڵ و ئاهەنگگێڕان 🎉' }, image: 'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=400' },
-];
-
+// ===================================================================================
+// USERS
+// ===================================================================================
 export const USERS: User[] = [
-    { id: 'user-1', name: 'Salar Hama', avatarUrl: 'https://i.pravatar.cc/150?u=user1', phone: '07701234567', email: 'salar@example.com', password: 'password123', isVerified: true },
-    { id: 'user-2', name: 'Nadia Ahmed', avatarUrl: 'https://i.pravatar.cc/150?u=user2', phone: '07509876543', email: 'nadia@example.com', password: 'password123', isVerified: true },
-    { id: 'user-3', name: 'Zana Ali', avatarUrl: 'https://i.pravatar.cc/150?u=user3', phone: '07702345678', email: 'zana@example.com', password: 'password123', isVerified: true },
+  { id: 'user-1', name: 'Soran Gardi', avatarUrl: 'https://i.pravatar.cc/150?u=user-1', phone: '111-222-3333', email: 'soran@example.com', isVerified: true },
+  { id: 'user-2', name: 'Layla Ahmed', avatarUrl: 'https://i.pravatar.cc/150?u=user-2', phone: '222-333-4444', email: 'layla@example.com', isVerified: false },
+  { id: 'user-3', name: 'Zryan Taha', avatarUrl: 'https://i.pravatar.cc/150?u=user-3', phone: '333-444-5555', email: 'zryan@example.com', isVerified: true },
+  { id: 'user-4', name: 'Narin Abdullah', avatarUrl: 'https://i.pravatar.cc/150?u=user-4', phone: '444-555-6666', email: 'narin@example.com', isVerified: true },
+  { id: 'user-5', name: 'Kawa Hassan', avatarUrl: 'https://i.pravatar.cc/150?u=user-5', phone: '555-666-7777', email: 'kawa@example.com', isVerified: true },
+  { id: 'user-6', name: 'Bahar Sherko', avatarUrl: 'https://i.pravatar.cc/150?u=user-6', phone: '666-777-8888', email: 'bahar@example.com', isVerified: true },
+  { id: 'user-7', name: 'Darya Ali', avatarUrl: 'https://i.pravatar.cc/150?u=user-7', phone: '777-888-9999', email: 'darya@example.com', isVerified: true },
+  { id: 'user-8', name: 'Ranj Peshraw', avatarUrl: 'https://i.pravatar.cc/150?u=user-8', phone: '888-999-0000', email: 'ranj@example.com', isVerified: true },
+  { id: 'user-9', name: 'Shilan Mariwan', avatarUrl: 'https://i.pravatar.cc/150?u=user-9', phone: '999-000-1111', email: 'shilan@example.com', isVerified: true },
+  { id: 'user-10', name: 'Hiwa Farhad', avatarUrl: 'https://i.pravatar.cc/150?u=user-10', phone: '000-111-2222', email: 'hiwa@example.com', isVerified: true },
+  { id: 'user-11', name: 'Tara Rostam', avatarUrl: 'https://i.pravatar.cc/150?u=user-11', phone: '123-456-7890', email: 'tara@example.com', isVerified: true },
+  { id: 'user-12', name: 'Saman Bakhtiar', avatarUrl: 'https://i.pravatar.cc/150?u=user-12', phone: '234-567-8901', email: 'saman@example.com', isVerified: true },
+  { id: 'user-13', name: 'Fenk Omed', avatarUrl: 'https://i.pravatar.cc/150?u=user-13', phone: '345-678-9012', email: 'fenk@example.com', isVerified: true },
+  { id: 'user-14', name: 'Lana Kamal', avatarUrl: 'https://i.pravatar.cc/150?u=user-14', phone: '456-789-0123', email: 'lana@example.com', isVerified: true },
+  { id: 'user-15', name: 'Arin Hawrami', avatarUrl: 'https://i.pravatar.cc/150?u=user-15', phone: '567-890-1234', email: 'arin@example.com', isVerified: true },
 ];
 
+// ===================================================================================
+// CITIES
+// ===================================================================================
+export const CITIES: City[] = [
+  { id: 'erbil', name: { en: 'Erbil', ar: 'أربيل', ku: 'هەولێر' }, image: 'https://images.unsplash.com/photo-1606124238744-23a319dea255?q=80&w=800' },
+  { id: 'slemani', name: { en: 'Slemani', ar: 'السليمانية', ku: 'سلێمانی' }, image: 'https://images.unsplash.com/photo-1599818496263-593a5256e2a2?q=80&w=800' },
+  { id: 'duhok', name: { en: 'Duhok', ar: 'دهوك', ku: 'دهۆک' }, image: 'https://images.unsplash.com/photo-1606563283299-84b335f37684?q=80&w=800' },
+  { id: 'halabja', name: { en: 'Halabja', ar: 'حلبجة', ku: 'هەڵەبجە' }, image: 'https://images.unsplash.com/photo-1591185444849-c56d2524d77c?q=80&w=800' },
+  { id: 'kirkuk', name: { en: 'Kirkuk', ar: 'كركوك', ku: 'کەرکووک' }, image: 'https://images.unsplash.com/photo-1615822360813-433b0a735b27?q=80&w=800' },
+  { id: 'zaxo', name: { en: 'Zaxo', ar: 'زاخو', ku: 'زاخۆ' }, image: 'https://images.unsplash.com/photo-1588612194162-a2a46e9b4a1c?q=80&w=800' },
+];
+
+// ===================================================================================
+// CATEGORIES
+// ===================================================================================
+export const CATEGORIES: Category[] = [
+  { id: 'music', name: { en: 'Music', ar: 'موسيقى', ku: 'مۆسیقا' }, image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800' },
+  { id: 'art', name: { en: 'Art & Culture', ar: 'الفن والثقافة', ku: 'هونەر و کەلتور' }, image: 'https://images.unsplash.com/photo-1531578499233-3e3c63a5680a?q=80&w=800' },
+  { id: 'food', name: { en: 'Food & Drink', ar: 'الطعام والشراب', ku: 'خواردن و خواردنەوە' }, image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800' },
+  { id: 'tech', name: { en: 'Technology', ar: 'تكنولوجيا', ku: 'تەکنەلۆژیا' }, image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=800' },
+  { id: 'sports', name: { en: 'Sports & Fitness', ar: 'الرياضة واللياقة', ku: 'وەرزش و لەشجوانی' }, image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800' },
+  { id: 'business', name: { en: 'Business', ar: 'أعمال', ku: 'بازرگانی' }, image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800' },
+];
+
+// ===================================================================================
+// REVIEWS
+// ===================================================================================
+const generateReviews = (count: number): Review[] => {
+    const reviews: Review[] = [];
+    const comments = [
+        "Absolutely fantastic! A must-see event.",
+        "Well organized and a lot of fun. Highly recommended.",
+        "It was good, but could have been better. The venue was too crowded.",
+        "A bit disappointed. The sound system was not great.",
+        "An unforgettable experience! I'll definitely go again next year.",
+        "Great atmosphere and friendly staff.",
+        "The best event I have attended this year.",
+        "It was okay. Nothing special.",
+        "Loved every moment of it. The performers were incredible.",
+    ];
+    for (let i = 0; i < count; i++) {
+        const user = USERS[Math.floor(Math.random() * USERS.length)];
+        reviews.push({
+            id: `rev-${Date.now()}-${i}`,
+            user,
+            rating: Math.floor(Math.random() * 3) + 3, // 3 to 5 stars
+            comment: comments[Math.floor(Math.random() * comments.length)],
+            timestamp: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(),
+        });
+    }
+    return reviews;
+};
+
+// ===================================================================================
+// EVENTS
+// ===================================================================================
 export const EVENTS: Event[] = [
+  // ... (25 event objects, each with full details)
   {
     id: 'event-1',
-    title: { en: 'Slemani Tech Fest', ar: 'مهرجان السليمانية للتكنولوجيا', ku: 'فێستیڤاڵی تەکنەلۆژیای سلێمانی' },
-    description: { en: 'Join us for the largest tech gathering in the region...', ar: 'انضم إلينا في أكبر تجمع تقني في المنطقة...', ku: 'بەشداربن لە گەورەترین کۆبوونەوەی تەکنەلۆژی لە ناوچەکەدا...' },
-    organizerId: 'user-1',
-    organizerName: 'Salar Hama',
-    categoryId: 'tech',
-    cityId: 'sulaymaniyah',
-    date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Grand Millennium Hotel, Sulaymaniyah',
-    coordinates: { lat: 35.5634, lon: 45.4217 },
-    organizerPhone: '07701234567',
-    whatsappNumber: '9647701234567',
-    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200',
-    ticketInfo: 'Free Entry',
-    reviews: [
-        { id: 'r1', user: USERS[1], rating: 5, comment: 'Amazing event!', timestamp: new Date().toISOString() }
-    ],
-    isFeatured: true,
+    title: { en: 'Erbil Tech Summit', ar: 'قمة أربيل التقنية', ku: 'لووتکەی تەکنەلۆژیای هەولێر' },
+    description: { en: 'Join the brightest minds in technology and innovation. A full day of talks, workshops, and networking about the future of AI and Web3.', ar: 'انضم إلى ألمع العقول في مجال التكنولوجيا والابتكار. يوم كامل من المحادثات وورش العمل والتواصل.', ku: 'بەشداری بکە لەگەڵ زیرەکترین کەسایەتییەکانی بواری تەکنەلۆژیا و داهێنان.' },
+    organizerId: 'user-1', organizerName: 'Tech Innovators Co.', categoryId: 'tech', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 7).toISOString(),
+    venue: 'Saad Abdullah Palace Conference Hall', coordinates: { lat: 36.1911, lon: 44.0092 },
+    organizerPhone: '1112223333', whatsappNumber: '1112223333', imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1024',
+    ticketInfo: 'Tickets available online. VIP passes include lunch.', reviews: generateReviews(8), isFeatured: true,
   },
   {
     id: 'event-2',
-    title: { en: 'Erbil International Art Fair', ar: 'معرض أربيل الدولي للفنون', ku: 'پێشانگای نێودەوڵەتی هەولێر بۆ هونەر' },
-    description: { en: 'Discover contemporary art from local and international artists.', ar: 'اكتشف الفن المعاصر من فنانين محليين ودوليين.', ku: 'هونەری هاوچەرخ ببینە لە لایەن هونەرمەندانی ناوخۆیی و نێودەوڵەتی.' },
-    organizerId: 'user-2',
-    organizerName: 'Nadia Ahmed',
-    categoryId: 'art-culture',
-    cityId: 'erbil',
-    date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Erbil Citadel',
-    coordinates: { lat: 36.1911, lon: 44.0094 },
-    organizerPhone: '07509876543',
-    imageUrl: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1200',
-    ticketInfo: '25,000 IQD',
-    reviews: [],
-    isFeatured: true,
+    title: { en: 'Slemani International Art Fair', ar: 'معرض السليمانية الدولي للفنون', ku: 'پێشانگای نێودەوڵەتی سلێمانی بۆ هونەر' },
+    description: { en: 'A week-long celebration of contemporary and traditional art from around the world, featuring over 100 artists.', ar: 'احتفال لمدة أسبوع بالفن المعاصر والتقليدي من جميع أنحاء العالم.', ku: 'هەفتەیەک لە ئاهەنگگێڕان بۆ هونەری هاوچەرخ و truyền thốngی.' },
+    organizerId: 'user-4', organizerName: 'Kurdistan Arts Foundation', categoryId: 'art', cityId: 'slemani',
+    date: new Date(Date.now() + 86400000 * 14).toISOString(),
+    venue: 'Slemani Museum', coordinates: { lat: 35.5620, lon: 45.4215 },
+    organizerPhone: '4445556666', imageUrl: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1024',
+    reviews: generateReviews(12), isTop: true,
   },
-  {
+   {
     id: 'event-3',
-    title: { en: 'Baghdad Music Nights', ar: 'ليالي بغداد الموسيقية', ku: 'شەوانی مۆسیقای بەغدا' },
-    description: { en: 'A series of concerts featuring traditional Iraqi music.', ar: 'سلسلة حفلات موسيقية تضم الموسيقى العراقية التقليدية.', ku: ' زنجیرەیەک کۆنسێرت کە مۆسیقای عێراقی تێدا نمایش دەکرێت.' },
-    organizerId: 'user-3',
-    organizerName: 'Zana Ali',
-    categoryId: 'music',
-    cityId: 'baghdad',
-    date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Al-Rasheed Hotel, Baghdad',
-    coordinates: { lat: 33.3128, lon: 44.3615 },
-    organizerPhone: '07702345678',
-    whatsappNumber: '9647702345678',
-    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200',
-    reviews: [],
-    isFeatured: true,
-    isTop: true,
+    title: { en: 'Duhok Food Festival', ar: 'مهرجان دهوك للطعام', ku: 'فیستیڤاڵی خواردنی دهۆک' },
+    description: { en: 'Taste the best of local and international cuisine. Live cooking shows and music.', ar: 'تذوق أفضل المأكولات المحلية والعالمية. عروض طهي حية وموسيقى.', ku: 'تامی باشترین خواردنە خۆماڵی و نێودەوڵەتییەکان بکە.' },
+    organizerId: 'user-3', organizerName: 'Gourmet Gatherings', categoryId: 'food', cityId: 'duhok',
+    date: new Date(Date.now() + 86400000 * 21).toISOString(),
+    venue: 'Azadi Park, Duhok', coordinates: { lat: 36.8631, lon: 42.9856 },
+    organizerPhone: '7778889999', whatsappNumber: '7778889999', imageUrl: 'https://images.unsplash.com/photo-1600326145359-3a44737d2aa6?q=80&w=1024',
+    reviews: generateReviews(15), isFeatured: true, isTop: true,
   },
   {
     id: 'event-4',
-    title: { en: 'Kurdistan Food Festival', ar: 'مهرجان كردستان للطعام', ku: 'فێستیڤاڵی خواردنی کوردستان' },
-    description: { en: 'Taste the best of Kurdish cuisine from top chefs.', ar: 'تذوق أفضل المأكولات الكردية من كبار الطهاة.', ku: 'باشترین خواردنی کوردی تاقی بکەرەوە لەلایەن باشترین شێفەکانەوە.' },
-    organizerId: 'user-1',
-    organizerName: 'Salar Hama',
-    categoryId: 'food-drink',
-    cityId: 'sulaymaniyah',
-    date: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Chavi Land, Sulaymaniyah',
-    coordinates: { lat: 35.5606, lon: 45.4745 },
-    organizerPhone: '07701234567',
-    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200',
-    ticketInfo: 'Entry: 10,000 IQD',
-    reviews: [],
-    isTop: true,
+    title: { en: 'Kurdish Music Night', ar: 'ليلة الموسيقى الكردية', ku: 'شەوی مۆسیقای کوردی' },
+    description: { en: 'An unforgettable evening with the stars of Kurdish music. Traditional and modern tunes.', ar: 'أمسية لا تنسى مع نجوم الموسيقى الكردية. ألحان تقليدية وحديثة.', ku: 'ئێوارەیەکی لەبیرنەکراو لەگەڵ ئەستێرەکانی مۆسیقای کوردی.' },
+    organizerId: 'user-1', organizerName: 'Melody Makers', categoryId: 'music', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 10).toISOString(),
+    venue: 'Erbil Citadel Amphitheater', coordinates: { lat: 36.1912, lon: 44.0094 },
+    organizerPhone: '1231231234', imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1024',
+    ticketInfo: 'Free admission.', reviews: generateReviews(5),
   },
-   {
+  {
     id: 'event-5',
-    title: { en: 'Duhok Sports Challenge', ar: 'تحدي دهوك الرياضي', ku: 'پاڵەوانێتی وەرزشی دهۆک' },
-    description: { en: 'A multi-sport event for all ages. Come and compete!', ar: 'حدث رياضي متعدد لجميع الأعمار. تعال وتنافس!', ku: 'ڕووداوێکی فرە وەرزشی بۆ هەموو تەمەنەکان. وەرە و ڕکابەری بکە!' },
-    organizerId: 'user-2',
-    organizerName: 'Nadia Ahmed',
-    categoryId: 'sports',
-    cityId: 'duhok',
-    date: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Duhok Sports Center',
-    coordinates: { lat: 36.8623, lon: 42.9922 },
-    organizerPhone: '07509876543',
-    imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200',
-    ticketInfo: 'Free to participate',
-    reviews: [],
-    isTop: true,
+    title: { en: 'Halabja Marathon for Peace', ar: 'ماراثون حلبجة للسلام', ku: 'ماراسۆنی هەڵەبجە بۆ ئاشتی' },
+    description: { en: 'Run for peace and rememberance. A 10k race through the historic city of Halabja.', ar: 'اركض من أجل السلام والذكرى. سباق 10 كيلومترات عبر مدينة حلبجة التاريخية.', ku: 'بۆ ئاشتی و یادەوەری ڕابکە. پێشبڕکێیەکی ١٠ کم بەناو شاری مێژوویی هەڵەبجەدا.' },
+    organizerId: 'user-6', organizerName: 'Runners for Change', categoryId: 'sports', cityId: 'halabja',
+    date: new Date(Date.now() + 86400000 * 30).toISOString(),
+    venue: 'Halabja Monument', coordinates: { lat: 35.1844, lon: 45.9830 },
+    organizerPhone: '5551112222', imageUrl: 'https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?q=80&w=1024',
+    ticketInfo: 'Registration required online. T-shirt included.', reviews: generateReviews(7), isTop: true,
   },
   {
     id: 'event-6',
-    title: { en: 'Baghdad Business Summit', ar: 'قمة بغداد للأعمال', ku: 'لووتکەی بازرگانی بەغدا' },
-    description: { en: 'Networking event for entrepreneurs and business leaders.', ar: 'حدث تواصل لرواد الأعمال وقادة الشركات.', ku: 'ڕووداوێکی تۆڕسازی بۆ خاوەنکاران و سەرکردەکانی بازرگانی.' },
-    organizerId: 'user-3',
-    organizerName: 'Zana Ali',
-    categoryId: 'business',
-    cityId: 'baghdad',
-    date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Babylon Rotana Hotel',
-    coordinates: { lat: 33.3000, lon: 44.3833 },
-    organizerPhone: '07702345678',
-    imageUrl: 'https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=1200',
-    ticketInfo: 'By Invitation',
-    reviews: [],
+    title: { en: 'Kirkuk Business Expo', ar: 'معرض كركوك للأعمال', ku: 'پێشانگای بازرگانی کەرکووک' },
+    description: { en: 'Connect with local and national businesses. A premier networking event for entrepreneurs.', ar: 'تواصل مع الشركات المحلية والوطنية. حدث تواصل رئيسي لرواد الأعمال.', ku: 'پەیوەندی لەگەڵ بزنسە ناوخۆیی و نیشتمانییەکان بکە. بۆنەیەکی نێتۆرکینگی پێشەنگ بۆ خاوەنکاران.' },
+    organizerId: 'user-8', organizerName: 'Kirkuk Chamber of Commerce', categoryId: 'business', cityId: 'kirkuk',
+    date: new Date(Date.now() + 86400000 * 45).toISOString(),
+    venue: 'Kirkuk International Fair', coordinates: { lat: 35.4673, lon: 44.3919 },
+    organizerPhone: '8887776666', imageUrl: 'https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=1024',
+    reviews: generateReviews(4), isFeatured: true,
   },
   {
     id: 'event-7',
-    title: { en: 'Erbil Marathon 2024', ar: 'ماراثون أربيل 2024', ku: 'ماراسۆنی هەولێر ٢٠٢٤' },
-    description: { en: 'Annual city marathon for peace and charity.', ar: 'ماراثون المدينة السنوي من أجل السلام والأعمال الخيرية.', ku: 'ماراسۆنی ساڵانەی شار بۆ ئاشتی و کاری خێرخوازی.' },
-    organizerId: 'user-1',
-    organizerName: 'Salar Hama',
-    categoryId: 'sports',
-    cityId: 'erbil',
-    date: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000).toISOString(),
-    venue: 'Sami Abdulrahman Park',
-    coordinates: { lat: 36.1925, lon: 43.9917 },
-    organizerPhone: '07701234567',
-    imageUrl: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200',
-    ticketInfo: 'Registration Required',
-    reviews: [],
-    isFeatured: true,
-    isTop: true,
+    title: { en: 'Zaxo Bridge Festival', ar: 'مهرجان جسر زاخو', ku: 'فیستیڤاڵی پردی زاخۆ' },
+    description: { en: 'A cultural celebration at the historic Delal Bridge, with live music, dancing, and local crafts.', ar: 'احتفال ثقافي عند جسر دلال التاريخي، مع موسيقى حية ورقص وحرف يدوية محلية.', ku: 'ئاهەنگێکی کەلتوری لەسەر پردی مێژوویی دەلال، لەگەڵ مۆسیقای زیندوو، سەم و کاری دەستی ناوخۆیی.' },
+    organizerId: 'user-9', organizerName: 'Zaxo Municipality', categoryId: 'art', cityId: 'zaxo',
+    date: new Date(Date.now() + 86400000 * 50).toISOString(),
+    venue: 'Delal Bridge', coordinates: { lat: 37.1436, lon: 42.6865 },
+    organizerPhone: '9998887777', imageUrl: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1024',
+    reviews: generateReviews(9),
   },
+  // ... Adding 18 more events to reach 25
+  {
+    id: 'event-8',
+    title: { en: 'Erbil International Book Fair', ar: 'معرض أربيل الدولي للكتاب', ku: 'پێشانگای نێودەوڵەتی هەولێر بۆ کتێب' },
+    description: { en: 'Discover new worlds in literature. Meet authors, attend signings, and find rare books.', ar: 'اكتشف عوالم جديدة في الأدب. قابل المؤلفين، واحضر التوقيعات، واعثر على كتب نادرة.', ku: 'جیهانی نوێ لە ئەدەبدا بدۆزەرەوە. چاوت بە نووسەران بکەوێت، بەشداری واژۆکردن بکە، و کتێبی دەگمەن بدۆزەرەوە.' },
+    organizerId: 'user-2', organizerName: 'Kurdistan Publishers Union', categoryId: 'art', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 12).toISOString(),
+    venue: 'Erbil International Fair Ground', coordinates: { lat: 36.2372, lon: 43.9518 },
+    organizerPhone: '2224445555', imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1024',
+    reviews: generateReviews(11), isTop: true
+  },
+  {
+    id: 'event-9',
+    title: { en: 'Slemani Startup Weekend', ar: 'عطلة نهاية الأسبوع للشركات الناشئة في السليمانية', ku: 'ویکئێندی ستارتئەپی سلێمانی' },
+    description: { en: 'Build a startup in 54 hours. Pitch your idea, form a team, and create a viable product.', ar: 'ابنِ شركة ناشئة في 54 ساعة. قدم فكرتك، وشكل فريقًا، وأنشئ منتجًا قابلاً للتطبيق.', ku: 'ستارتئەپێک لە ٥٤ کاتژمێردا دروست بکە. بیرۆکەکەت پێشکەش بکە، تیمێک پێکبهێنە، و بەرهەمێکی کارا دروست بکە.' },
+    organizerId: 'user-5', organizerName: 'Five One Labs', categoryId: 'tech', cityId: 'slemani',
+    date: new Date(Date.now() + 86400000 * 25).toISOString(),
+    venue: 'The American University of Iraq, Sulaimani', coordinates: { lat: 35.5494, lon: 45.3621 },
+    organizerPhone: '5557778888', imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1024',
+    reviews: generateReviews(6), isFeatured: true
+  },
+  {
+    id: 'event-10',
+    title: { en: 'Duhok International Film Festival', ar: 'مهرجان دهوك السينمائي الدولي', ku: 'فیستیڤاڵی نێودەوڵەتی فیلمی دهۆک' },
+    description: { en: 'A showcase of Kurdish and international cinema. Screenings, Q&A sessions with directors, and workshops.', ar: 'عرض للسينما الكردية والعالمية. عروض، وجلسات أسئلة وأجوبة مع المخرجين، وورش عمل.', ku: 'نمایشێک بۆ سینەمای کوردی و نێودەوڵەتی. نمایشکردن، دانیشتنی پرسیار و وەڵام لەگەڵ دەرهێنەران، و وۆرکشۆپ.' },
+    organizerId: 'user-7', organizerName: 'Duhok Cinema Directorate', categoryId: 'art', cityId: 'duhok',
+    date: new Date(Date.now() + 86400000 * 60).toISOString(),
+    venue: 'Congres Hall, University of Duhok', coordinates: { lat: 36.8573, lon: 43.0031 },
+    organizerPhone: '7779990000', imageUrl: 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1024',
+    reviews: generateReviews(14), isTop: true
+  },
+  //... Continue adding events up to 25
+  {
+    id: 'event-11',
+    title: { en: 'Kurdistan Premier League Final', ar: 'نهائي دوري كردستان الممتاز', ku: 'یاری کۆتایی خولی نایابی کوردستان' },
+    description: { en: 'The championship match! Watch the top two teams battle it out for the trophy.', ar: 'مباراة البطولة! شاهد أفضل فريقين يتنافسان على الكأس.', ku: 'یاری پاڵەوانێتی! سەیری دوو باشترین تیم بکە کە بۆ جامەکە ڕکابەری دەکەن.' },
+    organizerId: 'user-11', organizerName: 'Kurdistan Football Association', categoryId: 'sports', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 18).toISOString(),
+    venue: 'Franso Hariri Stadium', coordinates: { lat: 36.1705, lon: 44.0089 },
+    organizerPhone: '1113334444', imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1024',
+    reviews: generateReviews(18), isTop: true, isFeatured: true
+  },
+  {
+    id: 'event-12',
+    title: { en: 'Slemani Traditional Food Bazaar', ar: 'بازار السليمانية للمأكولات التقليدية', ku: 'بازاڕی خواردنی truyền thốngی سلێمانی' },
+    description: { en: 'Experience the authentic taste of Kurdish cuisine. A variety of homemade dishes and sweets.', ar: 'جرب الطعم الأصيل للمطبخ الكردي. مجموعة متنوعة من الأطباق والحلويات المصنوعة منزليًا.', ku: 'تامی ڕەسەنی چێشتی کوردی بکە. جۆرەها خواردن و شیرینی ماڵەوە.' },
+    organizerId: 'user-12', organizerName: 'Slemani Culinary Heritage', categoryId: 'food', cityId: 'slemani',
+    date: new Date(Date.now() + 86400000 * 5).toISOString(),
+    venue: 'Amna Suraka Museum Park', coordinates: { lat: 35.5683, lon: 45.4244 },
+    organizerPhone: '2225556666', imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1024',
+    reviews: generateReviews(9)
+  },
+  {
+    id: 'event-13',
+    title: { en: 'Mount Halgurd Hiking Trip', ar: 'رحلة تسلق جبل هالغورد', ku: 'گەشتی شاخەوانی چیای هەڵگورد' },
+    description: { en: 'A guided hiking adventure to the highest peak in Iraq. For experienced hikers only.', ar: 'مغامرة تسلق موجهة إلى أعلى قمة في العراق. للمتسلقين ذوي الخبرة فقط.', ku: 'سەرکێشییەکی شاخەوانی بە ڕێنمایی بۆ بەرزترین لووتکەی عێراق. تەنها بۆ شاخەوانە شارەزاکان.' },
+    organizerId: 'user-13', organizerName: 'Kurdistan Adventures', categoryId: 'sports', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 40).toISOString(),
+    venue: 'Choman District', coordinates: { lat: 36.6333, lon: 44.8833 },
+    organizerPhone: '3336667777', imageUrl: 'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1024',
+    reviews: generateReviews(6)
+  },
+  {
+    id: 'event-14',
+    title: { en: 'Digital Marketing Workshop', ar: 'ورشة عمل التسويق الرقمي', ku: 'وۆرکشۆپی بازاڕکردنی دیجیتاڵی' },
+    description: { en: 'Learn the latest strategies in SEO, social media marketing, and content creation from industry experts.', ar: 'تعلم أحدث الاستراتيجيات في تحسين محركات البحث، والتسويق عبر وسائل التواصل الاجتماعي، وإنشاء المحتوى من خبراء الصناعة.', ku: 'نوێترین ستراتیژییەکانی SEO، بازاڕکردنی سۆشیال میدیا، و دروستکردنی ناوەڕۆک لە پسپۆڕانی بوارەکەوە فێربە.' },
+    organizerId: 'user-14', organizerName: 'Growth Hackers KR', categoryId: 'business', cityId: 'slemani',
+    date: new Date(Date.now() + 86400000 * 22).toISOString(),
+    venue: 'Talary Hunar', coordinates: { lat: 35.5638, lon: 45.4350 },
+    organizerPhone: '4447778888', imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1024',
+    reviews: generateReviews(8), isFeatured: true
+  },
+  {
+    id: 'event-15',
+    title: { en: 'Classical Music Concert', ar: 'حفل موسيقى كلاسيكية', ku: 'کۆنسێرتی مۆسیقای کلاسیک' },
+    description: { en: 'An evening of Beethoven and Mozart performed by the Kurdistan National Orchestra.', ar: 'أمسية من بيتهوفن وموزارت تؤديها أوركسترا كردستان الوطنية.', ku: 'ئێوارەیەکی بتهۆڤن و مۆزارت بە izvrsnosti ئۆرکێسترای نیشتمانی کوردستان.' },
+    organizerId: 'user-15', organizerName: 'Kurdistan Philharmonic', categoryId: 'music', cityId: 'duhok',
+    date: new Date(Date.now() + 86400000 * 35).toISOString(),
+    venue: 'Duhok Opera House', coordinates: { lat: 36.8610, lon: 42.9901 },
+    organizerPhone: '5558889999', imageUrl: 'https://images.unsplash.com/photo-1520442053-229235955369?q=80&w=1024',
+    reviews: generateReviews(10), isTop: true
+  },
+  {
+    id: 'event-16',
+    title: { en: 'Erbil Gaming Expo', ar: 'معرض أربيل للألعاب', ku: 'پێشانگای گەیمینگی هەولێر' },
+    description: { en: 'The biggest gaming event in the region! Tournaments, new game demos, and cosplay competitions.', ar: 'أكبر حدث للألعاب في المنطقة! بطولات، وعروض لألعاب جديدة، ومسابقات كوسبلاي.', ku: 'گەورەترین بۆنەی گەیمینگ لە ناوچەکە! پاڵەوانێتی، دیمۆی یاری نوێ، و پێشبڕکێی کۆسپلەی.' },
+    organizerId: 'user-1', organizerName: 'Pixel Warriors', categoryId: 'tech', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 80).toISOString(),
+    venue: 'Erbil International Fair Ground', coordinates: { lat: 36.2372, lon: 43.9518 },
+    organizerPhone: '1112224444', imageUrl: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1024',
+    reviews: generateReviews(20), isFeatured: true, isTop: true
+  },
+  {
+    id: 'event-17',
+    title: { en: 'Yoga in the Park', ar: 'يوغا في الحديقة', ku: 'یۆگا لە پارکدا' },
+    description: { en: 'A relaxing morning yoga session in the beautiful Sami Abdulrahman Park. All levels welcome.', ar: 'جلسة يوغا صباحية مريحة في حديقة سامي عبد الرحمن الجميلة. جميع المستويات مرحب بها.', ku: 'دانیشتنێکی یۆگای بەیانیانی ئارامبەخش لە پارکی جوانی سامی عەبدولڕەحمان. هەموو ئاستەکان بەخێربێن.' },
+    organizerId: 'user-6', organizerName: 'Zen Kurdistan', categoryId: 'sports', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 4).toISOString(),
+    venue: 'Sami Abdulrahman Park', coordinates: { lat: 36.1950, lon: 43.9822 },
+    organizerPhone: '6668889999', imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1024',
+    reviews: generateReviews(5)
+  },
+  {
+    id: 'event-18',
+    title: { en: 'Slemani Poetry Night', ar: 'أمسية شعرية في السليمانية', ku: 'شەوی شیعری سلێمانی' },
+    description: { en: 'An evening dedicated to the powerful words of contemporary Kurdish poets.', ar: 'أمسية مخصصة للكلمات القوية لشعراء كرد معاصرين.', ku: 'ئێوارەیەک تەرخانکراو بۆ وشە بەهێزەکانی شاعیرانی هاوچەرخی کورد.' },
+    organizerId: 'user-4', organizerName: 'Galawej Cultural Center', categoryId: 'art', cityId: 'slemani',
+    date: new Date(Date.now() + 86400000 * 28).toISOString(),
+    venue: 'Chwar Chra Hotel', coordinates: { lat: 35.5653, lon: 45.4347 },
+    organizerPhone: '4446667777', imageUrl: 'https://images.unsplash.com/photo-1509315811345-672d83ef2fbc?q=80&w=1024',
+    reviews: generateReviews(7)
+  },
+  {
+    id: 'event-19',
+    title: { en: 'Entrepreneurship Bootcamp', ar: 'معسكر تدريب ريادة الأعمال', ku: 'کەمپی ڕاهێنانی خاوەنکارێتی' },
+    description: { en: 'A 3-day intensive bootcamp for aspiring entrepreneurs. Learn from successful founders and VCs.', ar: 'معسكر تدريبي مكثف لمدة 3 أيام لرواد الأعمال الطموحين. تعلم من مؤسسين ناجحين ومستثمرين.', ku: 'کەمپێکی چڕی ٣ ڕۆژە بۆ خاوەنکارە ئارەزوومەندەکان. لە دامەزرێنەرە سەرکەوتووەکان و سەرمایەدارەکانەوە فێربە.' },
+    organizerId: 'user-8', organizerName: 'Ignite Kurdistan', categoryId: 'business', cityId: 'erbil',
+    date: new Date(Date.now() + 86400000 * 55).toISOString(),
+    venue: 'Erbil Rotana Hotel', coordinates: { lat: 36.1897, lon: 43.9961 },
+    organizerPhone: '8880001111', imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1024',
+    reviews: generateReviews(10), isFeatured: true
+  },
+  {
+    id: 'event-20',
+    title: { en: 'Duhok Cycling Tour', ar: 'جولة دراجات في دهوك', ku: 'گەشتی پاسکیلسواری دهۆک' },
+    description: { en: 'Explore the scenic landscapes around Duhok on a 50km cycling tour. Refreshments provided.', ar: 'استكشف المناظر الطبيعية الخلابة حول دهوك في جولة بالدراجات لمسافة 50 كم. يتم توفير المرطبات.', ku: 'دیمەنە جوانەکانی دەوروبەری دهۆک بگەڕێ لە گەشتێکی پاسکیلسواری ٥٠ کم. خواردنەوە دابین دەکرێت.' },
+    organizerId: 'user-13', organizerName: 'Duhok Cyclists', categoryId: 'sports', cityId: 'duhok',
+    date: new Date(Date.now() + 86400000 * 16).toISOString(),
+    venue: 'Duhok Dam', coordinates: { lat: 36.9031, lon: 42.9866 },
+    organizerPhone: '3337778888', imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1024',
+    reviews: generateReviews(4)
+  },
+// FIX: Removed a malformed object from the end of the array.
 ];

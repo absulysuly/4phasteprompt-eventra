@@ -1,20 +1,49 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Eventara - Event Discovery Platform
 
-This contains everything you need to run your app locally.
+Welcome to Eventara, an interactive event discovery platform for finding, creating, and sharing local events. This project is built with React, TypeScript, Vite, and Tailwind CSS, and features AI-powered event creation using the Google Gemini API.
 
-View your app in AI Studio: https://ai.studio/apps/drive/18F96t4HUkvmbV451CXwsTp4sR8UQ1af2
+## Project Setup
 
-## Run Locally
+### Prerequisites
 
-**Prerequisites:**  Node.js
+- Node.js (v18 or later)
+- npm or yarn
 
+### Installation
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd eventara
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root of the project and add your Google Gemini API key:
+    ```
+    GEMINI_API_KEY=your_api_key_here
+    ```
+
+### Running the Development Server
+
+To start the application in development mode, run:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+## Features (Phase 1)
+
+- **Complete Foundation:** A fully structured and runnable React application.
+- **Component-Based Architecture:** A comprehensive set of reusable UI components.
+- **AI Integration:** Foundational setup for Gemini API integration for event creation.
+- **Mock Backend:** A mock API service to simulate data fetching and manipulation.
+- **TypeScript:** Full type safety across the application.
+- **Styling:** Modern UI styled with Tailwind CSS.

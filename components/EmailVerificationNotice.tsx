@@ -1,65 +1,29 @@
-import React, { useState } from 'react';
 
-// FIX: Removed unused onLoginAttempt prop from EmailVerificationNoticeProps to resolve a TypeScript type mismatch in App.tsx.
+import React from 'react';
+import { XIcon } from './icons';
+
 interface EmailVerificationNoticeProps {
   email: string;
-  onSimulateVerification: (email: string) => Promise<void>;
-  onBackToLogin: () => void;
+  onResend: () => void;
+  onClose: () => void;
 }
 
-export const EmailVerificationNotice: React.FC<EmailVerificationNoticeProps> = ({
-  email,
-  onSimulateVerification,
-  onBackToLogin,
-}) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-  
-  const handleSimulateClick = async () => {
-    setError('');
-    setIsLoading(true);
-    try {
-      await onSimulateVerification(email);
-    } catch(e) {
-      setError((e as Error).message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
+export const EmailVerificationNotice: React.FC<EmailVerificationNoticeProps> = ({ email, onResend, onClose }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-neutral-bg p-4">
-      <div className="w-full max-w-md p-8 space-y-6 bg-neutral-container rounded-lg shadow-xl border border-neutral-border text-center">
-        <h1 className="text-2xl font-bold text-neutral-text">Check Your Email</h1>
-        <p className="text-neutral-text-soft">
-          We've sent a verification link to <strong className="text-primary">{email}</strong>. Please click the link in the email to activate your account.
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-8 text-center relative">
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+            <XIcon className="w-6 h-6"/>
+        </button>
+        <h2 className="text-2xl font-bold mb-4">Please Verify Your Email</h2>
+        <p className="text-gray-600 mb-6">
+          We've sent a verification link to <strong>{email}</strong>. Please check your inbox (and spam folder) to complete your registration.
         </p>
-        
-        <div className="pt-4 space-y-3">
-            <button
-              onClick={() => handleSimulateClick()}
-              disabled={isLoading}
-              className="w-full px-4 py-2 bg-accent text-dark-text font-bold rounded-md hover:bg-accent/90 disabled:bg-accent/70"
-            >
-              {isLoading ? 'Verifying...' : 'Simulate Clicking Email Link & Login'}
+        <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+            <p className="text-sm text-gray-500">Didn't receive the email?</p>
+            <button onClick={onResend} className="font-semibold text-primary hover:underline">
+                Resend Verification Link
             </button>
-            <p className="text-xs text-neutral-text-soft">
-                (This is for demonstration. In a real app, you would check your actual email.)
-            </p>
-        </div>
-
-        {error && <p className="text-red-500 text-sm font-semibold">{error}</p>}
-        
-        <div className="border-t border-neutral-border pt-6">
-          <p className="text-sm text-neutral-text-soft mb-2">
-            Didn't receive the email? Check your spam folder or
-          </p>
-          <button
-            onClick={onBackToLogin}
-            className="font-medium text-primary hover:underline"
-          >
-            Go back to the Login page
-          </button>
         </div>
       </div>
     </div>
