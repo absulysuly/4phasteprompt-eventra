@@ -1,22 +1,19 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
-import { fileURLToPath, URL } from 'url';
-
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          // Fix: __dirname is not available in ESM. Use import.meta.url instead.
-          '@': fileURLToPath(new URL('.', import.meta.url)),
-        }
-      }
-    };
-});
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '.'),
+    },
+  },
+  define: {
+    // The Gemini SDK uses process.env.API_KEY. Vite requires environment variables
+    // to be prefixed with VITE_ to expose them to the client. This define statement
+    // maps the expected variable to the Vite-specific one.
+    'process.env.API_KEY': JSON.stringify(process.env.VITE_GEMINI_API_KEY),
+  }
+})

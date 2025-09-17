@@ -1,16 +1,15 @@
-
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { loggingService } from '@/services/loggingService';
 
 interface Props {
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 interface State {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends Component<Props, State> {
+export default class ErrorBoundary extends Component<Props, State> {
   public state: State = {
     hasError: false
   };
@@ -27,20 +26,21 @@ export class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="flex flex-col items-center justify-center h-screen bg-red-50 text-red-800 p-4">
-          <h1 className="text-4xl font-bold mb-4">Oops! Something went wrong.</h1>
-          <p className="text-lg mb-8">We're sorry for the inconvenience. Please try refreshing the page.</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors"
-          >
-            Refresh Page
-          </button>
+        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+            <div className="text-center p-8 bg-white rounded-lg shadow-md">
+              <h1 className="text-2xl font-bold text-red-600">Something went wrong.</h1>
+              <p className="text-gray-600 mt-2">We're sorry for the inconvenience. Please try refreshing the page.</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-indigo-700"
+              >
+                Refresh
+              </button>
+            </div>
         </div>
       );
     }
 
-    // Fix: Destructure children from props to avoid potential 'this' context issues with TypeScript.
     return this.props.children;
   }
 }

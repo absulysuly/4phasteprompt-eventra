@@ -1,10 +1,12 @@
-
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY || API_KEY === 'your_api_key_here') {
-  console.warn("WARNING: Gemini API key is not configured or is using the default placeholder in .env.local. AI features will not work.");
-}
+// Application-wide configuration settings.
 
 export const config = {
-  geminiApiKey: API_KEY as string,
+  // Number of events to display per page in paginated views.
+  EVENTS_PER_PAGE: 8,
+  
+  // App name
+  APP_NAME: 'Eventara',
+
+  // Default language
+  DEFAULT_LANG: 'en',
 };
