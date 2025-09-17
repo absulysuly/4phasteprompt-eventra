@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Eventra PWA Icons</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .icon-preview { margin: 10px; display: inline-block; }
+        button { background: #4f46e5; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Eventra PWA Icon Generator</h1>
+    <button onclick="generateIcons()">Generate Icons</button>
+    <div id="icons-container"></div>
+    
+    <script>
+        function createEventraIcon(size, maskable = false) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#4f46e5'); // Indigo
+            gradient.addColorStop(1, '#ec4899'); // Pink
+            ctx.fillStyle = gradient;
+            
+            if (maskable) {
+                // Larger safe area for maskable icons
+                ctx.fillRect(0, 0, size, size);
+                
+                // Icon content in safe area (80% of size)
+                const safeSize = size * 0.8;
+                const offset = size * 0.1;
+                
+                // Calendar icon in white
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(offset + safeSize * 0.2, offset + safeSize * 0.25, safeSize * 0.6, safeSize * 0.5);
+                
+                // Calendar header
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(offset + safeSize * 0.2, offset + safeSize * 0.25, safeSize * 0.6, safeSize * 0.15);
+                
+                // Calendar grid
+                ctx.strokeStyle = '#4f46e5';
+                ctx.lineWidth = 2;
+                for (let i = 1; i < 4; i++) {
+                    const x = offset + safeSize * 0.2 + (safeSize * 0.6 * i / 4);
+                    ctx.beginPath();
+                    ctx.moveTo(x, offset + safeSize * 0.4);
+                    ctx.lineTo(x, offset + safeSize * 0.75);
+                    ctx.stroke();
+                }
+                for (let i = 1; i < 3; i++) {
+                    const y = offset + safeSize * 0.4 + (safeSize * 0.35 * i / 3);
+                    ctx.beginPath();
+                    ctx.moveTo(offset + safeSize * 0.2, y);
+                    ctx.lineTo(offset + safeSize * 0.8, y);
+                    ctx.stroke();
+                }
+            } else {
+                // Regular icon
+                ctx.fillRect(0, 0, size, size);
+                
+                // Calendar icon
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(size * 0.25, size * 0.3, size * 0.5, size * 0.4);
+                
+                // Calendar header
+                ctx.fillRect(size * 0.25, size * 0.3, size * 0.5, size * 0.12);
+                
+                // Calendar grid
+                ctx.strokeStyle = '#4f46e5';
+                ctx.lineWidth = Math.max(1, size / 128);
+                for (let i = 1; i < 4; i++) {
+                    const x = size * 0.25 + (size * 0.5 * i / 4);
+                    ctx.beginPath();
+                    ctx.moveTo(x, size * 0.42);
+                    ctx.lineTo(x, size * 0.7);
+                    ctx.stroke();
+                }
+                for (let i = 1; i < 3; i++) {
+                    const y = size * 0.42 + (size * 0.28 * i / 3);
+                    ctx.beginPath();
+                    ctx.moveTo(size * 0.25, y);
+                    ctx.lineTo(size * 0.75, y);
+                    ctx.stroke();
+                }
+            }
+            
+            return canvas;
+        }
+        
+        function generateIcons() {
+            const container = document.getElementById('icons-container');
+            container.innerHTML = '<h2>Generated Icons (Right-click to save)</h2>';
+            
+            const sizes = [48, 72, 96, 128, 144, 192, 256, 384, 512];
+            const maskableSizes = [192, 512];
+            
+            // Regular icons
+            sizes.forEach(size => {
+                const canvas = createEventraIcon(size);
+                const div = document.createElement('div');
+                div.className = 'icon-preview';
+                div.innerHTML = `<h4>icon-${size}x${size}.png</h4>`;
+                div.appendChild(canvas);
+                container.appendChild(div);
+                
+                // Add download link
+                canvas.toBlob(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `icon-${size}x${size}.png`;
+                    link.textContent = 'Download';
+                    div.appendChild(link);
+                });
+            });
+            
+            // Maskable icons
+            maskableSizes.forEach(size => {
+                const canvas = createEventraIcon(size, true);
+                const div = document.createElement('div');
+                div.className = 'icon-preview';
+                div.innerHTML = `<h4>maskable-icon-${size}x${size}.png</h4>`;
+                div.appendChild(canvas);
+                container.appendChild(div);
+                
+                // Add download link
+                canvas.toBlob(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `maskable-icon-${size}x${size}.png`;
+                    link.textContent = 'Download';
+                    div.appendChild(link);
+                });
+            });
+            
+            // Shortcut icons
+            ['events', 'create'].forEach(type => {
+                const canvas = createEventraIcon(96);
+                const div = document.createElement('div');
+                div.className = 'icon-preview';
+                div.innerHTML = `<h4>shortcut-${type}.png</h4>`;
+                div.appendChild(canvas);
+                container.appendChild(div);
+                
+                canvas.toBlob(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `shortcut-${type}.png`;
+                    link.textContent = 'Download';
+                    div.appendChild(link);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
