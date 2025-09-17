@@ -22,27 +22,103 @@ export const USERS: User[] = [
 ];
 
 // ===================================================================================
-// CITIES
+// CITIES - All 18 Iraqi Governorates
 // ===================================================================================
 export const CITIES: City[] = [
+  { id: 'baghdad', name: { en: 'Baghdad', ar: 'بغداد', ku: 'بەغدا' }, image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800' },
+  { id: 'basra', name: { en: 'Basra', ar: 'البصرة', ku: 'بەسرە' }, image: 'https://images.unsplash.com/photo-1605640779851-ad2a96584203?q=80&w=800' },
+  { id: 'nineveh', name: { en: 'Nineveh', ar: 'نينوى', ku: 'نەینەوا' }, image: 'https://images.unsplash.com/photo-1600968256473-87af8e692d8e?q=80&w=800' },
   { id: 'erbil', name: { en: 'Erbil', ar: 'أربيل', ku: 'هەولێر' }, image: 'https://images.unsplash.com/photo-1606124238744-23a319dea255?q=80&w=800' },
-  { id: 'slemani', name: { en: 'Slemani', ar: 'السليمانية', ku: 'سلێمانی' }, image: 'https://images.unsplash.com/photo-1599818496263-593a5256e2a2?q=80&w=800' },
+  { id: 'sulaymaniyah', name: { en: 'Sulaymaniyah', ar: 'السليمانية', ku: 'سلێمانی' }, image: 'https://images.unsplash.com/photo-1599818496263-593a5256e2a2?q=80&w=800' },
   { id: 'duhok', name: { en: 'Duhok', ar: 'دهوك', ku: 'دهۆک' }, image: 'https://images.unsplash.com/photo-1606563283299-84b335f37684?q=80&w=800' },
-  { id: 'halabja', name: { en: 'Halabja', ar: 'حلبجة', ku: 'هەڵەبجە' }, image: 'https://images.unsplash.com/photo-1591185444849-c56d2524d77c?q=80&w=800' },
   { id: 'kirkuk', name: { en: 'Kirkuk', ar: 'كركوك', ku: 'کەرکووک' }, image: 'https://images.unsplash.com/photo-1615822360813-433b0a735b27?q=80&w=800' },
-  { id: 'zaxo', name: { en: 'Zaxo', ar: 'زاخو', ku: 'زاخۆ' }, image: 'https://images.unsplash.com/photo-1588612194162-a2a46e9b4a1c?q=80&w=800' },
+  { id: 'diyala', name: { en: 'Diyala', ar: 'ديالى', ku: 'دیالە' }, image: 'https://images.unsplash.com/photo-1591348122392-0c6356582fa8?q=80&w=800' },
+  { id: 'anbar', name: { en: 'Anbar', ar: 'الأنبار', ku: 'ئەنبار' }, image: 'https://images.unsplash.com/photo-1572037993259-d8b5e0f1b7df?q=80&w=800' },
+  { id: 'najaf', name: { en: 'Najaf', ar: 'النجف', ku: 'نەجەف' }, image: 'https://images.unsplash.com/photo-1568792923760-d4ab5f5d7c96?q=80&w=800' },
+  { id: 'karbala', name: { en: 'Karbala', ar: 'كربلاء', ku: 'کەربەلا' }, image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800' },
+  { id: 'babil', name: { en: 'Babil', ar: 'بابل', ku: 'بابل' }, image: 'https://images.unsplash.com/photo-1558437078-2bb81162dbc0?q=80&w=800' },
+  { id: 'wasit', name: { en: 'Wasit', ar: 'واسط', ku: 'واسیت' }, image: 'https://images.unsplash.com/photo-1577981552651-5a7d47cf4d50?q=80&w=800' },
+  { id: 'maysan', name: { en: 'Maysan', ar: 'ميسان', ku: 'مەیسان' }, image: 'https://images.unsplash.com/photo-1591027169744-c94ac99a3f8a?q=80&w=800' },
+  { id: 'dhiqar', name: { en: 'Dhi Qar', ar: 'ذي قار', ku: 'زی قار' }, image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800' },
+  { id: 'qadisiyyah', name: { en: 'Al-Qadisiyyah', ar: 'القادسية', ku: 'قادسیە' }, image: 'https://images.unsplash.com/photo-1536431311719-398b6704d4cc?q=80&w=800' },
+  { id: 'salahuddin', name: { en: 'Salah ad-Din', ar: 'صلاح الدين', ku: 'سەلاحەددین' }, image: 'https://images.unsplash.com/photo-1518737074923-f75d9a1c6f90?q=80&w=800' },
+  { id: 'muthanna', name: { en: 'Muthanna', ar: 'المثنى', ku: 'موسەنا' }, image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=800' }
 ];
 
 // ===================================================================================
-// CATEGORIES
+// CATEGORIES - Event Categories for Iraq
 // ===================================================================================
 export const CATEGORIES: Category[] = [
-  { id: 'music', name: { en: 'Music', ar: 'موسيقى', ku: 'مۆسیقا' }, image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800' },
-  { id: 'art', name: { en: 'Art & Culture', ar: 'الفن والثقافة', ku: 'هونەر و کەلتور' }, image: 'https://images.unsplash.com/photo-1531578499233-3e3c63a5680a?q=80&w=800' },
-  { id: 'food', name: { en: 'Food & Drink', ar: 'الطعام والشراب', ku: 'خواردن و خواردنەوە' }, image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800' },
-  { id: 'tech', name: { en: 'Technology', ar: 'تكنولوجيا', ku: 'تەکنەلۆژیا' }, image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=800' },
-  { id: 'sports', name: { en: 'Sports & Fitness', ar: 'الرياضة واللياقة', ku: 'وەرزش و لەشجوانی' }, image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800' },
-  { id: 'business', name: { en: 'Business', ar: 'أعمال', ku: 'بازرگانی' }, image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800' },
+  { 
+    id: 'music', 
+    name: { en: 'Music & Concerts', ar: 'الموسيقى والحفلات', ku: 'مۆسیقا و کۆنسێرتەکان' }, 
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800',
+    icon: '🎵',
+    pricingTier: 'paid'
+  },
+  { 
+    id: 'sports', 
+    name: { en: 'Sports & Fitness', ar: 'الرياضة واللياقة', ku: 'وەرزش و لیاقەت' }, 
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800',
+    icon: '⚽',
+    pricingTier: 'free'
+  },
+  { 
+    id: 'art', 
+    name: { en: 'Arts & Culture', ar: 'الفنون والثقافة', ku: 'هونەر و کاڵتوور' }, 
+    image: 'https://images.unsplash.com/photo-1531578499233-3e3c63a5680a?q=80&w=800',
+    icon: '🎨',
+    pricingTier: 'paid'
+  },
+  { 
+    id: 'food', 
+    name: { en: 'Food & Dining', ar: 'الطعام والمأكولات', ku: 'خواردن و خواردنخوازی' }, 
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800',
+    icon: '🍽️',
+    pricingTier: 'paid'
+  },
+  { 
+    id: 'tech', 
+    name: { en: 'Technology & Innovation', ar: 'التكنولوجيا والابتكار', ku: 'تەکنەلۆژیا و داهێنان' }, 
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800',
+    icon: '💻',
+    pricingTier: 'premium'
+  },
+  { 
+    id: 'business', 
+    name: { en: 'Business & Networking', ar: 'الأعمال والتواصل', ku: 'بازرگانی و پەیوەندیکردن' }, 
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+    icon: '💼',
+    pricingTier: 'premium'
+  },
+  { 
+    id: 'education', 
+    name: { en: 'Education & Learning', ar: 'التعليم والتعلم', ku: 'پەروەردە و فێربوون' }, 
+    image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800',
+    icon: '🎓',
+    pricingTier: 'free'
+  },
+  { 
+    id: 'festivals', 
+    name: { en: 'Festivals & Celebrations', ar: 'المهرجانات والاحتفالات', ku: 'فێستیڤاڵ و ئاهەنگەکان' }, 
+    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800',
+    icon: '🎉',
+    pricingTier: 'paid'
+  },
+  { 
+    id: 'community', 
+    name: { en: 'Community & Social', ar: 'المجتمع والاجتماعی', ku: 'کۆمەڵگا و کۆمەڵایەتی' }, 
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800',
+    icon: '🤝',
+    pricingTier: 'free'
+  },
+  { 
+    id: 'lifestyle', 
+    name: { en: 'Lifestyle & Wellness', ar: 'نمط الحياة والعافية', ku: 'شێوازی ژیان و تەندروستی' }, 
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800',
+    icon: '🧘‍♀️',
+    pricingTier: 'paid'
+  }
 ];
 
 // ===================================================================================

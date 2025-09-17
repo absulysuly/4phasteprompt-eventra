@@ -14,10 +14,10 @@ interface EventGridProps {
 
 export const EventGrid: React.FC<EventGridProps> = ({ events, cities, categories, lang, onEventClick, currentUser }) => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">All Events</h2>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 mobile-scroll-container">
+      <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">All Events</h2>
       {events.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {events.map(event => (
             <EventCard
               key={event.id}
@@ -31,8 +31,12 @@ export const EventGrid: React.FC<EventGridProps> = ({ events, cities, categories
           ))}
         </div>
       ) : (
-        <div className="text-center py-16">
-          <p className="text-gray-500">No events found matching your criteria.</p>
+        <div className="text-center py-12 sm:py-16">
+          <p className="text-gray-500 text-sm sm:text-base">
+            {lang === 'en' ? 'No events found matching your criteria.' : 
+             lang === 'ar' ? 'لم يتم العثور على أحداث تطابق معاييرك.' : 
+             'هیچ بۆنەیەک نەدۆزرایەوە کە لەگەڵ پێوەرەکانتدا بگونجێت.'}
+          </p>
         </div>
       )}
     </div>

@@ -1,2 +1,58 @@
 /* This file is imported by index.tsx to resolve the module. */
 /* Styles are provided by the Tailwind CSS CDN script in index.html. */
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-optimized scrolling */
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* 3D Card Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(10deg) scale(1.02);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .card-3d:hover {
+    transform: scale(1.02);
+  }
+  
+  .mobile-scroll-container {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior: contain;
+  }
+  
+  .mobile-filter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

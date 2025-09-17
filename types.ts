@@ -23,10 +23,14 @@ export interface City {
   image: string;
 }
 
+export type PricingTier = 'free' | 'paid' | 'premium';
+
 export interface Category {
   id: string;
   name: LocalizedString;
   image: string;
+  pricingTier?: PricingTier;
+  icon?: string;
 }
 
 export interface Coordinates {
@@ -40,6 +44,12 @@ export interface Review {
   rating: number; // 1-5
   comment: string;
   timestamp: string; // ISO 8601
+}
+
+export interface EventPrice {
+  amount: number;
+  currency: string;
+  isFree: boolean;
 }
 
 export interface Event {
@@ -57,6 +67,7 @@ export interface Event {
   whatsappNumber?: string;
   imageUrl: string;
   ticketInfo?: string;
+  price?: EventPrice;
   reviews: Review[];
   isFeatured?: boolean;
   isTop?: boolean;
