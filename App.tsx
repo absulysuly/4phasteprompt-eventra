@@ -22,8 +22,8 @@ import { AuthModal } from './components/AuthModal';
 import { EnhancedAuthModal } from './components/EnhancedAuthModal';
 import { UserProfileModal } from './components/UserProfileModal';
 import { EmailVerificationNotice } from './components/EmailVerificationNotice';
-import { PWAInstallBanner } from './components/PWAInstallBanner';
-import { FloatingInstallButton } from './components/FloatingInstallButton';
+// import { PWAInstallBanner } from './components/PWAInstallBanner';
+// import { FloatingInstallButton } from './components/FloatingInstallButton';
 import type { Event, City, Category, User, Language, AuthMode, PricingTier } from './types';
 import { config } from './config';
 
@@ -206,8 +206,8 @@ function App() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* PWA Install Notification Banner */}
-      <PWAInstallBanner lang={lang} />
+      {/* PWA Install Notification Banner - Temporarily disabled */}
+      {/* <PWAInstallBanner lang={lang} /> */}
       
       <Header
         lang={lang}
@@ -382,8 +382,8 @@ function App() {
         />
       )}
       
-      {/* Floating Install Button */}
-      <FloatingInstallButton lang={lang} />
+      {/* Floating Install Button - Temporarily disabled */}
+      {/* <FloatingInstallButton lang={lang} /> */}
 
     </div>
   );
