@@ -1,0 +1,195 @@
+name: Production Deployment
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      deploy_target:
+        description: 'Choose deployment target'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - vercel
+        - netlify
+        - docker
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+
+    - name: Run type check
+      run: npm run type-check
+
+    - name: Run linting
+      run: npm run lint
+
+    - name: Run tests
+      run: npm run test:run
+
+    - name: Build application
+      run: npm run build
+      env:
+        VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        VITE_APP_NAME: 'Eventra'
+        VITE_APP_VERSION: '1.0.0'
+        VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
+        VITE_ANALYTICS_ID: ${{ secrets.VITE_ANALYTICS_ID }}
+        VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist/
+        retention-days: 7
+
+    - name: Generate deployment summary
+      run: |
+        echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Build completed successfully!**" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Build Information" >> $GITHUB_STEP_SUMMARY
+        echo "- **Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Node Version:** ${{ env.NODE_VERSION }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Build Time:** $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Build Stats" >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        du -sh dist/ >> $GITHUB_STEP_SUMMARY
+        ls -la dist/ >> $GITHUB_STEP_SUMMARY
+        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+  deploy-vercel:
+    if: github.ref == 'refs/heads/main' && (github.event.inputs.deploy_target == 'vercel' || github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == '')
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-args: '--prod'
+        working-directory: ./
+
+  deploy-netlify:
+    if: github.ref == 'refs/heads/main' && (github.event.inputs.deploy_target == 'netlify' || github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == '')
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+
+    - name: Deploy to Netlify
+      uses: netlify/actions/cli@master
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --dir=dist --prod --message "Deploy from GitHub Actions"
+
+  deploy-docker:
+    if: github.ref == 'refs/heads/main' && (github.event.inputs.deploy_target == 'docker' || github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == '')
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Docker Hub
+      if: github.event_name != 'pull_request'
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ secrets.DOCKER_USERNAME }}/eventra
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=raw,value=latest,enable={{is_default_branch}}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        build-args: |
+          VITE_API_URL=${{ secrets.VITE_API_URL }}
+          VITE_APP_NAME=Eventra
+          VITE_APP_VERSION=1.0.0
+          VITE_SENTRY_DSN=${{ secrets.VITE_SENTRY_DSN }}
+          VITE_ANALYTICS_ID=${{ secrets.VITE_ANALYTICS_ID }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        platforms: linux/amd64,linux/arm64
+
+  notify-deployment:
+    if: always()
+    needs: [build-and-test, deploy-vercel, deploy-netlify, deploy-docker]
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Generate final summary
+      run: |
+        echo "## 🎉 Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Deployment Status" >> $GITHUB_STEP_SUMMARY
+        echo "- **Build & Test:** ${{ needs.build-and-test.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Vercel:** ${{ needs.deploy-vercel.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Netlify:** ${{ needs.deploy-netlify.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Docker:** ${{ needs.deploy-docker.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Visit your deployed application:"
+        echo "- 🔗 GitHub Pages: https://<username>.github.io/eventra-draft" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔗 Vercel: Check deployment URL in Vercel dashboard" >> $GITHUB_STEP_SUMMARY
+        echo "- 🔗 Netlify: Check deployment URL in Netlify dashboard" >> $GITHUB_STEP_SUMMARY
