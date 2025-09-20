@@ -9,5 +9,27 @@
     "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=630&fit=crop&crop=center&auto=format&q=80",
     "priceLevel": "$$",
     "category": "Hotel"
+  },
+  {
+    "id": "h2",
+    "publicId": "erbil-resort",
+    "name": "Erbil Hills Resort",
+    "description": "Relaxing resort with pool and gardens.",
+    "city": "Erbil",
+    "address": "Erbil Hills",
+    "imageUrl": "https://images.unsplash.com/photo-1502920917128-1aa500764b8a?w=1200&h=630&fit=crop&crop=center&auto=format&q=80",
+    "priceLevel": "$$$",
+    "category": "Resort"
+  },
+  {
+    "id": "h3",
+    "publicId": "sulaymaniyah-hostel",
+    "name": "Sulaymaniyah City Hostel",
+    "description": "Budget-friendly stays near the city center.",
+    "city": "Sulaymaniyah",
+    "address": "Park Street, Sulaymaniyah",
+    "imageUrl": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=1200&h=630&fit=crop&crop=center&auto=format&q=80",
+    "priceLevel": "$",
+    "category": "Hostel"
   }
 ]
