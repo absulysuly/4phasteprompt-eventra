@@ -518,6 +518,36 @@ export default function EventsPage({ params }: EventsPageProps) {
                     </div>
                     {event.user && (
                       <div className="flex items-center gap-2 text-gray-600 text-xs">
+                        {/* organizer info */}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Main Categories Section (footer) */}
+      <div className="max-w-7xl mx-auto px-4 pb-20">
+        <div className="mt-16 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('events.exploreByCategory') || 'Explore by category'}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {categories.filter(c => c.key !== 'all').map(cat => (
+              <button
+                key={cat.key}
+                onClick={() => setSelectedCategory(cat.name)}
+                className="group w-full text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-blue-500 hover:shadow-md transition-all"
+                aria-label={`Filter by ${cat.name}`}
+              >
+                <div className="text-2xl mb-2">{cat.icon}</div>
+                <div className="font-medium text-gray-900 group-hover:text-blue-600 text-sm line-clamp-2">{cat.name}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
                         <span className="text-purple-600">👤</span>
                         <span>{t('events.byOrganizer', { name: event.user.name || event.user.email })}</span>
                       </div>
