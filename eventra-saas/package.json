@@ -29,6 +29,7 @@
     "db:studio": "prisma studio",
     "clean": "rimraf .next out",
     "i18n:check": "node scripts/validate-i18n.js",
+    "import:events:csv": "tsx scripts/csv-to-events-json.ts",
     "test": "echo \"No tests specified\" && exit 0",
     "prebuild": "npm run type-check && npm run lint",
     "postinstall": "prisma generate"
