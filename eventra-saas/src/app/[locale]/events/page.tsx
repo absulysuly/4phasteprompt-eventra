@@ -548,34 +548,6 @@ export default function EventsPage({ params }: EventsPageProps) {
           </div>
         </div>
       </div>
-                        <span className="text-purple-600">👤</span>
-                        <span>{t('events.byOrganizer', { name: event.user.name || event.user.email })}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <span className={`text-lg font-semibold ${
-                      event.isFree || event.price === 0 ? 'text-green-600' : 'text-blue-600'
-                    }`}>
-                      {event.isFree || event.price === 0 ? t('events.free') : `$${event.price}`}
-                    </span>
-                    <ResponsiveButton 
-                      onClick={(e) => handleViewDetails(event, e!)}
-                      variant="ghost"
-                      size="sm"
-                      className="text-purple-600 group-hover:text-purple-800 hover:bg-purple-50"
-                    >
-                      {t('events.viewDetails')} {isRTL ? '←' : '→'}
-                    </ResponsiveButton>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-
       {/* Call to Action Section */}
       <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">

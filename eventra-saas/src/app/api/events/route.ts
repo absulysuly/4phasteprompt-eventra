@@ -2,14 +2,30 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../../lib/auth";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 const prisma = new PrismaClient();
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get('type');
+
+  // Optional static mode for safe deployments without a DB
+  const useStatic = process.env.NEXT_PUBLIC_EVENTS_STATIC === '1' || !!process.env.EVENTS_STATIC_FILE;
+  if (type === 'public' && useStatic) {
+    try {
+      const filePath = process.env.EVENTS_STATIC_FILE || join(process.cwd(), 'public', 'data', 'events.json');
+      const json = await readFile(filePath, 'utf8');
+      const list = JSON.parse(json);
+      return NextResponse.json(Array.isArray(list) ? list : []);
+    } catch (e) {
+      console.error('Static events read failed:', e);
+      return NextResponse.json([], { status: 200 });
+    }
+  }
   
-  // If type is 'public', return all public events localized
+  // If type is 'public', return all public events localized from DB
   if (type === 'public') {
     try {
       const lang = (searchParams.get('lang') || 'ar').toLowerCase();
