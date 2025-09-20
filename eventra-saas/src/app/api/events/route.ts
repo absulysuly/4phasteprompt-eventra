@@ -12,8 +12,8 @@ export async function GET(request: Request) {
   // If type is 'public', return all public events localized
   if (type === 'public') {
     try {
-      const lang = (searchParams.get('lang') || 'en').toLowerCase();
-      const locale = ['en','ar','ku'].includes(lang) ? (lang as 'en'|'ar'|'ku') : 'en';
+      const lang = (searchParams.get('lang') || 'ar').toLowerCase();
+      const locale = ['ar','ku'].includes(lang) ? (lang as 'ar'|'ku') : 'ar';
       const events = await prisma.event.findMany({
         include: {
           translations: true,
@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       });
       // Map to localized DTO
       const localized = events.map((e) => {
-        const pick = e.translations.find(t => t.locale === locale) || e.translations.find(t => t.locale === 'en');
+        const pick = e.translations.find(t => t.locale === locale) || e.translations.find(t => t.locale === 'ar') || e.translations.find(t => t.locale === 'ku') || e.translations[0];
         return {
           id: e.id,
           publicId: e.publicId,

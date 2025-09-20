@@ -59,6 +59,7 @@ export async function POST(req: Request) {
           whatsappGroup: ev.whatsappGroup || "",
           whatsappPhone: ev.whatsappPhone || "",
           contactMethod: ev.contactMethod || "",
+          sourceUrl: ev.sourceUrl || "",
           city: ev.city || "",
           latitude: latitude ?? undefined,
           longitude: longitude ?? undefined,

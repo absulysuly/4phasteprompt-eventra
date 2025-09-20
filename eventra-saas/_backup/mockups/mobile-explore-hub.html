@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobile Explore Hub (Prototype)</title>
+  <style>
+    :root { --bg: #0f172a; --card:#0b1220; --accent:#22d3ee; --accent2:#a78bfa; --text:#e5e7eb; --muted:#9ca3af; }
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020,#101a33);color:var(--text);font-family:"Noto Naskh Arabic", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .container{max-width:420px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
+    .header{padding:16px 16px 8px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.5px}
+    .brand .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#22d3ee,#a78bfa);display:grid;place-items:center;}
+    .panel{padding:12px 16px}
+    .card{background:linear-gradient(180deg,#0b1220,#0e1730);border:1px solid rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.35);border-radius:16px}
+    .city{display:flex;align-items:center;gap:12px;padding:16px}
+    select,button{font-family:inherit}
+    select.city-select{flex:1;background:#0d1530;color:var(--text);border:1px solid rgba(255,255,255,0.08);padding:12px;border-radius:12px;direction:rtl;text-align:right}
+    .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+    .tile{padding:18px;border-radius:16px;background:linear-gradient(160deg,rgba(167,139,250,0.12),rgba(34,211,238,0.12));border:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:10px;align-items:flex-start;transition:transform .2s ease, box-shadow .2s ease;text-decoration:none;color:inherit}
+    .tile:active{transform:scale(0.985)}
+    .tile .icon{font-size:26px;}
+    .tile .title{font-weight:800}
+    .tile .sub{font-size:12px;color:var(--muted)}
+    .foot{margin-top:auto;padding:10px 16px 24px;color:var(--muted);font-size:12px;text-align:center}
+    .lang{display:flex;gap:8px}
+    .tag{background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.4);padding:6px 10px;border-radius:999px;font-size:12px;color:#a5f3fc;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand"><div class="logo">🇮🇶</div><div>IraqEvents</div></div>
+      <div class="lang">
+        <button id="btn-ar" class="tag">العربية</button>
+        <button id="btn-ku" class="tag">کوردی</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card">
+        <div class="city">
+          <div style="font-weight:800">🌆 <span id="lbl-choose">اختر المدينة</span></div>
+          <select id="city" class="city-select">
+            <option>هەولێر</option>
+            <option>بەغدا</option>
+            <option>سلێمانی</option>
+            <option>مووسڵ</option>
+            <option>کەرکووک</option>
+          </select>
+        </div>
+        <div class="tiles">
+          <a href="#" class="tile" id="t-hotel">
+            <div class="icon">🏨</div>
+            <div class="title" id="hotels-title">الفنادق</div>
+            <div class="sub" id="hotels-sub">اكتشف أفضل الفنادق في مدينتك</div>
+          </a>
+          <a href="#" class="tile" id="t-restaurant">
+            <div class="icon">🍽️</div>
+            <div class="title" id="rest-title">المطاعم</div>
+            <div class="sub" id="rest-sub">تعرّف على المأكولات المحلية</div>
+          </a>
+          <a href="#" class="tile" id="t-cafe">
+            <div class="icon">☕</div>
+            <div class="title" id="cafe-title">المقاهي</div>
+            <div class="sub" id="cafe-sub">أماكن لطيفة للدردشة والعمل</div>
+          </a>
+          <a href="#" class="tile" id="t-tour">
+            <div class="icon">🗺️</div>
+            <div class="title" id="tour-title">الأماكن السياحية</div>
+            <div class="sub" id="tour-sub">أفضل المعالم والحدائق والمتاحف</div>
+          </a>
+          <a href="#" class="tile" id="t-event" style="grid-column:1/-1;">
+            <div class="icon">🎟️</div>
+            <div class="title" id="event-title">الفعاليات</div>
+            <div class="sub" id="event-sub">اكتشف فعاليات اليوم والأسبوع</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div>تصميم نموذجي للهاتف • تجريبي فقط لعرض الفكرة</div>
+    </div>
+  </div>
+
+  <script>
+    const dict = {
+      ar: {
+        choose:"اختر المدينة",
+        hotels:{title:"الفنادق", sub:"اكتشف أفضل الفنادق في مدينتك"},
+        restaurants:{title:"المطاعم", sub:"تعرّف على المأكولات المحلية"},
+        cafes:{title:"المقاهي", sub:"أماكن لطيفة للدردشة والعمل"},
+        tours:{title:"الأماكن السياحية", sub:"أفضل المعالم والحدائق والمتاحف"},
+        events:{title:"الفعاليات", sub:"اكتشف فعاليات اليوم والأسبوع"}
+      },
+      ku: {
+        choose:"شار هەڵبژێرە",
+        hotels:{title:"هۆتێلەکان", sub:"باشترین هۆتێلەکان لە شارەکەت بدۆزەرەوە"},
+        restaurants:{title:"چێشتخانەکان", sub:"خواردنی ناوچەیی دەست نیشان بکە"},
+        cafes:{title:"قه‌وەخانه‌کان", sub:"شوێنە جوانەکان بۆ گفتوگۆ و کارکردن"},
+        tours:{title:"شوێنە گەشتیاریەکان", sub:"باشترین بینینگەکان و باخەکان و مۆزەخانەکان"},
+        events:{title:"بۆنەکان", sub:"بۆنەکانی ئەمرۆ و ئەفتە بدۆزەرەوە"}
+      }
+    };
+    function applyLang(lang){
+      document.documentElement.lang = lang;
+      document.documentElement.dir = 'rtl';
+      const d = dict[lang];
+      document.getElementById('lbl-choose').textContent = d.choose;
+      document.getElementById('hotels-title').textContent = d.hotels.title;
+      document.getElementById('hotels-sub').textContent = d.hotels.sub;
+      document.getElementById('rest-title').textContent = d.restaurants.title;
+      document.getElementById('rest-sub').textContent = d.restaurants.sub;
+      document.getElementById('cafe-title').textContent = d.cafes.title;
+      document.getElementById('cafe-sub').textContent = d.cafes.sub;
+      document.getElementById('tour-title').textContent = d.tours.title;
+      document.getElementById('tour-sub').textContent = d.tours.sub;
+      document.getElementById('event-title').textContent = d.events.title;
+      document.getElementById('event-sub').textContent = d.events.sub;
+    }
+    document.getElementById('btn-ar').addEventListener('click',()=>applyLang('ar'));
+    document.getElementById('btn-ku').addEventListener('click',()=>applyLang('ku'));
+    applyLang('ar');
+  </script>
+</body>
+</html>

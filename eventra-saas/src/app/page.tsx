@@ -205,22 +205,81 @@ export default function Home() {
     return categoryMap[category?.toLowerCase()] || 'other';
   };
 
-  // Load events
+  // Load events localized; fallback to localized demo if none
   useEffect(() => {
     const loadEvents = async () => {
       try {
-        const response = await fetch('/api/events');
+        const response = await fetch(`/api/events?type=public&lang=${language}`);
         if (response.ok) {
           const eventsData = await response.json();
-          setEvents(eventsData.slice(0, 8)); // Show first 8 events
+          if (Array.isArray(eventsData) && eventsData.length > 0) {
+            setEvents(eventsData.slice(0, 8));
+            return;
+          }
         }
       } catch (error) {
         console.log('Events not available, showing sample cards');
       }
+      // Fallback: localized demo events using hero slide titles
+      const fallback: any[] = [
+        {
+          id: "d1",
+          publicId: "ai-summit-demo",
+          title: t('heroSlides.slide1.title'),
+          description: t('heroSlides.slide1.description'),
+          date: new Date().toISOString(),
+          location: t('cities.erbil'),
+          category: "technology",
+          price: 0,
+          isFree: true,
+          imageUrl: undefined,
+          user: { name: "IraqEvents", email: "demo@iraqevents.com" }
+        },
+        {
+          id: "d2",
+          publicId: "music-festival-demo",
+          title: t('heroSlides.slide2.title'),
+          description: t('heroSlides.slide2.description'),
+          date: new Date().toISOString(),
+          location: t('cities.baghdad'),
+          category: "music",
+          price: 0,
+          isFree: true,
+          imageUrl: undefined,
+          user: { name: "IraqEvents", email: "demo@iraqevents.com" }
+        },
+        {
+          id: "d3",
+          publicId: "business-workshop-demo",
+          title: t('heroSlides.slide3.title'),
+          description: t('heroSlides.slide3.description'),
+          date: new Date().toISOString(),
+          location: t('cities.basra'),
+          category: "business",
+          price: 25,
+          isFree: false,
+          imageUrl: undefined,
+          user: { name: "IraqEvents", email: "demo@iraqevents.com" }
+        },
+        {
+          id: "d4",
+          publicId: "art-exhibition-demo",
+          title: t('heroSlides.slide4.title'),
+          description: t('heroSlides.slide4.description'),
+          date: new Date().toISOString(),
+          location: t('cities.mosul'),
+          category: "art",
+          price: 10,
+          isFree: false,
+          imageUrl: undefined,
+          user: { name: "IraqEvents", email: "demo@iraqevents.com" }
+        }
+      ];
+      setEvents(fallback);
     };
     
     loadEvents();
-  }, []);
+  }, [language, t]);
 
   return (
     <>
@@ -267,10 +326,12 @@ export default function Home() {
           {heroSlides.map((slide, index) => (
             <div 
               key={slide.id}
-              className={`relative flex-shrink-0 w-full h-full overflow-hidden`}
+              className={`relative flex-shrink-0 w-full min-w-full h-full overflow-hidden`}
             >
-              {/* Background Image */}
+              {/* Background Layer (gradient + image with fallback) */}
               <div className="absolute inset-0">
+                {/* Base gradient to avoid black screens even if image fails */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-90`}></div>
                 <EventImage
                   src={slide.backgroundImage}
                   alt={slide.title}
@@ -278,9 +339,11 @@ export default function Home() {
                   height={1080}
                   className="w-full h-full object-cover"
                   category={slide.category}
+                  fallbackType={slide.category as any}
                   priority={index === 0}
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-80`}></div>
+                {/* Soft overlay */}
+                <div className="absolute inset-0 bg-black/20"></div>
               </div>
               
               {/* Animated Background Elements */}
@@ -308,12 +371,10 @@ export default function Home() {
                     <span className="text-white/90 text-sm font-medium">{t('hero.liveEventPlatform')}</span>
                   </div>
                   
-                  <h1 className="text-7xl md:text-8xl font-black text-white mb-6 leading-tight">
+                  <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                     <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent animate-shimmer">
-                      {slide.title.split(' ')[0]} {slide.title.split(' ')[1]}
+                      {slide.title}
                     </span>
-                    <br />
-                    <span className="text-yellow-400 animate-pulse">{slide.title.split(' ')[2]}</span>
                   </h1>
                   
                   <p className="text-2xl text-white/90 mb-4 font-light">
@@ -506,25 +567,25 @@ export default function Home() {
           {/* Filter Buttons */}
           <div className="flex flex-wrap gap-4 justify-center">
             <select className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 font-medium focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
-              <option className="text-gray-800">All Categories</option>
+              <option className="text-gray-800">{t('common.allCategories')}</option>
               {categories.map(cat => (
                 <option key={cat.name} className="text-gray-800">{cat.name}</option>
               ))}
             </select>
             <select className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 font-medium focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
-              <option className="text-gray-800">All Cities</option>
+              <option className="text-gray-800">{t('common.allCities')}</option>
               {cities.map(city => (
                 <option key={city} className="text-gray-800">{city}</option>
               ))}
             </select>
             <select className="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 font-medium focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
-              <option className="text-gray-800">All Months</option>
-              <option className="text-gray-800">January</option>
-              <option className="text-gray-800">February</option>
-              <option className="text-gray-800">March</option>
+              <option className="text-gray-800">{t('common.allMonths')}</option>
+              <option className="text-gray-800">{t('months.january')}</option>
+              <option className="text-gray-800">{t('months.february')}</option>
+              <option className="text-gray-800">{t('months.march')}</option>
             </select>
             <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium">
-              Clear All
+              {t('events.clearAllFilters')}
             </button>
           </div>
         </div>
@@ -534,7 +595,7 @@ export default function Home() {
       <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-4 shadow-lg">
-            ⭐ FEATURED
+            ⭐ {t('homepage.featuredEvents')}
           </div>
           <h2 className="text-4xl font-bold text-white mb-12">{t('homepage.featuredEvents')}</h2>
           
@@ -568,11 +629,11 @@ export default function Home() {
             ) : events.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {events.slice(0, 8).map((event) => (
-                  <Link
-                    key={event.id}
-href={`/${language}/event/${event.publicId}`}
-                    className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
-                  >
+                    <Link
+                      key={event.id}
+                      href={`/${language}/event/${event.publicId}`}
+                      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
+                    >
                     <div className="relative">
                       <EventImage
                         src={event.imageUrl}
@@ -615,7 +676,7 @@ href={`/${language}/event/${event.publicId}`}
                         <span className={`font-semibold ${
                           event.isFree || event.price === 0 ? 'text-green-600' : 'text-blue-600'
                         }`}>
-                          {event.isFree || event.price === 0 ? 'FREE' : `$${event.price}`}
+                          {event.isFree || event.price === 0 ? t('events.free') : `$${event.price}`}
                         </span>
 <span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
                           {t('events.viewDetails')} {isRTL ? '←' : '→'}

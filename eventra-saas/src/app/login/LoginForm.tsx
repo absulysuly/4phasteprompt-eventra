@@ -66,7 +66,7 @@ export default function LoginForm() {
       </div>
 
       {/* Google Sign In - Only show if Google provider is available */}
-      {providers?.google && (
+      {providers?.google && process.env.NEXT_PUBLIC_ENABLE_GOOGLE === 'true' && (
         <>
           <button
             onClick={handleGoogleSignIn}

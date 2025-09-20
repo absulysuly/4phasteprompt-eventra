@@ -17,16 +17,6 @@ export interface LocaleConfig {
 }
 
 export const SUPPORTED_LOCALES: Record<string, LocaleConfig> = {
-  en: {
-    code: 'en',
-    name: 'English',
-    nativeName: 'English',
-    direction: 'ltr',
-    flag: '🇺🇸',
-    dateFormat: 'en-US',
-    numberFormat: 'en-US',
-    currency: 'IQD'
-  },
   ar: {
     code: 'ar',
     name: 'Arabic',

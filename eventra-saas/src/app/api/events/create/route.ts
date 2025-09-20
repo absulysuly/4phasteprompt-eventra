@@ -41,6 +41,7 @@ export async function POST(req: Request) {
       whatsappGroup: data.whatsappGroup ?? "",
       whatsappPhone: data.whatsappPhone ?? "",
       contactMethod: data.contactMethod ?? "",
+      sourceUrl: data.sourceUrl ?? "",
       city: data.city ?? "",
       latitude: latitude ?? undefined,
       longitude: longitude ?? undefined,

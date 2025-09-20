@@ -71,21 +71,13 @@ export default function Navigation() {
                 <button className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-purple-600 font-medium transition-colors rounded-full hover:bg-gray-50">
                   <span className="text-lg">🌐</span>
                   <span className="text-sm">
-                    {language === 'en' ? 'EN' : language === 'ar' ? 'العربية' : 'کوردی'}
+                    {language === 'ar' ? 'العربية' : 'کوردی'}
                   </span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50`}>
-                  <button 
-                    onClick={() => setLanguage('en' as any)}
-                    className={`w-full px-4 py-2 text-left transition-colors ${
-                      language === 'en' ? 'bg-purple-100 text-purple-700' : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
-                    }`}
-                  >
-                    🇺🇸 English
-                  </button>
                   <button 
                     onClick={() => setLanguage('ar' as any)}
                     className={`w-full px-4 py-2 text-left transition-colors ${
@@ -195,14 +187,6 @@ export default function Navigation() {
                 <div className="pt-4 border-t border-gray-100 mt-4">
                   <div className="text-sm text-gray-600 mb-2">{t('navigation.language')}</div>
                   <div className="flex gap-2">
-                    <button 
-                      onClick={() => setLanguage('en' as any)}
-                      className={`px-3 py-1 text-sm rounded-full font-medium ${
-                        language === 'en' ? 'bg-purple-100 text-purple-600' : 'text-gray-600 hover:bg-gray-100'
-                      }`}
-                    >
-                      🇺🇸 EN
-                    </button>
                     <button 
                       onClick={() => setLanguage('ar' as any)}
                       className={`px-3 py-1 text-sm rounded-full font-medium ${

@@ -25,6 +25,22 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
 }
 
+/* Ensure Arabic-script fonts are used for Arabic & Kurdish for proper shaping */
+[dir="rtl"] body,
+html[lang="ar"] body,
+html[lang="ku"] body {
+  font-family: var(--font-arabic-rtl), var(--font-geist-sans), sans-serif;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+/* Inputs/selects inherit font to avoid fallback that breaks shaping */
+input, select, textarea, button { font-family: inherit; }
+[dir="rtl"] select, [dir="rtl"] option { direction: rtl; text-align: right; }
+
+/* Avoid left-text utility overriding RTL context */
+[dir="rtl"] .text-left { text-align: right !important; }
+
 /* Custom Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }

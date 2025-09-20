@@ -45,17 +45,17 @@ export const metadata: Metadata = {
   },
 };
 
-function detectServerLanguage(): "en" | "ar" | "ku" {
+function detectServerLanguage(): "ar" | "ku" {
   try {
     const cookieStore = cookies() as any;
     const h = headers() as any;
-    const cookieLang = cookieStore?.get?.("language")?.value as "en" | "ar" | "ku" | undefined;
-    if (cookieLang && ["en","ar","ku"].includes(cookieLang)) return cookieLang;
+    const cookieLang = cookieStore?.get?.("language")?.value as "ar" | "ku" | undefined;
+    if (cookieLang && ["ar","ku"].includes(cookieLang)) return cookieLang;
     const accept: string = h?.get?.("accept-language") || "";
     if (accept.includes("ar")) return "ar";
     if (accept.includes("ku") || accept.includes("ckb")) return "ku";
   } catch {}
-  return "en";
+  return "ar";
 }
 
 export default async function RootLayout({
