@@ -1,0 +1,82 @@
+// Prisma schema for Eventra MVP (User, Event)
+// SQLite for local/dev
+
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  events    Event[]
+  resets    PasswordResetToken[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Event {
+  id            String   @id @default(cuid())
+  // Base fields not localized
+  date          DateTime
+  category      String?
+  imageUrl      String?
+  whatsappGroup String?
+  whatsappPhone String?
+  contactMethod String?
+  publicId      String   @unique
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  // New city code (display via translations file)
+  city          String?
+  // Geocoded coordinates (optional)
+  latitude      Float?
+  longitude     Float?
+  // Localized content via translations
+  translations  EventTranslation[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+enum Locale {
+  en
+  ar
+  ku
+}
+
+model EventTranslation {
+  id          String  @id @default(cuid())
+  locale      Locale
+  title       String
+  description String
+  location    String
+  event       Event   @relation(fields: [eventId], references: [id])
+  eventId     String
+
+  @@unique([eventId, locale])
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+// Simple CMS-style content overrides per locale and key
+model Content {
+  id        String   @id @default(cuid())
+  key       String
+  locale    Locale
+  data      String   // JSON or plain text content
+  updatedAt DateTime @updatedAt
+
+  @@unique([key, locale])
+}

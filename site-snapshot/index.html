@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/4phasteprompt-eventra/manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="background-color" content="#ffffff" />
+    
+    <!-- App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/4phasteprompt-eventra/eventra-icon.svg" />
+    <link rel="apple-touch-icon" href="/4phasteprompt-eventra/icons/icon-192x192.png" />
+    
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Eventra" />
+    
+    <!-- Windows specific meta tags -->
+    <meta name="msapplication-TileImage" content="/4phasteprompt-eventra/icons/icon-192x192.png" />
+    <meta name="msapplication-TileColor" content="#4f46e5" />
+    <meta name="msapplication-navbutton-color" content="#4f46e5" />
+    
+    <!-- SEO and Social Media -->
+    <title>Eventra - Event Discovery & Management</title>
+    <meta name="description" content="🎉 Discover, create and manage events in Iraq & Kurdistan Region. Multi-language support for English, Arabic, and Kurdish. Your gateway to amazing events!" />
+    <meta name="keywords" content="events, Iraq, Kurdistan, Arabic, Kurdish, event management, discover events" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Eventra - Event Discovery & Management" />
+    <meta property="og:description" content="🎉 Discover amazing events in Iraq & Kurdistan Region. Multi-language support!" />
+    <meta property="og:image" content="/4phasteprompt-eventra/eventra-icon.svg" />
+    <meta property="og:url" content="https://absulysuly.github.io/4phasteprompt-eventra/" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eventra - Event Discovery & Management" />
+    <meta name="twitter:description" content="🎉 Discover amazing events in Iraq & Kurdistan Region" />
+    <meta name="twitter:image" content="/4phasteprompt-eventra/eventra-icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#4f46e5', // indigo-600
+              secondary: '#ec4899', // pink-500
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+       .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "vite": "https://aistudiocdn.com/vite@^7.1.5",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.3",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-CroAhmWA.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CSWIzNRY.css">
+</head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      // Register service worker for PWA functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+          try {
+            const registration = await navigator.serviceWorker.register('/4phasteprompt-eventra/sw.js');
+            console.log('🎉 Service Worker registered successfully:', registration);
+            
+            // Handle service worker updates
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing;
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New content available, show update notification
+                  console.log('🆕 New app version available!');
+                }
+              });
+            });
+          } catch (error) {
+            console.error('❌ Service Worker registration failed:', error);
+          }
+        });
+      }
+      
+      // PWA Install Prompt
+      let deferredPrompt;
+      let installButton;
+      
+      window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('📱 PWA install prompt available');
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Show install button (you can customize this UI)
+        if (!installButton) {
+          installButton = document.createElement('button');
+          installButton.textContent = '📱 Install Eventra App';
+          installButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #4f46e5, #ec4899);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 14px;
+            transition: transform 0.2s ease;
+          `;
+          
+          installButton.addEventListener('mouseenter', () => {
+            installButton.style.transform = 'scale(1.05)';
+          });
+          
+          installButton.addEventListener('mouseleave', () => {
+            installButton.style.transform = 'scale(1)';
+          });
+          
+          installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+              deferredPrompt.prompt();
+              const { outcome } = await deferredPrompt.userChoice;
+              console.log('📱 PWA install outcome:', outcome);
+              deferredPrompt = null;
+              installButton.remove();
+            }
+          });
+          
+          document.body.appendChild(installButton);
+        }
+      });
+      
+      // Hide install button when app is installed
+      window.addEventListener('appinstalled', () => {
+        console.log('🎉 PWA was installed successfully!');
+        if (installButton) {
+          installButton.remove();
+        }
+        deferredPrompt = null;
+      });
+      
+      // iOS Safari install instructions
+      function showIOSInstallInstructions() {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isInStandaloneMode = window.navigator.standalone;
+        
+        if (isIOS && !isInStandaloneMode) {
+          // Show iOS specific install instructions
+          const iosPrompt = document.createElement('div');
+          iosPrompt.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(79, 70, 229, 0.95);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+            text-align: center;
+          `;
+          iosPrompt.innerHTML = `
+            <strong>📱 Install Eventra</strong><br>
+            Tap the Share button <span style="font-size: 18px;">↗️</span> and then "Add to Home Screen"
+            <button onclick="this.parentElement.remove()" style="background: rgba(255,255,255,0.2); border: none; color: white; padding: 5px 10px; border-radius: 5px; margin-left: 10px; cursor: pointer;">Got it!</button>
+          `;
+          document.body.appendChild(iosPrompt);
+          
+          // Auto-hide after 10 seconds
+          setTimeout(() => {
+            if (iosPrompt.parentElement) {
+              iosPrompt.remove();
+            }
+          }, 10000);
+        }
+      }
+      
+      // Show iOS instructions after a short delay
+      setTimeout(showIOSInstallInstructions, 3000);
+    </script>
+  </body>
+</html>
+
