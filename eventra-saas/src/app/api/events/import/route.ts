@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../../lib/auth";
+import { authOptions } from "../../../../lib/auth";
 import { randomBytes } from "crypto";
-import { translateTriple } from "../../../lib/translate";
-import { geocodeAddress } from "../../../lib/geocode";
+import { translateTriple } from "../../../../lib/translate";
+import { geocodeAddress } from "../../../../lib/geocode";
 
 const prisma = new PrismaClient();
 
