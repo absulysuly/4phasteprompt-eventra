@@ -1,0 +1,13 @@
+[
+  {
+    "id": "h1",
+    "publicId": "royal-baghdad",
+    "name": "Royal Baghdad Hotel",
+    "description": "Comfortable rooms in the heart of Baghdad.",
+    "city": "Baghdad",
+    "address": "Central Baghdad",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=630&fit=crop&crop=center&auto=format&q=80",
+    "priceLevel": "$$",
+    "category": "Hotel"
+  }
+]

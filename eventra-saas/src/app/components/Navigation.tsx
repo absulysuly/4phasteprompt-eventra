@@ -56,8 +56,14 @@ export default function Navigation() {
               </Link>
               <Link href="/categories" className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group">
                 {t('navigation.categories')}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
               </Link>
+              {process.env.NEXT_PUBLIC_ENABLE_HOTELS === 'true' && (
+                <Link href="/hotels" className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group">
+                  {t('navigation.hotels') || 'Hotels'}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              )}
               <Link href="/about" className="text-gray-700 hover:text-purple-600 font-medium transition-colors relative group">
                 {t('navigation.about')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
@@ -171,6 +177,11 @@ export default function Navigation() {
                 <Link href="/categories" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
                   {t('navigation.categories')}
                 </Link>
+                {process.env.NEXT_PUBLIC_ENABLE_HOTELS === 'true' && (
+                  <Link href="/hotels" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                    {t('navigation.hotels') || 'Hotels'}
+                  </Link>
+                )}
                 <Link href="/about" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
                   {t('navigation.about')}
                 </Link>
