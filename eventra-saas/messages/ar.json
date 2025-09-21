@@ -1,5 +1,7 @@
 {
   "navigation": {
+    "eventPlatform": "منصة الفعاليات",
+    "home": "الرئيسية",
     "home": "الرئيسية",
     "events": "الفعاليات", 
     "categories": "الأقسام",
@@ -83,6 +85,7 @@
     "createEvent": "إنشاء فعالية"
   },
   "categories": {
+    "technology": "التكنولوجيا",
     "tech": "التكنولوجيا",
     "business": "الأعمال",
     "music": "الموسيقى",
@@ -227,6 +230,10 @@
     }
   },
   "common": {
+    "allCities": "جميع المدن",
+    "allCategories": "جميع الأقسام",
+    "allMonths": "جميع الأشهر",
+    "paid": "مدفوع",
     "loading": "جاري التحميل...",
     "error": "حدث خطأ",
     "tryAgain": "حاول مرة أخرى",
@@ -258,6 +265,16 @@
   },
   "cities": {
     "baghdad": "بغداد",
+    "basra": "البصرة",
+    "mosul": "الموصل",
+    "erbil": "أربيل",
+    "sulaymaniyah": "السليمانية",
+    "duhok": "دهوك",
+    "kirkuk": "كركوك",
+    "anbar": "الأنبار",
+    "najaf": "النجف",
+    "karbala": "كربلاء"
+    "baghdad": "بغداد",
     "basra": "البصرة", 
     "mosul": "الموصل",
     "erbil": "أربيل",
@@ -269,6 +286,18 @@
     "karbala": "كربلاء"
   },
   "months": {
+    "january": "يناير",
+    "february": "فبراير",
+    "march": "مارس",
+    "april": "أبريل",
+    "may": "مايو",
+    "june": "يونيو",
+    "july": "يوليو",
+    "august": "أغسطس",
+    "september": "سبتمبر",
+    "october": "أكتوبر",
+    "november": "نوفمبر",
+    "december": "ديسمبر"
     "january": "يناير",
     "february": "فبراير", 
     "march": "مارس",

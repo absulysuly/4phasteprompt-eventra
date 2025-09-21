@@ -27,11 +27,18 @@ export default function ResetRequestPage() {
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">Reset Password</h1>
         {sent ? (
-          <p className="text-gray-600">If the email exists, a reset link has been sent. Please check your inbox.</p>
+          <p className="text-gray-800 font-medium text-lg leading-relaxed">If the email exists, a reset link has been sent. Please check your inbox.</p>
         ) : (
           <form onSubmit={onSubmit} className="space-y-4">
-            <label className="block text-sm font-semibold text-gray-900">Email</label>
-            <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 border border-gray-300 rounded-xl" />
+            <label className="block text-sm font-semibold text-gray-900 mb-2">Email Address</label>
+            <input 
+              type="email" 
+              required 
+              value={email} 
+              onChange={e => setEmail(e.target.value)} 
+              placeholder="Enter your email address"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors text-gray-900 placeholder-gray-500" 
+            />
             <button disabled={loading} className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 text-white py-3 rounded-xl font-semibold disabled:opacity-60">
               {loading ? 'Sending...' : 'Send reset link'}
             </button>

@@ -45,10 +45,10 @@ export const metadata: Metadata = {
   },
 };
 
-function detectServerLanguage(): "ar" | "ku" {
+async function detectServerLanguage(): Promise<"ar" | "ku"> {
   try {
-    const cookieStore = cookies() as any;
-    const h = headers() as any;
+    const cookieStore = await cookies();
+    const h = await headers();
     const cookieLang = cookieStore?.get?.("language")?.value as "ar" | "ku" | undefined;
     if (cookieLang && ["ar","ku"].includes(cookieLang)) return cookieLang;
     const accept: string = h?.get?.("accept-language") || "";
@@ -63,7 +63,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const serverLang = detectServerLanguage();
+  const serverLang = await detectServerLanguage();
   const dir = serverLang === "ar" || serverLang === "ku" ? "rtl" : "ltr";
   return (
     <html lang={serverLang} dir={dir}>

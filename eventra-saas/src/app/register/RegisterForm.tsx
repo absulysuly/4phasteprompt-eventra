@@ -41,7 +41,7 @@ export default function RegisterForm() {
         redirect: false
       });
       if (signInRes?.ok) {
-        router.push("/dashboard");
+        router.push("/"); // Redirect to homepage instead of dashboard
       }
     }
     setLoading(false);
@@ -51,7 +51,7 @@ export default function RegisterForm() {
     setGoogleLoading(true);
     setError("");
     try {
-      await signIn("google", { callbackUrl: "/dashboard" });
+      await signIn("google", { callbackUrl: "/" }); // Redirect to homepage
     } catch (error) {
       setError("Failed to sign in with Google");
     }

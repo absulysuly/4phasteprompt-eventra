@@ -3,10 +3,17 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 async function getEvent(publicId: string, lang: string) {
-  const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+  // Use absolute URL for server-side fetching or relative for client-side
+  const baseUrl = process.env.NEXTAUTH_URL || process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'http://localhost:3000';
   try {
     const res = await fetch(`${baseUrl}/api/events/public/${publicId}?lang=${lang}`, {
-      cache: "no-store"
+      cache: "no-store",
+      headers: {
+        'Content-Type': 'application/json',
+        'User-Agent': 'Eventra-Server/1.0',
+      },
     });
     if (!res.ok) {
       console.error(`Failed to fetch event: ${res.status} ${res.statusText}`);

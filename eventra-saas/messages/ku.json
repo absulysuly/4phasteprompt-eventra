@@ -1,4 +1,93 @@
 {
+  "navigation": {
+    "eventPlatform": "پلاتفۆرمی بۆنەکان",
+    "home": "سەرەکی",
+    "events": "بۆنەکان",
+    "categories": "پۆلەکان",
+    "about": "دەربارە",
+    "login": "چوونەژوورەوە",
+    "logout": "دەرچوون",
+    "dashboard": "داشبۆرد",
+    "createEvent": "دروستکردنی بۆنە",
+    "language": "زمان"
+  },
+  "common": {
+    "allCities": "هەموو شارەکان",
+    "allCategories": "هەموو پۆلەکان",
+    "allMonths": "هەموو مانگەکان",
+    "paid": "پارەدار"
+  },
+  "cities": {
+    "baghdad": "بەغدا",
+    "basra": "بەسرە",
+    "mosul": "موسڵ",
+    "erbil": "هەولێر",
+    "sulaymaniyah": "سلێمانی",
+    "duhok": "دهۆک",
+    "kirkuk": "کەرکوک",
+    "anbar": "ئەنبار",
+    "najaf": "نەجەف",
+    "karbala": "کەربەلا"
+  },
+  "months": {
+    "january": "کانوونی دووەم",
+    "february": "شوبات",
+    "march": "ئازار",
+    "april": "نیسان",
+    "may": "ئایار",
+    "june": "حوزەیران",
+    "july": "تەمووز",
+    "august": "ئاب",
+    "september": "ئەیلول",
+    "october": "تشرینی یەکەم",
+    "november": "تشرینی دووەم",
+    "december": "کانوونی یەکەم"
+  },
+  "heroSlides": {
+    "slide1": {
+      "title": "کۆنگرەی داهێنانی AI بەغدا",
+      "subtitle": "سەردەمی نوێی تەکنەلۆژیا",
+      "description": "لەگەڵمان بن بۆ گەڕانێکی تەواو بە تەکنەلۆژیای زیرەکی دەستکرد"
+    },
+    "slide2": {
+      "title": "فێستیڤاڵی میوزیکی کوردی",
+      "subtitle": "هونەر و کەلتوری نەتەوەیی",
+      "description": "میراتی میوزیقی دەوڵەمەندی کوردستان تاقی بکەرەوە"
+    },
+    "slide3": {
+      "title": "لوتکەی ڕابەرایەتی بازرگانی",
+      "subtitle": "گەشەکردنی کاروبار",
+      "description": "فێربوونی کارامەیی ڕابەرایەتی بنەڕەتی"
+    },
+    "slide4": {
+      "title": "نمایشگای هونەری هاوچەرخ",
+      "subtitle": "هونەر و کەلتور",
+      "description": "هونەری هاوچەرخی عێراق و کوردستان ببینە"
+    },
+    "attendees": "بەشداربوو",
+    "sessions": "دانیشتن",
+    "days": "ڕۆژ",
+    "artists": "هونەرمەند",
+    "stages": "سەکۆ",
+    "hours": "کاتژمێر",
+    "leaders": "ڕابەر",
+    "companies": "کۆمپانیا",
+    "workshops": "وۆرکشۆپ",
+    "artworks": "کارە هونەرییەکان",
+    "galleries": "گالێری",
+    "joinSummit": "بەشداری کۆنگرە بکە",
+    "exploreArt": "هونەر بگەڕێ"
+  },
+  "hero": {
+    "registerNow": "ئێستا تۆمار بکە",
+    "getTickets": "بلیت بەدەست بهێنە",
+    "liveEventPlatform": "پلاتفۆرمی بۆنەی زیندوو",
+    "eventStartsIn": "بۆنە دەست پێدەکات لە",
+    "days": "ڕۆژ",
+    "hours": "کاتژمێر",
+    "minutes": "خولەک",
+    "seconds": "چرکە"
+  },
   "homepage": {
     "heroTitle": "بۆنە نایابەکان لە عێراق و کوردستان بدۆزەرەوە",
     "heroSubtitle": "لەگەڵ هەزاران کەس یەکبگرە لە دۆزینەوەی باشترین بۆنەکان کە لە عێراق و کوردستان ڕوودەدەن. لە کۆبوونەوەی تەکنەلۆژییەوە تا فێستیۚاڵی کلتوری.",
@@ -98,10 +187,24 @@
     "signingIn": "چوونهژوورهوه...",
     "signIn": "چوونه ژوورهوه",
     "noAccount": "ئهکاونتت نییه؟",
-    "createAccount": "Register",
+    "createAccount": "هەژمار دروست بکە",
     "forgotPassword": "وشەی نهێنیت لەبیرچووە؟",
     "invalidCredentials": "ئیمهیڵ یان وشهی نهێنی ههڵه",
     "googleSignInError": "شکست له چوونه ژوورهوه به گووگڵ"
+  },
+  "register": {
+    "joinIraqEvents": "بەشداری بۆنەکانی عێراق ببە",
+    "createAccountSubtitle": "هەژماری نوێ دروست بکە",
+    "continueWithGoogle": "بەردەوامبوون لەگەڵ گووگڵ",
+    "orCreateAccount": "یان هەژمار دروست بکە",
+    "fullNameOptional": "ناوی تەواو (ئیختیاری)",
+    "enterFullName": "ناوی تەواوت بنووسە",
+    "enterEmail": "ئیمەیڵەکەت بنووسە",
+    "createPassword": "وشەی نهێنی دروست بکە",
+    "creatingAccount": "هەژمار دروستکردن...",
+    "createAccount": "هەژمار دروست بکە",
+    "alreadyHaveAccount": "هەژمارت هەیە؟",
+    "signInHere": "لێرە بچۆ ژوورەوە"
   },
   "about": {
     "title": "دەربارەی بۆنەکانی عێراق",
