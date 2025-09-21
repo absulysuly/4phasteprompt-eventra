@@ -2,6 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Suspense, useState, useEffect } from "react";
 import { useLanguage } from "../../../components/LanguageProvider";
 import { useTranslations } from "../../../hooks/useTranslations";
@@ -131,8 +132,15 @@ export default function PublicEventPage({ params }: EventPageProps) {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Event Image */}
           {event.imageUrl ? (
-            <div className="h-64 bg-gray-100">
-              <img src={event.imageUrl} alt={event.title} className="w-full h-full object-cover" />
+            <div className="h-64 bg-gray-100 relative">
+              <Image 
+                src={event.imageUrl} 
+                alt={event.title} 
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1024px"
+                priority
+              />
             </div>
           ) : (
             <div className="h-64 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 flex items-center justify-center">

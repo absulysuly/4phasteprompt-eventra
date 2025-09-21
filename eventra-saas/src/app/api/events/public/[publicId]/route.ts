@@ -16,7 +16,7 @@ export async function GET(req: Request, context: { params: Promise<{ publicId: s
     }
   });
   if (!event) return NextResponse.json({ error: "Event not found" }, { status: 404 });
-  const pick = event.translations.find(t => t.locale === locale) || event.translations.find(t => t.locale === 'ar') || event.translations.find(t => t.locale === 'ku') || event.translations[0];
+  const pick = event.translations.find((t: any) => t.locale === locale) || event.translations.find((t: any) => t.locale === 'ar') || event.translations.find((t: any) => t.locale === 'ku') || event.translations[0];
   const dto = {
     id: event.id,
     publicId: event.publicId,

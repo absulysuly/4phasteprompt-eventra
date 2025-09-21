@@ -52,15 +52,32 @@ export function middleware(request: NextRequest) {
   // Create response
   const response = NextResponse.next();
 
-  // Add security headers
+  // Add enhanced security headers
   response.headers.set('X-Frame-Options', 'DENY');
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-XSS-Protection', '1; mode=block');
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https:; media-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
-  );
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
+  response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+  
+  // Strict CSP - removing unsafe-eval and unsafe-inline where possible
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self' 'wasm-unsafe-eval' https://va.vercel-scripts.com", // Removed unsafe-eval/inline
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com", // Tailwind requires unsafe-inline
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data: blob: https://images.unsplash.com https://via.placeholder.com",
+    "connect-src 'self' https://sentry.io https://*.sentry.io https://vitals.vercel-insights.com https://*.upstash.io",
+    "media-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    "worker-src 'self' blob:",
+    process.env.NODE_ENV === 'production' ? "upgrade-insecure-requests" : ""
+  ].filter(Boolean).join('; ');
+  
+  response.headers.set('Content-Security-Policy', csp);
 
   // Rate limiting headers (for API routes)
   if (request.nextUrl.pathname.startsWith('/api/')) {

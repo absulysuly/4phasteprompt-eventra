@@ -1,11 +1,30 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { randomBytes } from "crypto";
+import { applyRateLimit, resetPasswordRateLimit, getClientIP } from "../../../../lib/ratelimit";
 
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
   try {
+    // Apply rate limiting
+    const clientIP = getClientIP(req);
+    const rateLimitResult = await applyRateLimit(resetPasswordRateLimit, clientIP);
+    
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { success: true }, // Don't reveal rate limiting for security
+        { 
+          status: 200,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+            'X-RateLimit-Reset': new Date(rateLimitResult.reset).toISOString(),
+          }
+        }
+      );
+    }
+    
     const { email } = await req.json();
     if (!email) return NextResponse.json({ success: true }); // Do not leak emails
 

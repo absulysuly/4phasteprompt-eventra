@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
+import { applyRateLimit, registerRateLimit, getClientIP } from "../../../lib/ratelimit";
 
 const prisma = new PrismaClient();
 
@@ -27,6 +28,25 @@ function validatePassword(password: string): string | null {
 // POST /api/register
 export async function POST(req: Request) {
   try {
+    // Apply rate limiting
+    const clientIP = getClientIP(req);
+    const rateLimitResult = await applyRateLimit(registerRateLimit, clientIP);
+    
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: "Too many registration attempts. Please try again later." },
+        { 
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+            'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+            'X-RateLimit-Reset': new Date(rateLimitResult.reset).toISOString(),
+            'Retry-After': Math.round((rateLimitResult.reset - Date.now()) / 1000).toString(),
+          }
+        }
+      );
+    }
+    
     const { email, password, name } = await req.json();
     
     // Input validation

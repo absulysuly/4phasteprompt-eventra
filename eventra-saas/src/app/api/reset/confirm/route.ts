@@ -14,7 +14,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: 'Token expired or invalid' }, { status: 400 });
     }
 
-    const hash = await bcrypt.hash(password, 10);
+    // Use consistent bcrypt rounds from environment variable
+    const rounds = Number(process.env.BCRYPT_ROUNDS || '12');
+    const hash = await bcrypt.hash(password, rounds);
     await prisma.user.update({ where: { id: record.userId }, data: { password: hash } });
     await prisma.passwordResetToken.delete({ where: { token } });
 

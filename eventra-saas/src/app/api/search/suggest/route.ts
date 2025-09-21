@@ -21,8 +21,8 @@ export async function GET(req: Request) {
           some: {
             locale,
             OR: [
-              { title: { contains: q, mode: 'insensitive' } },
-              { location: { contains: q, mode: 'insensitive' } }
+              { title: { contains: q } },
+              { location: { contains: q } }
             ]
           }
         }
@@ -30,8 +30,8 @@ export async function GET(req: Request) {
       orderBy: { date: 'asc' }
     });
 
-    const suggestions = matches.map(e => {
-      const tr = e.translations.find(t => t.locale === locale) || e.translations.find(t => t.locale === 'en');
+    const suggestions = matches.map((e: any) => {
+      const tr = e.translations.find((t: any) => t.locale === locale) || e.translations.find((t: any) => t.locale === 'en');
       return {
         type: 'event',
         id: e.id,

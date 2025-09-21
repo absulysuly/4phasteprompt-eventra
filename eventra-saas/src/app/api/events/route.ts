@@ -45,8 +45,8 @@ export async function GET(request: Request) {
         }
       });
       // Map to localized DTO
-      const localized = events.map((e) => {
-        const pick = e.translations.find(t => t.locale === locale) || e.translations.find(t => t.locale === 'ar') || e.translations.find(t => t.locale === 'ku') || e.translations[0];
+      const localized = events.map((e: any) => {
+        const pick = e.translations.find((t: any) => t.locale === locale) || e.translations.find((t: any) => t.locale === 'ar') || e.translations.find((t: any) => t.locale === 'ku') || e.translations[0];
         return {
           id: e.id,
           publicId: e.publicId,

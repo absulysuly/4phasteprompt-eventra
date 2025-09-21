@@ -35,7 +35,27 @@ export const authOptions: AuthOptions = {
     })
   ],
   session: { strategy: "jwt" as const },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: (() => {
+    const secret = process.env.NEXTAUTH_SECRET;
+    if (!secret) {
+      throw new Error('NEXTAUTH_SECRET environment variable is required but not set. Generate one with: openssl rand -base64 32');
+    }
+    if (secret.length < 32) {
+      throw new Error('NEXTAUTH_SECRET must be at least 32 characters long for security');
+    }
+    return secret;
+  })(),
+  cookies: {
+    sessionToken: {
+      name: 'next-auth.session-token',
+      options: {
+        httpOnly: true,
+        sameSite: 'lax' as const,
+        path: '/',
+        secure: process.env.NODE_ENV === 'production'
+      }
+    }
+  },
   pages: {
     signIn: '/login',
   },
