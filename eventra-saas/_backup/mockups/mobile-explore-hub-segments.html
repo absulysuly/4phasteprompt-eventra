@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option C • Hub (Segmented Top)</title>
+  <style>
+    :root{--text:#e5e7eb;--muted:#9ca3af}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1020,#101a33);color:var(--text);font-family:"Noto Naskh Arabic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:420px;margin:0 auto}
+    .bar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+    .seg{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:#0d1530;border-radius:12px;padding:4px;border:1px solid rgba(255,255,255,.06);margin:0 16px}
+    .seg button{background:transparent;border:none;color:#cbd5e1;border-radius:10px;padding:8px 6px;font-size:12px}
+    .seg button.active{background:linear-gradient(135deg,rgba(167,139,250,.25),rgba(34,211,238,.25));color:#fff}
+    .list{padding:10px 16px;display:grid;gap:8px}
+    .card{border-radius:14px;background:linear-gradient(180deg,#0b1220,#0e1730);border:1px solid rgba(255,255,255,.06);padding:12px}
+    .title{font-weight:800}
+    .sub{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar">
+      <div>🌆 <select style="background:#0d1530;color:#fff;border:1px solid rgba(255,255,255,.08);padding:8px;border-radius:10px;direction:rtl;text-align:right;font-family:inherit">
+        <option>هەولێر</option><option>بەغدا</option><option>سلێمانی</option><option>مووسڵ</option><option>کەرکووک</option>
+      </select></div>
+      <div>
+        <button id="ar">العربية</button>
+        <button id="ku">کوردی</button>
+      </div>
+    </div>
+    <div class="seg">
+      <button id="s-events" class="active">🎟️ <span>الفعاليات</span></button>
+      <button id="s-hotels">🏨 <span>الفنادق</span></button>
+      <button id="s-rest">🍽️ <span>المطاعم</span></button>
+      <button id="s-cafe">☕ <span>المقاهي</span></button>
+      <button id="s-tour">🗺️ <span>الأماكن السياحية</span></button>
+    </div>
+    <div class="list" id="list">
+      <div class="card"><div class="title">حدث اليوم</div><div class="sub">تفاصيل قصيرة هنا</div></div>
+      <div class="card"><div class="title">قمة الأعمال</div><div class="sub">تفاصيل قصيرة هنا</div></div>
+      <div class="card"><div class="title">مهرجان الموسيقى</div><div class="sub">تفاصيل قصيرة هنا</div></div>
+    </div>
+  </div>
+  <script>
+    const D={ar:{events:"الفعاليات",hotels:"الفنادق",rest:"المطاعم",cafes:"المقاهي",tours:"الأماكن السياحية",items:["حدث اليوم","قمة الأعمال","مهرجان الموسيقى"],desc:"تفاصيل قصيرة هنا"},
+             ku:{events:"بۆنەکان",hotels:"هۆتێلەکان",rest:"چێشتخانەکان",cafes:"قه‌وەخانه‌کان",tours:"شوێنە گەشتیاریەکان",items:["بۆنەی ئەمڕۆ","کۆنگرەی کاروبار","فیستیڤاڵی میوزیک"],desc:"وردەکارییە کەمیک لێرە"}};
+    let L='ar';
+    function fill(type){
+      document.querySelectorAll('.seg button').forEach(b=>b.classList.remove('active'));
+      document.getElementById('s-'+type).classList.add('active');
+      const list=document.getElementById('list');
+      list.innerHTML='';
+      D[L].items.forEach(t=>{const c=document.createElement('div');c.className='card';c.innerHTML=`<div class="title">${t}</div><div class="sub">${D[L].desc}</div>`;list.appendChild(c)});
+    }
+    function setLang(l){L=l;document.querySelector('#s-events span').textContent=D[l].events;document.querySelector('#s-hotels span').textContent=D[l].hotels;document.querySelector('#s-rest span').textContent=D[l].rest;document.querySelector('#s-cafe span').textContent=D[l].cafes;document.querySelector('#s-tour span').textContent=D[l].tours;fill('events');}
+    document.getElementById('ar').onclick=()=>setLang('ar');document.getElementById('ku').onclick=()=>setLang('ku');
+    document.getElementById('s-events').onclick=()=>fill('events');
+    document.getElementById('s-hotels').onclick=()=>fill('hotels');
+    document.getElementById('s-rest').onclick=()=>fill('rest');
+    document.getElementById('s-cafe').onclick=()=>fill('cafe');
+    document.getElementById('s-tour').onclick=()=>fill('tour');
+    setLang('ar');
+  </script>
+</body>
+</html>
