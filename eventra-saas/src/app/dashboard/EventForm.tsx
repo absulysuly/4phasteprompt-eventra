@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "../hooks/useTranslations";
 import { useLanguage } from "../components/LanguageProvider";
 
@@ -201,7 +202,15 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
             className="cursor-pointer bg-gray-100 hover:bg-gray-200 border-2 border-dashed border-gray-300 rounded-xl p-4 flex flex-col items-center justify-center text-gray-600 transition-colors min-h-[120px] flex-1"
           >
             {imagePreview ? (
-              <img src={imagePreview} alt="Preview" className="max-h-20 max-w-full rounded" />
+              <div className="relative w-20 h-20">
+                <Image 
+                  src={imagePreview} 
+                  alt="Preview" 
+                  fill
+                  className="object-cover rounded"
+                  sizes="80px"
+                />
+              </div>
             ) : (
               <>
                 <span className="text-2xl mb-2">📷</span>

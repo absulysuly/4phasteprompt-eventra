@@ -20,6 +20,7 @@ type IncomingEvent = {
   whatsappGroup?: string;
   whatsappPhone?: string;
   contactMethod?: string;
+  sourceUrl?: string;
   city?: string;
 };
 

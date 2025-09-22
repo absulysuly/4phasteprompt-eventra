@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../../../lib/auth";
+import { applyRateLimit, eventCreateRateLimit, getClientIP } from "../../../../lib/ratelimit";
 import { randomBytes } from "crypto";
 import { translateTriple } from "../../../../lib/translate";
 import { geocodeAddress } from "../../../../lib/geocode";
@@ -11,6 +12,24 @@ const prisma = new PrismaClient();
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) return NextResponse.json({error: "Unauthorized"}, {status: 401});
+  
+  // Apply rate limiting per user
+  const userIdentifier = session.user.email;
+  const rateLimitResult = await applyRateLimit(eventCreateRateLimit, userIdentifier);
+  
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: "Too many events created. Please wait before creating more." },
+      { 
+        status: 429,
+        headers: {
+          'X-RateLimit-Limit': rateLimitResult.limit.toString(),
+          'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+          'X-RateLimit-Reset': new Date(rateLimitResult.reset).toISOString(),
+        }
+      }
+    );
+  }
 
   const data = await req.json();
   if (!data.title || !data.date) return NextResponse.json({error: "Missing required fields"}, {status: 400});
@@ -69,7 +88,7 @@ export async function POST(req: Request) {
 
     for (const target of targets) {
       // Don't duplicate if an entry for target already exists
-      const exists = event.translations.find(t => t.locale === target);
+      const exists = event.translations.find((t: any) => t.locale === target);
       if (!exists) {
         await prisma.event.update({
           where: { id: event.id },
