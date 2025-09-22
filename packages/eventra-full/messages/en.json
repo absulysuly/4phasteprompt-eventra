@@ -1,0 +1,341 @@
+{
+  "navigation": {
+    "home": "Home",
+    "events": "Events", 
+    "categories": "Categories",
+    "about": "About",
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "createEvent": "Create Event",
+    "eventPlatform": "Event Platform",
+    "aiRecommendations": "AI-powered event recommendations are now live!",
+    "tryItFree": "Try it free",
+    "language": "Language"
+  },
+  "homepage": {
+    "heroTitle": "Discover Amazing Events in Iraq & Kurdistan",
+    "heroSubtitle": "Join thousands of people exploring the best events happening across Iraq and Kurdistan. From tech meetups to cultural festivals.",
+    "getStarted": "Get Started",
+    "exploreEvents": "Explore Events",
+    "featuredEvents": "Featured Events",
+    "upcomingEvents": "Upcoming Events",
+    "allEvents": "All Events",
+    "viewAllEvents": "View All Events",
+    "noEventsFound": "No events found",
+    "loading": "Loading events...",
+    "exploreCities": "Explore Cities",
+    "exploreCitiesSubtitle": "Discover amazing events in cities across the region",
+    "exploreCategories": "Explore Categories",
+    "exploreCategoriesSubtitle": "Find events that match your interests and passions",
+    "findPerfectEvent": "Find Your Perfect Event",
+    "featuredCarousel": "Featured event carousel will appear here"
+  },
+  "events": {
+    "title": "Discover Amazing Events",
+    "subtitle": "Find and join incredible events happening across Iraq and Kurdistan. From tech summits to cultural festivals, there's something for everyone.",
+    "searchPlaceholder": "Search events by title, description, or location...",
+    "foundEvents": "Found {count} event{count, plural, one {} other {s}}",
+    "noEventsFound": "No Events Found",
+    "noEventsMessage": "Try adjusting your search criteria or filters",
+    "clearAllFilters": "Clear All Filters",
+    "viewDetails": "View Details",
+    "free": "FREE",
+    "soldOut": "SOLD OUT",
+    "byOrganizer": "by {name}",
+    "createEventCta": "Don't See Your Event?",
+    "createEventSubtitle": "Create and promote your own events on IraqEvents platform",
+    "createYourEvent": "Create Your Event",
+    "viewPublicPage": "View Public Page"
+  },
+  "dashboard": {
+    "welcomeBack": "Welcome back, {name}!",
+    "subtitle": "Manage your events and create new experiences for your community.",
+    "browseEvents": "Browse Events",
+    "createEvent": "Create Event",
+    "cancel": "Cancel",
+    "createNewEvent": "Create New Event",
+    "myEvents": "My Events",
+    "noEvents": "No events yet. Create one!",
+    "loadingEvents": "Loading events..."
+  },
+  "eventForm": {
+    "eventName": "Event Name",
+    "eventNameRequired": "Event Name *",
+    "eventNamePlaceholder": "Enter event name",
+    "dateTime": "Date & Time",
+    "dateTimeRequired": "Date & Time *",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "location": "Location/Address",
+    "locationPlaceholder": "Enter event location or address",
+    "description": "Event Description",
+    "descriptionPlaceholder": "Describe your event, what attendees can expect, schedule, etc.",
+    "eventImage": "Event Image",
+    "selectImage": "Click to select image",
+    "whatsappGroup": "WhatsApp Group Link",
+    "whatsappPlaceholder": "https://chat.whatsapp.com/...",
+    "whatsappPhone": "WhatsApp Phone Number",
+    "whatsappPhonePlaceholder": "+964 XXX XXX XXXX",
+    "contactMethod": "Contact Method",
+    "contactPlaceholder": "Email, phone, or other contact method for attendees",
+    "creating": "Creating...",
+    "createEvent": "Create Event"
+  },
+  "categories": {
+    "tech": "Technology",
+    "business": "Business",
+    "music": "Music",
+    "musicConcerts": "Music & Concerts",
+    "art": "Art & Culture",
+    "artsCulture": "Arts & Culture",
+    "sports": "Sports",
+    "sportsFitness": "Sports & Fitness",
+    "food": "Food & Drink",
+    "foodDrink": "Food & Drink",
+    "health": "Health & Wellness",
+    "healthWellness": "Health & Wellness",
+    "community": "Community",
+    "communitySocial": "Community & Social",
+    "technologyInnovation": "Technology & Innovation",
+    "other": "Other"
+  },
+  "login": {
+    "welcomeBack": "Welcome Back",
+    "subtitle": "Sign in to your IraqEvents account",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "Or continue with email",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password", 
+    "passwordPlaceholder": "Enter your password",
+    "signingIn": "Signing in...",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one here",
+    "invalidCredentials": "Invalid email or password",
+    "googleSignInError": "Failed to sign in with Google"
+  },
+  "about": {
+    "title": "About IraqEvents",
+    "subtitle": "Connecting communities through amazing events",
+    "stats": {
+      "eventsCreated": "Events Created",
+      "happyUsers": "Happy Users",
+      "citiesCovered": "Cities Covered",
+      "languagesSupported": "Languages Supported"
+    },
+    "features": {
+      "eventDiscovery": {
+        "title": "Event Discovery",
+        "description": "Find amazing events across Iraq and Kurdistan with our advanced search and filtering system."
+      },
+      "easyEventCreation": {
+        "title": "Easy Event Creation",
+        "description": "Create and manage your events with our intuitive event management platform."
+      },
+      "multiLanguageSupport": {
+        "title": "Multi-Language Support",
+        "description": "Navigate in Arabic, English, or Sorani Kurdish to make the platform accessible to everyone."
+      },
+      "mobileFriendly": {
+        "title": "Mobile Friendly",
+        "description": "Access events and create your own from anywhere with our fully responsive design."
+      },
+      "flexibleTicketing": {
+        "title": "Flexible Ticketing",
+        "description": "Support for both free and paid events with secure payment processing."
+      },
+      "communityFocused": {
+        "title": "Community Focused",
+        "description": "Connect with event organizers and attendees to build stronger communities."
+      }
+    },
+    "mission": {
+      "title": "Our Mission",
+      "p1": "We believe that events have the power to bring people together, create lasting memories, and strengthen communities. Our mission is to make event discovery and creation accessible to everyone across Iraq and Kurdistan.",
+      "p2": "Whether you're looking for cultural festivals, business conferences, music concerts, or community gatherings, IraqEvents is your gateway to discovering what's happening in your city.",
+      "p3": "For event organizers, we provide powerful tools to create, promote, and manage events with ease, helping you reach the right audience and create successful experiences."
+    },
+    "whyChoose": {
+      "title": "Why Choose IraqEvents?",
+      "subtitle": "We've built the most comprehensive event platform for Iraq and Kurdistan, designed with our local communities in mind."
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "We're a passionate team dedicated to bringing people together through events and building stronger communities across Iraq and Kurdistan.",
+      "items": {
+        "devTeam": {
+          "name": "Development Team",
+          "role": "Platform Development",
+          "description": "Building the future of event management in Iraq"
+        },
+        "communityTeam": {
+          "name": "Community Team",
+          "role": "User Support",
+          "description": "Helping users create and discover amazing events"
+        },
+        "localPartners": {
+          "name": "Local Partners",
+          "role": "Regional Expansion",
+          "description": "Expanding our reach across Iraq and Kurdistan"
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "These principles guide everything we do as we work to build the best event platform for our region.",
+      "items": {
+        "communityFirst": {
+          "title": "Community First",
+          "description": "We prioritize the needs of our local communities and event organizers."
+        },
+        "trustSafety": {
+          "title": "Trust & Safety",
+          "description": "We ensure secure transactions and protect user privacy at all times."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "We strive for the highest quality in everything we build and deliver."
+        },
+        "culturalDiversity": {
+          "title": "Cultural Diversity",
+          "description": "We celebrate and support the rich cultural diversity of our region."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We continuously innovate to provide better solutions for event management."
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "description": "We make our platform accessible to everyone, regardless of technical expertise."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Join thousands of event organizers and attendees who trust IraqEvents to bring their communities together."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Have questions or suggestions? We'd love to hear from you!",
+      "emailSupport": "Email Support",
+      "liveChat": "Live Chat",
+      "liveChatAvailability": "Available 24/7",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "allCategories": "All Categories",
+    "allCities": "All Cities", 
+    "allMonths": "All Months",
+    "allPrices": "All Prices",
+    "free": "Free",
+    "paid": "Paid",
+    "under25": "Under $25",
+    "price25to50": "$25 - $50",
+    "price50to100": "$50 - $100",
+    "over100": "Over $100",
+    "notSpecified": "Not specified",
+    "contactInformation": "Contact Information",
+    "joinWhatsAppGroup": "Join WhatsApp Group",
+    "price": "Price",
+    "imageUnavailable": "Image not available"
+  },
+  "cities": {
+    "baghdad": "Baghdad",
+    "basra": "Basra", 
+    "mosul": "Mosul",
+    "erbil": "Erbil",
+    "sulaymaniyah": "Sulaymaniyah",
+    "duhok": "Duhok",
+    "kirkuk": "Kirkuk",
+    "anbar": "Anbar",
+    "najaf": "Najaf",
+    "karbala": "Karbala"
+  },
+  "months": {
+    "january": "January",
+    "february": "February", 
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "categoriesPage": {
+    "title": "Event Categories",
+    "subtitle": "Discover amazing events across all categories. From music and technology to food and culture, find exactly what interests you.",
+    "ctaTitle": "Cannot Find Your Category?",
+    "ctaSubtitle": "Create your own event and start building your community today!"
+  },
+  "categoryDescriptions": {
+    "all": "Discover all types of events happening around you",
+    "musicConcerts": "Live music, concerts, and musical performances",
+    "sportsFitness": "Sports events, fitness classes, and athletic competitions",
+    "foodDrink": "Culinary events, food festivals, and dining experiences",
+    "business": "Networking, conferences, and professional development",
+    "technologyInnovation": "Tech talks, hackathons, and innovation showcases",
+    "artsCulture": "Art exhibitions, cultural events, and creative workshops",
+    "healthWellness": "Health seminars, wellness workshops, and medical events",
+    "communitySocial": "Social gatherings, community events, and meetups"
+  },
+  "hero": {
+    "liveEventPlatform": "Live Event Platform",
+    "registerNow": "Register Now",
+    "getTickets": "Get Tickets",
+    "joinSummit": "Join Summit",
+    "exploreArt": "Explore Art",
+    "eventStartsIn": "Event Starts In",
+    "days": "DAYS",
+    "hours": "HRS",
+    "minutes": "MIN",
+    "seconds": "SEC"
+  },
+  "register": {
+    "joinIraqEvents": "Join IraqEvents",
+    "createAccountSubtitle": "Create your account to start organizing amazing events",
+    "continueWithGoogle": "Continue with Google",
+    "orCreateAccount": "Or create account with email",
+    "fullNameOptional": "Full Name (Optional)",
+    "enterFullName": "Enter your full name",
+    "enterEmail": "Enter your email",
+    "createPassword": "Create a password (min. 6 characters)",
+    "creatingAccount": "Creating account...",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInHere": "Sign in here"
+  },
+  "navigation": {
+    "home": "Home",
+    "events": "Events", 
+    "categories": "Categories",
+    "about": "About",
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "createEvent": "Create Event",
+    "eventPlatform": "Event Platform",
+    "aiRecommendations": "AI-Powered Event Recommendations Now Live!",
+    "tryItFree": "Try it free",
+    "language": "Language"
+  }
+}

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Event Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        body.rtl {
+            direction: rtl;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .rtl .logo i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-btn.active {
+            background: white;
+            color: #6a11cb;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .btn-primary {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #43a047;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1e88e5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+        }
+        
+        .rtl .btn {
+            margin: 0 10px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            color: #2d3748;
+            font-size: 2rem;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image {
+            height: 180px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .event-date {
+            color: #718096;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-date i {
+            margin-right: 8px;
+        }
+        
+        .rtl .event-date i {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+        
+        .event-desc {
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #6a11cb;
+            color: white;
+            border-color: #6a11cb;
+        }
+        
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin: 20px 0 40px;
+        }
+        
+        .month-btn {
+            padding: 10px;
+            text-align: center;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .month-btn:hover, .month-btn.active {
+            background: #2575fc;
+            color: white;
+            border-color: #2575fc;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            line-height: 1.6;
+            color: #cbd5e0;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #718096;
+        }
+        
+        .rtl .close-modal {
+            right: auto;
+            left: 20px;
+        }
+        
+        .event-form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .upload-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #6a11cb;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .upload-btn i {
+            margin-right: 8px;
+        }
+        
+        .rtl .upload-btn i {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .months-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="logo-text">EventMaster</span>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="ar">Arabic</button>
+                    <button class="lang-btn" data-lang="ku">Kurdish</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1 class="hero-title">Discover Amazing Events</h1>
+            <p class="hero-desc">Find and create events that match your interests. Connect with people and enjoy unique experiences.</p>
+            <div class="hero-buttons">
+                <a href="#login" class="btn btn-secondary login-btn">Login</a>
+                <a href="#create-event" class="btn btn-primary create-event-btn">Create Event</a>
+            </div>
+        </section>
+
+        <h2 class="section-title upcoming-events-title">Upcoming Events</h2>
+        
+        <div class="filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Music</button>
+            <button class="filter-btn">Sports</button>
+            <button class="filter-btn">Art</button>
+            <button class="filter-btn">Food</button>
+            <button class="filter-btn">Technology</button>
+        </div>
+        
+        <h3 class="section-title">Filter by Month</h3>
+        <div class="months-grid">
+            <button class="month-btn">January</button>
+            <button class="month-btn">February</button>
+            <button class="month-btn">March</button>
+            <button class="month-btn">April</button>
+            <button class="month-btn">May</button>
+            <button class="month-btn">June</button>
+            <button class="month-btn">July</button>
+            <button class="month-btn">August</button>
+            <button class="month-btn">September</button>
+            <button class="month-btn">October</button>
+            <button class="month-btn">November</button>
+            <button class="month-btn">December</button>
+        </div>
+
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Summer Music Festival</h3>
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>June 15, 2023</span>
+                    </div>
+                    <p class="event-desc">Join us for the biggest music festival of the year featuring top international artists.</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-basketball-ball"></i>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Basketball Tournament</h3>
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>July 22, 2023</span>
+                    </div>
+                    <p class="event-desc">Annual city basketball tournament for amateur teams. Register your team now!</p>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Art Exhibition</h3>
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>August 5, 2023</span>
+                    </div>
+                    <p class="event-desc">Exhibition featuring works from local artists. Free entrance for all visitors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We connect people through events and experiences. Our platform makes it easy to discover and create events.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@eventmaster.com<br>Phone: +1 234 567 8900</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <i class="fab fa-facebook"></i> &nbsp;
+                        <i class="fab fa-twitter"></i> &nbsp;
+                        <i class="fab fa-instagram"></i> &nbsp;
+                        <i class="fab fa-linkedin"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EventMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form class="event-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Event Modal -->
+    <div class="modal" id="create-event-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create New Event</h2>
+            <form class="event-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" placeholder="Event title">
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date">
+                </div>
+                <div class="form-group">
+                    <label for="event-category">Category</label>
+                    <select id="event-category">
+                        <option value="">Select category</option>
+                        <option value="music">Music</option>
+                        <option value="sports">Sports</option>
+                        <option value="art">Art</option>
+                        <option value="food">Food</option>
+                        <option value="tech">Technology</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="event-desc">Description</label>
+                    <textarea id="event-desc" placeholder="Event description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="event-image">Event Image</label>
+                    <div class="upload-btn">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload Image</span>
+                        <input type="file" id="event-image" style="display: none;">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language data
+            const translations = {
+                en: {
+                    logoText: "EventMaster",
+                    heroTitle: "Discover Amazing Events",
+                    heroDesc: "Find and create events that match your interests. Connect with people and enjoy unique experiences.",
+                    login: "Login",
+                    createEvent: "Create Event",
+                    upcomingEvents: "Upcoming Events",
+                    events: "Events",
+                    filters: ["All", "Music", "Sports", "Art", "Food", "Technology"],
+                    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                    about: "About Us",
+                    contact: "Contact",
+                    follow: "Follow Us",
+                    copyright: "© 2023 EventMaster. All rights reserved.",
+                    eventTitles: ["Summer Music Festival", "Basketball Tournament", "Art Exhibition"],
+                    eventDescriptions: [
+                        "Join us for the biggest music festival of the year featuring top international artists.",
+                        "Annual city basketball tournament for amateur teams. Register your team now!",
+                        "Exhibition featuring works from local artists. Free entrance for all visitors."
+                    ]
+                },
+                ar: {
+                    logoText: " الفعاليات ",
+                    heroTitle: "اكتشف الفعاليات المدهشة",
+                    heroDesc: "ابحث وأنشئ فعاليات تطابق اهتماماتك. تواصل مع الأشخاص واستمتع بتجارب فريدة.",
+                    login: "تسجيل الدخول",
+                    createEvent: "إنشاء فعالية",
+                    upcomingEvents: "الفعاليات القادمة",
+                    events: "الفعاليات",
+                    filters: ["الكل", "موسيقى", "رياضة", "فن", "طعام", "تكنولوجيا"],
+                    months: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+                    about: "من نحن",
+                    contact: "اتصل بنا",
+                    follow: "تابعنا",
+                    copyright: "© 2023 الفعاليات. جميع الحقوق محفوظة.",
+                    eventTitles: ["مهرجان الموسيقى الصيفي", "بطولة كرة السلة", "معرض فني"],
+                    eventDescriptions: [
+                        "انضم إلينا في أكبر مهرجان موسيقي لهذا العام بمشاركة كبار الفنانين الدوليين.",
+                        "بطولة كرة السلة السنوية للمدينة للفرق الهواة. سجل فريقك الآن!",
+                        "معرض يعرض أعمال فنانين محليين. دخول مجاني لجميع الزوار."
+                    ]
+                },
+                ku: {
+                    logoText: "بۆنەگرنگەکان ",
+                    heroTitle: "بۆنە سەرسووڕهێنەرەکان بدۆزەوە",
+                    heroDesc: "بۆنەکان بدۆزەوە و دروستی بکە کە  جێی بایەختن. پەیوەندی بە خەڵکەوە بکە و چێژ لە ئەزموونی تایبەت وەربگرە.",
+                    login: "چوونەژوورەوە",
+                    createEvent: "دروستکردنی بۆنە",
+                    upcomingEvents: "بۆنەکانی داهاتوو",
+                    events: "بۆنەکان",
+                    filters: ["هەموو", "مۆسیقا", "وەرزش", "هونەر", "خواردن", "تەکنەلۆژیا"],
+                    months: ["کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانوونی یەکەم"],
+                    about: "دەربارەی ئێمە",
+                    contact: "پەیوەندی",
+                    follow: "فۆڵۆمان بکە",
+                    copyright: "© 2023 بۆنەگرنگەکان. هەموو مافەکان پارێزراون.",
+                    eventTitles: ["فێستیڤاڵی مۆسیقای هاوینە", "پاڵەوانییەتی تۆپی سەبەتە", "نمایشگاهی هونەری"],
+                    eventDescriptions: [
+                        "بەشداری بکە لە گەورەترین فێستیڤاڵی مۆسیقای ساڵ کە باشترین هونەرمەندانی نێودەوڵەتی تێدایە.",
+                        "پاڵەوانییەتی تۆپی سەبەتەی ساڵانەی شار بۆ تیپە ئاماتۆرەکان. تیپەکەت ئێستا تۆمار بکە!",
+                        "فیستیڤاڵێک کە کارەکانی هونەرمەندانی ناوخۆیی پیشان دەدات. چوونەژوورەوەی بێبەرامبەر بۆ هەموو سەردانکەران."
+                    ]
+                }
+            };
+
+            // Language switching functionality
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const body = document.body;
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update active button
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update direction for RTL languages
+                    if (lang === 'ar') {
+                        body.classList.add('rtl');
+                    } else {
+                        body.classList.remove('rtl');
+                    }
+                    
+                    // Update all text content
+                    updateContent(lang);
+                });
+            });
+            
+            // Update content based on selected language
+            function updateContent(lang) {
+                const t = translations[lang];
+                
+                // Update navigation and hero section
+                document.querySelector('.logo-text').textContent = t.logoText;
+                document.querySelector('.hero-title').textContent = t.heroTitle;
+                document.querySelector('.hero-desc').textContent = t.heroDesc;
+                document.querySelector('.login-btn').textContent = t.login;
+                document.querySelector('.create-event-btn').textContent = t.createEvent;
+                document.querySelector('.upcoming-events-title').textContent = t.upcomingEvents;
+                
+                // Update filter buttons
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                filterButtons.forEach((button, index) => {
+                    button.textContent = t.filters[index];
+                });
+                
+                // Update month buttons
+                const monthButtons = document.querySelectorAll('.month-btn');
+                monthButtons.forEach((button, index) => {
+                    button.textContent = t.months[index];
+                });
+                
+                // Update event cards
+                const eventTitles = document.querySelectorAll('.event-title');
+                const eventDescriptions = document.querySelectorAll('.event-desc');
+                
+                eventTitles.forEach((title, index) => {
+                    title.textContent = t.eventTitles[index];
+                });
+                
+                eventDescriptions.forEach((desc, index) => {
+                    desc.textContent = t.eventDescriptions[index];
+                });
+                
+                // Update footer
+                document.querySelector('.footer-section h3').textContent = t.about;
+                document.querySelectorAll('.footer-section h3')[1].textContent = t.contact;
+                document.querySelectorAll('.footer-section h3')[2].textContent = t.follow;
+                document.querySelector('.copyright p').textContent = t.copyright;
+            }
+            
+            // Modal functionality
+            const loginBtn = document.querySelector('.login-btn');
+            const createEventBtn = document.querySelector('.create-event-btn');
+            const loginModal = document.getElementById('login-modal');
+            const createEventModal = document.getElementById('create-event-modal');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+            });
+            
+            createEventBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                createEventModal.style.display = 'flex';
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    loginModal.style.display = 'none';
+                    createEventModal.style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === createEventModal) {
+                    createEventModal.style.display = 'none';
+                }
+            });
+            
+            // Event card click to show details
+            const eventCards = document.querySelectorAll('.event-card');
+            eventCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    alert('Event details would open here. In a real application, this would show a detailed view of the event.');
+                });
+            });
+            
+            // Image upload functionality
+            const uploadBtn = document.querySelector('.upload-btn');
+            const fileInput = document.getElementById('event-image');
+            
+            uploadBtn.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const fileName = this.files[0].name;
+                    uploadBtn.querySelector('span').textContent = fileName;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

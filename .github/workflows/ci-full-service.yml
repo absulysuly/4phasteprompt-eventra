@@ -1,33 +1,34 @@
-name: CI — Events Only (core platform)
+name: CI — Full Service (events + hotels + restaurants)
 
 on:
   push:
     branches: [ main, dev ]
     paths:
-      - 'packages/eventra-events/**'
+      - 'packages/eventra-full/**'
       - 'shared/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/ci-full-service.yml'
   pull_request:
     branches: [ main, dev ]
     paths:
-      - 'packages/eventra-events/**'
+      - 'packages/eventra-full/**'
       - 'shared/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/ci-full-service.yml'
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-full-service-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-and-unit-tests:
+  build-and-unit-tests-full:
     runs-on: ubuntu-latest
-    # Set working directory for entire job to packages/eventra-events subdirectory
+    # Set working directory for entire job to packages/eventra-full subdirectory
     defaults:
       run:
-        working-directory: packages/eventra-events
+        working-directory: packages/eventra-full
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       FAIL_ON_LINT: "false"   # TEMP: allow lint warnings while we fix them
+      EVENTRA_VERSION: "full-service"  # Feature flag for full-service features
 
     steps:
       - name: Checkout
@@ -42,10 +43,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          # Updated key to reference packages/eventra-events package-lock.json
-          key: ${{ runner.os }}-node-${{ hashFiles('packages/eventra-events/package-lock.json') }}
+          # Updated key to reference packages/eventra-full package-lock.json
+          key: ${{ runner.os }}-node-full-${{ hashFiles('packages/eventra-full/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-full-
 
       - name: Install deps
         run: npm ci
@@ -74,11 +75,11 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: build-logs
-          # Updated paths to reference packages/eventra-events subdirectory
+          name: build-logs-full-service
+          # Updated paths to reference packages/eventra-full subdirectory
           path: |
-            packages/eventra-events/automation-logs/
-            packages/eventra-events/logs/
-            packages/eventra-events/.next/
-            packages/eventra-events/build/logs/
-            packages/eventra-events/*.log
+            packages/eventra-full/automation-logs/
+            packages/eventra-full/logs/
+            packages/eventra-full/.next/
+            packages/eventra-full/build/logs/
+            packages/eventra-full/*.log

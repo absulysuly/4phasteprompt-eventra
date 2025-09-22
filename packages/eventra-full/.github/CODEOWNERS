@@ -1,0 +1,50 @@
+# Global owners - default reviewers for everything in the repo
+# These owners will be requested for review when someone opens a pull request
+* @your-github-username
+
+# Internationalization (i18n) - requires specialized review
+/messages/ @i18n-team @your-github-username
+/src/lib/i18n.ts @i18n-team @your-github-username
+/src/lib/translate.ts @i18n-team @your-github-username
+/middleware.ts @i18n-team @your-github-username
+**/i18n*.js @i18n-team @your-github-username
+**/validate-i18n.js @i18n-team @your-github-username
+
+# Database & API - backend team review
+/prisma/ @backend-team @your-github-username
+/src/app/api/ @backend-team @your-github-username
+/src/lib/auth.ts @backend-team @your-github-username
+
+# Frontend Components - frontend team review
+/src/app/components/ @frontend-team @your-github-username
+/src/app/**/page.tsx @frontend-team @your-github-username
+/src/app/**/layout.tsx @frontend-team @your-github-username
+
+# Styling and design
+/src/app/globals.css @frontend-team @your-github-username
+/tailwind.config.* @frontend-team @your-github-username
+/postcss.config.* @frontend-team @your-github-username
+
+# Configuration files - require careful review
+/next.config.ts @your-github-username
+/package.json @your-github-username
+/tsconfig.json @your-github-username
+/.env.example @your-github-username
+/docker-compose*.yml @devops-team @your-github-username
+/Dockerfile* @devops-team @your-github-username
+
+# CI/CD and GitHub workflows
+/.github/ @devops-team @your-github-username
+
+# Documentation - technical writers or maintainers
+/README.md @your-github-username
+/WARP.md @your-github-username
+/CONTRIBUTING.md @your-github-username
+/CODE_OF_CONDUCT.md @your-github-username
+/**/*.md @your-github-username
+
+# Scripts and utilities
+/scripts/ @backend-team @your-github-username
+
+# Public assets and PWA
+/public/ @frontend-team @your-github-username
