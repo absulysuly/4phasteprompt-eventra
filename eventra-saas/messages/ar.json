@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "الرئيسية",
-    "events": "الفعاليات", 
+    "events": "الفعاليات",
     "categories": "الأقسام",
     "about": "حول الموقع",
     "login": "تسجيل الدخول",
@@ -9,8 +9,8 @@
     "dashboard": "لوحة التحكم",
     "createEvent": "إنشاء فعالية",
     "eventPlatform": "منصة الفعاليات",
-    "aiRecommendations": "اقتراحات فعاليات مدعومة بالذكاء الاصطناعي متاحة الآن!",
-    "tryItFree": "جرّبها مجاناً",
+    "aiRecommendations": "توصيات الذكاء الاصطناعي للفعاليات متاحة الآن!",
+    "tryItFree": "جربها مجاناً",
     "language": "اللغة"
   },
   "homepage": {
@@ -107,7 +107,7 @@
     "orContinueWith": "أو المتابعة بالبريد الإلكتروني",
     "emailAddress": "عنوان البريد الإلكتروني",
     "emailPlaceholder": "أدخل بريدك الإلكتروني",
-    "password": "كلمة المرور", 
+    "password": "كلمة المرور",
     "passwordPlaceholder": "أدخل كلمة المرور",
     "signingIn": "جاري تسجيل الدخول...",
     "signIn": "تسجيل الدخول",
@@ -241,7 +241,7 @@
     "search": "بحث",
     "filter": "فلتر",
     "allCategories": "جميع الفئات",
-    "allCities": "جميع المدن", 
+    "allCities": "جميع المدن",
     "allMonths": "جميع الشهور",
     "allPrices": "جميع الأسعار",
     "free": "مجاني",
@@ -258,7 +258,7 @@
   },
   "cities": {
     "baghdad": "بغداد",
-    "basra": "البصرة", 
+    "basra": "البصرة",
     "mosul": "الموصل",
     "erbil": "أربيل",
     "sulaymaniyah": "السليمانية",
@@ -270,7 +270,7 @@
   },
   "months": {
     "january": "يناير",
-    "february": "فبراير", 
+    "february": "فبراير",
     "march": "مارس",
     "april": "أبريل",
     "may": "مايو",
@@ -359,19 +359,5 @@
     "createAccount": "إنشاء حساب",
     "alreadyHaveAccount": "لديك حساب بالفعل؟",
     "signInHere": "سجل الدخول هنا"
-  },
-  "navigation": {
-    "home": "الرئيسية",
-    "events": "الفعاليات", 
-    "categories": "الأقسام",
-    "about": "حول الموقع",
-    "login": "تسجيل الدخول",
-    "logout": "تسجيل الخروج",
-    "dashboard": "لوحة التحكم",
-    "createEvent": "إنشاء فعالية",
-    "eventPlatform": "منصة الفعاليات",
-    "aiRecommendations": "توصيات الذكاء الاصطناعي للفعاليات متاحة الآن!",
-    "tryItFree": "جربها مجاناً",
-    "language": "اللغة"
   }
 }
