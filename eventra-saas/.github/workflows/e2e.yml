@@ -1,0 +1,62 @@
+name: E2E — Playwright (staging)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]   # or trigger after successful staging deploy
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e-staging:
+    runs-on: ubuntu-latest
+    env:
+      STAGING_URL: ${{ secrets.STAGING_URL }}       # staging app URL
+      DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
+      PLAYWRIGHT_VIDEO: "on"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # From package.json engines field
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+
+      - name: Wait for staging to be healthy
+        if: ${{ env.STAGING_URL != '' }}
+        run: |
+          for i in $(seq 1 12); do
+            if curl -fsS "${{ env.STAGING_URL }}/health"; then
+              echo "staging healthy"
+              exit 0
+            fi
+            echo "waiting for staging... ($i/12)"
+            sleep 10
+          done
+          echo "staging health check failed" >&2
+          exit 1
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright E2E
+        run: npm run e2e # ensure package.json has e2e script pointing to playwright test --project=...
+
+      - name: Upload Playwright artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts
+          path: |
+            playwright-report/
+            test-results/
+            artifacts/
