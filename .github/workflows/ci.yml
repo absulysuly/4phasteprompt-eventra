@@ -13,9 +13,13 @@ concurrency:
 jobs:
   build-and-unit-tests:
     runs-on: ubuntu-latest
+    # Set working directory for entire job to eventra-saas subdirectory
+    defaults:
+      run:
+        working-directory: eventra-saas
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      FAIL_ON_LINT: \"false\"   # TEMP: allow lint warnings while we fix them
+      FAIL_ON_LINT: "false"   # TEMP: allow lint warnings while we fix them
 
     steps:
       - name: Checkout
@@ -30,7 +34,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          # Updated key to reference eventra-saas package-lock.json
+          key: ${{ runner.os }}-node-${{ hashFiles('eventra-saas/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -62,9 +67,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-logs
+          # Updated paths to reference eventra-saas subdirectory
           path: |
-            automation-logs/
-            logs/
-            .next/
-            build/logs/
-            *.log
+            eventra-saas/automation-logs/
+            eventra-saas/logs/
+            eventra-saas/.next/
+            eventra-saas/build/logs/
+            eventra-saas/*.log
