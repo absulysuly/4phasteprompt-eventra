@@ -1,0 +1,83 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to deploy'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+        - both
+        - events-only
+        - full-service
+
+jobs:
+  deploy-events-only:
+    if: github.event.inputs.version == 'events-only' || github.event.inputs.version == 'both' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: packages/eventra-events
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+        
+      - name: Deploy to Vercel
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_EVENTS }}
+          EVENTRA_VERSION: events-only
+
+  deploy-full-service:
+    if: github.event.inputs.version == 'full-service' || github.event.inputs.version == 'both' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: packages/eventra-full
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+        
+      - name: Deploy to Vercel
+        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_FULL }}
+          EVENTRA_VERSION: full-service
+
+  notify-deployment:
+    needs: [deploy-events-only, deploy-full-service]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Success
+        if: needs.deploy-events-only.result == 'success' && needs.deploy-full-service.result == 'success'
+        run: |
+          echo "🎉 Both versions deployed successfully!"
+          echo "Events-Only: https://eventra-events.vercel.app"
+          echo "Full-Service: https://eventra-full.vercel.app"

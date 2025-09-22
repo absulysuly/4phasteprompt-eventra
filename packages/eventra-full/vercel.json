@@ -1,0 +1,65 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "eventra-full-service",
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "framework": "nextjs",
+  "regions": ["fra1", "iad1"],
+  "env": {
+    "EVENTRA_VERSION": "full-service"
+  },
+  "build": {
+    "env": {
+      "EVENTRA_VERSION": "full-service"
+    }
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 15
+    },
+    "app/api/hotels/**/*.ts": {
+      "maxDuration": 20
+    },
+    "app/api/travel/**/*.ts": {
+      "maxDuration": 25
+    }
+  },
+  "redirects": [
+    {
+      "source": "/old-events",
+      "destination": "/events",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/booking/:path*",
+      "destination": "/api/hotels/:path*"
+    },
+    {
+      "source": "/dining/:path*",
+      "destination": "/api/restaurants/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Eventra-Version",
+          "value": "full-service"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ]
+}

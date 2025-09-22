@@ -95,9 +95,9 @@ export default function PWAInstallPrompt() {
             <span className="text-2xl">🇮🇶</span>
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-bold text-lg mb-1">Install IraqEvents</h3>
+            <h3 className="font-bold text-lg mb-1">📱 Install Eventra Events</h3>
             <p className="text-sm text-white/90 mb-3">
-              Add to your home screen for quick access to events!
+              Get the app! Works offline, faster loading, and home screen access.
             </p>
             <div className="flex gap-2">
               <button

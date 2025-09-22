@@ -1,0 +1,59 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "eventra-events",
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "framework": "nextjs",
+  "regions": ["fra1", "iad1"],
+  "env": {
+    "EVENTRA_VERSION": "events-only"
+  },
+  "build": {
+    "env": {
+      "EVENTRA_VERSION": "events-only"
+    }
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 10
+    }
+  },
+  "redirects": [
+    {
+      "source": "/hotels",
+      "destination": "/events",
+      "permanent": false
+    },
+    {
+      "source": "/restaurants", 
+      "destination": "/events",
+      "permanent": false
+    },
+    {
+      "source": "/travel",
+      "destination": "/events", 
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Eventra-Version",
+          "value": "events-only"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ]
+}

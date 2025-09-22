@@ -1,7 +1,7 @@
 {
-  "name": "IraqEvents - Event Platform",
-  "short_name": "IraqEvents",
-  "description": "Discover amazing events across Iraq and Kurdistan Region. Multilingual platform supporting English, Arabic, and Kurdish.",
+  "name": "Eventra Events - Discover Amazing Events",
+  "short_name": "Eventra Events",
+  "description": "Iraq's #1 event discovery platform. Find concerts, conferences, cultural events and more across Iraq and Kurdistan Region. Supports Arabic, Kurdish & English.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#667eea",
