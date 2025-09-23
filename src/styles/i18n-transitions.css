@@ -1,0 +1,303 @@
+/* i18n Transition Styles */
+/* Smooth transitions for language switching and RTL/LTR layout changes */
+
+/* Global HTML transitions */
+html {
+  transition: none !important; /* Prevent jarring transitions on HTML element */
+}
+
+/* Language transition animations */
+.language-transition-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.language-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.language-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.language-transition-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* RTL/LTR direction transitions */
+.direction-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text alignment smooth transitions */
+.text-align-transition {
+  transition: text-align 0.2s ease-in-out;
+}
+
+/* Language switcher specific animations */
+.language-switcher {
+  transition: all 0.2s ease-in-out;
+}
+
+.language-switcher-dropdown {
+  transform-origin: top;
+  animation: dropdown-enter 0.2s ease-out;
+}
+
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.language-switcher-dropdown.closing {
+  animation: dropdown-exit 0.15s ease-in;
+}
+
+@keyframes dropdown-exit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+}
+
+/* Button hover effects */
+.language-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0); /* Enable hardware acceleration */
+}
+
+.language-button:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.language-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Flag transitions */
+.flag-transition {
+  transition: transform 0.2s ease-in-out;
+}
+
+.flag-transition:hover {
+  transform: scale(1.1);
+}
+
+/* Loading spinner for language switching */
+.language-switching-loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth content fade during language switch */
+.content-fade-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.content-fade-transition.switching {
+  opacity: 0.7;
+}
+
+/* RTL/LTR layout transitions */
+.layout-direction-transition {
+  transition: 
+    margin-left 0.3s ease-in-out,
+    margin-right 0.3s ease-in-out,
+    padding-left 0.3s ease-in-out,
+    padding-right 0.3s ease-in-out,
+    text-align 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+/* Flex direction transitions for RTL */
+.flex-direction-transition {
+  transition: flex-direction 0.3s ease-in-out;
+}
+
+/* Specific RTL/LTR styles with transitions */
+[dir="rtl"] .rtl-transition {
+  transform: scaleX(-1);
+  transition: transform 0.3s ease-in-out;
+}
+
+[dir="ltr"] .rtl-transition {
+  transform: scaleX(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Text input direction transitions */
+input, textarea {
+  transition: text-align 0.2s ease-in-out, direction 0.2s ease-in-out;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="ltr"] input,
+[dir="ltr"] textarea {
+  text-align: left;
+  direction: ltr;
+}
+
+/* Menu transitions for different directions */
+.menu-transition {
+  transition: 
+    left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icon flip transitions for RTL */
+.icon-flip-transition {
+  transition: transform 0.3s ease-in-out;
+}
+
+[dir="rtl"] .icon-flip-transition {
+  transform: scaleX(-1);
+}
+
+[dir="ltr"] .icon-flip-transition {
+  transform: scaleX(1);
+}
+
+/* Margin and padding automatic transitions */
+.spacing-transition {
+  transition: 
+    margin-left 0.3s ease-in-out,
+    margin-right 0.3s ease-in-out,
+    padding-left 0.3s ease-in-out,
+    padding-right 0.3s ease-in-out;
+}
+
+/* Border radius transitions for RTL */
+.border-radius-transition {
+  transition: border-radius 0.3s ease-in-out;
+}
+
+/* Language indicator pulse animation */
+.language-indicator-active {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .language-transition-enter,
+  .language-transition-enter-active,
+  .language-transition-exit,
+  .language-transition-exit-active,
+  .direction-transition,
+  .language-switcher,
+  .language-button,
+  .flag-transition,
+  .content-fade-transition,
+  .layout-direction-transition,
+  .flex-direction-transition,
+  .rtl-transition,
+  .menu-transition,
+  .icon-flip-transition,
+  .spacing-transition,
+  .border-radius-transition {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .language-indicator-active {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .language-button {
+    border: 2px solid;
+  }
+  
+  .language-switcher-dropdown {
+    border: 2px solid;
+  }
+}
+
+/* Focus visible improvements */
+.language-button:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease-in-out;
+}
+
+/* Smooth backdrop blur transition */
+.language-switcher-backdrop {
+  backdrop-filter: blur(4px);
+  transition: backdrop-filter 0.3s ease-in-out;
+}
+
+/* Mobile responsive transitions */
+@media (max-width: 768px) {
+  .language-switcher-dropdown {
+    animation: mobile-dropdown-enter 0.25s ease-out;
+  }
+  
+  @keyframes mobile-dropdown-enter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Dark mode transitions */
+@media (prefers-color-scheme: dark) {
+  .language-button {
+    transition: 
+      all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
+  }
+}
+
+/* Print styles - hide transitions */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
