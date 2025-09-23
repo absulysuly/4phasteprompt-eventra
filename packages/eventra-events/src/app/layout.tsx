@@ -27,22 +27,23 @@ const notoArabic = Noto_Naskh_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "IraqEvents - Discover Amazing Events in Iraq",
-  description: "The premier event platform for Iraq. Discover concerts, conferences, festivals, and community events across Baghdad, Erbil, Basra, and all Iraqi cities.",
+  title: "Eventra Events - Discover Amazing Events",
+  description: "Iraq's #1 event discovery platform. Find concerts, conferences, cultural events and more across Iraq and Kurdistan Region. Supports Arabic, Kurdish & English.",
   manifest: "/manifest.json",
-  themeColor: "#6a11cb",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IraqEvents",
+    title: "Eventra Events",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover",
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover" as const,
+  themeColor: "#3B82F6",
 };
 
 function detectServerLanguage(): "ar" | "ku" {

@@ -1,12 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "name": "eventra-events",
   "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm ci",
   "framework": "nextjs",
-  "regions": ["fra1", "iad1"],
   "env": {
     "EVENTRA_VERSION": "events-only"
   },
