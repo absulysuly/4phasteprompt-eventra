@@ -1,38 +1,30 @@
 import type { NextConfig } from "next";
-import withPWAInit from "next-pwa";
-
-const withPWA = withPWAInit({
-  dest: "public",
-  register: true,
-  skipWaiting: true,
-  runtimeCaching: [
-    {
-      urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
-      handler: "CacheFirst",
-      options: {
-        cacheName: "unsplash-images",
-        expiration: {
-          maxEntries: 16,
-          maxAgeSeconds: 24 * 60 * 60 * 30, // 30 Days
-        },
-      },
-    },
-    {
-      urlPattern: /\/api\/events/,
-      handler: "NetworkFirst",
-      options: {
-        cacheName: "api-events",
-        networkTimeoutSeconds: 10,
-        expiration: {
-          maxEntries: 50,
-          maxAgeSeconds: 5 * 60, // 5 minutes
-        },
-      },
-    },
-  ],
-});
+// PWA disabled to fix CSP issues
+// import withPWAInit from "next-pwa";
 
 const nextConfig: NextConfig = {
+  // Fix CSP issues by allowing necessary scripts
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: `
+              default-src 'self';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+              font-src 'self' https://fonts.gstatic.com;
+              img-src 'self' data: https: blob:;
+              connect-src 'self' https: wss: ws:;
+              frame-src 'self' https:;
+            `.replace(/\s{2,}/g, ' ').trim()
+          }
+        ]
+      }
+    ];
+  },
   // Remove i18n config since we're using next-intl with app directory
   // i18n: {
   //   locales: ['en', 'ar', 'ku'],
@@ -63,4 +55,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withPWA(nextConfig);
+export default nextConfig;

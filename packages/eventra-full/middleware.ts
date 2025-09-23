@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Define supported locales
-const locales = ['ar', 'ku'];
-const defaultLocale = 'ar';
+const locales = ['en', 'ar', 'ku'];
+const defaultLocale = 'en';
 
 function getLocale(request: NextRequest): string {
   // Check for locale in pathname
@@ -60,14 +60,14 @@ export function middleware(request: NextRequest) {
   response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
   response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
   
-  // Strict CSP - removing unsafe-eval and unsafe-inline where possible
+  // Relaxed CSP to allow Next.js to work properly
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'wasm-unsafe-eval' https://va.vercel-scripts.com", // Removed unsafe-eval/inline
+    "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live", // Next.js needs these
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com", // Tailwind requires unsafe-inline
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: blob: https://images.unsplash.com https://via.placeholder.com",
-    "connect-src 'self' https://sentry.io https://*.sentry.io https://vitals.vercel-insights.com https://*.upstash.io",
+    "connect-src 'self' https: wss: ws:", // Allow all HTTPS and WebSocket connections
     "media-src 'self'",
     "object-src 'none'",
     "base-uri 'self'",
