@@ -17,6 +17,16 @@ export interface LocaleConfig {
 }
 
 export const SUPPORTED_LOCALES: Record<string, LocaleConfig> = {
+  en: {
+    code: 'en',
+    name: 'English',
+    nativeName: 'English',
+    direction: 'ltr',
+    flag: '🇺🇸',
+    dateFormat: 'en-US',
+    numberFormat: 'en-US',
+    currency: 'USD'
+  },
   ar: {
     code: 'ar',
     name: 'Arabic',
@@ -39,7 +49,7 @@ export const SUPPORTED_LOCALES: Record<string, LocaleConfig> = {
   }
 } as const;
 
-export const DEFAULT_LOCALE = 'ar';
+export const DEFAULT_LOCALE = 'en';
 export const LOCALE_CODES = Object.keys(SUPPORTED_LOCALES) as Array<keyof typeof SUPPORTED_LOCALES>;
 
 /**

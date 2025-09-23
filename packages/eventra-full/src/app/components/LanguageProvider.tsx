@@ -47,9 +47,11 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
       return savedLanguage as Language;
     }
     
-    // Detect from browser
-    const detected = detectLocale(navigator.language);
-    return (isValidLocale(detected) ? (detected as Language) : DEFAULT_LOCALE) as Language;
+    // Force English as default to avoid Arabic translation warnings
+    // TODO: Enable browser detection once Arabic translations are complete
+    // const detected = detectLocale(navigator.language);
+    // return (isValidLocale(detected) ? (detected as Language) : DEFAULT_LOCALE) as Language;
+    return DEFAULT_LOCALE as Language;
   };
   
   const [language, setLanguageState] = useState<Language>(getInitialLanguage);

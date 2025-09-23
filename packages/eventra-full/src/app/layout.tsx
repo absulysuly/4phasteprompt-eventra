@@ -27,35 +27,37 @@ const notoArabic = Noto_Naskh_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "IraqEvents - Discover Amazing Events in Iraq",
-  description: "The premier event platform for Iraq. Discover concerts, conferences, festivals, and community events across Baghdad, Erbil, Basra, and all Iraqi cities.",
+  title: "Eventra Full - Complete Experience Platform",
+  description: "Your complete travel companion for Iraq! Book events, hotels, restaurants, flights and packages. All-in-one platform for unforgettable experiences.",
   manifest: "/manifest.json",
-  themeColor: "#6a11cb",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IraqEvents",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover",
+    title: "Eventra Full",
   },
 };
 
-function detectServerLanguage(): "ar" | "ku" {
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover" as const,
+  themeColor: "#059669",
+};
+
+async function detectServerLanguage(): Promise<"en" | "ar" | "ku"> {
   try {
-    const cookieStore = cookies() as any;
-    const h = headers() as any;
-    const cookieLang = cookieStore?.get?.("language")?.value as "ar" | "ku" | undefined;
-    if (cookieLang && ["ar","ku"].includes(cookieLang)) return cookieLang;
+    const cookieStore = await cookies();
+    const h = await headers();
+    const cookieLang = cookieStore?.get?.("language")?.value as "en" | "ar" | "ku" | undefined;
+    if (cookieLang && ["en", "ar", "ku"].includes(cookieLang)) return cookieLang;
     const accept: string = h?.get?.("accept-language") || "";
     if (accept.includes("ar")) return "ar";
     if (accept.includes("ku") || accept.includes("ckb")) return "ku";
+    if (accept.includes("en")) return "en";
   } catch {}
-  return "ar";
+  return "en";
 }
 
 export default async function RootLayout({
@@ -63,7 +65,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const serverLang = detectServerLanguage();
+  const serverLang = await detectServerLanguage();
   const dir = serverLang === "ar" || serverLang === "ku" ? "rtl" : "ltr";
   return (
     <html lang={serverLang} dir={dir}>
