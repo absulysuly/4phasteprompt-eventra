@@ -38,8 +38,82 @@ html[lang="ku"] body {
 input, select, textarea, button { font-family: inherit; }
 [dir="rtl"] select, [dir="rtl"] option { direction: rtl; text-align: right; }
 
-/* Avoid left-text utility overriding RTL context */
+/* Comprehensive RTL Layout Fixes */
 [dir="rtl"] .text-left { text-align: right !important; }
+[dir="rtl"] .text-right { text-align: left !important; }
+[dir="rtl"] .text-center { text-align: center !important; }
+
+/* Fix Flexbox and Grid layouts for RTL */
+[dir="rtl"] .flex-row { flex-direction: row-reverse !important; }
+[dir="rtl"] .flex-row-reverse { flex-direction: row !important; }
+
+/* Fix positioning and margins for RTL */
+[dir="rtl"] .ml-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ml-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ml-3 { margin-right: 0.75rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ml-4 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .mr-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .mr-3 { margin-left: 0.75rem !important; margin-right: 0 !important; }
+[dir="rtl"] .mr-4 { margin-left: 1rem !important; margin-right: 0 !important; }
+
+/* Fix padding for RTL */
+[dir="rtl"] .pl-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pl-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pl-3 { padding-right: 0.75rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pl-4 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .pr-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pr-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pr-3 { padding-left: 0.75rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pr-4 { padding-left: 1rem !important; padding-right: 0 !important; }
+
+/* Fix float and positioning for RTL */
+[dir="rtl"] .float-left { float: right !important; }
+[dir="rtl"] .float-right { float: left !important; }
+[dir="rtl"] .left-0 { right: 0 !important; left: auto !important; }
+[dir="rtl"] .right-0 { left: 0 !important; right: auto !important; }
+
+/* Fix border radius for RTL */
+[dir="rtl"] .rounded-l { border-top-right-radius: 0.25rem !important; border-bottom-right-radius: 0.25rem !important; border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+[dir="rtl"] .rounded-r { border-top-left-radius: 0.25rem !important; border-bottom-left-radius: 0.25rem !important; border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+
+/* Fix event card layout specifically */
+[dir="rtl"] .event-card {
+  text-align: right !important;
+}
+
+[dir="rtl"] .event-card .event-title {
+  text-align: right !important;
+}
+
+[dir="rtl"] .event-card .event-category {
+  text-align: right !important;
+}
+
+[dir="rtl"] .event-card .event-price {
+  text-align: left !important;
+}
+
+/* Fix form inputs for RTL */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Fix button alignment for RTL */
+[dir="rtl"] .btn-group {
+  flex-direction: row-reverse !important;
+}
+
+/* Ensure proper text rendering for Arabic/Kurdish */
+[dir="rtl"] * {
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
 
 /* Custom Animations */
 @keyframes float {

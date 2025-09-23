@@ -14,8 +14,8 @@ import { useLanguage } from "./components/LanguageProvider";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCity, setSelectedCity] = useState("All Cities");
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
@@ -29,6 +29,14 @@ export default function Home() {
   // Translation and language hooks
   const { t } = useTranslations();
   const { language, isRTL } = useLanguage();
+
+  // Initialize filter states
+  useEffect(() => {
+    if (t && !selectedCity) {
+      setSelectedCity(t('common.allCities'));
+      setSelectedCategory(t('common.allCategories'));
+    }
+  }, [t, selectedCity]);
 
   // Use translated cities and categories
   const cities = [
@@ -47,14 +55,21 @@ export default function Home() {
   
   const categories = [
     { name: t('common.allCategories'), icon: "🎉" },
-    { name: t('categories.music'), icon: "🎵" },
-    { name: t('categories.sports'), icon: "⚽" },
-    { name: t('categories.food'), icon: "🍽️" },
-    { name: t('categories.business'), icon: "💼" },
-    { name: t('categories.tech'), icon: "💻" },
-    { name: t('categories.art'), icon: "🎨" },
-    { name: t('categories.health'), icon: "🏥" },
-    { name: t('categories.community'), icon: "👥" }
+    { name: t('categories.technologyInnovation'), icon: "💻" },
+    { name: t('categories.businessNetworking'), icon: "💼" },
+    { name: t('categories.musicConcerts'), icon: "🎵" },
+    { name: t('categories.artsCulture'), icon: "🎨" },
+    { name: t('categories.sportsFitness'), icon: "⚽" },
+    { name: t('categories.foodDrink'), icon: "🍽️" },
+    { name: t('categories.learningDevelopment'), icon: "📚" },
+    { name: t('categories.healthWellness'), icon: "🏥" },
+    { name: t('categories.communitySocial'), icon: "👥" },
+    { name: t('categories.gamingEsports'), icon: "🎮" },
+    { name: t('categories.spiritualReligious'), icon: "🕌" },
+    { name: t('categories.familyKids'), icon: "👨‍👩‍👧‍👦" },
+    { name: t('categories.outdoorAdventure'), icon: "🏔️" },
+    { name: t('categories.virtualEvents'), icon: "📱" },
+    { name: t('categories.academicConferences'), icon: "🎓" }
   ];
 
   const heroSlides = [
@@ -173,6 +188,22 @@ export default function Home() {
 
   const getCategoryIcon = (category: string) => {
     const icons: { [key: string]: string } = {
+      'technologyinnovation': '💻',
+      'businessnetworking': '💼',
+      'musicconcerts': '🎵',
+      'artsculture': '🎨',
+      'sportsfitness': '⚽',
+      'fooddrink': '🍽️',
+      'learningdevelopment': '📚',
+      'healthwellness': '🏥',
+      'communitysocial': '👥',
+      'gamingesports': '🎮',
+      'spiritualreligious': '🕌',
+      'familykids': '👨‍👩‍👧‍👦',
+      'outdooradventure': '🏔️',
+      'virtualevents': '📱',
+      'academicconferences': '🎓',
+      // Legacy mappings for backward compatibility
       'tech': '💻',
       'technology': '💻',
       'music': '🎵',
@@ -183,9 +214,42 @@ export default function Home() {
       'food': '🍽️',
       'health': '🏥',
       'community': '👥',
-      'other': '🎪'
+      'other': '🎦'
     };
-    return icons[category?.toLowerCase()] || '🎪';
+    return icons[category?.toLowerCase().replace(/[^a-z]/g, '')] || '🎦';
+  };
+
+  const getCategoryTranslation = (category: string) => {
+    const categoryMap: { [key: string]: string } = {
+      'technologyinnovation': 'categories.technologyInnovation',
+      'businessnetworking': 'categories.businessNetworking',
+      'musicconcerts': 'categories.musicConcerts',
+      'artsculture': 'categories.artsCulture',
+      'sportsfitness': 'categories.sportsFitness',
+      'fooddrink': 'categories.foodDrink',
+      'learningdevelopment': 'categories.learningDevelopment',
+      'healthwellness': 'categories.healthWellness',
+      'communitysocial': 'categories.communitySocial',
+      'gamingesports': 'categories.gamingEsports',
+      'spiritualreligious': 'categories.spiritualReligious',
+      'familykids': 'categories.familyKids',
+      'outdooradventure': 'categories.outdoorAdventure',
+      'virtualevents': 'categories.virtualEvents',
+      'academicconferences': 'categories.academicConferences',
+      // Legacy mappings
+      'tech': 'categories.technologyInnovation',
+      'technology': 'categories.technologyInnovation',
+      'music': 'categories.musicConcerts',
+      'business': 'categories.businessNetworking',
+      'art': 'categories.artsCulture',
+      'arts': 'categories.artsCulture',
+      'sports': 'categories.sportsFitness',
+      'food': 'categories.foodDrink',
+      'health': 'categories.healthWellness',
+      'community': 'categories.communitySocial'
+    };
+    const key = categoryMap[category?.toLowerCase().replace(/[^a-z]/g, '')];
+    return key ? t(key) : category;
   };
 
   const getEventImageCategory = (category: string) => {
@@ -583,6 +647,15 @@ export default function Home() {
               <option className="text-gray-800">{t('months.january')}</option>
               <option className="text-gray-800">{t('months.february')}</option>
               <option className="text-gray-800">{t('months.march')}</option>
+              <option className="text-gray-800">{t('months.april')}</option>
+              <option className="text-gray-800">{t('months.may')}</option>
+              <option className="text-gray-800">{t('months.june')}</option>
+              <option className="text-gray-800">{t('months.july')}</option>
+              <option className="text-gray-800">{t('months.august')}</option>
+              <option className="text-gray-800">{t('months.september')}</option>
+              <option className="text-gray-800">{t('months.october')}</option>
+              <option className="text-gray-800">{t('months.november')}</option>
+              <option className="text-gray-800">{t('months.december')}</option>
             </select>
             <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium">
               {t('events.clearAllFilters')}
@@ -616,7 +689,7 @@ export default function Home() {
       <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-3">
-            📅 {t('homepage.upcomingEvents')}
+            📅 {t('homepage.allEvents')}
           </h2>
           
           <div className="mb-8">
@@ -643,20 +716,9 @@ export default function Home() {
                         className="h-48 w-full object-cover"
                         category={getEventImageCategory(event.category || "")}
                       />
-                      <div className="absolute top-3 right-3">
-{event.isFree || event.price === 0 ? (
-                          <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            {t('events.free')}
-                          </span>
-                        ) : (
-                          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            ${event.price}
-                          </span>
-                        )}
-                      </div>
                       <div className="absolute top-3 left-3">
                         <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
-                          {getCategoryIcon(event.category || "")} {event.category}
+                          {getCategoryIcon(event.category || "")} {getCategoryTranslation(event.category || "")}
                         </span>
                       </div>
                     </div>
@@ -672,13 +734,8 @@ export default function Home() {
                         <span>📍</span>
                         <span className="truncate">{event.location}</span>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span className={`font-semibold ${
-                          event.isFree || event.price === 0 ? 'text-green-600' : 'text-blue-600'
-                        }`}>
-                          {event.isFree || event.price === 0 ? t('events.free') : `$${event.price}`}
-                        </span>
-<span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
+                      <div className="flex items-center justify-end">
+                        <span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
                           {t('events.viewDetails')} {isRTL ? '←' : '→'}
                         </span>
                       </div>
@@ -690,7 +747,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Sample Event Cards for demo */}
                 <Link
-                  href="/events"
+                  href={language === 'en' ? '/events' : `/${language}/events`}
                   className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
                 >
                   <div className="relative">
@@ -701,31 +758,27 @@ export default function Home() {
                       className="h-48 w-full"
                       fallbackType="tech"
                     />
-<div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {t('common.paid')}
-                    </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-blue-600 transition-colors">AI Innovation Summit</h4>
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-blue-600 transition-colors">{t('demo.events.aiSummit.title')}</h4>
                     <div className="flex items-center gap-2 text-gray-600 text-sm mb-2">
                       <span>📅</span>
-                      <span>March 15, 2025</span>
+                      <span>{formatDate('2025-03-15')}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 text-sm mb-4">
                       <span>📍</span>
-                      <span>Baghdad Tech Center</span>
+                      <span>{t('demo.events.aiSummit.location')}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-blue-600 font-semibold">$50</span>
-<span className="text-blue-600 group-hover:text-blue-800 text-sm font-medium">
-                        {t('homepage.exploreEvents')} {isRTL ? '←' : '→'}
+                    <div className="flex items-center justify-end">
+                      <span className="text-blue-600 group-hover:text-blue-800 text-sm font-medium">
+                        {t('events.viewDetails')} {isRTL ? '←' : '→'}
                       </span>
                     </div>
                   </div>
                 </Link>
                 
                 <Link
-                  href="/events"
+                  href={language === 'en' ? '/events' : `/${language}/events`}
                   className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
                 >
                   <div className="relative">
@@ -736,31 +789,27 @@ export default function Home() {
                       className="h-48 w-full"
                       fallbackType="music"
                     />
-<div className="absolute top-3 right-3 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {t('events.free')}
-                    </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">Music Festival</h4>
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">{t('demo.events.musicFestival.title')}</h4>
                     <div className="flex items-center gap-2 text-gray-600 text-sm mb-2">
                       <span>📅</span>
-                      <span>March 20, 2025</span>
+                      <span>{formatDate('2025-03-20')}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 text-sm mb-4">
                       <span>📍</span>
-                      <span>Central Park, Erbil</span>
+                      <span>{t('demo.events.musicFestival.location')}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-<span className="text-green-600 font-semibold">{t('events.free')}</span>
+                    <div className="flex items-center justify-end">
                       <span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
-                        Explore Events →
+                        {t('events.viewDetails')} {isRTL ? '←' : '→'}
                       </span>
                     </div>
                   </div>
                 </Link>
                 
                 <Link
-                  href="/events"
+                  href={language === 'en' ? '/events' : `/${language}/events`}
                   className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
                 >
                   <div className="relative">
@@ -771,31 +820,27 @@ export default function Home() {
                       className="h-48 w-full"
                       fallbackType="business"
                     />
-<div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {t('common.paid')}
-                    </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-teal-600 transition-colors">Business Workshop</h4>
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-teal-600 transition-colors">{t('demo.events.businessWorkshop.title')}</h4>
                     <div className="flex items-center gap-2 text-gray-600 text-sm mb-2">
                       <span>📅</span>
-                      <span>March 25, 2025</span>
+                      <span>{formatDate('2025-03-25')}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 text-sm mb-4">
                       <span>📍</span>
-                      <span>Business District, Basra</span>
+                      <span>{t('demo.events.businessWorkshop.location')}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-teal-600 font-semibold">$75</span>
-<span className="text-teal-600 group-hover:text-teal-800 text-sm font-medium">
-                        {t('homepage.exploreEvents')} {isRTL ? '←' : '→'}
+                    <div className="flex items-center justify-end">
+                      <span className="text-teal-600 group-hover:text-teal-800 text-sm font-medium">
+                        {t('events.viewDetails')} {isRTL ? '←' : '→'}
                       </span>
                     </div>
                   </div>
                 </Link>
                 
                 <Link
-                  href="/events"
+                  href={language === 'en' ? '/events' : `/${language}/events`}
                   className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group cursor-pointer"
                 >
                   <div className="relative">
@@ -806,24 +851,20 @@ export default function Home() {
                       className="h-48 w-full"
                       fallbackType="art"
                     />
-<div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {t('events.soldOut')}
-                    </div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">Art Exhibition</h4>
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-purple-600 transition-colors">{t('demo.events.artExhibition.title')}</h4>
                     <div className="flex items-center gap-2 text-gray-600 text-sm mb-2">
                       <span>📅</span>
-                      <span>April 1, 2025</span>
+                      <span>{formatDate('2025-04-01')}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-700 text-sm mb-4">
                       <span>📍</span>
-                      <span>Culture Center, Mosul</span>
+                      <span>{t('demo.events.artExhibition.location')}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400 font-semibold line-through">$30</span>
-<span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
-                        {t('homepage.exploreEvents')} {isRTL ? '←' : '→'}
+                    <div className="flex items-center justify-end">
+                      <span className="text-purple-600 group-hover:text-purple-800 text-sm font-medium">
+                        {t('events.viewDetails')} {isRTL ? '←' : '→'}
                       </span>
                     </div>
                   </div>

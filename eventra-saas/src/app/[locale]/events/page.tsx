@@ -37,7 +37,6 @@ export default function EventsPage({ params }: EventsPageProps) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
-  const [selectedPrice, setSelectedPrice] = useState("");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [locale, setLocale] = useState<string>("en");
@@ -61,14 +60,21 @@ export default function EventsPage({ params }: EventsPageProps) {
   // Use translated categories
   const categories = [
     { name: t('common.allCategories'), icon: "🎉", key: 'all' },
+    { name: t('categories.technologyInnovation'), icon: "💻", key: 'technologyInnovation' },
+    { name: t('categories.businessNetworking'), icon: "💼", key: 'businessNetworking' },
     { name: t('categories.musicConcerts'), icon: "🎵", key: 'musicConcerts' },
+    { name: t('categories.artsCulture'), icon: "🎨", key: 'artsCulture' },
     { name: t('categories.sportsFitness'), icon: "⚽", key: 'sportsFitness' },
     { name: t('categories.foodDrink'), icon: "🍽️", key: 'foodDrink' },
-    { name: t('categories.business'), icon: "💼", key: 'business' },
-    { name: t('categories.technologyInnovation'), icon: "💻", key: 'technologyInnovation' },
-    { name: t('categories.artsCulture'), icon: "🎨", key: 'artsCulture' },
+    { name: t('categories.learningDevelopment'), icon: "📚", key: 'learningDevelopment' },
     { name: t('categories.healthWellness'), icon: "🏥", key: 'healthWellness' },
-    { name: t('categories.communitySocial'), icon: "👥", key: 'communitySocial' }
+    { name: t('categories.communitySocial'), icon: "👥", key: 'communitySocial' },
+    { name: t('categories.gamingEsports'), icon: "🎮", key: 'gamingEsports' },
+    { name: t('categories.spiritualReligious'), icon: "🕌", key: 'spiritualReligious' },
+    { name: t('categories.familyKids'), icon: "👨‍👩‍👧‍👦", key: 'familyKids' },
+    { name: t('categories.outdoorAdventure'), icon: "🏔️", key: 'outdoorAdventure' },
+    { name: t('categories.virtualEvents'), icon: "📱", key: 'virtualEvents' },
+    { name: t('categories.academicConferences'), icon: "🎓", key: 'academicConferences' }
   ];
 
   // Use translated cities
@@ -95,26 +101,14 @@ export default function EventsPage({ params }: EventsPageProps) {
     t('months.october'), t('months.november'), t('months.december')
   ]), [language]);
 
-  // Use translated price filters
-  const priceFilters = [
-    t('common.allPrices'),
-    t('common.free'),
-    t('common.paid'),
-    t('common.under25'),
-    t('common.price25to50'),
-    t('common.price50to100'),
-    t('common.over100')
-  ];
-
   // Initialize filter states with translations when they're loaded
   useEffect(() => {
     if (t && selectedCategory === '') {
       setSelectedCategory(t('common.allCategories'));
       setSelectedCity(t('common.allCities'));
       setSelectedMonth(t('common.allMonths'));
-      setSelectedPrice(t('common.allPrices'));
     }
-  }, [t, selectedCategory, selectedCity, selectedMonth, selectedPrice]);
+  }, [t, selectedCategory, selectedCity, selectedMonth]);
 
   // Fetch events
   useEffect(() => {
@@ -151,11 +145,11 @@ export default function EventsPage({ params }: EventsPageProps) {
     {
       id: "1",
       publicId: "ai-summit-2025",
-      title: "AI Innovation Summit",
-      description: "Join us for a comprehensive exploration of artificial intelligence and machine learning technologies that are shaping the future.",
+      title: t('demo.events.aiSummit.title'),
+      description: t('demo.events.aiSummit.description'),
       date: "2025-03-15T10:00:00Z",
-      location: "Baghdad Tech Center, Baghdad",
-      category: "Technology & Innovation",
+      location: t('demo.events.aiSummit.location'),
+      category: t('demo.events.aiSummit.category'),
       price: 50,
       isFree: false,
       imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop&crop=center&auto=format&q=80",
@@ -164,11 +158,11 @@ export default function EventsPage({ params }: EventsPageProps) {
     {
       id: "2", 
       publicId: "music-festival-erbil",
-      title: "Kurdish Music Festival",
-      description: "Experience the rich musical heritage of Kurdistan with traditional and contemporary Kurdish artists.",
+      title: t('demo.events.musicFestival.title'),
+      description: t('demo.events.musicFestival.description'),
       date: "2025-03-20T18:00:00Z",
-      location: "Central Park, Erbil",
-      category: "Music & Concerts",
+      location: t('demo.events.musicFestival.location'),
+      category: t('demo.events.musicFestival.category'),
       price: 0,
       isFree: true,
       imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&crop=center&auto=format&q=80",
@@ -177,11 +171,11 @@ export default function EventsPage({ params }: EventsPageProps) {
     {
       id: "3",
       publicId: "business-workshop-basra",
-      title: "Business Leadership Workshop",
-      description: "Learn essential leadership skills and networking strategies for business growth in the Middle East market.",
+      title: t('demo.events.businessWorkshop.title'),
+      description: t('demo.events.businessWorkshop.description'),
       date: "2025-03-25T09:00:00Z",
-      location: "Business District, Basra",
-      category: "Business",
+      location: t('demo.events.businessWorkshop.location'),
+      category: t('demo.events.businessWorkshop.category'),
       price: 75,
       isFree: false,
       imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center&auto=format&q=80",
@@ -190,11 +184,11 @@ export default function EventsPage({ params }: EventsPageProps) {
     {
       id: "4",
       publicId: "art-exhibition-mosul",
-      title: "Modern Art Exhibition",
-      description: "Discover contemporary Iraqi and international art in this groundbreaking exhibition featuring 50+ artists.",
+      title: t('demo.events.artExhibition.title'),
+      description: t('demo.events.artExhibition.description'),
       date: "2025-04-01T14:00:00Z",
-      location: "Culture Center, Mosul",
-      category: "Arts & Culture",
+      location: t('demo.events.artExhibition.location'),
+      category: t('demo.events.artExhibition.category'),
       price: 30,
       isFree: false,
       imageUrl: "https://images.unsplash.com/photo-1549490349-8643362247b5?w=800&h=600&fit=crop&crop=center&auto=format&q=80",
@@ -262,37 +256,14 @@ export default function EventsPage({ params }: EventsPageProps) {
       });
     }
 
-    // Price filter
-    if (selectedPrice !== t('common.allPrices')) {
-      filtered = filtered.filter(event => {
-        switch (selectedPrice) {
-          case t('common.free'):
-            return event.isFree || event.price === 0;
-          case t('common.paid'):
-            return !event.isFree && (event.price || 0) > 0;
-          case t('common.under25'):
-            return (event.price || 0) < 25;
-          case t('common.price25to50'):
-            return (event.price || 0) >= 25 && (event.price || 0) <= 50;
-          case t('common.price50to100'):
-            return (event.price || 0) > 50 && (event.price || 0) <= 100;
-          case t('common.over100'):
-            return (event.price || 0) > 100;
-          default:
-            return true;
-        }
-      });
-    }
-
     setFilteredEvents(filtered);
-  }, [events, searchQuery, selectedCategory, selectedCity, selectedMonth, selectedPrice, t, language]);
+  }, [events, searchQuery, selectedCategory, selectedCity, selectedMonth, t, language]);
 
   const clearAllFilters = () => {
     setSearchQuery("");
     setSelectedCategory(t('common.allCategories'));
     setSelectedCity(t('common.allCities'));
     setSelectedMonth(t('common.allMonths'));
-    setSelectedPrice(t('common.allPrices'));
   };
 
   const formatDate = (dateString: string) => {
@@ -317,6 +288,31 @@ export default function EventsPage({ params }: EventsPageProps) {
   const getCategoryIcon = (categoryName: string) => {
     const category = categories.find(cat => cat.name === categoryName);
     return category ? category.icon : "🎉";
+  };
+
+  const translateCategory = (categoryName: string): string => {
+    // Map English category names to translation keys
+    const categoryMap: { [key: string]: string } = {
+      "Technology & Innovation": "categories.technologyInnovation",
+      "Business & Networking": "categories.businessNetworking", 
+      "Business": "categories.businessNetworking", // Handle variations
+      "Music & Concerts": "categories.musicConcerts",
+      "Arts & Culture": "categories.artsCulture",
+      "Sports & Fitness": "categories.sportsFitness",
+      "Food & Drink": "categories.foodDrink",
+      "Learning & Development": "categories.learningDevelopment",
+      "Health & Wellness": "categories.healthWellness",
+      "Community & Social": "categories.communitySocial",
+      "Gaming & Esports": "categories.gamingEsports",
+      "Spiritual & Religious": "categories.spiritualReligious",
+      "Family & Kids": "categories.familyKids",
+      "Outdoor & Adventure": "categories.outdoorAdventure",
+      "Virtual Events": "categories.virtualEvents",
+      "Academic and Conferences": "categories.academicConferences"
+    };
+    
+    const translationKey = categoryMap[categoryName];
+    return translationKey ? t(translationKey) : categoryName;
   };
 
   const getEventImageCategory = (category: string) => {
@@ -380,8 +376,8 @@ export default function EventsPage({ params }: EventsPageProps) {
               </div>
             </div>
 
-            {/* Filter Controls */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-6">
+            {/* Filter Controls - Clean 3 Filters */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -411,16 +407,6 @@ export default function EventsPage({ params }: EventsPageProps) {
               >
                 {months.map(month => (
                   <option key={month} value={month}>📅 {month}</option>
-                ))}
-              </select>
-
-              <select
-                value={selectedPrice}
-                onChange={(e) => setSelectedPrice(e.target.value)}
-                className="px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-800 font-medium focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
-              >
-                {priceFilters.map(price => (
-                  <option key={price} value={price}>💰 {price}</option>
                 ))}
               </select>
 
@@ -477,23 +463,10 @@ export default function EventsPage({ params }: EventsPageProps) {
                     category={getEventImageCategory(event.category || "")}
                   />
                   
-                  {/* Price Badge */}
-                  <div className="absolute top-4 right-4">
-                    {event.isFree || event.price === 0 ? (
-                      <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                        {t('events.free')}
-                      </span>
-                    ) : (
-                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                        ${event.price}
-                      </span>
-                    )}
-                  </div>
-
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
-                      {getCategoryIcon(event.category || "")} {event.category}
+                      {getCategoryIcon(event.category || "")} {translateCategory(event.category || "")}
                     </span>
                   </div>
                 </div>

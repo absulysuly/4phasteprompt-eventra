@@ -321,7 +321,7 @@ export default function AboutPage() {
               href="/register"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-white hover:text-purple-600 transform hover:scale-105 w-full sm:w-auto text-center"
 >
-              {t('events.createEvent')}
+              {t('dashboard.createEvent')}
             </Link>
           </div>
         </div>

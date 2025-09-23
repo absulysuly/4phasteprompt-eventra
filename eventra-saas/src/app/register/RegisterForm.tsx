@@ -33,7 +33,7 @@ export default function RegisterForm() {
     if (data.error) {
       setError(data.error);
     } else {
-      setSuccess("Registration successful! Redirecting to dashboard...");
+      setSuccess(t('register.registrationSuccess'));
       // Auto sign in after successful registration
       const signInRes = await signIn("credentials", {
         email,
@@ -53,7 +53,7 @@ export default function RegisterForm() {
     try {
       await signIn("google", { callbackUrl: "/" }); // Redirect to homepage
     } catch (error) {
-      setError("Failed to sign in with Google");
+      setError(t('register.googleSignInError'));
     }
     setGoogleLoading(false);
   }

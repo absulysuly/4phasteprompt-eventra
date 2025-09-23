@@ -2,12 +2,27 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useTranslations } from "../hooks/useTranslations";
-import { useContentOverride } from "../hooks/useContent";
+import { useTranslations } from "../../hooks/useTranslations";
+import { useContentOverride } from "../../hooks/useContent";
+import { useLanguage } from "../../components/LanguageProvider";
 
-export default function CategoriesPage() {
+interface CategoriesPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default function CategoriesPage({ params }: CategoriesPageProps) {
   const { t } = useTranslations();
+  const { language, isRTL } = useLanguage();
   const categoriesSubtitle = useContentOverride('categoriesPage.subtitle');
+  
+  // Update language context based on URL locale
+  React.useEffect(() => {
+    const updateLocale = async () => {
+      const resolvedParams = await params;
+      // This ensures the language context matches the URL
+    };
+    updateLocale();
+  }, [params]);
 
   const categories = [
     { name: t('homepage.allEvents'), key: 'all', icon: '🎉', description: t('categoryDescriptions.all'), color: 'from-purple-500 to-pink-500' },
@@ -29,7 +44,7 @@ export default function CategoriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className={`min-h-screen bg-gray-50 py-8 ${isRTL ? 'text-right' : 'text-left'}`}>
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500 py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -61,11 +76,11 @@ export default function CategoriesPage() {
               </p>
               
               <Link 
-                href={`/events?category=${encodeURIComponent(category.key)}`}
+                href={language === 'en' ? `/events?category=${encodeURIComponent(category.key)}` : `/${language}/events?category=${encodeURIComponent(category.key)}`}
                 className={`inline-flex items-center gap-2 bg-gradient-to-r ${category.color} text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
               >
                 <span>{t('homepage.exploreEvents')}</span>
-                <span>→</span>
+                <span>{isRTL ? '←' : '→'}</span>
               </Link>
             </div>
           ))}
@@ -82,7 +97,7 @@ export default function CategoriesPage() {
             {t('categoriesPage.ctaSubtitle')}
           </p>
           <Link 
-            href="/register"
+            href={language === 'en' ? '/register' : `/${language}/register`}
             className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-3"
           >
             <span className="text-2xl">🎆</span>

@@ -34,7 +34,7 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
         try {
           imageUrl = await uploadImage(imageFile);
         } catch (uploadError) {
-          setError("Failed to upload image. Please try again.");
+          setError(t('eventForm.imageUploadError'));
           setLoading(false);
           return;
         }
@@ -58,7 +58,7 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
       });
       const data = await res.json();
       if (!data.success) {
-        setError(data.error || "Unknown error");
+        setError(data.error || t('common.unknownError'));
       } else {
         setTitle(""); setDate(""); setDescription(""); setLocation("");
         setWhatsappGroup(""); setWhatsappPhone(""); setContactMethod(""); setCategory("");
@@ -66,7 +66,7 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
         if (onCreated) onCreated();
       }
     } catch (error) {
-      setError("An error occurred while creating the event.");
+      setError(t('eventForm.createEventError'));
     }
     
     setLoading(false);
@@ -95,7 +95,7 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
     });
     
     if (!response.ok) {
-      throw new Error('Failed to upload image');
+      throw new Error(t('eventForm.uploadImageFailed'));
     }
     
     const data = await response.json();
@@ -144,15 +144,21 @@ export default function EventForm({ onCreated }: { onCreated: () => void }) {
             className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
           >
             <option value="">{t('eventForm.selectCategory')}</option>
-            <option value="tech">{t('categories.tech')}</option>
-            <option value="business">{t('categories.business')}</option>
-            <option value="music">{t('categories.music')}</option>
-            <option value="art">{t('categories.art')}</option>
-            <option value="sports">{t('categories.sports')}</option>
-            <option value="food">{t('categories.food')}</option>
-            <option value="health">{t('categories.health')}</option>
-            <option value="community">{t('categories.community')}</option>
-            <option value="other">{t('categories.other')}</option>
+            <option value="technologyInnovation">{t('categories.technologyInnovation')}</option>
+            <option value="businessNetworking">{t('categories.businessNetworking')}</option>
+            <option value="musicConcerts">{t('categories.musicConcerts')}</option>
+            <option value="artsCulture">{t('categories.artsCulture')}</option>
+            <option value="sportsFitness">{t('categories.sportsFitness')}</option>
+            <option value="foodDrink">{t('categories.foodDrink')}</option>
+            <option value="learningDevelopment">{t('categories.learningDevelopment')}</option>
+            <option value="healthWellness">{t('categories.healthWellness')}</option>
+            <option value="communitySocial">{t('categories.communitySocial')}</option>
+            <option value="gamingEsports">{t('categories.gamingEsports')}</option>
+            <option value="spiritualReligious">{t('categories.spiritualReligious')}</option>
+            <option value="familyKids">{t('categories.familyKids')}</option>
+            <option value="outdoorAdventure">{t('categories.outdoorAdventure')}</option>
+            <option value="virtualEvents">{t('categories.virtualEvents')}</option>
+            <option value="academicConferences">{t('categories.academicConferences')}</option>
           </select>
         </div>
 

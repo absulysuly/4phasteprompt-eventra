@@ -1,0 +1,31 @@
+*** Begin Patch
+*** Add File: src/app/about/LanguageProviderWrapper.tsx
++// src/app/about/LanguageProviderWrapper.tsx
++'use client';
++import React from 'react';
++// Adjust import path if your LanguageProvider is located elsewhere.
++import { LanguageProvider } from '../../components/LanguageProvider';
++
++export default function LanguageProviderWrapper({ children }: { children: React.ReactNode }) {
++  return <LanguageProvider>{children}</LanguageProvider>;
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: src/app/about/layout.tsx
++import React from 'react';
++import LanguageProviderWrapper from './LanguageProviderWrapper';
++
++export default function AboutLayout({ children }: { children: React.ReactNode }) {
++  return (
++    <html lang="en">
++      <body>
++        <LanguageProviderWrapper>
++          {children}
++        </LanguageProviderWrapper>
++      </body>
++    </html>
++  );
++}
++
+*** End Patch

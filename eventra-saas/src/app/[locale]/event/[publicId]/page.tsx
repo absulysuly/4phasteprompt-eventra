@@ -8,6 +8,7 @@ import { useLanguage } from "../../../components/LanguageProvider";
 import { useTranslations } from "../../../hooks/useTranslations";
 import ResponsiveButton from "../../../components/ResponsiveButton";
 
+
 interface Event {
   id: string;
   publicId: string;

@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Home",
-    "events": "Events", 
+    "events": "Events",
     "categories": "Categories",
     "about": "About",
     "login": "Login",
@@ -12,6 +12,19 @@
     "aiRecommendations": "AI-powered event recommendations are now live!",
     "tryItFree": "Try it free",
     "language": "Language"
+  },
+  "hero": {
+    "liveEventPlatform": "Live Event Platform",
+    "registerNow": "Register Now",
+    "getTickets": "Get Tickets",
+    "joinSummit": "Join Summit",
+    "exploreArt": "Explore Art"
+  },
+  "countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
   },
   "homepage": {
     "heroTitle": "Discover Amazing Events in Iraq & Kurdistan",
@@ -47,7 +60,20 @@
     "createEventSubtitle": "Create and promote your own events on IraqEvents platform",
     "createYourEvent": "Create Your Event",
     "viewPublicPage": "View Public Page",
-    "exploreByCategory": "Explore by Category"
+    "exploreByCategory": "Explore by Category",
+    "eventImage": "Event Image",
+    "location": "Location",
+    "eventDetails": "Event Details",
+    "dateTime": "Date & Time",
+    "category": "Category",
+    "price": "Price",
+    "aboutEvent": "About Event",
+    "noDescription": "No description available",
+    "registerForEvent": "Register for Event",
+    "shareEvent": "Share Event",
+    "organizer": "Organizer",
+    "anonymousOrganizer": "Anonymous Organizer",
+    "noContactInfo": "No contact information available"
   },
   "dashboard": {
     "welcomeBack": "Welcome back, {name}!",
@@ -81,7 +107,10 @@
     "contactMethod": "Contact Method",
     "contactPlaceholder": "Email, phone, or other contact method for attendees",
     "creating": "Creating...",
-    "createEvent": "Create Event"
+    "createEvent": "Create Event",
+    "imageUploadError": "Failed to upload image. Please try again.",
+    "createEventError": "An error occurred while creating the event.",
+    "uploadImageFailed": "Failed to upload image"
   },
   "categories": {
     "technologyInnovation": "Technology & Innovation",
@@ -107,13 +136,30 @@
     "orContinueWith": "Or continue with email",
     "emailAddress": "Email Address",
     "emailPlaceholder": "Enter your email",
-    "password": "Password", 
+    "password": "Password",
     "passwordPlaceholder": "Enter your password",
     "signingIn": "Signing in...",
     "signIn": "Sign In",
     "noAccount": "Don't have an account?",
     "createAccount": "Create one here",
     "invalidCredentials": "Invalid email or password",
+    "googleSignInError": "Failed to sign in with Google",
+    "forgotPassword": "Forgot password?"
+  },
+  "register": {
+    "joinIraqEvents": "Join IraqEvents",
+    "createAccountSubtitle": "Create your account to start discovering and creating amazing events",
+    "continueWithGoogle": "Continue with Google",
+    "orCreateAccount": "Or create account with email",
+    "fullNameOptional": "Full Name (Optional)",
+    "enterFullName": "Enter your full name",
+    "enterEmail": "Enter your email address",
+    "createPassword": "Create a strong password",
+    "creatingAccount": "Creating account...",
+    "createAccount": "Create Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "signInHere": "Sign in here",
+    "registrationSuccess": "Registration successful! Redirecting...",
     "googleSignInError": "Failed to sign in with Google"
   },
   "about": {
@@ -198,36 +244,36 @@
           "title": "Excellence",
           "description": "We strive for the highest quality in everything we build and deliver."
         },
-        "culturalDiversity": {
-          "title": "Cultural Diversity",
-          "description": "We celebrate and support the rich cultural diversity of our region."
-        },
         "innovation": {
           "title": "Innovation",
-          "description": "We continuously innovate to provide better solutions for event management."
+          "description": "We continuously improve our platform with cutting-edge technology."
+        },
+        "culturalDiversity": {
+          "title": "Cultural Diversity",
+          "description": "We celebrate and support the rich cultural diversity of Iraq and Kurdistan."
         },
         "accessibility": {
           "title": "Accessibility",
-          "description": "We make our platform accessible to everyone, regardless of technical expertise."
+          "description": "We make events accessible to everyone, regardless of ability or background."
         }
       }
     },
     "cta": {
-      "title": "Ready to Get Started?",
-      "subtitle": "Join thousands of event organizers and attendees who trust IraqEvents to bring their communities together."
+      "title": "Join the IraqEvents Community",
+      "subtitle": "Start discovering and creating amazing events today"
     },
     "contact": {
       "title": "Get in Touch",
-      "subtitle": "Have questions or suggestions? We'd love to hear from you!",
+      "subtitle": "We're here to help with any questions or support you need",
       "emailSupport": "Email Support",
       "liveChat": "Live Chat",
-      "liveChatAvailability": "Available 24/7",
+      "liveChatAvailability": "Available 9 AM - 6 PM (Baghdad Time)",
       "whatsapp": "WhatsApp"
     }
   },
   "common": {
     "loading": "Loading...",
-    "error": "Error occurred",
+    "error": "Error",
     "tryAgain": "Try Again",
     "cancel": "Cancel",
     "save": "Save",
@@ -240,7 +286,7 @@
     "search": "Search",
     "filter": "Filter",
     "allCategories": "All Categories",
-    "allCities": "All Cities", 
+    "allCities": "All Cities",
     "allMonths": "All Months",
     "allPrices": "All Prices",
     "free": "Free",
@@ -249,15 +295,19 @@
     "price25to50": "$25 - $50",
     "price50to100": "$50 - $100",
     "over100": "Over $100",
-    "notSpecified": "Not specified",
+    "notSpecified": "Not Specified",
     "contactInformation": "Contact Information",
     "joinWhatsAppGroup": "Join WhatsApp Group",
     "price": "Price",
-    "imageUnavailable": "Image not available"
+    "imageUnavailable": "Image Unavailable",
+    "unknownError": "An unknown error occurred",
+    "backToEvents": "Back to Events",
+    "anonymous": "Anonymous",
+    "general": "General"
   },
   "cities": {
     "baghdad": "Baghdad",
-    "basra": "Basra", 
+    "basra": "Basra",
     "mosul": "Mosul",
     "erbil": "Erbil",
     "sulaymaniyah": "Sulaymaniyah",
@@ -269,7 +319,7 @@
   },
   "months": {
     "january": "January",
-    "february": "February", 
+    "february": "February",
     "march": "March",
     "april": "April",
     "may": "May",
@@ -281,90 +331,26 @@
     "november": "November",
     "december": "December"
   },
-  "categoriesPage": {
-    "title": "Event Categories",
-    "subtitle": "Discover amazing events across all categories. From music and technology to food and culture, find exactly what interests you.",
-    "ctaTitle": "Cannot Find Your Category?",
-    "ctaSubtitle": "Create your own event and start building your community today!"
-  },
-  "categoryDescriptions": {
-    "all": "Discover all types of events happening around you",
-    "technologyInnovation": "Tech talks, hackathons, and innovation showcases",
-    "businessNetworking": "Networking events, professional meetups, and business conferences",
-    "musicConcerts": "Live music, concerts, and musical performances",
-    "artsCulture": "Art exhibitions, cultural events, and creative workshops",
-    "sportsFitness": "Sports events, fitness classes, and athletic competitions",
-    "foodDrink": "Culinary events, food festivals, and dining experiences",
-    "learningDevelopment": "Educational workshops, skill development, and training sessions",
-    "healthWellness": "Health seminars, wellness workshops, and medical events",
-    "communitySocial": "Social gatherings, community events, and meetups",
-    "gamingEsports": "Gaming tournaments, esports competitions, and gaming meetups",
-    "spiritualReligious": "Spiritual gatherings, religious events, and faith-based meetings",
-    "familyKids": "Family-friendly events, children's activities, and parenting workshops",
-    "outdoorAdventure": "Outdoor activities, adventure sports, and nature experiences",
-    "virtualEvents": "Online events, webinars, and virtual conferences",
-    "academicConferences": "Academic conferences, research presentations, and scholarly meetings"
-  },
-  "hero": {
-    "liveEventPlatform": "Live Event Platform",
-    "registerNow": "Register Now",
-    "getTickets": "Get Tickets",
-    "joinSummit": "Join Summit",
-    "exploreArt": "Explore Art",
-    "eventStartsIn": "Event Starts In",
-    "days": "DAYS",
-    "hours": "HRS",
-    "minutes": "MIN",
-    "seconds": "SEC"
-  },
-  "register": {
-    "joinIraqEvents": "Join IraqEvents",
-    "createAccountSubtitle": "Create your account to start organizing amazing events",
-    "continueWithGoogle": "Continue with Google",
-    "orCreateAccount": "Or create account with email",
-    "fullNameOptional": "Full Name (Optional)",
-    "enterFullName": "Enter your full name",
-    "enterEmail": "Enter your email",
-    "createPassword": "Create a password (min. 6 characters)",
-    "creatingAccount": "Creating account...",
-    "createAccount": "Create Account",
-    "alreadyHaveAccount": "Already have an account?",
-    "signInHere": "Sign in here"
-  },
-  "navigation": {
-    "home": "Home",
-    "events": "Events", 
-    "categories": "Categories",
-    "about": "About",
-    "login": "Login",
-    "logout": "Logout",
-    "dashboard": "Dashboard",
-    "createEvent": "Create Event",
-    "eventPlatform": "Event Platform",
-    "aiRecommendations": "AI-Powered Event Recommendations Now Live!",
-    "tryItFree": "Try it free",
-    "language": "Language"
-  },
   "heroSlides": {
     "slide1": {
-      "title": "Baghdad AI Innovation Summit",
-      "subtitle": "The New Age of Technology",
-      "description": "Join us for a complete exploration of artificial intelligence technology"
+      "title": "AI Innovation Summit Baghdad",
+      "subtitle": "The Future of Technology",
+      "description": "Join us for a comprehensive exploration of artificial intelligence"
     },
     "slide2": {
       "title": "Kurdish Music Festival",
-      "subtitle": "National Arts and Culture",
+      "subtitle": "National Arts & Culture",
       "description": "Experience the rich musical heritage of Kurdistan"
     },
     "slide3": {
       "title": "Business Leadership Workshop",
-      "subtitle": "Business Development",
+      "subtitle": "Business Growth",
       "description": "Learn essential leadership skills"
     },
     "slide4": {
       "title": "Modern Art Exhibition",
-      "subtitle": "Art and Culture",
-      "description": "See contemporary art from Iraq and Kurdistan"
+      "subtitle": "Art & Culture",
+      "description": "Discover contemporary Iraqi and Kurdish art"
     },
     "attendees": "Attendees",
     "sessions": "Sessions",
@@ -376,8 +362,68 @@
     "companies": "Companies",
     "workshops": "Workshops",
     "artworks": "Artworks",
-    "galleries": "Galleries",
-    "joinSummit": "Join Summit",
-    "exploreArt": "Explore Art"
+    "galleries": "Galleries"
+  },
+  "meta": {
+    "title": "IraqEvents - Discover Amazing Events in Iraq",
+    "description": "The premier event platform for Iraq. Discover concerts, conferences, festivals, and community events across Baghdad, Erbil, Basra, and all Iraqi cities.",
+    "appTitle": "IraqEvents"
+  },
+  "categoryDescriptions": {
+    "all": "All Categories",
+    "technologyInnovation": "Latest in tech, AI, and digital innovation",
+    "businessNetworking": "Professional development and networking opportunities",
+    "musicConcerts": "Live music performances and concerts",
+    "artsCulture": "Art exhibitions, cultural events, and heritage",
+    "sportsFitness": "Sports events, fitness activities, and wellness",
+    "foodDrink": "Culinary experiences, food festivals, and tastings",
+    "learningDevelopment": "Educational workshops and skill development",
+    "healthWellness": "Health, wellness, and mental health events",
+    "communitySocial": "Community gatherings and social events",
+    "gamingEsports": "Gaming tournaments and esports competitions",
+    "spiritualReligious": "Religious ceremonies and spiritual gatherings",
+    "familyKids": "Family-friendly events and kids activities",
+    "outdoorAdventure": "Outdoor activities and adventure sports",
+    "virtualEvents": "Online events and virtual experiences",
+    "academicConferences": "Academic conferences and research presentations"
+  },
+  "categoriesPage": {
+    "title": "Event Categories",
+    "subtitle": "Discover events that match your interests",
+    "ctaTitle": "Ready to Create Your Event?",
+    "ctaSubtitle": "Join thousands of event organizers using our platform"
+  },
+  "reset": {
+    "emailSent": "Reset email sent successfully",
+    "sending": "Sending...",
+    "sendResetLink": "Send Reset Link"
+  },
+  "demo": {
+    "events": {
+      "aiSummit": {
+        "title": "AI Innovation Summit",
+        "description": "Join us for a comprehensive exploration of artificial intelligence and machine learning technologies that are shaping the future.",
+        "location": "Baghdad Tech Center, Baghdad",
+        "category": "Technology & Innovation"
+      },
+      "musicFestival": {
+        "title": "Kurdish Music Festival",
+        "description": "Experience the rich musical heritage of Kurdistan with traditional and contemporary Kurdish artists.",
+        "location": "Central Park, Erbil",
+        "category": "Music & Concerts"
+      },
+      "businessWorkshop": {
+        "title": "Business Leadership Workshop",
+        "description": "Learn essential leadership skills and networking strategies for business growth in the Middle East market.",
+        "location": "Business District, Basra",
+        "category": "Business & Networking"
+      },
+      "artExhibition": {
+        "title": "Modern Art Exhibition",
+        "description": "Discover contemporary Iraqi and international art in this groundbreaking exhibition featuring 50+ artists.",
+        "location": "Culture Center, Mosul",
+        "category": "Arts & Culture"
+      }
+    }
   }
 }

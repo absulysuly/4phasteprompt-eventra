@@ -38,7 +38,7 @@ export default function LoginForm() {
     if (res?.ok) {
       router.push("/");
     } else {
-      setError(res?.error || t('login.invalidCredentials') || "Invalid email or password");
+      setError(res?.error || t('login.invalidCredentials'));
     }
     setLoading(false);
   }
@@ -49,7 +49,7 @@ export default function LoginForm() {
     try {
       await signIn("google", { callbackUrl: "/" });
     } catch (error) {
-      setError(t('login.googleSignInError') || "Failed to sign in with Google");
+      setError(t('login.googleSignInError'));
     }
     setGoogleLoading(false);
   }

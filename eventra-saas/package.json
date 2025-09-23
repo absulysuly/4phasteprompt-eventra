@@ -38,9 +38,11 @@
     "db:studio": "prisma studio",
     "clean": "rimraf .next out",
     "i18n:check": "node scripts/validate-i18n.js",
+    "validate:translations": "node scripts/validate-translations.js",
+    "validate:translations:ci": "node scripts/validate-translations.js --fail-fast",
     "import:events:csv": "tsx scripts/csv-to-events-json.ts",
     "test": "echo \"No tests specified\" && exit 0",
-    "prebuild": "echo skipping type-check and lint for build",
+    "prebuild": "echo 'Skipping translation validation for simplified build'",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -50,6 +52,8 @@
     "@upstash/redis": "^1.35.4",
     "bcryptjs": "^3.0.2",
     "csv-parse": "^6.1.0",
+    "i18next": "^25.5.2",
+    "i18next-browser-languagedetector": "^8.2.0",
     "next": "15.5.3",
     "next-auth": "^4.24.11",
     "next-intl": "^4.3.9",
@@ -57,6 +61,7 @@
     "prisma": "^6.16.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-i18next": "^15.7.3",
     "resend": "^6.1.0",
     "workbox-window": "^7.3.0"
   },
@@ -69,6 +74,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
+    "glob": "^11.0.3",
     "rimraf": "^6.0.1",
     "tailwindcss": "^4",
     "tsx": "^4.20.5",
