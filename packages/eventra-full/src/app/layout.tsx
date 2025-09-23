@@ -31,12 +31,8 @@ const notoArabic = Noto_Naskh_Arabic({
 export const metadata: Metadata = {
   title: "Eventra Full - Complete Experience Platform",
   description: "Your complete travel companion for Iraq! Book events, hotels, restaurants, flights and packages. All-in-one platform for unforgettable experiences.",
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Eventra Full",
-  },
+  // Manifest disabled for regular web page
+  // manifest: "/manifest.json",
 };
 
 export const viewport = {

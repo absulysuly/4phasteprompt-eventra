@@ -82,6 +82,10 @@ export default function PWAInstallPrompt() {
     localStorage.setItem('pwa-install-dismissed', 'true');
   };
 
+  // DISABLED: Keep as web page for now, not PWA
+  // Don't show PWA install prompts
+  return null;
+  
   // Don't show if already installed or not installable
   if (isInstalled || !isInstallable || !showInstallPrompt) {
     return null;

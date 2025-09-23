@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 
 export default function ServiceWorkerRegistration() {
   useEffect(() => {
+    // DISABLED: Keep as web page for now, not PWA
+    return;
+    
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', async () => {
         try {
