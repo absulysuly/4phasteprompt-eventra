@@ -6,6 +6,8 @@ import Providers from "./providers";
 import Navigation from "./components/Navigation";
 import { LanguageProvider } from "./components/LanguageProvider";
 import PWAInstallPrompt from "./components/PWAInstallPrompt";
+import ServiceWorkerRegistration from "./components/ServiceWorkerRegistration";
+import OfflineNotification from "./components/OfflineNotification";
 import DynamicHTML from "./components/DynamicHTML";
 import { cookies, headers } from "next/headers";
 
@@ -78,6 +80,8 @@ export default async function RootLayout({
               <Navigation />
               <main>{children}</main>
               <PWAInstallPrompt />
+              <ServiceWorkerRegistration />
+              <OfflineNotification />
             </DynamicHTML>
           </LanguageProvider>
         </Providers>
