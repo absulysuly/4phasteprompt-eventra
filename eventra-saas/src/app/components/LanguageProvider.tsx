@@ -13,6 +13,7 @@ import {
 } from '../../lib/i18n';
 
 type Language = keyof typeof SUPPORTED_LOCALES;
+type TranslationFunction = (key: string) => string;
 
 interface LanguageContextType {
   language: Language;
@@ -20,13 +21,19 @@ interface LanguageContextType {
   isRTL: boolean;
   localeConfig: ReturnType<typeof getLocaleConfig>;
   switchLanguage: (lang: Language, preservePath?: boolean) => void;
+  t: TranslationFunction;
+  locale: Language;
+  setLocale: (lang: Language) => void;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children, initialLanguage }: { children: React.ReactNode, initialLanguage?: Language }) {
   const router = useRouter();
   const pathname = usePathname();
+  
+  // Translation cache
+  const [translations, setTranslations] = useState<Record<string, any>>({});
   
   // Initialize with URL locale if available, otherwise fall back to detection/default
   const getInitialLanguage = (): Language => {
@@ -55,6 +62,49 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
   const [language, setLanguageState] = useState<Language>(getInitialLanguage);
   const localeConfig = getLocaleConfig(language);
   const isRTL = checkIsRTL(language);
+  
+  // Load translation files
+  useEffect(() => {
+    const loadTranslations = async () => {
+      try {
+        const response = await fetch(`/messages/${language}.json`);
+        if (response.ok) {
+          const translationData = await response.json();
+          setTranslations(translationData);
+        } else {
+          // Fallback to English if the specific language file fails to load
+          const fallbackResponse = await fetch(`/messages/en.json`);
+          if (fallbackResponse.ok) {
+            const fallbackData = await fallbackResponse.json();
+            setTranslations(fallbackData);
+          }
+        }
+      } catch (error) {
+        console.warn(`Failed to load translations for ${language}:`, error);
+        // Use empty object as fallback
+        setTranslations({});
+      }
+    };
+    
+    loadTranslations();
+  }, [language]);
+  
+  // Translation function
+  const t: TranslationFunction = (key: string) => {
+    const keys = key.split('.');
+    let value = translations;
+    
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        // Return the key if translation is not found
+        return key;
+      }
+    }
+    
+    return typeof value === 'string' ? value : key;
+  };
 
   // Sync with URL and localStorage whenever language changes
   useEffect(() => {
@@ -108,7 +158,10 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
       setLanguage, 
       isRTL, 
       localeConfig,
-      switchLanguage
+      switchLanguage,
+      t,
+      locale: language,
+      setLocale: setLanguage
     }}>
       {children}
     </LanguageContext.Provider>
@@ -118,6 +171,16 @@ export function LanguageProvider({ children, initialLanguage }: { children: Reac
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
+    // During SSR or if provider is missing, return default values
+    if (typeof window === 'undefined') {
+      return {
+        language: DEFAULT_LOCALE,
+        setLanguage: () => {},
+        isRTL: false,
+        localeConfig: getLocaleConfig(DEFAULT_LOCALE),
+        switchLanguage: () => {}
+      } as LanguageContextType;
+    }
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;

@@ -1,0 +1,211 @@
+name: Deploy to Cloud Run with OIDC & Keyless Cosign
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Minimal permissions for security
+permissions:
+  contents: read
+  id-token: write
+  security-events: write
+  actions: read
+
+# Prevent concurrent deployments
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  # Required - set these as repository secrets
+  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+  GCP_REGION: ${{ secrets.GCP_REGION }}
+  ARTIFACT_REGISTRY_LOCATION: ${{ secrets.ARTIFACT_REGISTRY_LOCATION }}
+  REPO: ${{ secrets.REPO }}
+  SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
+  WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+  
+  # Service configuration
+  SERVICE_NAME: eventra-collector
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  deploy:
+    name: Build, Scan & Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    # Authenticate to GCP using Workload Identity Federation (OIDC)
+    - name: Authenticate to Google Cloud
+      id: auth
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+        service_account: ${{ env.SERVICE_ACCOUNT_EMAIL }}
+
+    - name: Setup Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+
+    - name: Configure Docker auth
+      run: gcloud auth configure-docker ${{ env.ARTIFACT_REGISTRY_LOCATION }}-docker.pkg.dev
+
+    # Install security tools
+    - name: Install Syft (SBOM generator)
+      uses: anchore/sbom-action/download-syft@v0.15.9
+
+    - name: Install Trivy (vulnerability scanner)
+      run: |
+        sudo apt-get update && sudo apt-get install wget apt-transport-https gnupg lsb-release
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+        echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update && sudo apt-get install trivy
+
+    - name: Install Cosign
+      uses: sigstore/cosign-installer@v3.4.0
+
+    # Build application
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build application
+      run: npm run build
+
+    # Build and push Docker image
+    - name: Build Docker image
+      run: |
+        docker build -f Dockerfile.hardened -t temp-image:${{ env.IMAGE_TAG }} .
+        
+        # Tag for Artifact Registry
+        IMAGE_URI="${{ env.ARTIFACT_REGISTRY_LOCATION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.REPO }}/${{ env.SERVICE_NAME }}:${{ env.IMAGE_TAG }}"
+        docker tag temp-image:${{ env.IMAGE_TAG }} ${IMAGE_URI}
+        
+        echo "IMAGE_URI=${IMAGE_URI}" >> $GITHUB_ENV
+
+    # Generate SBOM before pushing
+    - name: Generate SBOM
+      run: |
+        syft ${{ env.IMAGE_URI }} -o json --file sbom.json
+        echo "✅ SBOM generated successfully"
+
+    # Vulnerability scan with Trivy - fail on HIGH/CRITICAL
+    - name: Run Trivy vulnerability scan
+      run: |
+        trivy image --format sarif --output trivy-results.sarif --severity HIGH,CRITICAL --exit-code 1 ${{ env.IMAGE_URI }}
+        echo "✅ Vulnerability scan passed"
+
+    # Push image to Artifact Registry
+    - name: Push Docker image
+      run: |
+        docker push ${{ env.IMAGE_URI }}
+        echo "✅ Image pushed to Artifact Registry"
+
+    # Sign image with keyless cosign (OIDC)
+    - name: Sign image with Cosign (keyless)
+      run: |
+        cosign sign --yes ${{ env.IMAGE_URI }}
+        echo "✅ Image signed with keyless cosign"
+
+    # Verify signature
+    - name: Verify image signature
+      run: |
+        cosign verify ${{ env.IMAGE_URI }} --certificate-identity-regexp="https://github.com/${{ github.repository }}" --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
+        echo "✅ Image signature verified"
+
+    # Deploy to Cloud Run
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy ${{ env.SERVICE_NAME }} \
+          --image=${{ env.IMAGE_URI }} \
+          --platform=managed \
+          --region=${{ env.GCP_REGION }} \
+          --allow-unauthenticated \
+          --service-account=${{ env.SERVICE_ACCOUNT_EMAIL }} \
+          --memory=512Mi \
+          --cpu=1 \
+          --concurrency=80 \
+          --max-instances=20 \
+          --port=3000 \
+          --set-env-vars="NODE_ENV=production" \
+          --ingress=all \
+          --cpu-boost \
+          --execution-environment=gen2 \
+          --no-traffic
+        
+        echo "✅ Service deployed to Cloud Run"
+
+    # Get service URL for smoke tests
+    - name: Get service URL
+      id: url
+      run: |
+        SERVICE_URL=$(gcloud run services describe ${{ env.SERVICE_NAME }} --region=${{ env.GCP_REGION }} --format='value(status.url)')
+        echo "SERVICE_URL=${SERVICE_URL}" >> $GITHUB_ENV
+        echo "url=${SERVICE_URL}" >> $GITHUB_OUTPUT
+        echo "🔗 Service URL: ${SERVICE_URL}"
+
+    # Gradual traffic migration
+    - name: Route traffic to new revision
+      run: |
+        gcloud run services update-traffic ${{ env.SERVICE_NAME }} \
+          --region=${{ env.GCP_REGION }} \
+          --to-latest=100
+        echo "✅ Traffic routed to new revision"
+
+    # Run smoke tests
+    - name: Run smoke tests
+      env:
+        STAGING_URL: ${{ env.SERVICE_URL }}
+      run: |
+        chmod +x .github/scripts/smoke-test.sh
+        .github/scripts/smoke-test.sh
+        echo "✅ Smoke tests passed"
+
+    # Upload artifacts
+    - name: Upload SBOM
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: sbom-${{ env.IMAGE_TAG }}
+        path: sbom.json
+        retention-days: 30
+
+    - name: Upload Trivy results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: trivy-results-${{ env.IMAGE_TAG }}
+        path: trivy-results.sarif
+        retention-days: 30
+
+    # Upload Trivy results to GitHub Security
+    - name: Upload Trivy results to GitHub Security
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: trivy-results.sarif
+
+    # Summary
+    - name: Deployment summary
+      if: success()
+      run: |
+        echo "🎉 Deployment Summary"
+        echo "===================="
+        echo "✅ Image: ${{ env.IMAGE_URI }}"
+        echo "✅ Service: ${{ env.SERVICE_URL }}"
+        echo "✅ Region: ${{ env.GCP_REGION }}"
+        echo "✅ Signed: Yes (keyless cosign)"
+        echo "✅ Scanned: Yes (Trivy)"
+        echo "✅ SBOM: Generated"
+        echo "✅ Tests: Passed"

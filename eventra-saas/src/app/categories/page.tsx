@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import { useTranslations } from "../hooks/useTranslations";
 import { useContentOverride } from "../hooks/useContent";

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+export const dynamic = 'force-dynamic';
 import { useTranslations } from "../../hooks/useTranslations";
 import { useLanguage } from "../../components/LanguageProvider";
 

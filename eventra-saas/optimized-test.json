@@ -1,0 +1,150 @@
+{
+    "metrics": {
+        "checks": {
+            "passes": 112,
+            "fails": 64,
+            "thresholds": {
+                "rate>0.90": true
+            },
+            "value": 0.6363636363636364
+        },
+        "http_req_connecting": {
+            "med": 0,
+            "max": 256.8004,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 10.512018750000001,
+            "min": 0
+        },
+        "vus": {
+            "max": 5,
+            "value": 1,
+            "min": 1
+        },
+        "http_req_tls_handshaking": {
+            "avg": 12.955450892857144,
+            "min": 0,
+            "med": 0,
+            "max": 352.8118,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_waiting": {
+            "p(90)": 307.21822000000003,
+            "p(95)": 424.42998499999794,
+            "avg": 277.3810008928573,
+            "min": 160.2437,
+            "med": 255.57715000000002,
+            "max": 1018.8978
+        },
+        "data_sent": {
+            "count": 7733,
+            "rate": 154.65556293189948
+        },
+        "iterations": {
+            "rate": 1.2799632778535583,
+            "count": 64
+        },
+        "http_req_sending": {
+            "avg": 0.1417892857142857,
+            "min": 0,
+            "med": 0,
+            "max": 1.5134,
+            "p(90)": 0.51117,
+            "p(95)": 0.5924749999999999
+        },
+        "data_received": {
+            "count": 187744,
+            "rate": 3754.7722755834134
+        },
+        "http_reqs": {
+            "count": 112,
+            "rate": 2.239935736243727
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 258.8000395833333,
+            "min": 161.3355,
+            "med": 248.40460000000002,
+            "max": 580.4724,
+            "p(90)": 282.66614000000004,
+            "p(95)": 450.2812999999997
+        },
+        "http_req_duration": {
+            "avg": 278.3888142857143,
+            "min": 161.3355,
+            "med": 256.41085,
+            "max": 1018.8978,
+            "p(90)": 307.71078,
+            "p(95)": 425.65766999999795,
+            "thresholds": {
+                "p(95)<800": false
+            }
+        },
+        "http_req_receiving": {
+            "avg": 0.8660241071428575,
+            "min": 0,
+            "med": 0.4111,
+            "max": 16.4657,
+            "p(90)": 1.3293000000000008,
+            "p(95)": 2.713234999999997
+        },
+        "iteration_duration": {
+            "avg": 1292.2144859375,
+            "min": 400.5759,
+            "med": 1311.15755,
+            "max": 2452.6762,
+            "p(90)": 1987.98692,
+            "p(95)": 2299.7477949999998
+        },
+        "http_req_failed": {
+            "passes": 64,
+            "fails": 48,
+            "thresholds": {
+                "rate<0.1": true
+            },
+            "value": 0.5714285714285714
+        },
+        "http_req_blocked": {
+            "avg": 26.75530446428571,
+            "min": 0,
+            "med": 0,
+            "max": 600.0267,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "vus_max": {
+            "value": 5,
+            "min": 5,
+            "max": 5
+        }
+    },
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "homepage status 200": {
+                    "path": "::homepage status 200",
+                    "id": "82ce3049092902cfaaec10205c70e6ae",
+                    "passes": 48,
+                    "fails": 0,
+                    "name": "homepage status 200"
+                },
+                "events or fallback status 200": {
+                    "id": "6375f84d0c2bc4ebd53cfbfe522f83c0",
+                    "passes": 0,
+                    "fails": 64,
+                    "name": "events or fallback status 200",
+                    "path": "::events or fallback status 200"
+                },
+                "events response has data": {
+                    "name": "events response has data",
+                    "path": "::events response has data",
+                    "id": "7ae4cadc6557691be7c0cf6ad269e5e9",
+                    "passes": 64,
+                    "fails": 0
+                }
+            },
+        "name": "",
+        "path": ""
+    }
+}

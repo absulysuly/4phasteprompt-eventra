@@ -11,7 +11,8 @@ const PRESET_KEYS = [
 ];
 
 export default function ContentEditorPage() {
-  const { data: session } = useSession();
+  const sessionResult = useSession();
+  const session = sessionResult?.data;
   const { language } = useLanguage();
   const { t } = useTranslations();
   const [locale, setLocale] = useState<string>(language);

@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguageProviderWrapper from './LanguageProviderWrapper';
+import LanguageProviderWrapper from '../../components/LanguageProviderWrapper';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   // Keep this a server component; only the wrapper is client-side.
