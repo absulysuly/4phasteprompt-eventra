@@ -1,0 +1,135 @@
+name: RPI - Readiness Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  workflow_dispatch:
+    inputs:
+      skip_smoke_tests:
+        description: 'Skip smoke tests'
+        required: false
+        default: 'false'
+
+jobs:
+  readiness-inspection:
+    name: Deployment Readiness Inspection
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔍 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'eventra-saas/package-lock.json'
+
+      - name: 📦 Install dependencies
+        working-directory: eventra-saas
+        run: |
+          echo "📦 Installing production dependencies..."
+          npm ci --only=production --ignore-scripts
+          echo "📦 Installing dev dependencies..."
+          npm ci
+          echo "✅ Dependencies installed successfully"
+
+      - name: 🛡️ Foundation Protection Guard
+        run: |
+          chmod +x .github/scripts/foundation-guard.sh
+          ./.github/scripts/foundation-guard.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BYPASS_LABEL: "FOUNDATION-CHANGE-APPROVED"
+
+      - name: 🔍 Lint Check
+        working-directory: eventra-saas
+        run: |
+          echo "🔍 Running ESLint..."
+          npm run lint
+          echo "✅ Linting passed"
+
+      - name: 📝 TypeScript Check
+        working-directory: eventra-saas
+        run: |
+          echo "📝 Running TypeScript compiler check..."
+          npm run type-check
+          echo "✅ TypeScript compilation passed"
+
+      - name: 🗃️ Prisma Generate
+        working-directory: eventra-saas
+        run: |
+          echo "🗃️ Generating Prisma client..."
+          npm run db:generate
+          echo "✅ Prisma client generated successfully"
+
+      - name: 🧪 Run Tests
+        working-directory: eventra-saas
+        run: |
+          echo "🧪 Running test suite..."
+          npm test
+          echo "✅ All tests passed"
+
+      - name: 🏗️ Build Check
+        working-directory: eventra-saas
+        run: |
+          echo "🏗️ Testing production build..."
+          npm run build
+          echo "✅ Build completed successfully"
+
+      - name: 🌐 i18n Parity Check
+        run: |
+          chmod +x .github/scripts/i18n-check.mjs
+          node .github/scripts/i18n-check.mjs
+        working-directory: eventra-saas
+
+      - name: 🔥 Smoke Tests (Optional)
+        if: env.STAGING_URL != ''
+        run: |
+          chmod +x .github/scripts/smoke-test.sh
+          ./.github/scripts/smoke-test.sh
+        env:
+          STAGING_URL: ${{ secrets.STAGING_URL }}
+
+      - name: 📊 CodeQL Security Analysis
+        if: github.event_name == 'pull_request'
+        uses: github/codeql-action/analyze@v3
+        with:
+          languages: typescript, javascript
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: ✅ Readiness Summary
+        if: success()
+        run: |
+          echo "🎉 All readiness checks passed!"
+          echo "✅ Foundation protection: PASSED"
+          echo "✅ Code quality: PASSED"
+          echo "✅ TypeScript: PASSED"
+          echo "✅ Build: PASSED"
+          echo "✅ i18n parity: PASSED"
+          echo "✅ Tests: PASSED"
+          if [ -n "${{ secrets.STAGING_URL }}" ]; then
+            echo "✅ Smoke tests: PASSED"
+          else
+            echo "⚠️  Smoke tests: SKIPPED (no STAGING_URL configured)"
+          fi
+          echo ""
+          echo "🚀 Ready for deployment!"
+
+      - name: ❌ Failure Summary
+        if: failure()
+        run: |
+          echo "❌ Readiness checks failed!"
+          echo ""
+          echo "🔧 Troubleshooting steps:"
+          echo "1. Check the logs above for specific failure details"
+          echo "2. Run checks locally: npm run lint && npm run type-check && npm run build"
+          echo "3. Verify all translation keys exist in en.json, ar.json, and ku.json"
+          echo "4. If modifying protected files, add the FOUNDATION-CHANGE-APPROVED label"
+          echo ""
+          echo "📖 For detailed guidance, see: .github/pull_request_template.md"
