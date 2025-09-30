@@ -2,7 +2,7 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { useTranslations } from "../hooks/useTranslations";
 import ResponsiveButton from "./ResponsiveButton";
@@ -10,10 +10,38 @@ import ResponsiveButton from "./ResponsiveButton";
 export default function Navigation() {
   const { data: session } = useSession();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const { language, setLanguage, isRTL } = useLanguage();
   const { t } = useTranslations();
+  const navRef = useRef<HTMLElement>(null);
+  
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   
   const showTopBanner = (process.env.NEXT_PUBLIC_SHOW_TOP_BANNER === 'true');
+  
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node) && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
   
   return (
     <>
@@ -28,7 +56,7 @@ export default function Navigation() {
       )}
       
       {/* Main Navigation */}
-      <nav className="bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-100 sticky top-0 z-50">
+      <nav ref={navRef} className="bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -71,13 +99,21 @@ export default function Navigation() {
                 <button className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-purple-600 font-medium transition-colors rounded-full hover:bg-gray-50">
                   <span className="text-lg">🌐</span>
                   <span className="text-sm">
-                    {language === 'ar' ? 'العربية' : 'کوردی'}
+                    {language === 'en' ? 'English' : language === 'ar' ? 'العربية' : 'کوردی'}
                   </span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50`}>
+                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[70]`}>
+                  <button 
+                    onClick={() => setLanguage('en' as any)}
+                    className={`w-full px-4 py-2 text-left transition-colors ${
+                      language === 'en' ? 'bg-purple-100 text-purple-700' : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                    }`}
+                  >
+                    🇺🇸 English
+                  </button>
                   <button 
                     onClick={() => setLanguage('ar' as any)}
                     className={`w-full px-4 py-2 text-left transition-colors ${
@@ -146,22 +182,31 @@ export default function Navigation() {
                 </div>
               )}
               
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button - Always visible on mobile */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden text-gray-700 hover:text-purple-600 transition-colors"
+                className="md:hidden p-2 text-gray-700 hover:text-purple-600 hover:bg-gray-100 rounded-lg transition-all duration-200 relative z-[60] bg-white shadow-sm border border-gray-200"
+                aria-label="Toggle mobile menu"
+                aria-expanded={isMenuOpen}
+                style={{ minWidth: '44px', minHeight: '44px' }}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                {isMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
           
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-100 bg-white/95 backdrop-blur-md">
-              <div className="flex flex-col gap-4">
+            <div className="md:hidden fixed left-0 right-0 top-16 bg-white shadow-2xl border-b border-gray-200 z-[9999] animate-slide-down">
+              <div className="max-w-7xl mx-auto flex flex-col gap-4 py-6 px-4">
                 <Link href="/" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
                   {t('navigation.home')}
                 </Link>
@@ -187,6 +232,14 @@ export default function Navigation() {
                 <div className="pt-4 border-t border-gray-100 mt-4">
                   <div className="text-sm text-gray-600 mb-2">{t('navigation.language')}</div>
                   <div className="flex gap-2">
+                    <button 
+                      onClick={() => setLanguage('en' as any)}
+                      className={`px-3 py-1 text-sm rounded-full font-medium ${
+                        language === 'en' ? 'bg-purple-100 text-purple-600' : 'text-gray-600 hover:bg-gray-100'
+                      }`}
+                    >
+                      🇺🇸 EN
+                    </button>
                     <button 
                       onClick={() => setLanguage('ar' as any)}
                       className={`px-3 py-1 text-sm rounded-full font-medium ${

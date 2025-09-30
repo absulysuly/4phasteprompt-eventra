@@ -24,27 +24,53 @@ export default function RegisterForm() {
     setError("");
     setSuccess("");
     setLoading(true);
-    const res = await fetch("/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password, name })
-    });
-    const data = await res.json();
-    if (data.error) {
-      setError(data.error);
-    } else {
-      setSuccess("Registration successful! Redirecting to dashboard...");
-      // Auto sign in after successful registration
-      const signInRes = await signIn("credentials", {
-        email,
-        password,
-        redirect: false
+    
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, name })
       });
-      if (signInRes?.ok) {
-        router.push("/dashboard");
+      
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
       }
+      
+      const data = await res.json();
+      
+      if (data.error) {
+        setError(data.error);
+      } else if (data.success) {
+        setSuccess("Registration successful! Redirecting to dashboard...");
+        // Auto sign in after successful registration
+        try {
+          const signInRes = await signIn("credentials", {
+            email,
+            password,
+            redirect: false
+          });
+          if (signInRes?.ok) {
+            router.push("/dashboard");
+          } else {
+            setError("Registration successful, but auto-login failed. Please login manually.");
+          }
+        } catch (signInError) {
+          console.error('Sign in error:', signInError);
+          setError("Registration successful, but auto-login failed. Please login manually.");
+        }
+      } else {
+        setError("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        setError("Network error. Please check your connection and try again.");
+      } else {
+        setError(error instanceof Error ? error.message : "Registration failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   async function handleGoogleSignIn() {

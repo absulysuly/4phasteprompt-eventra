@@ -139,7 +139,6 @@ export default function EventCard({
                 ${imageLoading ? 'opacity-0' : 'opacity-100'}
               `}
               category={getEventImageCategory(event.category || "")}
-              onLoad={() => setImageLoading(false)}
             />
             
             {/* Gradient Overlay */}

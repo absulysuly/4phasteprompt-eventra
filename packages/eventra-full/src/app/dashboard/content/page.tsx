@@ -5,6 +5,9 @@ import { useSession } from "next-auth/react";
 import { useTranslations } from "../../hooks/useTranslations";
 import { useLanguage } from "../../components/LanguageProvider";
 
+// Dynamic export to prevent prerender issues with auth
+export const dynamic = 'force-dynamic';
+
 const PRESET_KEYS = [
   { key: "about.subtitle", label: "About - Subtitle" },
   { key: "categoriesPage.subtitle", label: "Categories - Subtitle" },

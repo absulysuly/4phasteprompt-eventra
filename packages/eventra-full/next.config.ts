@@ -32,10 +32,12 @@ const nextConfig: NextConfig = {
   //   localeDetection: true,
   // },
   typescript: {
-    ignoreBuildErrors: true,
+    // Fail the production build if there are type errors
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    // Fail the production build if there are ESLint errors
+    ignoreDuringBuilds: false,
   },
   images: {
     remotePatterns: [

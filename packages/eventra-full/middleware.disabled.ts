@@ -30,24 +30,22 @@ function getLocale(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-
-  // Handle locale redirection for event routes
-  if (pathname.startsWith('/event/') && !locales.some(locale => pathname.startsWith(`/${locale}/`))) {
-    const locale = getLocale(request);
-    const url = request.nextUrl.clone();
-    url.pathname = `/${locale}${pathname}`;
-    return NextResponse.redirect(url);
+  
+  // Skip middleware for static files and API routes
+  if (
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/api/') ||
+    pathname.startsWith('/_vercel/') ||
+    pathname.includes('.') ||
+    pathname === '/favicon.ico' ||
+    pathname.startsWith('/public/')
+  ) {
+    return NextResponse.next();
   }
 
-  // Handle locale redirection for events listing
-  if (pathname === '/events' || pathname.startsWith('/events/')) {
-    if (!locales.some(locale => pathname.startsWith(`/${locale}/`))) {
-      const locale = getLocale(request);
-      const url = request.nextUrl.clone();
-      url.pathname = `/${locale}${pathname}`;
-      return NextResponse.redirect(url);
-    }
-  }
+  // Only redirect specific locale-aware routes to prevent 404s
+  // Remove automatic locale redirection that was causing 404s
+  // Let Next.js App Router handle routing naturally
 
   // Create response
   const response = NextResponse.next();

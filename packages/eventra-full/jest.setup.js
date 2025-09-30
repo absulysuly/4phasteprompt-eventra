@@ -73,3 +73,64 @@ const localStorageMock = {
   clear: jest.fn(),
 }
 global.localStorage = localStorageMock
+
+// Add Node.js polyfills for browser APIs
+if (typeof setImmediate === 'undefined') {
+  global.setImmediate = (callback, ...args) => {
+    return setTimeout(callback, 0, ...args)
+  }
+}
+
+if (typeof clearImmediate === 'undefined') {
+  global.clearImmediate = (id) => {
+    return clearTimeout(id)
+  }
+}
+
+// Mock next-auth
+jest.mock('next-auth/react', () => ({
+  useSession: jest.fn(() => ({ data: null, status: 'unauthenticated' })),
+  signIn: jest.fn(),
+  signOut: jest.fn(),
+  SessionProvider: ({ children }) => children,
+}))
+
+// Mock fetch for API calls
+global.fetch = jest.fn()
+
+// Mock Request and Response for Next.js API routes
+class MockRequest {
+  constructor(url, options = {}) {
+    this.url = url
+    this.method = options.method || 'GET'
+    this.headers = new Headers(options.headers)
+    this.body = options.body
+  }
+  
+  async json() {
+    return JSON.parse(this.body || '{}')
+  }
+}
+
+class MockResponse {
+  constructor(body, options = {}) {
+    this.body = body
+    this.status = options.status || 200
+    this.statusText = options.statusText || 'OK'
+    this.headers = new Headers(options.headers)
+  }
+  
+  static json(body, options = {}) {
+    return new MockResponse(JSON.stringify(body), {
+      ...options,
+      headers: { 'Content-Type': 'application/json', ...options.headers }
+    })
+  }
+  
+  async json() {
+    return JSON.parse(this.body)
+  }
+}
+
+global.Request = MockRequest
+global.Response = MockResponse

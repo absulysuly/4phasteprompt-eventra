@@ -115,10 +115,14 @@ async function main() {
   ];
 
   for (const eventData of events) {
+    const { userId, ...eventWithoutUserId } = eventData;
     await prisma.event.upsert({
       where: { publicId: eventData.publicId },
       update: {},
-      create: eventData,
+      create: {
+        ...eventWithoutUserId,
+        user: { connect: { id: userId } },
+      },
     });
   }
 

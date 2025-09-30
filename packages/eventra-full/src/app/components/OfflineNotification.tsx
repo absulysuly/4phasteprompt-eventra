@@ -52,14 +52,14 @@ export default function OfflineNotification() {
           <div className="flex-1">
             <h4 className="font-bold">
               {isOnline 
-                ? t('offline.backOnline', 'Back Online!') 
-                : t('offline.offlineMode', 'Offline Mode')
+               ? t('offline.backOnline') || 'Back Online!'
+                : t('offline.offlineMode') || 'Offline Mode'
               }
             </h4>
             <p className="text-sm opacity-90">
               {isOnline 
-                ? t('offline.syncingData', 'Syncing latest data...')
-                : t('offline.useOffline', 'App works offline! Browse saved events.')
+               ? t('offline.syncingData') || 'Syncing latest data...'
+                : t('offline.useOffline') || 'App works offline! Browse saved events.'
               }
             </p>
           </div>

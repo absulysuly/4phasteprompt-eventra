@@ -54,8 +54,14 @@ jobs:
             npm run lint || true
           fi
 
-      - name: Run tests (placeholder - tests not configured yet)
-        run: echo "Tests not yet configured - skipping for now"
+      - name: Run Health Check
+        run: node scripts/health-check.js
+      
+      - name: Run Unit Tests
+        run: npm test
+        env:
+          DATABASE_URL: file:./test.db
+          NEXTAUTH_SECRET: test-secret
 
       - name: Archive build logs
         if: failure()
