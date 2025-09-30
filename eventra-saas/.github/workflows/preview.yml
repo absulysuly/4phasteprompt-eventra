@@ -1,0 +1,132 @@
+name: 🔍 Preview Deployment
+
+on:
+  pull_request:
+    branches: [main, master]
+    types: [opened, synchronize, reopened]
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  # ===== BUILD & DEPLOY PREVIEW =====
+  preview:
+    name: 🔍 Deploy Preview
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📚 Install dependencies
+        run: npm ci
+        
+      - name: 🏗️ Build application
+        run: npm run build
+        env:
+          NEXTAUTH_URL: https://preview-pr-${{ github.event.number }}-iraqguide.vercel.app
+          NEXTAUTH_SECRET: preview-secret-key-${{ github.event.number }}
+          DATABASE_URL: file:./preview.db
+          NODE_ENV: production
+          
+      - name: 🚀 Deploy Preview to Vercel
+        uses: amondnet/vercel-action@v25
+        id: vercel-preview
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--meta githubPR=${{ github.event.number }}'
+          working-directory: ./
+          
+      - name: 📝 Comment PR with preview link
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const deploymentUrl = '${{ steps.vercel-preview.outputs.preview-url }}';
+            
+            const comment = `## 🔍 Preview Deployment
+            
+            Your changes have been deployed to a preview environment!
+            
+            **🌐 Preview URL:** ${deploymentUrl}
+            **📊 Analytics Dashboard:** ${deploymentUrl}/admin/analytics
+            
+            **🧪 Test the following pages:**
+            - [Homepage](${deploymentUrl})
+            - [Baghdad](${deploymentUrl}/cities/baghdad)
+            - [Hotels](${deploymentUrl}/hotels)
+            - [Restaurants](${deploymentUrl}/restaurants)
+            - [Cafés](${deploymentUrl}/cafes)
+            - [Sign In](${deploymentUrl}/auth/signin)
+            
+            **📈 Event Tracking:**
+            The analytics dashboard will show real-time user interactions and page views.
+            
+            *This preview will be automatically updated with new commits to this PR.*`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  # ===== LIGHTHOUSE AUDIT =====
+  lighthouse:
+    name: 🔍 Lighthouse Audit
+    runs-on: ubuntu-latest
+    needs: preview
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 🔍 Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: './.lighthouserc.json'
+          temporaryPublicStorage: true
+          uploadArtifacts: true
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ===== SECURITY SCAN =====
+  security:
+    name: 🛡️ Security Scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📚 Install dependencies
+        run: npm ci
+        
+      - name: 🔍 Run npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+        
+      - name: 🛡️ Run Snyk security scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+        continue-on-error: true

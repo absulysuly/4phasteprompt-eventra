@@ -1,0 +1,35 @@
+name: Sentry Release and Sourcemaps
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-upload-sourcemaps:
+    runs-on: ubuntu-latest
+    env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+      SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next.js
+        run: npm run build
+        env:
+          # Ensure DSN available at build for client init
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          NODE_ENV: production
+      - name: Create Sentry release and upload sourcemaps
+        uses: getsentry/action-release@v1
+        with:
+          environment: production
+          version: ${{ github.sha }}
+          sourcemaps: |
+            .next
+          ignore_missing: true

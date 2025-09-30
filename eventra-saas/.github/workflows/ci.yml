@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, typecheck, tests, build
+    runs-on: ubuntu-latest
+    env:
+      # Optional: toggle E2E tests by setting a repo/environment variable RUN_E2E=1
+      RUN_E2E: ${{ vars.RUN_E2E }}
+      NODE_ENV: test
+      # Optional: Sentry/Meili/Algolia secrets (set in repo secrets as needed)
+      # SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+      # MEILI_HOST: ${{ secrets.MEILI_HOST }}
+      # MEILI_KEY: ${{ secrets.MEILI_KEY }}
+      # ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+      # ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run type-check
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Install Playwright (browsers)
+        if: env.RUN_E2E == '1'
+        run: npx playwright install --with-deps
+
+      - name: E2E tests (Playwright)
+        if: env.RUN_E2E == '1'
+        run: npx playwright test
+        env:
+          # Optionally override start command/base URL
+          PLAYWRIGHT_START_COMMAND: npm run dev
+          PLAYWRIGHT_BASE_URL: http://localhost:3000
+
+      - name: Build
+        run: npm run build
+        env:
+          # Allow Sentry DSN if available at build time
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
+  # Optional staging deploy (example)
+  deploy-staging:
+    name: Deploy to staging (optional)
+    needs: checks
+    if: ${{ vars.DEPLOY_STAGING == '1' }}
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
+      # Example with Vercel CLI (requires secrets)
+      # - name: Deploy with Vercel
+      #   run: |
+      #     npm i -g vercel@latest
+      #     vercel pull --yes --environment=preview --token ${{ secrets.VERCEL_TOKEN }}
+      #     vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --scope ${{ secrets.VERCEL_ORG_ID }} --project ${{ secrets.VERCEL_PROJECT_ID }}
+      #   env:
+      #     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      #     VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      #     VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
