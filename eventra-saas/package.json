@@ -1,26 +1,66 @@
 {
-  "name": "eventra-venues",
-  "version": "2.0.0",
-  "private": true,
-  "description": "Complete travel and entertainment platform for Iraq & Kurdistan - Events, Hotels, Restaurants, Activities",
-  "author": "Your Name",
+  "name": "eventra-saas",
+  "version": "2.1.0",
+  "private": false,
+  "description": "🌟 AI-Accessible Iraqi Events & Venues Platform - Complete travel and entertainment SaaS for Iraq & Kurdistan featuring events, hotels, restaurants, cafes, and tourism with neon-themed UI. Optimized for AI systems including DeepSeek, GPT, and Claude.",
+  "author": {
+    "name": "Eventra Team",
+    "email": "contact@eventra.app",
+    "url": "https://github.com/absulysuly/4phasteprompt-eventra"
+  },
   "license": "MIT",
+  "homepage": "https://eventra-venues.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/absulysuly/4phasteprompt-eventra.git",
+    "directory": "eventra-saas"
+  },
+  "bugs": {
+    "url": "https://github.com/absulysuly/4phasteprompt-eventra/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/absulysuly"
+  },
   "keywords": [
+    "ai-accessible",
+    "ai-optimized",
+    "deepseek",
+    "gpt",
+    "claude",
     "nextjs",
     "typescript",
+    "react",
+    "tailwindcss",
+    "prisma",
     "event-management",
     "hotels",
     "restaurants",
+    "cafes",
+    "tourism",
     "activities",
     "travel-platform",
     "iraq",
     "kurdistan",
+    "baghdad",
+    "erbil",
+    "basra",
     "venues",
     "booking",
     "multi-venue",
     "saas",
-    "prisma",
-    "tailwindcss"
+    "neon-theme",
+    "multilingual",
+    "rtl",
+    "arabic",
+    "kurdish",
+    "i18n",
+    "pwa",
+    "responsive",
+    "middleware-east",
+    "mesopotamia",
+    "cultural-platform",
+    "hospitality"
   ],
   "scripts": {
     "dev": "next dev",

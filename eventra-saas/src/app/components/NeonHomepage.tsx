@@ -5,6 +5,14 @@ import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
 import { useTranslations } from '../hooks/useTranslations';
 
+/**
+ * Represents a story user in the stories section
+ * @interface StoryUser
+ * @property {string} id - Unique identifier for the user
+ * @property {string} name - Display name of the user
+ * @property {string} avatar - URL to user's avatar image
+ * @property {number} count - Number of stories/posts by the user
+ */
 interface StoryUser {
   id: string;
   name: string;
@@ -12,6 +20,15 @@ interface StoryUser {
   count: number;
 }
 
+/**
+ * Represents a category in the platform
+ * @interface Category
+ * @property {string} id - Unique identifier for the category
+ * @property {string} name - Display name of the category
+ * @property {string} icon - Emoji icon for the category
+ * @property {CategoryColor} color - Color theme for the category
+ * @property {number} count - Number of venues/items in this category
+ */
 interface Category {
   id: string;
   name: string;
@@ -20,6 +37,44 @@ interface Category {
   count: number;
 }
 
+/**
+ * NeonHomepage - Main homepage component with neon-themed design
+ * 
+ * This component serves as the primary landing page for the Eventra platform,
+ * featuring a futuristic neon-themed UI with glowing category cards, stories,
+ * and featured content sections.
+ * 
+ * Features:
+ * - Responsive neon-themed design with category-specific colors
+ * - Interactive story avatars with user engagement
+ * - Clickable category cards linking to specific venue types
+ * - Featured content sections for events and hotels
+ * - Multi-language support with RTL layout for Arabic/Kurdish
+ * - Progressive enhancement with loading states and error handling
+ * 
+ * Color Scheme:
+ * - Events: Purple (#B24BF3)
+ * - Hotels: Pink (#FF2E97)
+ * - Restaurants: Orange (#FF6B35)
+ * - Cafes: Yellow (#FFED4E)
+ * - Tourism: Cyan (#00F0FF)
+ * 
+ * @component
+ * @example
+ * // Basic usage
+ * import NeonHomepage from './components/NeonHomepage'
+ * 
+ * function App() {
+ *   return <NeonHomepage />
+ * }
+ * 
+ * @returns {JSX.Element} The rendered homepage with neon theme
+ * 
+ * @category Components
+ * @subcategory Pages
+ * @ai-accessible This component is fully documented for AI understanding
+ * @since 2.1.0
+ */
 export default function NeonHomepage() {
   const { language, isRTL } = useLanguage();
   const { t } = useTranslations();
