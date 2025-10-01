@@ -1,4 +1,6 @@
 {
+  "categories.${event.category}": ""
+  "app": { "name": "Iraq Guide" },
   "navigation": {
     "home": "Home",
     "events": "Events", 
@@ -47,7 +49,20 @@
     "createEventSubtitle": "Create and promote your own events on IraqEvents platform",
     "createYourEvent": "Create Your Event",
     "viewPublicPage": "View Public Page",
-    "exploreByCategory": "Explore by Category"
+    "exploreByCategory": "Explore by Category",
+    "eventImage": "Event image not available",
+    "location": "Location",
+    "eventDetails": "Event Details",
+    "dateTime": "Date & Time",
+    "category": "Category",
+    "price": "Price",
+    "aboutEvent": "About this event",
+    "noDescription": "No description provided.",
+    "registerForEvent": "Register for event",
+    "shareEvent": "Share event",
+    "organizer": "Organizer",
+    "anonymousOrganizer": "Anonymous organizer",
+    "noContactInfo": "No contact information"
   },
   "dashboard": {
     "welcomeBack": "Welcome back, {name}!",
@@ -253,7 +268,10 @@
     "contactInformation": "Contact Information",
     "joinWhatsAppGroup": "Join WhatsApp Group",
     "price": "Price",
-    "imageUnavailable": "Image not available"
+    "imageUnavailable": "Image not available",
+    "backToEvents": "Back to Events",
+    "anonymous": "Anonymous",
+    "general": "General"
   },
   "cities": {
     "baghdad": "Baghdad",

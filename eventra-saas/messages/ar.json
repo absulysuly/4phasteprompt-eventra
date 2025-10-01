@@ -1,4 +1,6 @@
 {
+  "categories.${event.category}": ""
+  "app": { "name": "Iraq Guide" },
   "navigation": {
     "eventPlatform": "منصة الفعاليات",
     "home": "الرئيسية",
@@ -49,7 +51,20 @@
     "createEventSubtitle": "أنشئ وروج لفعالياتك الخاصة على منصة فعاليات العراق",
     "createYourEvent": "أنشئ فعاليتك",
     "viewPublicPage": "عرض الصفحة العامة",
-    "exploreByCategory": "استكشف حسب الفئة"
+    "exploreByCategory": "استكشف حسب الفئة",
+    "eventImage": "لا توجد صورة للفعالية",
+    "location": "الموقع",
+    "eventDetails": "تفاصيل الفعالية",
+    "dateTime": "التاريخ والوقت",
+    "category": "الفئة",
+    "price": "السعر",
+    "aboutEvent": "عن الفعالية",
+    "noDescription": "لا توجد وصف متاح.",
+    "registerForEvent": "سجّل في الفعالية",
+    "shareEvent": "شارك الفعالية",
+    "organizer": "المنظّم",
+    "anonymousOrganizer": "منظم مجهول",
+    "noContactInfo": "لا توجد معلومات تواصل"
   },
   "dashboard": {
     "welcomeBack": "مرحباً بعودتك، {name}!",
@@ -267,7 +282,10 @@
     "contactInformation": "معلومات التواصل",
     "joinWhatsAppGroup": "انضم لمجموعة واتساب",
     "price": "السعر",
-    "imageUnavailable": "الصورة غير متوفرة"
+    "imageUnavailable": "الصورة غير متوفرة",
+    "backToEvents": "العودة إلى الفعاليات",
+    "anonymous": "مجهول",
+    "general": "عام"
   },
   "cities": {
     "baghdad": "بغداد",

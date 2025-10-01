@@ -1,4 +1,6 @@
 {
+  "key": "key",
+  "categories.${event.category}": "",
   "navigation": {
     "home": "الرئيسية",
     "events": "الفعاليات",
@@ -18,7 +20,12 @@
     "registerNow": "سجل الآن",
     "getTickets": "احصل على التذاكر",
     "joinSummit": "انضم للقمة",
-    "exploreArt": "استكشف الفن"
+    "exploreArt": "استكشف الفن",
+    "eventStartsIn": "تبدأ الفعالية في",
+    "days": "أيام",
+    "hours": "ساعات",
+    "minutes": "دقائق",
+    "seconds": "ثوان"
   },
   "countdown": {
     "days": "أيام",
@@ -113,6 +120,7 @@
     "uploadImageFailed": "فشل في تحميل الصورة"
   },
   "categories": {
+    "${event.category}": "",
     "technologyInnovation": "التكنولوجيا والابتكار",
     "businessNetworking": "الأعمال والتشبيك",
     "musicConcerts": "الموسيقى والحفلات",
@@ -332,6 +340,8 @@
     "december": "ديسمبر"
   },
   "heroSlides": {
+    "joinSummit": "انضم للقمة",
+    "exploreArt": "استكشف الفن",
     "slide1": {
       "title": "قمة الابتكار في الذكاء الاصطناعي - بغداد",
       "subtitle": "مستقبل التكنولوجيا",

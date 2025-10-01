@@ -30,6 +30,36 @@ interface EventDetailsModalProps {
   onClose: () => void;
 }
 
+function translateCategoryLabel(categoryName?: string): string {
+  if (!categoryName) return '';
+  const map: { [key: string]: string } = {
+    "Technology & Innovation": "categories.technologyInnovation",
+    "Business & Networking": "categories.businessNetworking",
+    "Business": "categories.businessNetworking",
+    "Music & Concerts": "categories.musicConcerts",
+    "Arts & Culture": "categories.artsCulture",
+    "Sports & Fitness": "categories.sportsFitness",
+    "Food & Drink": "categories.foodDrink",
+    "Learning & Development": "categories.learningDevelopment",
+    "Health & Wellness": "categories.healthWellness",
+    "Community & Social": "categories.communitySocial",
+    "Gaming & Esports": "categories.gamingEsports",
+    "Spiritual & Religious": "categories.spiritualReligious",
+    "Family & Kids": "categories.familyKids",
+    "Outdoor & Adventure": "categories.outdoorAdventure",
+    "Virtual Events": "categories.virtualEvents",
+    "Academic and Conferences": "categories.academicConferences"
+  };
+  const key = map[categoryName];
+  try {
+    const { t } = require('../hooks/useTranslations');
+    // Note: this dynamic import style is only to avoid top-level circular refs in some bundlers.
+    return key ? (require('../hooks/useTranslations').useTranslations().t(key)) : categoryName;
+  } catch {
+    return categoryName;
+  }
+}
+
 export default function EventDetailsModal({ event, isOpen, onClose }: EventDetailsModalProps) {
   const { isRTL, language } = useLanguage();
   const { t } = useTranslations();
@@ -118,7 +148,7 @@ export default function EventDetailsModal({ event, isOpen, onClose }: EventDetai
                   <h3 className="font-semibold text-gray-900">{t('eventForm.category')}</h3>
                 </div>
                 <p className="text-gray-700 bg-gray-50 p-3 rounded-lg">
-                  {t(`categories.${event.category}`) || event.category}
+                  {translateCategoryLabel(event.category)}
                 </p>
               </div>
             )}

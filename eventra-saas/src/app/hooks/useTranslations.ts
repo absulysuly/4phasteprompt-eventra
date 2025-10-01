@@ -1,17 +1,25 @@
-import { useContext } from 'react'
-import * as ProviderModule from '../components/LanguageProvider' // relative to src/app/hooks
+import { useLanguage } from '../components/LanguageProvider'
+import { useSimpleLanguage } from '../components/SimpleLanguageProvider'
 
-const LanguageContext = (ProviderModule as any).LanguageContext ?? (ProviderModule as any).default?.LanguageContext
-
+// Unified translations hook that adapts to the available language provider.
 export function useTranslations() {
-  const context = useContext(LanguageContext as any)
-  if (!context) {
-    throw new Error('useTranslations must be used within LanguageProvider')
+  try {
+    const lang = useLanguage() as any
+    const t = (lang.t as any) || ((key: string) => key)
+    return {
+      t,
+      locale: lang.language,
+      setLocale: lang.setLanguage,
+      isRTL: lang.isRTL,
+    }
+  } catch {
+    // Fallback to simple provider if the advanced one is not in tree
+    const simple = useSimpleLanguage()
+    return {
+      t: simple.t,
+      locale: simple.language,
+      setLocale: simple.setLanguage,
+      isRTL: simple.isRTL,
+    }
   }
-
-  const t = context.t ?? ((key: string) => key)
-  const locale = context.locale
-  const setLocale = context.setLocale
-
-  return { t, locale, setLocale }
 }

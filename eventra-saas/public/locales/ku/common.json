@@ -1,4 +1,6 @@
 {
+  "key": "key",
+  "categories.${event.category}": "",
   "navigation": {
     "home": "ماڵەوە",
     "events": "بۆنەکان",
@@ -45,6 +47,19 @@
   },
   "events": {
     "title": "بۆنە نایابەکان بدۆزەرەوە",
+    "eventImage": "وێنەی بۆنە بوونی نییە",
+    "location": "شوێن",
+    "eventDetails": "وردەکاریی بۆنە",
+    "dateTime": "ڕێکەوت و کات",
+    "category": "پۆل",
+    "price": "نرخ",
+    "aboutEvent": "دەربارەی بۆنە",
+    "noDescription": "هیچ پێناسەیەک بەردەست نییە",
+    "registerForEvent": "تۆماربوون بۆ بۆنە",
+    "shareEvent": "هاوبەشکردنی بۆنە",
+    "organizer": "ڕێکخەر",
+    "anonymousOrganizer": "ڕێکخەر نادیار",
+    "noContactInfo": "هیچ زانیارییەکی پەیوەندی نییە",
     "subtitle": "بۆنە نایابەکان بدۆزەرەوە و پێیاندا ببەسترە کە لە عێراق و کوردستان ڕوودەدەن. لە کۆنگرەی تەکنەلۆژییەوە تا فێستیڤاڵی کلتوری، شتێک بۆ ههموان ههیە.",
     "searchPlaceholder": "گەڕان بەپێی ناونیشان، وەسف، یان شوێن...",
     "foundEvents": "{count} بۆنە دۆزرایەوە",
@@ -99,6 +114,7 @@
     "uploadImageFailed": "شکستی هێنانی وێنە"
   },
   "categories": {
+    "${event.category}": "",
     "technologyInnovation": "تەکنەلۆژیا و نوێکاری",
     "businessNetworking": "بازرگانی و تۆڕینگ",
     "musicConcerts": "میوزیک و کۆنسێرتەکان",
@@ -259,6 +275,9 @@
   },
   "common": {
     "loading": "بارکردن...",
+    "backToEvents": "گەڕانەوە بۆ بۆنەکان",
+    "anonymous": "نا ناسراو",
+    "general": "گشتی",
     "error": "هەڵە",
     "tryAgain": "دووبارە هەوڵ بدەرەوە",
     "cancel": "هەڵوەشاندنەوە",
@@ -315,6 +334,8 @@
     "december": "کانوونی یەکەم"
   },
   "heroSlides": {
+    "joinSummit": "بەشداری کۆنگرە بکە",
+    "exploreArt": "هونەر بگەڕێ",
     "slide1": {
       "title": "کۆنگرەی داهێنانی AI بەغدا",
       "subtitle": "سەردەمی نوێی تەکنەلۆژیا",

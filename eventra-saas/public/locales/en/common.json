@@ -1,4 +1,6 @@
 {
+  "key": "key",
+  "categories.${event.category}": "",
   "navigation": {
     "home": "Home",
     "events": "Events",
@@ -18,7 +20,12 @@
     "registerNow": "Register Now",
     "getTickets": "Get Tickets",
     "joinSummit": "Join Summit",
-    "exploreArt": "Explore Art"
+    "exploreArt": "Explore Art",
+    "eventStartsIn": "Event Starts In",
+    "days": "DAYS",
+    "hours": "HRS",
+    "minutes": "MIN",
+    "seconds": "SEC"
   },
   "countdown": {
     "days": "Days",
@@ -113,6 +120,7 @@
     "uploadImageFailed": "Failed to upload image"
   },
   "categories": {
+    "${event.category}": "",
     "technologyInnovation": "Technology & Innovation",
     "businessNetworking": "Business & Networking",
     "musicConcerts": "Music & Concerts",
@@ -332,6 +340,8 @@
     "december": "December"
   },
   "heroSlides": {
+    "joinSummit": "Join Summit",
+    "exploreArt": "Explore Art",
     "slide1": {
       "title": "AI Innovation Summit Baghdad",
       "subtitle": "The Future of Technology",

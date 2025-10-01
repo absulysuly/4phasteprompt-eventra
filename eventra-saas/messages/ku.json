@@ -1,4 +1,6 @@
 {
+  "categories.${event.category}": ""
+  "app": { "name": "Iraq Guide" },
   "navigation": {
     "eventPlatform": "پلاتفۆرمی بۆنەکان",
     "home": "ماڵەوە",
@@ -24,7 +26,10 @@
     "viewDetails": "وردەکارییەکان ببینە",
     "eventCategory": "پۆلی بۆنە",
     "eventStatus": "حاڵەتی بۆنە",
-    "eventPrice": "نرخی بۆنە"
+    "eventPrice": "نرخی بۆنە",
+    "backToEvents": "گەڕانەوە بۆ بۆنەکان",
+    "anonymous": "نا ناسراو",
+    "general": "گشتی"
   },
   "cities": {
     "baghdad": "بەغدا",
@@ -131,7 +136,20 @@
     "createEventSubtitle": "بۆنەکانی خۆت دروست بکە و لە پلاتفۆرمی بۆنەکانی عێراق بیکە بە بڵاو",
     "createYourEvent": "بۆنەکەت دروست بکە",
     "viewPublicPage": "بینینی پهڕهی گشتی",
-    "exploreByCategory": "گەڕان بەپێی پۆل"
+    "exploreByCategory": "گەڕان بەپێی پۆل",
+    "eventImage": "وێنەی بۆنە بوونی نییە",
+    "location": "شوێن",
+    "eventDetails": "وردەکاریی بۆنە",
+    "dateTime": "ڕێکەوت و کات",
+    "category": "پۆل",
+    "price": "نرخ",
+    "aboutEvent": "دەربارەی ئەم بۆنەیە",
+    "noDescription": "هیچ پێناسەیەک نەدراوە.",
+    "registerForEvent": "تۆمار بکە بۆ بۆنە",
+    "shareEvent": "هاوبەشی بکە",
+    "organizer": "ڕێکخەر",
+    "anonymousOrganizer": "ڕێکخەرەکە نادیارە",
+    "noContactInfo": "هیچ زانیارییەکی پەیوەندی نییە"
   },
   "dashboard": {
     "welcomeBack": "بەخێرهاتنەوە، {name}!",
