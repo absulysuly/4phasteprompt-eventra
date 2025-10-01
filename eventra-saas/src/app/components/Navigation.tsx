@@ -72,6 +72,10 @@ export default function Navigation() {
                 Restaurants
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: 'var(--restaurants-color)', boxShadow: '0 0 5px var(--restaurants-color)' }}></span>
               </Link>
+              <Link href={language === 'en' ? '/cafes' : `/${language}/cafes`} className="font-medium transition-colors relative group" style={{ color: 'var(--text-primary)' }}>
+                Cafes
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: 'var(--cafes-color)', boxShadow: '0 0 5px var(--cafes-color)' }}></span>
+              </Link>
               <Link href={language === 'en' ? '/tourism' : `/${language}/tourism`} className="font-medium transition-colors relative group" style={{ color: 'var(--text-primary)' }}>
                 Tourism
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300" style={{ backgroundColor: 'var(--tourism-color)', boxShadow: '0 0 5px var(--tourism-color)' }}></span>
@@ -188,11 +192,17 @@ export default function Navigation() {
                 <Link href={language === 'en' ? '/events' : `/${language}/events`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
                   {t('navigation.events')}
                 </Link>
-                <Link href={language === 'en' ? '/categories' : `/${language}/categories`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                  {t('navigation.categories')}
+                <Link href={language === 'en' ? '/hotels' : `/${language}/hotels`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                  Hotels
                 </Link>
-                <Link href={language === 'en' ? '/about' : `/${language}/about`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
-                  {t('navigation.about')}
+                <Link href={language === 'en' ? '/restaurants' : `/${language}/restaurants`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                  Restaurants
+                </Link>
+                <Link href={language === 'en' ? '/cafes' : `/${language}/cafes`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                  Cafes
+                </Link>
+                <Link href={language === 'en' ? '/tourism' : `/${language}/tourism`} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+                  Tourism
                 </Link>
                 {!session && (
                   <div className="flex gap-3 pt-2">

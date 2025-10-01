@@ -218,130 +218,96 @@ input, select, textarea, button { font-family: inherit; }
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Neon Theme - Category Color System */
+/* ===== MODERN ELEGANT THEME - IRAQI/KURDISH DESIGN SYSTEM ===== */
 :root {
-  /* Category Colors */
-  --events-color: #B24BF3;
-  --hotels-color: #FF2E97;
-  --restaurants-color: #FF6B35;
-  --cafes-color: #FFED4E;
-  --tourism-color: #00F0FF;
+  /* Primary Brand Colors - Inspired by Iraqi/Kurdish Culture */
+  --events-color: #9333EA;      /* Deep Purple - Royal & Cultural */
+  --hotels-color: #EC4899;      /* Rose Pink - Hospitality & Warmth */
+  --restaurants-color: #F59E0B; /* Amber - Spices & Flavor */
+  --cafes-color: #EAB308;       /* Gold - Coffee & Tradition */
+  --tourism-color: #06B6D4;     /* Cyan - Rivers & Heritage */
   
-  /* Background Colors */
-  --bg-primary: #0D0019;
-  --bg-secondary: #1A0033;
-  --bg-card: #2D1B4E;
-  --bg-pattern: #3D2766;
+  /* Gradient Variants */
+  --events-gradient: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
+  --hotels-gradient: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  --restaurants-gradient: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  --cafes-gradient: linear-gradient(135deg, #EAB308 0%, #F59E0B 100%);
+  --tourism-gradient: linear-gradient(135deg, #06B6D4 0%, #0EA5E9 100%);
   
-  /* Text Colors */
-  --text-primary: #FFFFFF;
-  --text-secondary: #E0D4F7;
-  --text-tertiary: #B4A5D6;
+  /* Modern Background System */
+  --bg-primary: #0F172A;        /* Deep Navy Blue */
+  --bg-secondary: #1E293B;      /* Slate Gray */
+  --bg-card: #1E293B;           /* Card Background */
+  --bg-elevated: #334155;       /* Elevated Elements */
+  --bg-pattern: #475569;        /* Pattern/Divider */
+  
+  /* Text Color Hierarchy */
+  --text-primary: #F8FAFC;      /* Almost White */
+  --text-secondary: #CBD5E1;    /* Light Gray */
+  --text-tertiary: #94A3B8;     /* Muted Gray */
+  --text-muted: #64748B;        /* Very Muted */
+  
+  /* System/Semantic Colors */
+  --success-color: #10B981;     /* Green */
+  --warning-color: #F59E0B;     /* Amber */
+  --error-color: #EF4444;       /* Red */
+  --info-color: #3B82F6;        /* Blue */
+  
+  /* Border & Shadow */
+  --border-color: #334155;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
-/* Background Pattern */
+/* Modern Background with Subtle Pattern */
 body {
-  background: var(--bg-primary);
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 35px,
-      rgba(61, 39, 102, 0.2) 35px,
-      rgba(61, 39, 102, 0.2) 36px
-    );
-}
-
-/* ===== NEON THEME - CATEGORY COLOR SYSTEM ===== */
-:root {
-  /* Category Colors */
-  --events-color: #B24BF3;
-  --hotels-color: #FF2E97;
-  --restaurants-color: #FF6B35;
-  --cafes-color: #FFED4E;
-  --tourism-color: #00F0FF;
-  
-  /* Background Colors */
-  --bg-primary: #0D0019;
-  --bg-secondary: #1A0033;
-  --bg-card: #2D1B4E;
-  --bg-pattern: #3D2766;
-  
-  /* Text Colors */
-  --text-primary: #FFFFFF;
-  --text-secondary: #E0D4F7;
-  --text-tertiary: #B4A5D6;
-  
-  /* System Colors */
-  --success-color: #00FF88;
-  --warning-color: #FFED4E;
-  --error-color: #FF2E97;
-  --info-color: #00F0FF;
-}
-
-/* Background Pattern */
-body {
-  background: var(--bg-primary);
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 35px,
-      rgba(61, 39, 102, 0.2) 35px,
-      rgba(61, 39, 102, 0.2) 36px
-    );
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
+  min-height: 100vh;
 }
 
-/* ===== NEON GLOW EFFECTS ===== */
-.neon-glow {
-  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+/* ===== ELEGANT GLOW & SHADOW EFFECTS ===== */
+.elegant-glow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Category-Specific Glow Classes */
+/* Category-Specific Subtle Glows - Less Intense, More Elegant */
 .events-glow {
   box-shadow:
-    0 0 5px var(--events-color),
-    0 0 10px var(--events-color),
-    0 0 20px var(--events-color),
-    0 0 40px var(--events-color),
-    0 0 80px var(--events-color);
+    0 4px 6px -1px rgba(147, 51, 234, 0.2),
+    0 2px 4px -2px rgba(147, 51, 234, 0.1),
+    0 0 20px rgba(147, 51, 234, 0.15);
 }
 
 .hotels-glow {
   box-shadow:
-    0 0 5px var(--hotels-color),
-    0 0 10px var(--hotels-color),
-    0 0 20px var(--hotels-color),
-    0 0 40px var(--hotels-color),
-    0 0 80px var(--hotels-color);
+    0 4px 6px -1px rgba(236, 72, 153, 0.2),
+    0 2px 4px -2px rgba(236, 72, 153, 0.1),
+    0 0 20px rgba(236, 72, 153, 0.15);
 }
 
 .restaurants-glow {
   box-shadow:
-    0 0 5px var(--restaurants-color),
-    0 0 10px var(--restaurants-color),
-    0 0 20px var(--restaurants-color),
-    0 0 40px var(--restaurants-color),
-    0 0 80px var(--restaurants-color);
+    0 4px 6px -1px rgba(245, 158, 11, 0.2),
+    0 2px 4px -2px rgba(245, 158, 11, 0.1),
+    0 0 20px rgba(245, 158, 11, 0.15);
 }
 
 .cafes-glow {
   box-shadow:
-    0 0 5px var(--cafes-color),
-    0 0 10px var(--cafes-color),
-    0 0 20px var(--cafes-color),
-    0 0 40px var(--cafes-color),
-    0 0 80px var(--cafes-color);
+    0 4px 6px -1px rgba(234, 179, 8, 0.2),
+    0 2px 4px -2px rgba(234, 179, 8, 0.1),
+    0 0 20px rgba(234, 179, 8, 0.15);
 }
 
 .tourism-glow {
   box-shadow:
-    0 0 5px var(--tourism-color),
-    0 0 10px var(--tourism-color),
-    0 0 20px var(--tourism-color),
-    0 0 40px var(--tourism-color),
-    0 0 80px var(--tourism-color);
+    0 4px 6px -1px rgba(6, 182, 212, 0.2),
+    0 2px 4px -2px rgba(6, 182, 212, 0.1),
+    0 0 20px rgba(6, 182, 212, 0.15);
 }
 
 /* ===== NEON ANIMATIONS ===== */
@@ -365,64 +331,110 @@ body {
   animation: neonPulse 2s ease-in-out infinite;
 }
 
-/* ===== CARD STYLES ===== */
+/* ===== MODERN CARD STYLES ===== */
 .neon-card {
-  background: rgba(45, 27, 78, 0.6);
-  border-radius: 15px;
-  border: 2px solid;
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(10px);
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
   overflow: hidden;
+  position: relative;
+}
+
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .neon-card:hover {
-  transform: scale(1.02) translateY(-4px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
 }
 
-.neon-card.events {
-  border-color: var(--events-color);
+.neon-card:hover::before {
+  opacity: 1;
 }
 
-.neon-card.hotels {
-  border-color: var(--hotels-color);
+.neon-card.events::before {
+  background: var(--events-gradient);
 }
 
-.neon-card.restaurants {
-  border-color: var(--restaurants-color);
+.neon-card.hotels::before {
+  background: var(--hotels-gradient);
 }
 
-.neon-card.cafes {
-  border-color: var(--cafes-color);
+.neon-card.restaurants::before {
+  background: var(--restaurants-gradient);
 }
 
-.neon-card.tourism {
-  border-color: var(--tourism-color);
+.neon-card.cafes::before {
+  background: var(--cafes-gradient);
+}
+
+.neon-card.tourism::before {
+  background: var(--tourism-gradient);
 }
 
 .neon-card.featured {
-  border-width: 3px;
+  border: 2px solid;
+  background: var(--bg-elevated);
 }
 
-/* ===== BUTTON STYLES ===== */
+.neon-card.events.featured {
+  border-color: var(--events-color);
+}
+
+.neon-card.hotels.featured {
+  border-color: var(--hotels-color);
+}
+
+.neon-card.restaurants.featured {
+  border-color: var(--restaurants-color);
+}
+
+.neon-card.cafes.featured {
+  border-color: var(--cafes-color);
+}
+
+.neon-card.tourism.featured {
+  border-color: var(--tourism-color);
+}
+
+/* ===== MODERN BUTTON STYLES ===== */
 .neon-button {
   background: transparent;
   border: 2px solid;
-  border-radius: 25px;
-  padding: 12px 24px;
+  border-radius: 12px;
+  padding: 10px 20px;
   color: var(--text-primary);
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .neon-button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.neon-button:active {
+  transform: translateY(0);
 }
 
 .neon-button.events {
@@ -430,9 +442,21 @@ body {
   color: var(--events-color);
 }
 
+.neon-button.events:hover {
+  background: var(--events-gradient);
+  border-color: var(--events-color);
+  color: white;
+}
+
 .neon-button.hotels {
   border-color: var(--hotels-color);
   color: var(--hotels-color);
+}
+
+.neon-button.hotels:hover {
+  background: var(--hotels-gradient);
+  border-color: var(--hotels-color);
+  color: white;
 }
 
 .neon-button.restaurants {
@@ -440,9 +464,21 @@ body {
   color: var(--restaurants-color);
 }
 
+.neon-button.restaurants:hover {
+  background: var(--restaurants-gradient);
+  border-color: var(--restaurants-color);
+  color: white;
+}
+
 .neon-button.cafes {
   border-color: var(--cafes-color);
   color: var(--cafes-color);
+}
+
+.neon-button.cafes:hover {
+  background: var(--cafes-gradient);
+  border-color: var(--cafes-color);
+  color: white;
 }
 
 .neon-button.tourism {
@@ -450,12 +486,18 @@ body {
   color: var(--tourism-color);
 }
 
-/* ===== NAVIGATION STYLES ===== */
+.neon-button.tourism:hover {
+  background: var(--tourism-gradient);
+  border-color: var(--tourism-color);
+  color: white;
+}
+
+/* ===== MODERN NAVIGATION STYLES ===== */
 .neon-nav {
-  background: rgba(26, 0, 51, 0.9);
-  border: 2px solid var(--events-color);
-  border-radius: 10px;
-  backdrop-filter: blur(15px);
+  background: rgba(30, 41, 59, 0.95);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
 /* ===== CURRENTLY EXPLORING CARD ===== */
