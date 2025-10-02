@@ -1,0 +1,145 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:50:03.188Z",
+  "count": 3,
+  "data": [
+    {
+      "id": "mock_baghdad_Events_0",
+      "name": "Events 1 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38376825307005,
+      "longitude": 44.420431923097674,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_0",
+      "price_range": "medium",
+      "rating": 4.373039095318884,
+      "rating_count": 80,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Events_1",
+      "name": "Events 2 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.35891022058327,
+      "longitude": 44.43476964814972,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_1",
+      "price_range": "medium",
+      "rating": 4.229422802787326,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Events_2",
+      "name": "Events 3 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30117989280855,
+      "longitude": 44.47214342463779,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_2",
+      "price_range": "medium",
+      "rating": 4.070242961085623,
+      "rating_count": 79,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    }
+  ]
+}

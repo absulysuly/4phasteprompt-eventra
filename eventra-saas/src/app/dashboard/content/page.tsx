@@ -1,6 +1,21 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+
+// Prevent SSR for this component
+const DynamicContentEditor = dynamic(() => Promise.resolve(ContentEditorComponent), {
+  ssr: false,
+  loading: () => (
+    <div className="max-w-3xl mx-auto p-6">
+      <div className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-4">
+        <div className="font-semibold mb-1">Loading...</div>
+        <div>Initializing content editor...</div>
+      </div>
+    </div>
+  )
+});
+
 import { useSession } from "next-auth/react";
 import { useTranslations } from "../../hooks/useTranslations";
 import { useLanguage } from "../../components/LanguageProvider";
@@ -10,8 +25,9 @@ const PRESET_KEYS = [
   { key: "categoriesPage.subtitle", label: "Categories - Subtitle" },
 ];
 
-export default function ContentEditorPage() {
-  const { data: session } = useSession();
+function ContentEditorComponent() {
+  const [mounted, setMounted] = useState(false);
+  const { data: session, status } = useSession();
   const { language } = useLanguage();
   const { t } = useTranslations();
   const [locale, setLocale] = useState<string>(language);
@@ -20,6 +36,21 @@ export default function ContentEditorPage() {
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="max-w-3xl mx-auto p-6">
+        <div className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-4">
+          <div className="font-semibold mb-1">Loading...</div>
+          <div>Initializing application.</div>
+        </div>
+      </div>
+    );
+  }
 
   const options = useMemo(() => PRESET_KEYS, []);
 
@@ -57,6 +88,17 @@ export default function ContentEditorPage() {
       setSaving(false);
     }
   };
+
+  if (status === "loading") {
+    return (
+      <div className="max-w-3xl mx-auto p-6">
+        <div className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-4">
+          <div className="font-semibold mb-1">Loading...</div>
+          <div>Checking authentication status.</div>
+        </div>
+      </div>
+    );
+  }
 
   if (!session?.user) {
     return (
@@ -130,4 +172,8 @@ export default function ContentEditorPage() {
       </div>
     </div>
   );
+}
+
+export default function ContentEditorPage() {
+  return <DynamicContentEditor />;
 }

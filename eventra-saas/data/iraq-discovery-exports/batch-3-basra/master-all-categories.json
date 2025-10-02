@@ -1,0 +1,1505 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:52:03.545Z",
+  "count": 34,
+  "data": [
+    {
+      "id": "mock_basra_Accommodation_0",
+      "name": "Accommodation 1 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.368009822471706,
+      "longitude": 44.480194637260695,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.280987995080668,
+      "rating_count": 104,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_1",
+      "name": "Accommodation 2 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36994576863007,
+      "longitude": 44.4443532013878,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.17439364554882,
+      "rating_count": 103,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_2",
+      "name": "Accommodation 3 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.38114209265145,
+      "longitude": 44.43436759002718,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.722418681111424,
+      "rating_count": 84,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_3",
+      "name": "Accommodation 4 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36268074096518,
+      "longitude": 44.47569584695527,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.428434735199758,
+      "rating_count": 55,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_4",
+      "name": "Accommodation 5 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.313341799161726,
+      "longitude": 44.49430343693233,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.593810593386566,
+      "rating_count": 85,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_5",
+      "name": "Accommodation 6 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31351142503312,
+      "longitude": 44.441030461072046,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_5",
+      "price_range": "medium",
+      "rating": 4.28083241567201,
+      "rating_count": 86,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Cafe & Restaurants_0",
+      "name": "Cafe & Restaurants 1 - Basra",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36680057171195,
+      "longitude": 44.48993343410822,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Cafe & Restaurants_0",
+      "price_range": "medium",
+      "rating": 4.38844468364835,
+      "rating_count": 28,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_basra_Cafe & Restaurants_1",
+      "name": "Cafe & Restaurants 2 - Basra",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.32832403208746,
+      "longitude": 44.41390769804781,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Cafe & Restaurants_1",
+      "price_range": "medium",
+      "rating": 4.064702806777106,
+      "rating_count": 30,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_basra_Cafe & Restaurants_2",
+      "name": "Cafe & Restaurants 3 - Basra",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.33540160057355,
+      "longitude": 44.44749004945353,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Cafe & Restaurants_2",
+      "price_range": "medium",
+      "rating": 4.592294061824491,
+      "rating_count": 33,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_basra_Cafe & Restaurants_3",
+      "name": "Cafe & Restaurants 4 - Basra",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.379912762682814,
+      "longitude": 44.4182624920343,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Cafe & Restaurants_3",
+      "price_range": "medium",
+      "rating": 4.447665043541729,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_basra_Cafe & Restaurants_4",
+      "name": "Cafe & Restaurants 5 - Basra",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.378186477276934,
+      "longitude": 44.45586491729516,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Cafe & Restaurants_4",
+      "price_range": "medium",
+      "rating": 4.019710452354891,
+      "rating_count": 96,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_basra_Events_0",
+      "name": "Events 1 - Basra",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.37785920059891,
+      "longitude": 44.47345946141536,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Events_0",
+      "price_range": "medium",
+      "rating": 4.334412358125712,
+      "rating_count": 12,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:52:03.362Z",
+        "end_datetime": "2025-10-02T22:52:03.362Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Events_1",
+      "name": "Events 2 - Basra",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.333286357240496,
+      "longitude": 44.427663982918055,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Events_1",
+      "price_range": "medium",
+      "rating": 4.597000306098101,
+      "rating_count": 63,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:52:03.362Z",
+        "end_datetime": "2025-10-02T22:52:03.362Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Events_2",
+      "name": "Events 3 - Basra",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.35948843404129,
+      "longitude": 44.443466728876174,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Events_2",
+      "price_range": "medium",
+      "rating": 4.906402125499072,
+      "rating_count": 66,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:52:03.362Z",
+        "end_datetime": "2025-10-02T22:52:03.362Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Events_3",
+      "name": "Events 4 - Basra",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.316157249423966,
+      "longitude": 44.453832390188225,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Events_3",
+      "price_range": "medium",
+      "rating": 4.067081534186128,
+      "rating_count": 15,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:52:03.363Z",
+        "end_datetime": "2025-10-02T22:52:03.363Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Tourism_0",
+      "name": "Tourism 1 - Basra",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.34848382930115,
+      "longitude": 44.47922188825855,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Tourism_0",
+      "price_range": "medium",
+      "rating": 4.721403843950958,
+      "rating_count": 103,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Tourism_1",
+      "name": "Tourism 2 - Basra",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.353424596318945,
+      "longitude": 44.43537408593444,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Tourism_1",
+      "price_range": "medium",
+      "rating": 4.659620461327214,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Tourism_2",
+      "name": "Tourism 3 - Basra",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.37420181614932,
+      "longitude": 44.43713880235387,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Tourism_2",
+      "price_range": "medium",
+      "rating": 4.880069019119976,
+      "rating_count": 18,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_basra_Government Offices_0",
+      "name": "Government Offices 1 - Basra",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.34020455037988,
+      "longitude": 44.46289054860456,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Government Offices_0",
+      "price_range": "medium",
+      "rating": 4.337814636719268,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Government Offices_1",
+      "name": "Government Offices 2 - Basra",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31342449226982,
+      "longitude": 44.477379913266994,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Government Offices_1",
+      "price_range": "medium",
+      "rating": 4.807660480279021,
+      "rating_count": 45,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Government Offices_2",
+      "name": "Government Offices 3 - Basra",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.39507418161929,
+      "longitude": 44.423652918168486,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Government Offices_2",
+      "price_range": "medium",
+      "rating": 4.308740437451029,
+      "rating_count": 36,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Government Offices_3",
+      "name": "Government Offices 4 - Basra",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.356367356849496,
+      "longitude": 44.46037913927521,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Government Offices_3",
+      "price_range": "medium",
+      "rating": 4.040544748655257,
+      "rating_count": 90,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Services_0",
+      "name": "Services 1 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31799771045389,
+      "longitude": 44.48191617121522,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_0",
+      "price_range": "medium",
+      "rating": 4.4362348988852816,
+      "rating_count": 12,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_1",
+      "name": "Services 2 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31659200507666,
+      "longitude": 44.49443319877446,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_1",
+      "price_range": "medium",
+      "rating": 4.136725183936555,
+      "rating_count": 105,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_2",
+      "name": "Services 3 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.32653846240001,
+      "longitude": 44.424370390600906,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_2",
+      "price_range": "medium",
+      "rating": 4.828957159839615,
+      "rating_count": 33,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_3",
+      "name": "Services 4 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.34354845910726,
+      "longitude": 44.42176601168587,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_3",
+      "price_range": "medium",
+      "rating": 4.873953524730031,
+      "rating_count": 34,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_4",
+      "name": "Services 5 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31858064903175,
+      "longitude": 44.417671623692236,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_4",
+      "price_range": "medium",
+      "rating": 4.530572357354371,
+      "rating_count": 106,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Companies_0",
+      "name": "Companies 1 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36502808372468,
+      "longitude": 44.465700797277385,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_0",
+      "price_range": "medium",
+      "rating": 4.30229070930279,
+      "rating_count": 10,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_1",
+      "name": "Companies 2 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.337634970962796,
+      "longitude": 44.40583318978736,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_1",
+      "price_range": "medium",
+      "rating": 4.487801798775777,
+      "rating_count": 82,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_2",
+      "name": "Companies 3 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.366512601821555,
+      "longitude": 44.44159850447453,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_2",
+      "price_range": "medium",
+      "rating": 4.5493369459171955,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_3",
+      "name": "Companies 4 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.38090244825356,
+      "longitude": 44.46463958131078,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_3",
+      "price_range": "medium",
+      "rating": 4.44489492266916,
+      "rating_count": 19,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Shopping_0",
+      "name": "Shopping 1 - Basra",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.382391936450865,
+      "longitude": 44.44794866523711,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Shopping_0",
+      "price_range": "medium",
+      "rating": 4.579503087344664,
+      "rating_count": 109,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Shopping_1",
+      "name": "Shopping 2 - Basra",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.34411140807028,
+      "longitude": 44.49302280402318,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Shopping_1",
+      "price_range": "medium",
+      "rating": 4.966345836258437,
+      "rating_count": 86,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Shopping_2",
+      "name": "Shopping 3 - Basra",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.39062502216863,
+      "longitude": 44.476104306132875,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Shopping_2",
+      "price_range": "medium",
+      "rating": 4.827706572234453,
+      "rating_count": 103,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:50:03.192Z",
+  "count": 3,
+  "data": [
+    {
+      "id": "mock_baghdad_Services_0",
+      "name": "Services 1 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.37046110786565,
+      "longitude": 44.45757476266629,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_0",
+      "price_range": "medium",
+      "rating": 4.681757566128903,
+      "rating_count": 87,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_baghdad_Services_1",
+      "name": "Services 2 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34825723262634,
+      "longitude": 44.47941597059417,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_1",
+      "price_range": "medium",
+      "rating": 4.721220020391062,
+      "rating_count": 83,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_baghdad_Services_2",
+      "name": "Services 3 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30480768746072,
+      "longitude": 44.42437401455038,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_2",
+      "price_range": "medium",
+      "rating": 4.463693293101689,
+      "rating_count": 14,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    }
+  ]
+}

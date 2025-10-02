@@ -1,0 +1,212 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.439Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_erbil_Services_0",
+      "name": "Services 1 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33978057587008,
+      "longitude": 44.47719137508084,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_0",
+      "price_range": "medium",
+      "rating": 4.894133003746987,
+      "rating_count": 71,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_1",
+      "name": "Services 2 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.38692521634527,
+      "longitude": 44.43919174856011,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_1",
+      "price_range": "medium",
+      "rating": 4.006494728604629,
+      "rating_count": 10,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_2",
+      "name": "Services 3 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.314042557918896,
+      "longitude": 44.41203735156028,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_2",
+      "price_range": "medium",
+      "rating": 4.687544888410782,
+      "rating_count": 41,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_3",
+      "name": "Services 4 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.30811062997319,
+      "longitude": 44.47633075150774,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_3",
+      "price_range": "medium",
+      "rating": 4.894247674977119,
+      "rating_count": 66,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_4",
+      "name": "Services 5 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.328879155357136,
+      "longitude": 44.4047437761998,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_4",
+      "price_range": "medium",
+      "rating": 4.218232401114289,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    }
+  ]
+}

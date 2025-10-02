@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:43:10.101Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_baghdad_Accommodation_0",
+      "name": "Accommodation 1 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38179191706912,
+      "longitude": 44.4207552858004,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.8070972165380095,
+      "rating_count": 73,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.087Z",
+      "created_at": "2025-10-02T22:43:10.089Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_1",
+      "name": "Accommodation 2 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32884328534184,
+      "longitude": 44.42810263248101,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.13260235629757,
+      "rating_count": 13,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.089Z",
+      "created_at": "2025-10-02T22:43:10.089Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_2",
+      "name": "Accommodation 3 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.301749899072156,
+      "longitude": 44.417098786232536,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.263971617526743,
+      "rating_count": 20,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.089Z",
+      "created_at": "2025-10-02T22:43:10.089Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_3",
+      "name": "Accommodation 4 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.36376672951108,
+      "longitude": 44.46242717678523,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.813546290931983,
+      "rating_count": 93,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_4",
+      "name": "Accommodation 5 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34690299622341,
+      "longitude": 44.40012611962293,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.516019223419949,
+      "rating_count": 47,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "batch_number": 2,
+  "batch_name": "Baghdad Complete Dataset - Batch 2",
+  "governorate": "baghdad",
+  "date_created": "2025-10-02T22:50:03.256Z",
+  "records_by_category": {
+    "Accommodation": 5,
+    "Cafe & Restaurants": 3,
+    "Events": 3,
+    "Tourism": 4,
+    "Government Offices": 5,
+    "Services": 3,
+    "Companies": 5,
+    "Shopping": 7
+  },
+  "total_records": 35,
+  "quality_metrics": {
+    "complete_records": 35,
+    "partial_records": 0,
+    "geocoded": 35,
+    "with_images": 35,
+    "verified": 35
+  },
+  "files": {
+    "json": [
+      "accommodation.json",
+      "cafe-restaurants.json",
+      "events.json",
+      "tourism.json",
+      "government-offices.json",
+      "services.json",
+      "companies.json",
+      "shopping.json",
+      "master-all-categories.json"
+    ],
+    "csv": [
+      "accommodation.csv",
+      "cafe-restaurants.csv",
+      "events.csv",
+      "tourism.csv",
+      "government-offices.csv",
+      "services.csv",
+      "companies.csv",
+      "shopping.csv"
+    ]
+  }
+}

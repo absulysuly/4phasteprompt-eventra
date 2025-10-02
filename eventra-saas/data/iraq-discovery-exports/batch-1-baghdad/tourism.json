@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:43:10.113Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_baghdad_Tourism_0",
+      "name": "Tourism 1 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.31136530888532,
+      "longitude": 44.42317759627269,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_0",
+      "price_range": "medium",
+      "rating": 4.01194574183869,
+      "rating_count": 85,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_1",
+      "name": "Tourism 2 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.3276981773011,
+      "longitude": 44.41601768351871,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_1",
+      "price_range": "medium",
+      "rating": 4.579627273392094,
+      "rating_count": 46,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_2",
+      "name": "Tourism 3 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.36451439699394,
+      "longitude": 44.45280470642926,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_2",
+      "price_range": "medium",
+      "rating": 4.79981540831536,
+      "rating_count": 14,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_3",
+      "name": "Tourism 4 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30968816126635,
+      "longitude": 44.41298101185953,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_3",
+      "price_range": "medium",
+      "rating": 4.631352614768333,
+      "rating_count": 52,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_4",
+      "name": "Tourism 5 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.35016090034831,
+      "longitude": 44.46356982363909,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_4",
+      "price_range": "medium",
+      "rating": 4.265893149549694,
+      "rating_count": 64,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    }
+  ]
+}

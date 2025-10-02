@@ -1,0 +1,148 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:43:10.162Z",
+  "count": 3,
+  "data": [
+    {
+      "id": "mock_baghdad_Shopping_0",
+      "name": "Shopping 1 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34479688348039,
+      "longitude": 44.42584644827457,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_0",
+      "price_range": "medium",
+      "rating": 4.263676220094561,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.091Z",
+      "created_at": "2025-10-02T22:43:10.091Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_1",
+      "name": "Shopping 2 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.31451965323903,
+      "longitude": 44.443380450061575,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_1",
+      "price_range": "medium",
+      "rating": 4.052694949952822,
+      "rating_count": 101,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.091Z",
+      "created_at": "2025-10-02T22:43:10.091Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_2",
+      "name": "Shopping 3 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.36817535500277,
+      "longitude": 44.45178286737279,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_2",
+      "price_range": "medium",
+      "rating": 4.816147563498957,
+      "rating_count": 91,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.091Z",
+      "created_at": "2025-10-02T22:43:10.091Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    }
+  ]
+}

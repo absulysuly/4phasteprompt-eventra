@@ -1,0 +1,179 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:52:03.530Z",
+  "count": 4,
+  "data": [
+    {
+      "id": "mock_basra_Companies_0",
+      "name": "Companies 1 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36502808372468,
+      "longitude": 44.465700797277385,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_0",
+      "price_range": "medium",
+      "rating": 4.30229070930279,
+      "rating_count": 10,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_1",
+      "name": "Companies 2 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.337634970962796,
+      "longitude": 44.40583318978736,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_1",
+      "price_range": "medium",
+      "rating": 4.487801798775777,
+      "rating_count": 82,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_2",
+      "name": "Companies 3 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.366512601821555,
+      "longitude": 44.44159850447453,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_2",
+      "price_range": "medium",
+      "rating": 4.5493369459171955,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Companies_3",
+      "name": "Companies 4 - Basra",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.38090244825356,
+      "longitude": 44.46463958131078,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Companies_3",
+      "price_range": "medium",
+      "rating": 4.44489492266916,
+      "rating_count": 19,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    }
+  ]
+}

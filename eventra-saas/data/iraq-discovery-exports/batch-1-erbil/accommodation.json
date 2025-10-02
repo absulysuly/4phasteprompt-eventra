@@ -1,0 +1,277 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.338Z",
+  "count": 6,
+  "data": [
+    {
+      "id": "mock_erbil_Accommodation_0",
+      "name": "Accommodation 1 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39571912752711,
+      "longitude": 44.47570724106859,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.135553728073773,
+      "rating_count": 27,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.314Z",
+      "created_at": "2025-10-02T22:48:02.318Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_1",
+      "name": "Accommodation 2 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.36818072354783,
+      "longitude": 44.44694367627853,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.847587472928352,
+      "rating_count": 91,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_2",
+      "name": "Accommodation 3 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39194329844852,
+      "longitude": 44.48076507996965,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.261782813165881,
+      "rating_count": 43,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_3",
+      "name": "Accommodation 4 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.30983489821259,
+      "longitude": 44.40716555564243,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.905116787531119,
+      "rating_count": 29,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_4",
+      "name": "Accommodation 5 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39292847183086,
+      "longitude": 44.464716273313144,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.428412216667587,
+      "rating_count": 97,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_5",
+      "name": "Accommodation 6 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33353986625525,
+      "longitude": 44.415233071717346,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_5",
+      "price_range": "medium",
+      "rating": 4.989822453947809,
+      "rating_count": 28,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    }
+  ]
+}

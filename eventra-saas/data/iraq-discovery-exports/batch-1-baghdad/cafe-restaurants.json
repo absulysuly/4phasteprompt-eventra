@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:43:10.108Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_0",
+      "name": "Cafe & Restaurants 1 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.354781848432964,
+      "longitude": 44.47394469194931,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_0",
+      "price_range": "medium",
+      "rating": 4.877648332091031,
+      "rating_count": 54,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_1",
+      "name": "Cafe & Restaurants 2 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.36191467120464,
+      "longitude": 44.452658121740136,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_1",
+      "price_range": "medium",
+      "rating": 4.4647355595198235,
+      "rating_count": 101,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_2",
+      "name": "Cafe & Restaurants 3 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30270906217472,
+      "longitude": 44.4815788297492,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_2",
+      "price_range": "medium",
+      "rating": 4.176666019021422,
+      "rating_count": 104,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_3",
+      "name": "Cafe & Restaurants 4 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38757036027688,
+      "longitude": 44.44604086166147,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_3",
+      "price_range": "medium",
+      "rating": 4.6855461870090105,
+      "rating_count": 74,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_4",
+      "name": "Cafe & Restaurants 5 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.39189771272258,
+      "longitude": 44.409782234948885,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_4",
+      "price_range": "medium",
+      "rating": 4.288871137301578,
+      "rating_count": 102,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:43:10.090Z",
+      "created_at": "2025-10-02T22:43:10.090Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    }
+  ]
+}

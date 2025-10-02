@@ -43,6 +43,13 @@ model Event {
   translations  EventTranslation[]
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  
+  // Performance indexes
+  @@index([date])
+  @@index([category])
+  @@index([city])
+  @@index([userId])
+  @@index([createdAt])
 }
 
 enum Locale {
@@ -61,6 +68,8 @@ model EventTranslation {
   eventId     String
 
   @@unique([eventId, locale])
+  @@index([eventId])
+  @@index([locale])
 }
 
 model PasswordResetToken {
@@ -79,6 +88,8 @@ enum VenueType {
   RESTAURANT
   ACTIVITY
   SERVICE
+  SHOPPING        // Shopping centers, malls, stores, markets
+  ENTERTAINMENT   // Entertainment venues, companies, businesses
 }
 
 enum VenueStatus {
@@ -133,6 +144,16 @@ model Venue {
   cuisineType   String?
   dietaryOptions String?     // JSON array (vegan, halal, etc.)
   
+  // For shopping: product categories and brands
+  productCategories String?  // JSON array of product categories
+  brands        String?      // JSON array of available brands
+  paymentMethods String?     // JSON array of accepted payment methods
+  
+  // For entertainment/companies: services and business type
+  businessType  String?      // Type of business/entertainment
+  services      String?      // JSON array of services offered
+  operatingHours String?     // JSON object with operating hours
+  
   // SEO and discovery
   tags          String?      // JSON array of tags
   category      String?      // main category
@@ -149,6 +170,19 @@ model Venue {
   
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
+  
+  // Performance indexes for common queries
+  @@index([type])
+  @@index([status])
+  @@index([category])
+  @@index([city])
+  @@index([userId])
+  @@index([featured])
+  @@index([verified])
+  @@index([createdAt])
+  @@index([type, status])
+  @@index([category, city])
+  @@index([latitude, longitude])
 }
 
 // Venue translations for multi-language support
@@ -170,6 +204,8 @@ model VenueTranslation {
   venueId     String
 
   @@unique([venueId, locale])
+  @@index([venueId])
+  @@index([locale])
 }
 
 // Simple CMS-style content overrides per locale and key

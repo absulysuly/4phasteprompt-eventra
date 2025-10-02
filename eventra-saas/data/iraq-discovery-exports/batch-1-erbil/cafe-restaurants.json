@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.347Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_erbil_Cafe & Restaurants_0",
+      "name": "Cafe & Restaurants 1 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.364379823231474,
+      "longitude": 44.4724404882121,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_0",
+      "price_range": "medium",
+      "rating": 4.454066802516259,
+      "rating_count": 93,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_1",
+      "name": "Cafe & Restaurants 2 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31462129980014,
+      "longitude": 44.47213791956976,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_1",
+      "price_range": "medium",
+      "rating": 4.453418125312982,
+      "rating_count": 65,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_2",
+      "name": "Cafe & Restaurants 3 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35430851515681,
+      "longitude": 44.4051126008597,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_2",
+      "price_range": "medium",
+      "rating": 4.8854525558353945,
+      "rating_count": 40,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_3",
+      "name": "Cafe & Restaurants 4 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.32632844369371,
+      "longitude": 44.43095454287457,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_3",
+      "price_range": "medium",
+      "rating": 4.571195318540222,
+      "rating_count": 54,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_4",
+      "name": "Cafe & Restaurants 5 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31358335919144,
+      "longitude": 44.41898785102501,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_4",
+      "price_range": "medium",
+      "rating": 4.159546998573248,
+      "rating_count": 65,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    }
+  ]
+}

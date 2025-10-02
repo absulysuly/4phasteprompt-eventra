@@ -1,0 +1,237 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.360Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_erbil_Events_0",
+      "name": "Events 1 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.344399207422796,
+      "longitude": 44.49670620032667,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_0",
+      "price_range": "medium",
+      "rating": 4.369908433658597,
+      "rating_count": 38,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_1",
+      "name": "Events 2 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.36589812916478,
+      "longitude": 44.489638650786475,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_1",
+      "price_range": "medium",
+      "rating": 4.8372828492781865,
+      "rating_count": 97,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_2",
+      "name": "Events 3 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35267121269312,
+      "longitude": 44.42476723673585,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_2",
+      "price_range": "medium",
+      "rating": 4.0545603876345835,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_3",
+      "name": "Events 4 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.32481398925389,
+      "longitude": 44.41327232595818,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_3",
+      "price_range": "medium",
+      "rating": 4.3099819799659524,
+      "rating_count": 68,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_4",
+      "name": "Events 5 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35732127780797,
+      "longitude": 44.428810297761025,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_4",
+      "price_range": "medium",
+      "rating": 4.150493585007984,
+      "rating_count": 94,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    }
+  ]
+}

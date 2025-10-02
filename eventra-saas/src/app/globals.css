@@ -1,10 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -218,793 +223,9 @@ input, select, textarea, button { font-family: inherit; }
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* ===== MODERN ELEGANT THEME - IRAQI/KURDISH DESIGN SYSTEM ===== */
-:root {
-  /* Primary Brand Colors - Inspired by Iraqi/Kurdish Culture */
-  --events-color: #9333EA;      /* Deep Purple - Royal & Cultural */
-  --hotels-color: #EC4899;      /* Rose Pink - Hospitality & Warmth */
-  --restaurants-color: #F59E0B; /* Amber - Spices & Flavor */
-  --cafes-color: #EAB308;       /* Gold - Coffee & Tradition */
-  --tourism-color: #06B6D4;     /* Cyan - Rivers & Heritage */
-  
-  /* Gradient Variants */
-  --events-gradient: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
-  --hotels-gradient: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
-  --restaurants-gradient: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
-  --cafes-gradient: linear-gradient(135deg, #EAB308 0%, #F59E0B 100%);
-  --tourism-gradient: linear-gradient(135deg, #06B6D4 0%, #0EA5E9 100%);
-  
-  /* Modern Background System */
-  --bg-primary: #0F172A;        /* Deep Navy Blue */
-  --bg-secondary: #1E293B;      /* Slate Gray */
-  --bg-card: #1E293B;           /* Card Background */
-  --bg-elevated: #334155;       /* Elevated Elements */
-  --bg-pattern: #475569;        /* Pattern/Divider */
-  
-  /* Text Color Hierarchy */
-  --text-primary: #F8FAFC;      /* Almost White */
-  --text-secondary: #CBD5E1;    /* Light Gray */
-  --text-tertiary: #94A3B8;     /* Muted Gray */
-  --text-muted: #64748B;        /* Very Muted */
-  
-  /* System/Semantic Colors */
-  --success-color: #10B981;     /* Green */
-  --warning-color: #F59E0B;     /* Amber */
-  --error-color: #EF4444;       /* Red */
-  --info-color: #3B82F6;        /* Blue */
-  
-  /* Border & Shadow */
-  --border-color: #334155;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-}
-
-/* Modern Background with Subtle Pattern */
-body {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-  background-attachment: fixed;
-  color: var(--text-primary);
-  min-height: 100vh;
-}
-
-/* ===== ELEGANT GLOW & SHADOW EFFECTS ===== */
-.elegant-glow {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Category-Specific Subtle Glows - Less Intense, More Elegant */
-.events-glow {
-  box-shadow:
-    0 4px 6px -1px rgba(147, 51, 234, 0.2),
-    0 2px 4px -2px rgba(147, 51, 234, 0.1),
-    0 0 20px rgba(147, 51, 234, 0.15);
-}
-
-.hotels-glow {
-  box-shadow:
-    0 4px 6px -1px rgba(236, 72, 153, 0.2),
-    0 2px 4px -2px rgba(236, 72, 153, 0.1),
-    0 0 20px rgba(236, 72, 153, 0.15);
-}
-
-.restaurants-glow {
-  box-shadow:
-    0 4px 6px -1px rgba(245, 158, 11, 0.2),
-    0 2px 4px -2px rgba(245, 158, 11, 0.1),
-    0 0 20px rgba(245, 158, 11, 0.15);
-}
-
-.cafes-glow {
-  box-shadow:
-    0 4px 6px -1px rgba(234, 179, 8, 0.2),
-    0 2px 4px -2px rgba(234, 179, 8, 0.1),
-    0 0 20px rgba(234, 179, 8, 0.15);
-}
-
-.tourism-glow {
-  box-shadow:
-    0 4px 6px -1px rgba(6, 182, 212, 0.2),
-    0 2px 4px -2px rgba(6, 182, 212, 0.1),
-    0 0 20px rgba(6, 182, 212, 0.15);
-}
-
-/* ===== NEON ANIMATIONS ===== */
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 5px currentColor,
-                0 0 10px currentColor,
-                0 0 20px currentColor,
-                0 0 40px currentColor;
-  }
-  50% {
-    box-shadow: 0 0 10px currentColor,
-                0 0 20px currentColor,
-                0 0 40px currentColor,
-                0 0 80px currentColor,
-                0 0 100px currentColor;
-  }
-}
-
-.neon-pulse {
-  animation: neonPulse 2s ease-in-out infinite;
-}
-
-/* ===== MODERN CARD STYLES ===== */
-.neon-card {
-  background: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(20px);
-  overflow: hidden;
-  position: relative;
-}
-
-.neon-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.neon-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-}
-
-.neon-card:hover::before {
-  opacity: 1;
-}
-
-.neon-card.events::before {
-  background: var(--events-gradient);
-}
-
-.neon-card.hotels::before {
-  background: var(--hotels-gradient);
-}
-
-.neon-card.restaurants::before {
-  background: var(--restaurants-gradient);
-}
-
-.neon-card.cafes::before {
-  background: var(--cafes-gradient);
-}
-
-.neon-card.tourism::before {
-  background: var(--tourism-gradient);
-}
-
-.neon-card.featured {
-  border: 2px solid;
-  background: var(--bg-elevated);
-}
-
-.neon-card.events.featured {
-  border-color: var(--events-color);
-}
-
-.neon-card.hotels.featured {
-  border-color: var(--hotels-color);
-}
-
-.neon-card.restaurants.featured {
-  border-color: var(--restaurants-color);
-}
-
-.neon-card.cafes.featured {
-  border-color: var(--cafes-color);
-}
-
-.neon-card.tourism.featured {
-  border-color: var(--tourism-color);
-}
-
-/* ===== MODERN BUTTON STYLES ===== */
-.neon-button {
-  background: transparent;
-  border: 2px solid;
-  border-radius: 12px;
-  padding: 10px 20px;
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.neon-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.neon-button:active {
-  transform: translateY(0);
-}
-
-.neon-button.events {
-  border-color: var(--events-color);
-  color: var(--events-color);
-}
-
-.neon-button.events:hover {
-  background: var(--events-gradient);
-  border-color: var(--events-color);
-  color: white;
-}
-
-.neon-button.hotels {
-  border-color: var(--hotels-color);
-  color: var(--hotels-color);
-}
-
-.neon-button.hotels:hover {
-  background: var(--hotels-gradient);
-  border-color: var(--hotels-color);
-  color: white;
-}
-
-.neon-button.restaurants {
-  border-color: var(--restaurants-color);
-  color: var(--restaurants-color);
-}
-
-.neon-button.restaurants:hover {
-  background: var(--restaurants-gradient);
-  border-color: var(--restaurants-color);
-  color: white;
-}
-
-.neon-button.cafes {
-  border-color: var(--cafes-color);
-  color: var(--cafes-color);
-}
-
-.neon-button.cafes:hover {
-  background: var(--cafes-gradient);
-  border-color: var(--cafes-color);
-  color: white;
-}
-
-.neon-button.tourism {
-  border-color: var(--tourism-color);
-  color: var(--tourism-color);
-}
-
-.neon-button.tourism:hover {
-  background: var(--tourism-gradient);
-  border-color: var(--tourism-color);
-  color: white;
-}
-
-/* ===== MODERN NAVIGATION STYLES ===== */
-.neon-nav {
-  background: rgba(30, 41, 59, 0.95);
-  border-bottom: 1px solid var(--border-color);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-
-/* ===== CURRENTLY EXPLORING CARD ===== */
-.currently-exploring {
-  background: #00B4A6;
-  border: 2px solid var(--tourism-color);
-  border-radius: 15px;
-  padding: 32px;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  margin: 24px auto;
-  max-width: 600px;
-}
-
-.currently-exploring::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.1), transparent);
-  pointer-events: none;
-}
-
-.currently-exploring h2 {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
-.currently-exploring .city-name {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--tourism-color);
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
-  display: inline-block;
-}
-
-.currently-exploring .arabic-name {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  margin-top: 8px;
-}
-
-/* ===== CATEGORY ICONS ===== */
-.category-icon {
-  background: rgba(45, 27, 78, 0.6);
-  border: 2px solid;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.category-icon:hover {
-  transform: scale(1.05);
-  background: rgba(45, 27, 78, 0.8);
-}
-
-.category-icon.events {
-  border-color: var(--events-color);
-}
-
-.category-icon.hotels {
-  border-color: var(--hotels-color);
-}
-
-.category-icon.restaurants {
-  border-color: var(--restaurants-color);
-}
-
-.category-icon.cafes {
-  border-color: var(--cafes-color);
-}
-
-.category-icon.tourism {
-  border-color: var(--tourism-color);
-}
-
-.category-icon .icon {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.category-icon .label {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/* ===== STORIES/AVATAR STYLES ===== */
-.story-section {
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(178, 75, 243, 0.3);
-  margin-bottom: 20px;
-}
-
-.story-container {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  padding: 0 20px;
-  overflow-x: auto;
-}
-
-.story-avatar {
-  border: 2px solid var(--events-color);
-  border-radius: 50%;
-  padding: 3px;
-  background: rgba(45, 27, 78, 0.6);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-  cursor: pointer;
-  text-align: center;
-  min-width: 80px;
-}
-
-.story-avatar:hover {
-  animation: neonPulse 1s ease-in-out;
-}
-
-.story-avatar.add-story {
-  border-style: dashed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  font-size: 2rem;
-  color: var(--events-color);
-}
-
-.story-avatar img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.story-avatar .name {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-top: 4px;
-}
-
-/* ===== INPUT STYLES ===== */
-.neon-input {
-  background: rgba(26, 0, 51, 0.5);
-  border: 1px solid var(--events-color);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: var(--text-primary);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.neon-input:focus {
-  border: 2px solid var(--events-color);
-  outline: none;
-}
-
-.neon-input::placeholder {
-  color: var(--text-tertiary);
-}
-
-/* ===== RESPONSIVE BEHAVIOR ===== */
-@media (max-width: 768px) {
-  .events-glow, .hotels-glow, .restaurants-glow, .cafes-glow, .tourism-glow {
-    box-shadow:
-      0 0 3px currentColor,
-      0 0 7px currentColor,
-      0 0 14px currentColor,
-      0 0 28px currentColor,
-      0 0 56px currentColor;
-  }
-  
-  .currently-exploring {
-    padding: 20px;
-    margin: 16px;
-  }
-  
-  .currently-exploring h2 {
-    font-size: 2rem;
-  }
-  
-  .category-icon {
-    min-height: 100px;
-    padding: 16px;
-  }
-}
-
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-  .neon-pulse,
-  .story-avatar:hover {
-    animation: none;
-  }
-  
-  .neon-card:hover,
-  .neon-button:hover,
-  .category-icon:hover {
-    transform: none;
-  }
-}
-
-/* Focus indicators for accessibility */
-.neon-button:focus,
-.category-icon:focus,
-.story-avatar:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
-/* Category-Specific Glow Classes */
-.events-glow {
-  box-shadow:
-    0 0 5px var(--events-color),
-    0 0 10px var(--events-color),
-    0 0 20px var(--events-color),
-    0 0 40px var(--events-color),
-    0 0 80px var(--events-color);
-}
-
-.hotels-glow {
-  box-shadow:
-    0 0 5px var(--hotels-color),
-    0 0 10px var(--hotels-color),
-    0 0 20px var(--hotels-color),
-    0 0 40px var(--hotels-color),
-    0 0 80px var(--hotels-color);
-}
-
-.restaurants-glow {
-  box-shadow:
-    0 0 5px var(--restaurants-color),
-    0 0 10px var(--restaurants-color),
-    0 0 20px var(--restaurants-color),
-    0 0 40px var(--restaurants-color),
-    0 0 80px var(--restaurants-color);
-}
-
-.cafes-glow {
-  box-shadow:
-    0 0 5px var(--cafes-color),
-    0 0 10px var(--cafes-color),
-    0 0 20px var(--cafes-color),
-    0 0 40px var(--cafes-color),
-    0 0 80px var(--cafes-color);
-}
-
-.tourism-glow {
-  box-shadow:
-    0 0 5px var(--tourism-color),
-    0 0 10px var(--tourism-color),
-    0 0 20px var(--tourism-color),
-    0 0 40px var(--tourism-color),
-    0 0 80px var(--tourism-color);
-}
-
-/* Neon Pulse Animation */
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 5px currentColor,
-                0 0 10px currentColor,
-                0 0 20px currentColor,
-                0 0 40px currentColor;
-  }
-  50% {
-    box-shadow: 0 0 10px currentColor,
-                0 0 20px currentColor,
-                0 0 40px currentColor,
-                0 0 80px currentColor,
-                0 0 100px currentColor;
-  }
-}
-
-.neon-pulse {
-  animation: neonPulse 2s ease-in-out infinite;
-}
-
-/* Card Styles */
-.neon-card {
-  background: rgba(45, 27, 78, 0.6);
-  border-radius: 15px;
-  border: 2px solid;
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(10px);
-}
-
-.neon-card:hover {
-  transform: scale(1.02) translateY(-4px);
-}
-
-.neon-card.events {
-  border-color: var(--events-color);
-}
-
-.neon-card.hotels {
-  border-color: var(--hotels-color);
-}
-
-.neon-card.restaurants {
-  border-color: var(--restaurants-color);
-}
-
-.neon-card.cafes {
-  border-color: var(--cafes-color);
-}
-
-.neon-card.tourism {
-  border-color: var(--tourism-color);
-}
-
-/* Button Styles */
-.neon-button {
-  background: transparent;
-  border: 2px solid;
-  border-radius: 25px;
-  padding: 12px 24px;
-  color: var(--text-primary);
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.neon-button:hover {
-  transform: scale(1.05);
-}
-
-.neon-button.events {
-  border-color: var(--events-color);
-  color: var(--events-color);
-}
-
-.neon-button.hotels {
-  border-color: var(--hotels-color);
-  color: var(--hotels-color);
-}
-
-.neon-button.restaurants {
-  border-color: var(--restaurants-color);
-  color: var(--restaurants-color);
-}
-
-.neon-button.cafes {
-  border-color: var(--cafes-color);
-  color: var(--cafes-color);
-}
-
-.neon-button.tourism {
-  border-color: var(--tourism-color);
-  color: var(--tourism-color);
-}
-
-/* Navigation Styles */
-.neon-nav {
-  background: rgba(26, 0, 51, 0.9);
-  border: 2px solid var(--events-color);
-  border-radius: 10px;
-  backdrop-filter: blur(15px);
-}
-
-/* Currently Exploring Card */
-.currently-exploring {
-  background: #00B4A6;
-  border: 2px solid var(--tourism-color);
-  border-radius: 15px;
-  padding: 24px;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.currently-exploring::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.1), transparent);
-  pointer-events: none;
-}
-
-/* Category Icons */
-.category-icon {
-  background: rgba(45, 27, 78, 0.6);
-  border: 2px solid;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-}
-
-.category-icon:hover {
-  transform: scale(1.05);
-  background: rgba(45, 27, 78, 0.8);
-}
-
-.category-icon.events {
-  border-color: var(--events-color);
-}
-
-.category-icon.hotels {
-  border-color: var(--hotels-color);
-}
-
-.category-icon.restaurants {
-  border-color: var(--restaurants-color);
-}
-
-.category-icon.cafes {
-  border-color: var(--cafes-color);
-}
-
-.category-icon.tourism {
-  border-color: var(--tourism-color);
-}
-
-/* Stories/Avatar Styles */
-.story-avatar {
-  border: 2px solid var(--events-color);
-  border-radius: 50%;
-  padding: 3px;
-  background: rgba(45, 27, 78, 0.6);
-  transition: all 0.3s ease;
-}
-
-.story-avatar:hover {
-  animation: neonPulse 1s ease-in-out;
-}
-
-/* Input Fields */
-.neon-input {
-  background: rgba(26, 0, 51, 0.5);
-  border: 1px solid var(--events-color);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: var(--text-primary);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.neon-input:focus {
-  border: 2px solid var(--events-color);
-  outline: none;
-}
-
-.neon-input::placeholder {
-  color: var(--text-tertiary);
-}
-
-/* Responsive Glow Reduction */
-@media (max-width: 768px) {
-  .events-glow, .hotels-glow, .restaurants-glow, .cafes-glow, .tourism-glow {
-    box-shadow:
-      0 0 3px currentColor,
-      0 0 7px currentColor,
-      0 0 14px currentColor,
-      0 0 28px currentColor,
-      0 0 56px currentColor;
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  .neon-pulse,
-  .story-avatar:hover {
-    animation: none;
-  }
-  
-  .neon-card:hover,
-  .neon-button:hover,
-  .category-icon:hover {
-    transform: none;
-  }
-}
-
-/* Title emphasis for high contrast on any background */
-.title-emphasis {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 0 12px rgba(0,0,0,0.25);
-}
-
-@media (prefers-color-scheme: dark) {
-  .title-emphasis {
-    text-shadow: 0 1px 0 rgba(0,0,0,0.6), 0 0 12px rgba(255,255,255,0.25);
-  }
+/* Neon Glow */
+.neon-glow {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
 }
 
 /* Gradient Text */
@@ -1256,4 +477,125 @@ body {
 .rtl-button, .ltr-button {
   max-width: fit-content;
   flex-shrink: 0;
+}
+
+/* Iraq Discovery Custom Animations */
+
+/* Ken Burns Effect for Hero Images */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-out forwards;
+}
+
+/* Floating Animations with Delays */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(10px, -30px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(-15px, 25px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite 2s;
+}
+
+/* Slide-up animations with delays */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-slide-up-delayed {
+  animation: slide-up 0.8s ease-out 0.2s both;
+}
+
+.animate-slide-up-delayed-2 {
+  animation: slide-up 0.8s ease-out 0.4s both;
+}
+
+.animate-slide-up-delayed-3 {
+  animation: slide-up 0.8s ease-out 0.6s both;
+}
+
+.animate-slide-up-delayed-4 {
+  animation: slide-up 0.8s ease-out 0.8s both;
+}
+
+.animate-slide-up-delayed-5 {
+  animation: slide-up 0.8s ease-out 1s both;
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-text {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-text {
+  animation: gradient-text 5s ease infinite;
+}
+
+/* Modal Slide In */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.4s ease-out;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -1,0 +1,242 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.519Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_erbil_Shopping_0",
+      "name": "Shopping 1 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.304718735574454,
+      "longitude": 44.49563648114897,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_0",
+      "price_range": "medium",
+      "rating": 4.226255029984817,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_1",
+      "name": "Shopping 2 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.349944545894296,
+      "longitude": 44.467320438921384,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_1",
+      "price_range": "medium",
+      "rating": 4.444525317406654,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_2",
+      "name": "Shopping 3 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33023753466458,
+      "longitude": 44.46650239953478,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_2",
+      "price_range": "medium",
+      "rating": 4.0157900915325655,
+      "rating_count": 102,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_3",
+      "name": "Shopping 4 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31455954078904,
+      "longitude": 44.489333321762494,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_3",
+      "price_range": "medium",
+      "rating": 4.251979053699088,
+      "rating_count": 99,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_4",
+      "name": "Shopping 5 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.34959279113854,
+      "longitude": 44.45541334250364,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_4",
+      "price_range": "medium",
+      "rating": 4.165337187000444,
+      "rating_count": 74,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    }
+  ]
+}

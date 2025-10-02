@@ -1,0 +1,47 @@
+{
+  "batch_number": 1,
+  "batch_name": "Erbil Complete Dataset - Batch 1",
+  "governorate": "erbil",
+  "date_created": "2025-10-02T22:48:02.855Z",
+  "records_by_category": {
+    "Accommodation": 6,
+    "Cafe & Restaurants": 5,
+    "Events": 5,
+    "Tourism": 3,
+    "Government Offices": 7,
+    "Services": 5,
+    "Companies": 4,
+    "Shopping": 5
+  },
+  "total_records": 40,
+  "quality_metrics": {
+    "complete_records": 40,
+    "partial_records": 0,
+    "geocoded": 40,
+    "with_images": 40,
+    "verified": 40
+  },
+  "files": {
+    "json": [
+      "accommodation.json",
+      "cafe-restaurants.json",
+      "events.json",
+      "tourism.json",
+      "government-offices.json",
+      "services.json",
+      "companies.json",
+      "shopping.json",
+      "master-all-categories.json"
+    ],
+    "csv": [
+      "accommodation.csv",
+      "cafe-restaurants.csv",
+      "events.csv",
+      "tourism.csv",
+      "government-offices.csv",
+      "services.csv",
+      "companies.csv",
+      "shopping.csv"
+    ]
+  }
+}

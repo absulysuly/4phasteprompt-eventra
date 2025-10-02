@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:50:03.194Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_baghdad_Companies_0",
+      "name": "Companies 1 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32766592234221,
+      "longitude": 44.49021282400519,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_0",
+      "price_range": "medium",
+      "rating": 4.231675697224167,
+      "rating_count": 80,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_1",
+      "name": "Companies 2 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32327608706826,
+      "longitude": 44.446382474823125,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_1",
+      "price_range": "medium",
+      "rating": 4.0094133984599445,
+      "rating_count": 13,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_2",
+      "name": "Companies 3 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.327016166514795,
+      "longitude": 44.49000118571405,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_2",
+      "price_range": "medium",
+      "rating": 4.702598102658758,
+      "rating_count": 33,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_3",
+      "name": "Companies 4 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.331374261933625,
+      "longitude": 44.43318925200136,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_3",
+      "price_range": "medium",
+      "rating": 4.575914095986481,
+      "rating_count": 30,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_4",
+      "name": "Companies 5 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32657428847287,
+      "longitude": 44.46063074971872,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_4",
+      "price_range": "medium",
+      "rating": 4.003052934991857,
+      "rating_count": 41,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    }
+  ]
+}

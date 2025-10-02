@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:50:03.190Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_baghdad_Government Offices_0",
+      "name": "Government Offices 1 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.332192928580724,
+      "longitude": 44.43036578262166,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_0",
+      "price_range": "medium",
+      "rating": 4.2233897628710535,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_1",
+      "name": "Government Offices 2 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32396950314822,
+      "longitude": 44.44249259221443,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_1",
+      "price_range": "medium",
+      "rating": 4.055438920699549,
+      "rating_count": 82,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_2",
+      "name": "Government Offices 3 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30429768248995,
+      "longitude": 44.481479160584044,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_2",
+      "price_range": "medium",
+      "rating": 4.189029922684366,
+      "rating_count": 95,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_3",
+      "name": "Government Offices 4 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.3760588069293,
+      "longitude": 44.480110190289736,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_3",
+      "price_range": "medium",
+      "rating": 4.544704260685414,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_4",
+      "name": "Government Offices 5 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.337173207811475,
+      "longitude": 44.44293957099679,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_4",
+      "price_range": "medium",
+      "rating": 4.142794261822975,
+      "rating_count": 69,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    }
+  ]
+}

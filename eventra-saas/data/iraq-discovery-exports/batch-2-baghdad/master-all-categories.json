@@ -1,0 +1,1559 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:50:03.220Z",
+  "count": 35,
+  "data": [
+    {
+      "id": "mock_baghdad_Accommodation_0",
+      "name": "Accommodation 1 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.3514047301197,
+      "longitude": 44.419644842829406,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.273535367022945,
+      "rating_count": 32,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_1",
+      "name": "Accommodation 2 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38137194733791,
+      "longitude": 44.4498414229009,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.3165663475480365,
+      "rating_count": 70,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_2",
+      "name": "Accommodation 3 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.33681793909275,
+      "longitude": 44.44437386640902,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.955323917459893,
+      "rating_count": 13,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_3",
+      "name": "Accommodation 4 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30312042215843,
+      "longitude": 44.44501103741129,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.2792428972804615,
+      "rating_count": 109,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Accommodation_4",
+      "name": "Accommodation 5 - Baghdad",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.337460123322316,
+      "longitude": 44.40547372920576,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.749824515578053,
+      "rating_count": 84,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_0",
+      "name": "Cafe & Restaurants 1 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34031371973681,
+      "longitude": 44.48736737413306,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_0",
+      "price_range": "medium",
+      "rating": 4.429266679694829,
+      "rating_count": 11,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_1",
+      "name": "Cafe & Restaurants 2 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.334070148760674,
+      "longitude": 44.402646545431,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_1",
+      "price_range": "medium",
+      "rating": 4.371580846086561,
+      "rating_count": 60,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Cafe & Restaurants_2",
+      "name": "Cafe & Restaurants 3 - Baghdad",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.368704479240236,
+      "longitude": 44.45345382275559,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Cafe & Restaurants_2",
+      "price_range": "medium",
+      "rating": 4.664703792483586,
+      "rating_count": 83,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_baghdad_Events_0",
+      "name": "Events 1 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38376825307005,
+      "longitude": 44.420431923097674,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_0",
+      "price_range": "medium",
+      "rating": 4.373039095318884,
+      "rating_count": 80,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Events_1",
+      "name": "Events 2 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.35891022058327,
+      "longitude": 44.43476964814972,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_1",
+      "price_range": "medium",
+      "rating": 4.229422802787326,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Events_2",
+      "name": "Events 3 - Baghdad",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30117989280855,
+      "longitude": 44.47214342463779,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Events_2",
+      "price_range": "medium",
+      "rating": 4.070242961085623,
+      "rating_count": 79,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:50:03.183Z",
+        "end_datetime": "2025-10-02T22:50:03.183Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_0",
+      "name": "Tourism 1 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.37641283643509,
+      "longitude": 44.462161915108474,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_0",
+      "price_range": "medium",
+      "rating": 4.919174518408335,
+      "rating_count": 36,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_1",
+      "name": "Tourism 2 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.359109380477456,
+      "longitude": 44.49679788521856,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_1",
+      "price_range": "medium",
+      "rating": 4.982434941041799,
+      "rating_count": 84,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_2",
+      "name": "Tourism 3 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34216943003593,
+      "longitude": 44.40398312657108,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_2",
+      "price_range": "medium",
+      "rating": 4.885448874634207,
+      "rating_count": 21,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Tourism_3",
+      "name": "Tourism 4 - Baghdad",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.3732528837589,
+      "longitude": 44.41762178595405,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Tourism_3",
+      "price_range": "medium",
+      "rating": 4.266170957460556,
+      "rating_count": 72,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_0",
+      "name": "Government Offices 1 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.332192928580724,
+      "longitude": 44.43036578262166,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_0",
+      "price_range": "medium",
+      "rating": 4.2233897628710535,
+      "rating_count": 77,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_1",
+      "name": "Government Offices 2 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32396950314822,
+      "longitude": 44.44249259221443,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_1",
+      "price_range": "medium",
+      "rating": 4.055438920699549,
+      "rating_count": 82,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_2",
+      "name": "Government Offices 3 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30429768248995,
+      "longitude": 44.481479160584044,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_2",
+      "price_range": "medium",
+      "rating": 4.189029922684366,
+      "rating_count": 95,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_3",
+      "name": "Government Offices 4 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.3760588069293,
+      "longitude": 44.480110190289736,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_3",
+      "price_range": "medium",
+      "rating": 4.544704260685414,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Government Offices_4",
+      "name": "Government Offices 5 - Baghdad",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.337173207811475,
+      "longitude": 44.44293957099679,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Government Offices_4",
+      "price_range": "medium",
+      "rating": 4.142794261822975,
+      "rating_count": 69,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Services_0",
+      "name": "Services 1 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.37046110786565,
+      "longitude": 44.45757476266629,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_0",
+      "price_range": "medium",
+      "rating": 4.681757566128903,
+      "rating_count": 87,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_baghdad_Services_1",
+      "name": "Services 2 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.34825723262634,
+      "longitude": 44.47941597059417,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_1",
+      "price_range": "medium",
+      "rating": 4.721220020391062,
+      "rating_count": 83,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_baghdad_Services_2",
+      "name": "Services 3 - Baghdad",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30480768746072,
+      "longitude": 44.42437401455038,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Services_2",
+      "price_range": "medium",
+      "rating": 4.463693293101689,
+      "rating_count": 14,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_0",
+      "name": "Companies 1 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32766592234221,
+      "longitude": 44.49021282400519,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_0",
+      "price_range": "medium",
+      "rating": 4.231675697224167,
+      "rating_count": 80,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_1",
+      "name": "Companies 2 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32327608706826,
+      "longitude": 44.446382474823125,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_1",
+      "price_range": "medium",
+      "rating": 4.0094133984599445,
+      "rating_count": 13,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_2",
+      "name": "Companies 3 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.327016166514795,
+      "longitude": 44.49000118571405,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_2",
+      "price_range": "medium",
+      "rating": 4.702598102658758,
+      "rating_count": 33,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_3",
+      "name": "Companies 4 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.331374261933625,
+      "longitude": 44.43318925200136,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_3",
+      "price_range": "medium",
+      "rating": 4.575914095986481,
+      "rating_count": 30,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Companies_4",
+      "name": "Companies 5 - Baghdad",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.32657428847287,
+      "longitude": 44.46063074971872,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Companies_4",
+      "price_range": "medium",
+      "rating": 4.003052934991857,
+      "rating_count": 41,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_0",
+      "name": "Shopping 1 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30061429353375,
+      "longitude": 44.40713281561301,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_0",
+      "price_range": "medium",
+      "rating": 4.1001131583199655,
+      "rating_count": 98,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_1",
+      "name": "Shopping 2 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.323055574305634,
+      "longitude": 44.45052339252371,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_1",
+      "price_range": "medium",
+      "rating": 4.454675055209873,
+      "rating_count": 63,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_2",
+      "name": "Shopping 3 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.384143712110856,
+      "longitude": 44.42049423951907,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_2",
+      "price_range": "medium",
+      "rating": 4.955482136235312,
+      "rating_count": 10,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_3",
+      "name": "Shopping 4 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.36193207986972,
+      "longitude": 44.461591172272115,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_3",
+      "price_range": "medium",
+      "rating": 4.669530231625673,
+      "rating_count": 39,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_4",
+      "name": "Shopping 5 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.33410652506341,
+      "longitude": 44.429725233831746,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_4",
+      "price_range": "medium",
+      "rating": 4.284349599626871,
+      "rating_count": 56,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_5",
+      "name": "Shopping 6 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.30069628058351,
+      "longitude": 44.41253813912612,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_5",
+      "price_range": "medium",
+      "rating": 4.651841464946608,
+      "rating_count": 78,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_baghdad_Shopping_6",
+      "name": "Shopping 7 - Baghdad",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 7",
+        "city": "Baghdad",
+        "governorate": "baghdad"
+      },
+      "latitude": 33.38557270553093,
+      "longitude": 44.42249768139639,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_baghdad_Shopping_6",
+      "price_range": "medium",
+      "rating": 4.701921977673242,
+      "rating_count": 49,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Baghdad.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:50:03.183Z",
+      "created_at": "2025-10-02T22:50:03.183Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    }
+  ]
+}

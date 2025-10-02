@@ -1,0 +1,37 @@
+{
+  "info": {
+    "name": "Iraq Discovery API",
+    "description": "Mock API endpoints for testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Places",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/places"
+      }
+    },
+    {
+      "name": "Get Places by Category",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/places?category=Accommodation"
+      }
+    },
+    {
+      "name": "Get Places by Governorate",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/places?governorate=erbil"
+      }
+    },
+    {
+      "name": "Search Places",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/places/search?q=hotel"
+      }
+    }
+  ]
+}

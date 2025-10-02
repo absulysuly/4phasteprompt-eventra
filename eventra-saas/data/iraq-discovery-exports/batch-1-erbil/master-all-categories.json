@@ -1,0 +1,1774 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:48:02.529Z",
+  "count": 40,
+  "data": [
+    {
+      "id": "mock_erbil_Accommodation_0",
+      "name": "Accommodation 1 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39571912752711,
+      "longitude": 44.47570724106859,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.135553728073773,
+      "rating_count": 27,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.314Z",
+      "created_at": "2025-10-02T22:48:02.318Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_1",
+      "name": "Accommodation 2 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.36818072354783,
+      "longitude": 44.44694367627853,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.847587472928352,
+      "rating_count": 91,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_2",
+      "name": "Accommodation 3 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39194329844852,
+      "longitude": 44.48076507996965,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.261782813165881,
+      "rating_count": 43,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_3",
+      "name": "Accommodation 4 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.30983489821259,
+      "longitude": 44.40716555564243,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.905116787531119,
+      "rating_count": 29,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_4",
+      "name": "Accommodation 5 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39292847183086,
+      "longitude": 44.464716273313144,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.428412216667587,
+      "rating_count": 97,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Accommodation_5",
+      "name": "Accommodation 6 - Erbil",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33353986625525,
+      "longitude": 44.415233071717346,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Accommodation_5",
+      "price_range": "medium",
+      "rating": 4.989822453947809,
+      "rating_count": 28,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.320Z",
+      "created_at": "2025-10-02T22:48:02.320Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_0",
+      "name": "Cafe & Restaurants 1 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.364379823231474,
+      "longitude": 44.4724404882121,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_0",
+      "price_range": "medium",
+      "rating": 4.454066802516259,
+      "rating_count": 93,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_1",
+      "name": "Cafe & Restaurants 2 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31462129980014,
+      "longitude": 44.47213791956976,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_1",
+      "price_range": "medium",
+      "rating": 4.453418125312982,
+      "rating_count": 65,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_2",
+      "name": "Cafe & Restaurants 3 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35430851515681,
+      "longitude": 44.4051126008597,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_2",
+      "price_range": "medium",
+      "rating": 4.8854525558353945,
+      "rating_count": 40,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.321Z",
+      "created_at": "2025-10-02T22:48:02.321Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_3",
+      "name": "Cafe & Restaurants 4 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.32632844369371,
+      "longitude": 44.43095454287457,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_3",
+      "price_range": "medium",
+      "rating": 4.571195318540222,
+      "rating_count": 54,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Cafe & Restaurants_4",
+      "name": "Cafe & Restaurants 5 - Erbil",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "cafe & restaurants"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31358335919144,
+      "longitude": 44.41898785102501,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Cafe & Restaurants_4",
+      "price_range": "medium",
+      "rating": 4.159546998573248,
+      "rating_count": 65,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Cafe & Restaurants for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "cuisine_types": [
+          "Local",
+          "International"
+        ],
+        "delivery_available": false,
+        "takeout_available": true
+      }
+    },
+    {
+      "id": "mock_erbil_Events_0",
+      "name": "Events 1 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.344399207422796,
+      "longitude": 44.49670620032667,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_0",
+      "price_range": "medium",
+      "rating": 4.369908433658597,
+      "rating_count": 38,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_1",
+      "name": "Events 2 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.36589812916478,
+      "longitude": 44.489638650786475,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_1",
+      "price_range": "medium",
+      "rating": 4.8372828492781865,
+      "rating_count": 97,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_2",
+      "name": "Events 3 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35267121269312,
+      "longitude": 44.42476723673585,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_2",
+      "price_range": "medium",
+      "rating": 4.0545603876345835,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_3",
+      "name": "Events 4 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.32481398925389,
+      "longitude": 44.41327232595818,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_3",
+      "price_range": "medium",
+      "rating": 4.3099819799659524,
+      "rating_count": 68,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Events_4",
+      "name": "Events 5 - Erbil",
+      "canonical_category": "Events",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "events"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35732127780797,
+      "longitude": 44.428810297761025,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Events_4",
+      "price_range": "medium",
+      "rating": 4.150493585007984,
+      "rating_count": 94,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Events for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "event_type": "Conference",
+        "start_datetime": "2025-10-02T22:48:02.322Z",
+        "end_datetime": "2025-10-02T22:48:02.322Z",
+        "venue_name": "Unknown",
+        "organizer": {
+          "name": "Unknown"
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Tourism_0",
+      "name": "Tourism 1 - Erbil",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.32072009993435,
+      "longitude": 44.46336701584535,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Tourism_0",
+      "price_range": "medium",
+      "rating": 4.695475238014829,
+      "rating_count": 47,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Tourism_1",
+      "name": "Tourism 2 - Erbil",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33533254305775,
+      "longitude": 44.435964410312046,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Tourism_1",
+      "price_range": "medium",
+      "rating": 4.288328088670755,
+      "rating_count": 39,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Tourism_2",
+      "name": "Tourism 3 - Erbil",
+      "canonical_category": "Tourism",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "tourism"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35320960932312,
+      "longitude": 44.44317974653768,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Tourism_2",
+      "price_range": "medium",
+      "rating": 4.88400578729388,
+      "rating_count": 53,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Tourism for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "tourism_type": "Landmark",
+        "entry_fee": {
+          "free": true
+        }
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_0",
+      "name": "Government Offices 1 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35793387973756,
+      "longitude": 44.42641442115658,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_0",
+      "price_range": "medium",
+      "rating": 4.415312616854854,
+      "rating_count": 16,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_1",
+      "name": "Government Offices 2 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.36605865749875,
+      "longitude": 44.420354206002486,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_1",
+      "price_range": "medium",
+      "rating": 4.379186151588327,
+      "rating_count": 20,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.322Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_2",
+      "name": "Government Offices 3 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.30121822924465,
+      "longitude": 44.47966750651584,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_2",
+      "price_range": "medium",
+      "rating": 4.6121288930746385,
+      "rating_count": 99,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.322Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_3",
+      "name": "Government Offices 4 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39765338306478,
+      "longitude": 44.459988314107854,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_3",
+      "price_range": "medium",
+      "rating": 4.517053591178877,
+      "rating_count": 27,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_4",
+      "name": "Government Offices 5 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.300878973682096,
+      "longitude": 44.45379317579789,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_4",
+      "price_range": "medium",
+      "rating": 4.565709961185277,
+      "rating_count": 67,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_5",
+      "name": "Government Offices 6 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.34545094325325,
+      "longitude": 44.445267863061076,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_5",
+      "price_range": "medium",
+      "rating": 4.585251041882693,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Government Offices_6",
+      "name": "Government Offices 7 - Erbil",
+      "canonical_category": "Government Offices",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "government offices"
+      ],
+      "address": {
+        "street": "Street 7",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.351736348645375,
+      "longitude": 44.46921434848774,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Government Offices_6",
+      "price_range": "medium",
+      "rating": 4.311912832127065,
+      "rating_count": 63,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Government Offices for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "office_type": "Municipal Services",
+        "services_offered": [
+          "General Services"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Services_0",
+      "name": "Services 1 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33978057587008,
+      "longitude": 44.47719137508084,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_0",
+      "price_range": "medium",
+      "rating": 4.894133003746987,
+      "rating_count": 71,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_1",
+      "name": "Services 2 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.38692521634527,
+      "longitude": 44.43919174856011,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_1",
+      "price_range": "medium",
+      "rating": 4.006494728604629,
+      "rating_count": 10,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_2",
+      "name": "Services 3 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.314042557918896,
+      "longitude": 44.41203735156028,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_2",
+      "price_range": "medium",
+      "rating": 4.687544888410782,
+      "rating_count": 41,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_3",
+      "name": "Services 4 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.30811062997319,
+      "longitude": 44.47633075150774,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_3",
+      "price_range": "medium",
+      "rating": 4.894247674977119,
+      "rating_count": 66,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Services_4",
+      "name": "Services 5 - Erbil",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.328879155357136,
+      "longitude": 44.4047437761998,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Services_4",
+      "price_range": "medium",
+      "rating": 4.218232401114289,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_erbil_Companies_0",
+      "name": "Companies 1 - Erbil",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.39851463638586,
+      "longitude": 44.40838713459397,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Companies_0",
+      "price_range": "medium",
+      "rating": 4.88385320224616,
+      "rating_count": 97,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Companies_1",
+      "name": "Companies 2 - Erbil",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.387072335345216,
+      "longitude": 44.430379859217275,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Companies_1",
+      "price_range": "medium",
+      "rating": 4.818452508487698,
+      "rating_count": 101,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Companies_2",
+      "name": "Companies 3 - Erbil",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.35030841508757,
+      "longitude": 44.49698292698346,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Companies_2",
+      "price_range": "medium",
+      "rating": 4.16409758597516,
+      "rating_count": 103,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Companies_3",
+      "name": "Companies 4 - Erbil",
+      "canonical_category": "Companies",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "companies"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.363478653501446,
+      "longitude": 44.45871937106028,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Companies_3",
+      "price_range": "medium",
+      "rating": 4.634041498654569,
+      "rating_count": 39,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Companies for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "industry": "Other",
+        "services_products": [
+          "General"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_0",
+      "name": "Shopping 1 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.304718735574454,
+      "longitude": 44.49563648114897,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_0",
+      "price_range": "medium",
+      "rating": 4.226255029984817,
+      "rating_count": 51,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_1",
+      "name": "Shopping 2 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.349944545894296,
+      "longitude": 44.467320438921384,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_1",
+      "price_range": "medium",
+      "rating": 4.444525317406654,
+      "rating_count": 58,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_2",
+      "name": "Shopping 3 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.33023753466458,
+      "longitude": 44.46650239953478,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_2",
+      "price_range": "medium",
+      "rating": 4.0157900915325655,
+      "rating_count": 102,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_3",
+      "name": "Shopping 4 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.31455954078904,
+      "longitude": 44.489333321762494,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_3",
+      "price_range": "medium",
+      "rating": 4.251979053699088,
+      "rating_count": 99,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    },
+    {
+      "id": "mock_erbil_Shopping_4",
+      "name": "Shopping 5 - Erbil",
+      "canonical_category": "Shopping",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "shopping"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Erbil",
+        "governorate": "erbil"
+      },
+      "latitude": 33.34959279113854,
+      "longitude": 44.45541334250364,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_erbil_Shopping_4",
+      "price_range": "medium",
+      "rating": 4.165337187000444,
+      "rating_count": 74,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Shopping for testing purposes in Erbil.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:48:02.323Z",
+      "created_at": "2025-10-02T22:48:02.323Z",
+      "category_data": {
+        "store_type": "Retail Store",
+        "main_products": [
+          "General"
+        ],
+        "payment_methods": [
+          "Cash",
+          "Credit Card"
+        ]
+      }
+    }
+  ]
+}

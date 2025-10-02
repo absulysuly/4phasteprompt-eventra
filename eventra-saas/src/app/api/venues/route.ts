@@ -2,97 +2,121 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../../../lib/auth';
+import { cacheGet, CacheKeys, CacheTTL, cacheInvalidatePattern } from '../../../lib/cache/redis';
 
 const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
     const url = new URL(request.url);
-    const type = url.searchParams.get('type'); // EVENT, HOTEL, RESTAURANT, ACTIVITY
+    const type = url.searchParams.get('type'); // EVENT, HOTEL, RESTAURANT, ACTIVITY, SHOPPING, ENTERTAINMENT
     const city = url.searchParams.get('city');
     const locale = url.searchParams.get('locale') || 'en';
     const featured = url.searchParams.get('featured') === 'true';
     const category = url.searchParams.get('category');
 
-    // Build filter conditions
-    const where: any = {
-      status: 'ACTIVE',
-    };
+    // Create cache key from query params
+    const cacheParams = { type, city, locale, featured, category };
+    const cacheKey = CacheKeys.venueList(cacheParams);
 
-    if (type) {
-      where.type = type;
-    }
+    // Use cache with fetcher function
+    const result = await cacheGet(
+      cacheKey,
+      async () => {
+        // Build filter conditions
+        const where: any = {
+          status: 'ACTIVE',
+        };
 
-    if (city) {
-      where.city = city;
-    }
-
-    if (featured) {
-      where.featured = true;
-    }
-
-    if (category) {
-      where.category = category;
-    }
-
-    // Fetch venues with translations
-    const venues = await prisma.venue.findMany({
-      where,
-      include: {
-        translations: true,
-        user: {
-          select: { id: true, name: true }
+        if (type) {
+          where.type = type;
         }
+
+        if (city) {
+          where.city = city;
+        }
+
+        if (featured) {
+          where.featured = true;
+        }
+
+        if (category) {
+          where.category = category;
+        }
+
+        // Fetch venues with translations
+        const venues = await prisma.venue.findMany({
+          where,
+          include: {
+            translations: true,
+            user: {
+              select: { id: true, name: true }
+            }
+          },
+          orderBy: [
+            { featured: 'desc' },
+            { verified: 'desc' },
+            { createdAt: 'desc' }
+          ]
+        });
+
+        // Localize venues
+        const localizedVenues = venues.map((venue: any) => {
+          const translation = venue.translations.find((t: any) => t.locale === locale) || 
+                             venue.translations.find((t: any) => t.locale === 'en') || 
+                             venue.translations[0];
+
+          return {
+            id: venue.id,
+            publicId: venue.publicId,
+            type: venue.type,
+            status: venue.status,
+            title: translation?.title || 'Untitled Venue',
+            description: translation?.description || '',
+            location: translation?.location || venue.address || '',
+            city: venue.city,
+            category: venue.category,
+            subcategory: venue.subcategory,
+            priceRange: venue.priceRange,
+            imageUrl: venue.imageUrl,
+            galleryUrls: venue.galleryUrls ? JSON.parse(venue.galleryUrls) : [],
+            website: venue.website,
+            businessPhone: venue.businessPhone,
+            whatsappPhone: venue.whatsappPhone,
+            contactMethod: venue.contactMethod,
+            bookingUrl: venue.bookingUrl,
+            eventDate: venue.eventDate,
+            cuisineType: venue.cuisineType,
+            dietaryOptions: venue.dietaryOptions ? JSON.parse(venue.dietaryOptions) : [],
+            amenities: translation?.amenities ? JSON.parse(translation.amenities) : [],
+            features: translation?.features ? JSON.parse(translation.features) : [],
+            tags: venue.tags ? JSON.parse(venue.tags) : [],
+            // Shopping-specific
+            productCategories: venue.productCategories ? JSON.parse(venue.productCategories) : [],
+            brands: venue.brands ? JSON.parse(venue.brands) : [],
+            paymentMethods: venue.paymentMethods ? JSON.parse(venue.paymentMethods) : [],
+            // Entertainment-specific
+            businessType: venue.businessType,
+            services: venue.services ? JSON.parse(venue.services) : [],
+            operatingHours: venue.operatingHours ? JSON.parse(venue.operatingHours) : null,
+            featured: venue.featured,
+            verified: venue.verified,
+            createdAt: venue.createdAt,
+            owner: venue.user
+          };
+        });
+
+        return {
+          venues: localizedVenues,
+          count: localizedVenues.length
+        };
       },
-      orderBy: [
-        { featured: 'desc' },
-        { verified: 'desc' },
-        { createdAt: 'desc' }
-      ]
-    });
-
-    // Localize venues
-    const localizedVenues = venues.map((venue: any) => {
-      const translation = venue.translations.find((t: any) => t.locale === locale) || 
-                         venue.translations.find((t: any) => t.locale === 'en') || 
-                         venue.translations[0];
-
-      return {
-        id: venue.id,
-        publicId: venue.publicId,
-        type: venue.type,
-        status: venue.status,
-        title: translation?.title || 'Untitled Venue',
-        description: translation?.description || '',
-        location: translation?.location || venue.address || '',
-        city: venue.city,
-        category: venue.category,
-        subcategory: venue.subcategory,
-        priceRange: venue.priceRange,
-        imageUrl: venue.imageUrl,
-        galleryUrls: venue.galleryUrls ? JSON.parse(venue.galleryUrls) : [],
-        website: venue.website,
-        businessPhone: venue.businessPhone,
-        whatsappPhone: venue.whatsappPhone,
-        contactMethod: venue.contactMethod,
-        bookingUrl: venue.bookingUrl,
-        eventDate: venue.eventDate,
-        cuisineType: venue.cuisineType,
-        dietaryOptions: venue.dietaryOptions ? JSON.parse(venue.dietaryOptions) : [],
-        amenities: translation?.amenities ? JSON.parse(translation.amenities) : [],
-        features: translation?.features ? JSON.parse(translation.features) : [],
-        tags: venue.tags ? JSON.parse(venue.tags) : [],
-        featured: venue.featured,
-        verified: venue.verified,
-        createdAt: venue.createdAt,
-        owner: venue.user
-      };
-    });
+      CacheTTL.MEDIUM // 30 minutes cache
+    );
 
     return NextResponse.json({
       success: true,
-      venues: localizedVenues,
-      count: localizedVenues.length
+      ...result
     });
 
   } catch (error) {
@@ -183,6 +207,16 @@ export async function POST(request: NextRequest) {
         cuisineType: data.cuisineType || '',
         dietaryOptions: data.dietaryOptions ? JSON.stringify(data.dietaryOptions) : null,
         
+        // Shopping-specific
+        productCategories: data.productCategories ? JSON.stringify(data.productCategories) : null,
+        brands: data.brands ? JSON.stringify(data.brands) : null,
+        paymentMethods: data.paymentMethods ? JSON.stringify(data.paymentMethods) : null,
+        
+        // Entertainment-specific
+        businessType: data.businessType || '',
+        services: data.services ? JSON.stringify(data.services) : null,
+        operatingHours: data.operatingHours ? JSON.stringify(data.operatingHours) : null,
+        
         // SEO and categorization
         category: data.category || '',
         subcategory: data.subcategory || '',
@@ -208,6 +242,11 @@ export async function POST(request: NextRequest) {
         translations: true
       }
     });
+
+    // Invalidate venue list caches when new venue is created
+    await cacheInvalidatePattern('venues:list:*');
+    await cacheInvalidatePattern('venues:stats');
+    await cacheInvalidatePattern('venues:filters');
 
     return NextResponse.json({
       success: true,

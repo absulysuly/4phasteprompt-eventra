@@ -1,0 +1,277 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:52:03.370Z",
+  "count": 6,
+  "data": [
+    {
+      "id": "mock_basra_Accommodation_0",
+      "name": "Accommodation 1 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.368009822471706,
+      "longitude": 44.480194637260695,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_0",
+      "price_range": "medium",
+      "rating": 4.280987995080668,
+      "rating_count": 104,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_1",
+      "name": "Accommodation 2 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36994576863007,
+      "longitude": 44.4443532013878,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_1",
+      "price_range": "medium",
+      "rating": 4.17439364554882,
+      "rating_count": 103,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_2",
+      "name": "Accommodation 3 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.38114209265145,
+      "longitude": 44.43436759002718,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_2",
+      "price_range": "medium",
+      "rating": 4.722418681111424,
+      "rating_count": 84,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_3",
+      "name": "Accommodation 4 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.36268074096518,
+      "longitude": 44.47569584695527,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_3",
+      "price_range": "medium",
+      "rating": 4.428434735199758,
+      "rating_count": 55,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_4",
+      "name": "Accommodation 5 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.313341799161726,
+      "longitude": 44.49430343693233,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_4",
+      "price_range": "medium",
+      "rating": 4.593810593386566,
+      "rating_count": 85,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    },
+    {
+      "id": "mock_basra_Accommodation_5",
+      "name": "Accommodation 6 - Basra",
+      "canonical_category": "Accommodation",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "accommodation"
+      ],
+      "address": {
+        "street": "Street 6",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31351142503312,
+      "longitude": 44.441030461072046,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Accommodation_5",
+      "price_range": "medium",
+      "rating": 4.28083241567201,
+      "rating_count": 86,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Accommodation for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.362Z",
+      "created_at": "2025-10-02T22:52:03.362Z",
+      "category_data": {
+        "star_rating": 3,
+        "amenities": [
+          "WiFi",
+          "AC",
+          "Reception"
+        ]
+      }
+    }
+  ]
+}

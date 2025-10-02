@@ -1,0 +1,47 @@
+{
+  "batch_number": 3,
+  "batch_name": "Basra Complete Dataset - Batch 3",
+  "governorate": "basra",
+  "date_created": "2025-10-02T22:52:03.756Z",
+  "records_by_category": {
+    "Accommodation": 6,
+    "Cafe & Restaurants": 5,
+    "Events": 4,
+    "Tourism": 3,
+    "Government Offices": 4,
+    "Services": 5,
+    "Companies": 4,
+    "Shopping": 3
+  },
+  "total_records": 34,
+  "quality_metrics": {
+    "complete_records": 34,
+    "partial_records": 0,
+    "geocoded": 34,
+    "with_images": 34,
+    "verified": 34
+  },
+  "files": {
+    "json": [
+      "accommodation.json",
+      "cafe-restaurants.json",
+      "events.json",
+      "tourism.json",
+      "government-offices.json",
+      "services.json",
+      "companies.json",
+      "shopping.json",
+      "master-all-categories.json"
+    ],
+    "csv": [
+      "accommodation.csv",
+      "cafe-restaurants.csv",
+      "events.csv",
+      "tourism.csv",
+      "government-offices.csv",
+      "services.csv",
+      "companies.csv",
+      "shopping.csv"
+    ]
+  }
+}

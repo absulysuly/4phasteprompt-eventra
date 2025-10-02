@@ -1,0 +1,47 @@
+{
+  "data": [],
+  "metadata": {
+    "total_count": 0,
+    "page": 1,
+    "page_size": 20,
+    "has_more": false,
+    "applied_filters": {},
+    "available_filters": [
+      {
+        "field_name": "star_rating",
+        "ui_label": "Star Rating",
+        "ui_component": "slider",
+        "data_type": "number",
+        "min": 0,
+        "max": 5
+      },
+      {
+        "field_name": "price_range",
+        "ui_label": "Price Range",
+        "ui_component": "chips",
+        "data_type": "string",
+        "options": [
+          {
+            "value": "low",
+            "label": "Budget"
+          },
+          {
+            "value": "medium",
+            "label": "Mid-Range"
+          },
+          {
+            "value": "high",
+            "label": "Luxury"
+          }
+        ]
+      },
+      {
+        "field_name": "amenities",
+        "ui_label": "Amenities",
+        "ui_component": "multi-select",
+        "data_type": "array"
+      }
+    ],
+    "filter_counts": {}
+  }
+}

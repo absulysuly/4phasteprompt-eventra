@@ -1,0 +1,212 @@
+{
+  "version": "1.0.0",
+  "exported_at": "2025-10-02T22:52:03.522Z",
+  "count": 5,
+  "data": [
+    {
+      "id": "mock_basra_Services_0",
+      "name": "Services 1 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 1",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31799771045389,
+      "longitude": 44.48191617121522,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_0",
+      "price_range": "medium",
+      "rating": 4.4362348988852816,
+      "rating_count": 12,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_1",
+      "name": "Services 2 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 2",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31659200507666,
+      "longitude": 44.49443319877446,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_1",
+      "price_range": "medium",
+      "rating": 4.136725183936555,
+      "rating_count": 105,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_2",
+      "name": "Services 3 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 3",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.32653846240001,
+      "longitude": 44.424370390600906,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_2",
+      "price_range": "medium",
+      "rating": 4.828957159839615,
+      "rating_count": 33,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_3",
+      "name": "Services 4 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 4",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.34354845910726,
+      "longitude": 44.42176601168587,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_3",
+      "price_range": "medium",
+      "rating": 4.873953524730031,
+      "rating_count": 34,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    },
+    {
+      "id": "mock_basra_Services_4",
+      "name": "Services 5 - Basra",
+      "canonical_category": "Services",
+      "subcategory": "Mock",
+      "tags": [
+        "mock",
+        "services"
+      ],
+      "address": {
+        "street": "Street 5",
+        "city": "Basra",
+        "governorate": "basra"
+      },
+      "latitude": 33.31858064903175,
+      "longitude": 44.417671623692236,
+      "phone": "+9647901234567",
+      "website": "https://example.com/mock_basra_Services_4",
+      "price_range": "medium",
+      "rating": 4.530572357354371,
+      "rating_count": 106,
+      "images": [
+        "https://via.placeholder.com/800x600"
+      ],
+      "languages_supported": [
+        "en",
+        "ar"
+      ],
+      "description": "This is a mock Services for testing purposes in Basra.",
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true
+      },
+      "source_type": "google_maps",
+      "last_updated": "2025-10-02T22:52:03.363Z",
+      "created_at": "2025-10-02T22:52:03.363Z",
+      "category_data": {
+        "primary_service_type": "Professional",
+        "subcategory": "General"
+      }
+    }
+  ]
+}
