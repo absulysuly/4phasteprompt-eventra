@@ -212,7 +212,8 @@ export default function PayPage() {
     const a = parseFloat(params.get('amount') || '0');
     return isFinite(a) && a > 0 ? a : 10;
   });
-  const context = params.get('context') as 'sponsorship' | 'order' | null;
+const context = params.get('context') as 'sponsorship' | 'order' | null;
+  const campaignId = params.get('campaignId');
 
   // Form state per method
   const [zainPhone, setZainPhone] = useState('079');
@@ -279,7 +280,7 @@ const [processing, setProcessing] = useState(false);
       // Create intent (mock)
       await fetch('/api/payments/intent', { method: 'POST', body: JSON.stringify({ amount, method, context }) });
       // Confirm (mock)
-      const res = await fetch('/api/payments/confirm', { method: 'POST', body: JSON.stringify({ method, amount, context }) });
+const res = await fetch('/api/payments/confirm', { method: 'POST', body: JSON.stringify({ method, amount, context, campaignId }) });
       const data = await res.json();
       setResult({ ok: true, receiptId: data.receiptId });
       setStep(4);

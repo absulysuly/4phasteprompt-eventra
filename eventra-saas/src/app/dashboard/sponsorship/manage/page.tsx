@@ -158,6 +158,59 @@ const deleteRow = async (id: string) => {
           </table>
         </div>
       </div>
+      {/* Business Account Panel */}
+      <div className="bg-white rounded-2xl shadow-sm border p-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-lg font-semibold">Business Account</h3>
+          <button onClick={async ()=>{
+            const res = await fetch('/api/business-account');
+            const acc = await res.json();
+            (document.getElementById('ba_bank') as HTMLInputElement).value = acc.bankName || '';
+            (document.getElementById('ba_account') as HTMLInputElement).value = acc.account || '';
+            (document.getElementById('ba_iban') as HTMLInputElement).value = acc.iban || '';
+            (document.getElementById('ba_beneficiary') as HTMLInputElement).value = acc.beneficiary || '';
+            (document.getElementById('ba_branch') as HTMLInputElement).value = acc.branch || '';
+            (document.getElementById('ba_swift') as HTMLInputElement).value = acc.swift || '';
+          }} className="text-sm px-3 py-1.5 rounded border">Load</button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
+          <input id="ba_bank" placeholder="Bank Name" className="rounded border px-3 py-2" />
+          <input id="ba_account" placeholder="Account" className="rounded border px-3 py-2" />
+          <input id="ba_iban" placeholder="IBAN" className="rounded border px-3 py-2" />
+          <input id="ba_beneficiary" placeholder="Beneficiary" className="rounded border px-3 py-2" />
+          <input id="ba_branch" placeholder="Branch" className="rounded border px-3 py-2" />
+          <input id="ba_swift" placeholder="SWIFT" className="rounded border px-3 py-2" />
+        </div>
+        <div className="mt-3">
+          <button onClick={async ()=>{
+            const payload = {
+              bankName: (document.getElementById('ba_bank') as HTMLInputElement).value,
+              account: (document.getElementById('ba_account') as HTMLInputElement).value,
+              iban: (document.getElementById('ba_iban') as HTMLInputElement).value,
+              beneficiary: (document.getElementById('ba_beneficiary') as HTMLInputElement).value,
+              branch: (document.getElementById('ba_branch') as HTMLInputElement).value,
+              swift: (document.getElementById('ba_swift') as HTMLInputElement).value,
+            };
+            const res = await fetch('/api/business-account', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+            const data = await res.json();
+            alert(data?.success ? 'Saved' : (data?.error || 'Failed'));
+          }} className="px-4 py-2 rounded bg-gray-900 text-white">Save</button>
+        </div>
+      </div>
+
+      {/* Voucher Admin */}
+      <div className="bg-white rounded-2xl shadow-sm border p-4">
+        <h3 className="text-lg font-semibold mb-2">Voucher Admin</h3>
+        <div className="flex gap-2">
+          <input id="voucher_code" placeholder="Voucher Code" className="rounded border px-3 py-2" />
+          <button onClick={async ()=>{
+            const code = (document.getElementById('voucher_code') as HTMLInputElement).value;
+            const res = await fetch('/api/vouchers/admin/approve', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ code })});
+            const data = await res.json();
+            alert(data?.success ? 'Approved' : (data?.error || 'Failed'));
+          }} className="px-3 py-2 rounded bg-green-600 text-white">Approve</button>
+        </div>
+      </div>
     </div>
   );
 }

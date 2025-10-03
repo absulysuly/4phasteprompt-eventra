@@ -195,7 +195,7 @@ export default function CreateCampaignPage() {
                 // Create campaign then navigate to payment
                 const audience = { location, age: ageRange, interests, gender };
                 try {
-                  await fetch('/api/sponsorship/campaigns', {
+const resp = await fetch('/api/sponsorship/campaigns', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -205,9 +205,11 @@ export default function CreateCampaignPage() {
                       durationDays: duration,
                       audience
                     })
-                  });
+});
+                  const data = await resp.json().catch(()=>({}));
+                  const cid = data?.campaign?.id;
                 } catch {}
-                router.push(`/pay?context=sponsorship&amount=${(budget * duration).toFixed(2)}`);
+router.push(`/pay?context=sponsorship&amount=${(budget * duration).toFixed(2)}${cid ? `&campaignId=${cid}` : ''}`);
               }}
               className="px-5 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700"
             >
