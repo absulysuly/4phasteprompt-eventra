@@ -217,3 +217,104 @@ model Content {
 
   @@unique([key, locale])
 }
+
+// Sponsorship & Payments
+
+enum Placement {
+  STORIES
+  FEATURED
+  CAROUSEL
+}
+
+enum CampaignStatus {
+  ACTIVE
+  PAUSED
+  COMPLETED
+}
+
+enum PaymentMethodType {
+  FIB
+  QI
+  FASTPAY
+  BANK
+  COD
+  VOUCHER
+}
+
+enum VoucherStatus {
+  REQUESTED
+  APPROVED
+  REDEEMED
+  REJECTED
+  EXPIRED
+}
+
+enum BusinessStatus {
+  UNVERIFIED
+  PENDING
+  VERIFIED
+}
+
+model SponsorshipCampaign {
+  id           String          @id @default(cuid())
+  user         User            @relation(fields: [userId], references: [id])
+  userId       String
+  name         String?
+  placement    Placement
+  budgetDaily  Float
+  durationDays Int
+  status       CampaignStatus  @default(ACTIVE)
+  audienceJson String?
+  impressions  Int             @default(0)
+  clicks       Int             @default(0)
+  startDate    DateTime        @default(now())
+  endDate      DateTime?
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  payments     PaymentRecord[]
+}
+
+model PaymentRecord {
+  id         String            @id @default(cuid())
+  user       User?             @relation(fields: [userId], references: [id])
+  userId     String?
+  campaign   SponsorshipCampaign? @relation(fields: [campaignId], references: [id])
+  campaignId String?
+  amount     Float
+  method     PaymentMethodType
+  status     String            // e.g., pending/succeeded/failed
+  reference  String?
+  createdAt  DateTime          @default(now())
+}
+
+model Voucher {
+  id             String           @id @default(cuid())
+  code           String           @unique
+  amountIQD      Int
+  status         VoucherStatus    @default(REQUESTED)
+  requestedBy    User?            @relation(fields: [requestedById], references: [id])
+  requestedById  String?
+  intendedUse    String?          // sponsorship | ticket
+  preferredMethod PaymentMethodType?
+  address        String?
+  redeemedBy     User?            @relation("VoucherRedeemedBy", fields: [redeemedById], references: [id])
+  redeemedById   String?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model BusinessAccount {
+  id          String          @id @default(cuid())
+  user        User            @relation(fields: [userId], references: [id])
+  userId      String          @unique
+  bankName    String
+  account     String
+  iban        String?
+  beneficiary String?
+  branch      String?
+  swift       String?
+  status      BusinessStatus  @default(PENDING)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}

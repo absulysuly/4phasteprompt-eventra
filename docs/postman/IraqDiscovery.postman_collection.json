@@ -1,0 +1,447 @@
+{
+  "info": {
+    "name": "Iraq Discovery API",
+    "_postman_id": "iraq-discovery-v1",
+    "description": "Mock API endpoints for Iraq Discovery dataset. Test collection for all 8 categories. Replace {{base_url}} with your mock server or local file path.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Accommodation",
+      "item": [
+        {
+          "name": "Get All Accommodation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accommodation",
+              "host": ["{{base_url}}"],
+              "path": ["accommodation"]
+            },
+            "description": "Retrieve all accommodation listings (hotels, hostels, apartments, etc.)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Accommodation by City",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accommodation?city=Erbil",
+              "host": ["{{base_url}}"],
+              "path": ["accommodation"],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Accommodation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accommodation?city=Erbil&star_rating=4&amenities=wifi,parking&price_range=medium",
+              "host": ["{{base_url}}"],
+              "path": ["accommodation"],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "star_rating",
+                  "value": "4"
+                },
+                {
+                  "key": "amenities",
+                  "value": "wifi,parking"
+                },
+                {
+                  "key": "price_range",
+                  "value": "medium"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cafes & Restaurants",
+      "item": [
+        {
+          "name": "Get All Cafes & Restaurants",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cafes-restaurants",
+              "host": ["{{base_url}}"],
+              "path": ["cafes-restaurants"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Cuisine",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/cafes-restaurants?cuisine_types=Iraqi,Kurdish&city=Erbil&price_range=medium",
+              "host": ["{{base_url}}"],
+              "path": ["cafes-restaurants"],
+              "query": [
+                {
+                  "key": "cuisine_types",
+                  "value": "Iraqi,Kurdish"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "price_range",
+                  "value": "medium"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Get All Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": ["{{base_url}}"],
+              "path": ["events"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Events by Date Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events?start_date=2025-10-01&end_date=2025-10-31&city=Erbil&event_type=Festival",
+              "host": ["{{base_url}}"],
+              "path": ["events"],
+              "query": [
+                {
+                  "key": "start_date",
+                  "value": "2025-10-01"
+                },
+                {
+                  "key": "end_date",
+                  "value": "2025-10-31"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "event_type",
+                  "value": "Festival"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tourism",
+      "item": [
+        {
+          "name": "Get All Tourist Attractions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tourism",
+              "host": ["{{base_url}}"],
+              "path": ["tourism"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Attraction Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/tourism?attraction_type=Landmark,Cultural Site&city=Erbil&entry_fee=free",
+              "host": ["{{base_url}}"],
+              "path": ["tourism"],
+              "query": [
+                {
+                  "key": "attraction_type",
+                  "value": "Landmark,Cultural Site"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "entry_fee",
+                  "value": "free"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Government Offices",
+      "item": [
+        {
+          "name": "Get All Government Offices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/government-offices",
+              "host": ["{{base_url}}"],
+              "path": ["government-offices"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Office Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/government-offices?office_type=Passport Office&city=Erbil",
+              "host": ["{{base_url}}"],
+              "path": ["government-offices"],
+              "query": [
+                {
+                  "key": "office_type",
+                  "value": "Passport Office"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Get All Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/services",
+              "host": ["{{base_url}}"],
+              "path": ["services"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Service Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/services?primary_service_type=Health Services&city=Erbil&accepts_online_booking=true",
+              "host": ["{{base_url}}"],
+              "path": ["services"],
+              "query": [
+                {
+                  "key": "primary_service_type",
+                  "value": "Health Services"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "accepts_online_booking",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "Get All Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/companies",
+              "host": ["{{base_url}}"],
+              "path": ["companies"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Industry",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/companies?industry=Technology&city=Erbil&company_size=SME&is_hiring=true",
+              "host": ["{{base_url}}"],
+              "path": ["companies"],
+              "query": [
+                {
+                  "key": "industry",
+                  "value": "Technology"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                },
+                {
+                  "key": "company_size",
+                  "value": "SME"
+                },
+                {
+                  "key": "is_hiring",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Shopping",
+      "item": [
+        {
+          "name": "Get All Shopping Locations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/shopping",
+              "host": ["{{base_url}}"],
+              "path": ["shopping"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by Store Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/shopping?store_type=Shopping Mall&main_products=Clothing,Electronics&city=Erbil",
+              "host": ["{{base_url}}"],
+              "path": ["shopping"],
+              "query": [
+                {
+                  "key": "store_type",
+                  "value": "Shopping Mall"
+                },
+                {
+                  "key": "main_products",
+                  "value": "Clothing,Electronics"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "item": [
+        {
+          "name": "Get Filter Metadata",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/metadata/filters",
+              "host": ["{{base_url}}"],
+              "path": ["metadata", "filters"]
+            },
+            "description": "Returns available filter options and counts for the UI"
+          },
+          "response": []
+        },
+        {
+          "name": "Search All Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/search?q=hotel&city=Erbil",
+              "host": ["{{base_url}}"],
+              "path": ["search"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "hotel"
+                },
+                {
+                  "key": "city",
+                  "value": "Erbil"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

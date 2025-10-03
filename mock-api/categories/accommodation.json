@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "total_count": 3,
+    "city": "Erbil",
+    "category": "Accommodation",
+    "last_updated": "2025-10-02T22:30:00Z"
+  },
+  "data": [
+    {
+      "id": "acc-erbil-001",
+      "name": "Erbil Rotana Hotel",
+      "canonical_category": "Accommodation",
+      "subcategory": ["Hotel", "Luxury"],
+      "tags": ["business", "conference", "downtown"],
+      "address": {
+        "street": "Gulan Street",
+        "neighborhood": "Empire Area",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.1912,
+      "longitude": 44.0092,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 750 123 4567",
+      "website": "https://www.rotana.com/erbil",
+      "email": "info@erbilrotana.com",
+      "opening_hours": {
+        "monday": { "open": "00:00", "close": "23:59" },
+        "tuesday": { "open": "00:00", "close": "23:59" },
+        "wednesday": { "open": "00:00", "close": "23:59" },
+        "thursday": { "open": "00:00", "close": "23:59" },
+        "friday": { "open": "00:00", "close": "23:59" },
+        "saturday": { "open": "00:00", "close": "23:59" },
+        "sunday": { "open": "00:00", "close": "23:59" }
+      },
+      "price_range": "high",
+      "price_numeric": {
+        "min": 150000,
+        "max": 350000,
+        "currency": "IQD"
+      },
+      "rating": 4.5,
+      "rating_count": 247,
+      "images": [
+        {
+          "url": "https://placeholder.example/rotana-exterior.jpg",
+          "caption": "Erbil Rotana exterior view",
+          "thumbnail_url": "https://placeholder.example/rotana-exterior-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish", "English"],
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true,
+        "parking_available": true
+      },
+      "description": "5-star luxury hotel in the heart of Erbil with conference facilities, spa, and fine dining.",
+      "source_url": "https://www.rotana.com/erbil",
+      "source_license": "proprietary",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "star_rating": 5,
+      "amenities": ["wifi", "pool", "parking", "gym", "ac", "breakfast", "concierge", "restaurant", "bar"],
+      "room_types": ["Standard Room", "Deluxe Room", "Executive Suite"],
+      "checkin_time": "15:00",
+      "checkout_time": "12:00"
+    },
+    {
+      "id": "acc-erbil-002",
+      "name": "Divan Erbil Hotel",
+      "canonical_category": "Accommodation",
+      "subcategory": ["Hotel", "Business"],
+      "tags": ["city center", "modern"],
+      "address": {
+        "street": "100 Meter Street",
+        "neighborhood": "Ankawa",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.2356,
+      "longitude": 43.9968,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 750 987 6543",
+      "website": "https://www.divan.com.tr/en/erbil",
+      "email": "reservations@divanerbil.com",
+      "opening_hours": {
+        "monday": { "open": "00:00", "close": "23:59" },
+        "tuesday": { "open": "00:00", "close": "23:59" },
+        "wednesday": { "open": "00:00", "close": "23:59" },
+        "thursday": { "open": "00:00", "close": "23:59" },
+        "friday": { "open": "00:00", "close": "23:59" },
+        "saturday": { "open": "00:00", "close": "23:59" },
+        "sunday": { "open": "00:00", "close": "23:59" }
+      },
+      "price_range": "medium",
+      "price_numeric": {
+        "min": 100000,
+        "max": 200000,
+        "currency": "IQD"
+      },
+      "rating": 4.2,
+      "rating_count": 189,
+      "images": [
+        {
+          "url": "https://placeholder.example/divan-lobby.jpg",
+          "caption": "Divan Erbil lobby",
+          "thumbnail_url": "https://placeholder.example/divan-lobby-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish", "English", "Turkish"],
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true,
+        "parking_available": true
+      },
+      "description": "Modern 4-star business hotel offering comfortable rooms and excellent meeting facilities in Ankawa district.",
+      "source_url": "https://www.divan.com.tr/en/erbil",
+      "source_license": "proprietary",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "star_rating": 4,
+      "amenities": ["wifi", "parking", "gym", "ac", "breakfast", "restaurant"],
+      "room_types": ["Standard Room", "Business Room", "Family Suite"],
+      "checkin_time": "14:00",
+      "checkout_time": "12:00"
+    },
+    {
+      "id": "acc-erbil-003",
+      "name": "Noble Suites",
+      "canonical_category": "Accommodation",
+      "subcategory": ["Apartment", "Serviced Apartment"],
+      "tags": ["long-stay", "self-catering", "family"],
+      "address": {
+        "street": "Dream City",
+        "neighborhood": "Koya Road",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.2245,
+      "longitude": 44.0455,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 770 555 1234",
+      "website": "https://noblesuites-erbil.example",
+      "email": "info@noblesuites.iq",
+      "opening_hours": {
+        "monday": { "open": "08:00", "close": "20:00" },
+        "tuesday": { "open": "08:00", "close": "20:00" },
+        "wednesday": { "open": "08:00", "close": "20:00" },
+        "thursday": { "open": "08:00", "close": "20:00" },
+        "friday": { "open": "10:00", "close": "18:00" },
+        "saturday": { "open": "08:00", "close": "20:00" },
+        "sunday": { "open": "10:00", "close": "18:00" }
+      },
+      "price_range": "medium",
+      "price_numeric": {
+        "min": 80000,
+        "max": 150000,
+        "currency": "IQD"
+      },
+      "rating": 4.0,
+      "rating_count": 76,
+      "images": [
+        {
+          "url": "https://placeholder.example/noble-suite.jpg",
+          "caption": "Noble Suites apartment interior",
+          "thumbnail_url": "https://placeholder.example/noble-suite-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish", "English"],
+      "accessibility": {
+        "wheelchair_accessible": false,
+        "family_friendly": true,
+        "parking_available": true
+      },
+      "description": "Furnished serviced apartments ideal for extended stays with full kitchens and living areas.",
+      "source_url": "https://noblesuites-erbil.example",
+      "source_license": "proprietary",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "star_rating": 3,
+      "amenities": ["wifi", "parking", "ac", "laundry"],
+      "room_types": ["One-Bedroom Apartment", "Two-Bedroom Apartment"],
+      "checkin_time": "14:00",
+      "checkout_time": "11:00"
+    }
+  ]
+}

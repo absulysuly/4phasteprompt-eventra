@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "total_count": 3,
+    "city": "Erbil",
+    "category": "Cafe & Restaurants",
+    "last_updated": "2025-10-02T22:30:00Z"
+  },
+  "data": [
+    {
+      "id": "cafe-erbil-001",
+      "name": "Masgouf Al-Reef",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": ["Restaurant", "Iraqi Cuisine"],
+      "tags": ["traditional", "fish", "riverside"],
+      "address": {
+        "street": "Sami Abdulrahman Park",
+        "neighborhood": "Park Area",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.1791,
+      "longitude": 44.0175,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 750 222 3333",
+      "website": "https://masgouf-alreef.example",
+      "email": "info@masgouf.iq",
+      "opening_hours": {
+        "monday": { "open": "11:00", "close": "23:00" },
+        "tuesday": { "open": "11:00", "close": "23:00" },
+        "wednesday": { "open": "11:00", "close": "23:00" },
+        "thursday": { "open": "11:00", "close": "23:00" },
+        "friday": { "open": "10:00", "close": "00:00" },
+        "saturday": { "open": "10:00", "close": "00:00" },
+        "sunday": { "open": "11:00", "close": "23:00" }
+      },
+      "price_range": "medium",
+      "rating": 4.6,
+      "rating_count": 512,
+      "images": [
+        {
+          "url": "https://placeholder.example/masgouf-dish.jpg",
+          "caption": "Traditional Iraqi masgouf (grilled fish)",
+          "thumbnail_url": "https://placeholder.example/masgouf-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish", "English"],
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true,
+        "parking_available": true
+      },
+      "description": "Authentic Iraqi restaurant specializing in masgouf and traditional dishes, located by Sami Abdulrahman Park.",
+      "source_url": "https://masgouf-alreef.example",
+      "source_license": "proprietary",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "cuisine_types": ["Iraqi", "Arabic", "Seafood"],
+      "delivery": true,
+      "accepts_reservations": true,
+      "outdoor_seating": true,
+      "halal": true,
+      "dietary_options": []
+    },
+    {
+      "id": "cafe-erbil-002",
+      "name": "Café Colosso",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": ["Cafe", "Coffee Shop"],
+      "tags": ["specialty coffee", "modern", "wifi"],
+      "address": {
+        "street": "Italian Village",
+        "neighborhood": "Italian Village",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.1875,
+      "longitude": 44.0234,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 770 888 9999",
+      "website": "https://cafecolosso.example",
+      "email": "hello@colosso.iq",
+      "opening_hours": {
+        "monday": { "open": "08:00", "close": "22:00" },
+        "tuesday": { "open": "08:00", "close": "22:00" },
+        "wednesday": { "open": "08:00", "close": "22:00" },
+        "thursday": { "open": "08:00", "close": "22:00" },
+        "friday": { "open": "09:00", "close": "23:00" },
+        "saturday": { "open": "09:00", "close": "23:00" },
+        "sunday": { "open": "09:00", "close": "22:00" }
+      },
+      "price_range": "medium",
+      "rating": 4.4,
+      "rating_count": 287,
+      "images": [
+        {
+          "url": "https://placeholder.example/colosso-interior.jpg",
+          "caption": "Cozy cafe interior",
+          "thumbnail_url": "https://placeholder.example/colosso-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish", "English"],
+      "accessibility": {
+        "wheelchair_accessible": true,
+        "family_friendly": true,
+        "parking_available": true
+      },
+      "description": "Modern specialty coffee shop with artisanal brews, pastries, and fast Wi-Fi for remote workers.",
+      "source_url": "https://cafecolosso.example",
+      "source_license": "proprietary",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "cuisine_types": ["International", "Vegetarian"],
+      "delivery": false,
+      "accepts_reservations": false,
+      "outdoor_seating": true,
+      "halal": false,
+      "dietary_options": ["Vegetarian", "Vegan options"]
+    },
+    {
+      "id": "cafe-erbil-003",
+      "name": "Shawarma House Ankawa",
+      "canonical_category": "Cafe & Restaurants",
+      "subcategory": ["Fast Food", "Street Food"],
+      "tags": ["quick", "affordable", "late-night"],
+      "address": {
+        "street": "Ankawa Main Street",
+        "neighborhood": "Ankawa",
+        "city": "Erbil",
+        "governorate": "Erbil",
+        "postal_code": ""
+      },
+      "latitude": 36.2312,
+      "longitude": 43.9923,
+      "geocode_source": "OpenStreetMap",
+      "phone": "+964 750 333 4444",
+      "website": "",
+      "email": "",
+      "opening_hours": {
+        "monday": { "open": "10:00", "close": "02:00" },
+        "tuesday": { "open": "10:00", "close": "02:00" },
+        "wednesday": { "open": "10:00", "close": "02:00" },
+        "thursday": { "open": "10:00", "close": "03:00" },
+        "friday": { "open": "10:00", "close": "03:00" },
+        "saturday": { "open": "10:00", "close": "03:00" },
+        "sunday": { "open": "10:00", "close": "02:00" }
+      },
+      "price_range": "low",
+      "rating": 4.1,
+      "rating_count": 623,
+      "images": [
+        {
+          "url": "https://placeholder.example/shawarma-wrap.jpg",
+          "caption": "Fresh chicken shawarma wrap",
+          "thumbnail_url": "https://placeholder.example/shawarma-thumb.jpg"
+        }
+      ],
+      "languages_supported": ["Arabic", "Kurdish"],
+      "accessibility": {
+        "wheelchair_accessible": false,
+        "family_friendly": true,
+        "parking_available": false
+      },
+      "description": "Popular late-night shawarma spot in Ankawa serving authentic wraps and grills.",
+      "source_url": "https://placeholder.example",
+      "source_license": "public",
+      "last_updated": "2025-10-02T22:00:00Z",
+      "cuisine_types": ["Arabic", "Fast Food"],
+      "delivery": true,
+      "accepts_reservations": false,
+      "outdoor_seating": false,
+      "halal": true,
+      "dietary_options": []
+    }
+  ]
+}
