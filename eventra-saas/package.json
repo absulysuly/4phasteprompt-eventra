@@ -73,6 +73,7 @@
     "db:migrate": "prisma migrate dev",
     "db:reset": "prisma migrate reset",
     "db:seed": "prisma db seed",
+    "db:seed:categories": "tsx prisma/seed-categories.ts",
     "db:deploy": "prisma migrate deploy",
     "db:setup": "npm run db:deploy && npm run db:seed",
     "db:studio": "prisma studio",
@@ -94,7 +95,9 @@
     "collect:service:restart": "tsx scripts/background-collector-service.ts restart",
     "test": "echo \"No tests specified\" && exit 0",
     "prebuild": "echo 'Skipping translation validation for simplified build'",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "seed:comprehensive": "tsx prisma/seed-comprehensive.ts",
+    "analytics:start-continuous": "tsx scripts/analytics-background-generator.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -104,7 +107,7 @@
     "@upstash/redis": "^1.35.4",
     "bcryptjs": "^3.0.2",
     "csv-parse": "^6.1.0",
-    "eventara": "file:..",
+    "eventara": "file:C:/Users/HB LAPTOP STORE/4phasteprompt-eventra",
     "i18next": "^25.5.2",
     "i18next-browser-languagedetector": "^8.2.0",
     "ioredis": "^5.8.0",
