@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslations } from "../hooks/useTranslations";
 
 export default function CategorySubgridModal({
   category,
@@ -14,6 +15,7 @@ export default function CategorySubgridModal({
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslations();
 
   // Focus trap: collect focusable elements
   function trapFocus(e: KeyboardEvent) {
@@ -97,18 +99,22 @@ export default function CategorySubgridModal({
 
         {/* Subcategory grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {subs.slice(0, 9).map((sub, idx) => (
-            <button
-              key={idx}
-              onClick={() => onSelect(sub)}
-              className="aspect-square rounded-2xl bg-white/90 hover:bg-white transition-all duration-300 hover:shadow-2xl group flex items-center justify-center text-center"
-            >
-              <div>
-                <div className="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">{sub.icon}</div>
-                <div className="text-gray-900 font-bold text-xs md:text-sm max-w-[8rem] mx-auto leading-snug">{sub.name}</div>
-              </div>
-            </button>
-          ))}
+          {subs.slice(0, 9).map((sub, idx) => {
+            const slug = (sub.name || '').toLowerCase().replace(/[^a-z0-9]+/gi, '-').replace(/(^-|-$)/g, '');
+            const label = t(`subcategories.${slug}`) || sub.name;
+            return (
+              <button
+                key={idx}
+                onClick={() => onSelect({ ...sub, slug })}
+                className="aspect-square rounded-2xl bg-white/90 hover:bg-white transition-all duration-300 hover:shadow-2xl group flex items-center justify-center text-center"
+              >
+                <div>
+                  <div className="text-3xl md:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">{sub.icon}</div>
+                  <div className="text-gray-900 font-bold text-xs md:text-sm max-w-[8rem] mx-auto leading-snug">{label}</div>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

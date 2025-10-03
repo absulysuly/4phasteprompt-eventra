@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import ImagePlaceholder from "./components/ImagePlaceholder";
 import LazyImage from "./components/LazyImage";
 import LoadingScreen from "./components/LoadingScreen";
@@ -23,6 +24,10 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
+  const router = useRouter();
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : undefined as any;
+
   const [events, setEvents] = useState<any[]>([]);
   // Stories modal state
   const [storiesOpen, setStoriesOpen] = useState(false);
@@ -32,6 +37,7 @@ export default function Home() {
   const [interpretResult, setInterpretResult] = useState<any | null>(null);
   // Category popup state
   const [categoryPopup, setCategoryPopup] = useState<any | null>(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>("");
   
   // Performance and network hooks
   const { isOnline, connectionSpeed } = useNetworkStatus();
@@ -285,6 +291,15 @@ export default function Home() {
     }
   ];
 
+  // Read subcategory from URL
+  useEffect(() => {
+    try {
+      const qs = new URLSearchParams(window.location.search);
+      const sub = qs.get('subcat');
+      if (sub) setSelectedSubcategory(sub);
+    } catch {}
+  }, []);
+
   // Initialize loading sequence
   useEffect(() => {
     // Simulate initial app loading (DOM ready, critical resources)
@@ -512,13 +527,21 @@ export default function Home() {
     const filters = interpretResult?.filters || {};
     return (events || []).filter((e: any) => {
       let ok = true;
-      if (q) ok = ok && ((e.title || '').toLowerCase().includes(q) || (e.location || '').toLowerCase().includes(q));
-      if (selectedCategory && selectedCategory !== t('common.allCategories')) ok = ok && ((e.category || '').toLowerCase().includes(selectedCategory.toLowerCase()));
-      if (selectedCity && selectedCity !== t('common.allCities')) ok = ok && ((e.location || '').toLowerCase().includes(selectedCity.toLowerCase()) || (e.city || '').toLowerCase().includes(selectedCity.toLowerCase()));
-      if (filters.city) ok = ok && ((e.location || '').toLowerCase().includes(String(filters.city).toLowerCase()) || (e.city || '').toLowerCase().includes(String(filters.city).toLowerCase()));
+      const title = (e.title || '').toLowerCase();
+      const desc = (e.description || '').toLowerCase();
+      const cat = (e.category || '').toLowerCase();
+      const loc = (e.location || '').toLowerCase();
+      if (q) ok = ok && (title.includes(q) || loc.includes(q) || desc.includes(q));
+      if (selectedCategory && selectedCategory !== t('common.allCategories')) ok = ok && cat.includes(selectedCategory.toLowerCase());
+      if (selectedCity && selectedCity !== t('common.allCities')) ok = ok && (loc.includes(selectedCity.toLowerCase()) || (e.city || '').toLowerCase().includes(selectedCity.toLowerCase()));
+      if (filters.city) ok = ok && (loc.includes(String(filters.city).toLowerCase()) || (e.city || '').toLowerCase().includes(String(filters.city).toLowerCase()));
+      if (selectedSubcategory) {
+        const subReadable = selectedSubcategory.replace(/-/g, ' ');
+        ok = ok && (title.includes(subReadable) || desc.includes(subReadable) || cat.includes(subReadable));
+      }
       return ok;
     });
-  }, [events, searchQuery, selectedCategory, selectedCity, interpretResult, t]);
+  }, [events, searchQuery, selectedCategory, selectedCity, interpretResult, t, selectedSubcategory]);
 
   return (
     <>
@@ -816,8 +839,15 @@ export default function Home() {
               category={categoryPopup}
               onClose={() => setCategoryPopup(null)}
               onSelect={(subcat: any) => {
-                // You can hook subcategory selection to filtering/navigation here
                 setCategoryPopup(null);
+                const slug = subcat.slug || (subcat.name || '').toLowerCase().replace(/[^a-z0-9]+/gi, '-').replace(/(^-|-$)/g, '');
+                setSelectedSubcategory(slug);
+                try {
+                  const qs = new URLSearchParams(window.location.search);
+                  qs.set('subcat', slug);
+                  const url = `${window.location.pathname}?${qs.toString()}`;
+                  window.history.replaceState(null, '', url);
+                } catch {}
               }}
             />
           )}

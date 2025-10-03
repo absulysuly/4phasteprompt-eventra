@@ -130,6 +130,31 @@
     "virtualEvents": "Virtual Events",
     "academicConferences": "Academic and Conferences"
   },
+  "subcategories": {
+    "restaurants": "Restaurants",
+    "cafs": "Cafs",
+    "cafes": "Cafs",
+    "bars-nightlife": "Bars & Nightlife",
+    "concerts": "Concerts",
+    "festivals": "Festivals",
+    "exhibitions": "Exhibitions",
+    "theatre": "Theatre",
+    "film": "Film",
+    "workshops": "Workshops",
+    "webinars": "Webinars",
+    "football": "Football",
+    "yoga": "Yoga",
+    "clinics": "Clinics",
+    "wellness": "Wellness",
+    "community-events": "Community Events",
+    "tournaments": "Tournaments",
+    "prayers": "Prayers",
+    "kids-activities": "Kids Activities",
+    "hiking": "Hiking",
+    "online-courses": "Online Courses",
+    "conferences": "Conferences",
+    "calls-for-papers": "Calls for Papers"
+  },
   "login": {
     "welcomeBack": "Welcome Back",
     "subtitle": "Sign in to your IraqEvents account",
