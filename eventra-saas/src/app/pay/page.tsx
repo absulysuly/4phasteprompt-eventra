@@ -146,6 +146,58 @@ const labels = {
 } as const;
 
 export default function PayPage() {
+  function VoucherModal({ onClose, onCreated }: { onClose: () => void; onCreated: (code: string) => void }) {
+    const [name, setName] = useState('');
+    const [mobile, setMobile] = useState('07');
+    const [email, setEmail] = useState('');
+    const [amountIQD, setAmountIQD] = useState(10000);
+    const [intendedUse, setIntendedUse] = useState<'sponsorship'|'ticket'>('sponsorship');
+    const [preferredMethod, setPreferredMethod] = useState<'FIB'|'QI'|'FASTPAY'|'BANK'|'COD'>('FIB');
+    const [address, setAddress] = useState('');
+    const [submitting, setSubmitting] = useState(false);
+    return (
+      <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div className="bg-white rounded-xl w-full max-w-lg p-4">
+          <div className="flex items-center justify-between mb-2">
+            <div className="font-semibold">Request Voucher</div>
+            <button onClick={onClose} aria-label="Close" className="text-gray-600 hover:text-gray-900">✕</button>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <input placeholder="Name" value={name} onChange={e=>setName(e.target.value)} className="rounded-lg border px-3 py-2" />
+            <input placeholder="Mobile (+964)" value={mobile} onChange={e=>setMobile(e.target.value)} className="rounded-lg border px-3 py-2" />
+            <input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} className="rounded-lg border px-3 py-2" />
+            <input placeholder="Amount (IQD)" type="number" value={amountIQD} onChange={e=>setAmountIQD(Number(e.target.value)||0)} className="rounded-lg border px-3 py-2" />
+            <select value={intendedUse} onChange={e=>setIntendedUse(e.target.value as any)} className="rounded-lg border px-3 py-2">
+              <option value="sponsorship">Sponsorship</option>
+              <option value="ticket">Ticket</option>
+            </select>
+            <select value={preferredMethod} onChange={e=>setPreferredMethod(e.target.value as any)} className="rounded-lg border px-3 py-2">
+              <option value="FIB">FIB</option>
+              <option value="QI">QI Card</option>
+              <option value="FASTPAY">FAST PAY</option>
+              <option value="BANK">Bank</option>
+              <option value="COD">COD</option>
+            </select>
+            <input placeholder="Address (optional)" value={address} onChange={e=>setAddress(e.target.value)} className="sm:col-span-2 rounded-lg border px-3 py-2" />
+          </div>
+          <div className="mt-3 text-xs text-gray-500">Approval: 24–48h • العربية/کوردی supported</div>
+          <div className="mt-3 flex items-center justify-end gap-2">
+            <button onClick={onClose} className="px-3 py-2 rounded border text-sm">Cancel</button>
+            <button disabled={submitting} onClick={async ()=>{
+              setSubmitting(true);
+              try {
+                const res = await fetch('/api/vouchers/request', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ name, mobile, email, amountIQD, intendedUse, preferredMethod, address })});
+                const data = await res.json();
+                if (data?.code) onCreated(data.code);
+              } finally {
+                setSubmitting(false); onClose();
+              }
+            }} className={`px-4 py-2 rounded-lg ${submitting? 'bg-gray-200 text-gray-500':'bg-gray-900 text-white'}`}>Submit</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
   const params = useSearchParams();
   const router = useRouter();
   const { language, isRTL } = useLanguage();
@@ -176,7 +228,10 @@ export default function PayPage() {
   const [codPhone, setCodPhone] = useState('07');
   const [codAddress, setCodAddress] = useState('');
 
-  const [processing, setProcessing] = useState(false);
+const [processing, setProcessing] = useState(false);
+  const [voucherCode, setVoucherCode] = useState('');
+  const [voucherMsg, setVoucherMsg] = useState<string | null>(null);
+  const [showVoucher, setShowVoucher] = useState(false);
   const [result, setResult] = useState<{ ok: boolean; receiptId?: string } | null>(null);
 
   // Load preferred method
@@ -289,7 +344,20 @@ export default function PayPage() {
       )}
 
       {step === 2 && (
-        <div className="space-y-4">
+<div className="space-y-1">
+              <label className="text-sm font-semibold">Voucher</label>
+              <div className="flex gap-2">
+                <input value={voucherCode} onChange={e=>setVoucherCode(e.target.value)} placeholder="Enter voucher / أدخل القسيمة / فۆچەر" className="flex-1 rounded-lg border px-3 py-2" />
+                <button onClick={async ()=>{
+                  setVoucherMsg(null);
+                  const res = await fetch('/api/vouchers/redeem', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ code: voucherCode })});
+                  const data = await res.json();
+                  if (data?.success) setVoucherMsg(`Redeemed IQD ${data.amountIQD}`);
+                  else setVoucherMsg(data?.error || 'Invalid voucher');
+                }} className="px-3 py-2 rounded-lg bg-gray-900 text-white">Redeem</button>
+              </div>
+              {voucherMsg && <div className="text-xs text-gray-600">{voucherMsg}</div>}
+              <button className="text-xs text-blue-600 hover:underline" onClick={()=>setShowVoucher(true)}>Request Voucher</button>
           {method === 'zain' && (
             <div>
               <label className="text-sm font-medium text-gray-700">{t.phone} (079-xxxxxxx)</label>
@@ -405,6 +473,9 @@ export default function PayPage() {
             <button onClick={() => router.push('/dashboard')} className="px-5 py-2.5 rounded-lg bg-gray-900 text-white hover:bg-gray-800">Back to Dashboard</button>
           </div>
         </div>
+      )}
+      {showVoucher && (
+        <VoucherModal onClose={()=>setShowVoucher(false)} onCreated={(code)=>setVoucherMsg(`Requested • Code: ${code}`)} />
       )}
     </div>
   );

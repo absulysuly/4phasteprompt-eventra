@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const placements = [
   { key: 'stories', title: 'Stories', desc: 'Full-screen, immersive vertical format', icon: '📖', suggested: 30 },
@@ -12,6 +13,7 @@ const placements = [
 type Step = 1 | 2 | 3 | 4 | 5;
 
 export default function CreateCampaignPage() {
+  const router = useRouter();
   const [step, setStep] = useState<Step>(1);
   const [placement, setPlacement] = useState<string>('feed');
   const [location, setLocation] = useState('Baghdad');
@@ -188,7 +190,29 @@ export default function CreateCampaignPage() {
           </div>
           <div className="flex justify-between">
             <button onClick={() => setStep(4)} className="px-5 py-2.5 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50">Back</button>
-            <a href={`/pay?context=sponsorship&amount=${(budget * duration).toFixed(2)}`} className="px-5 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700">Proceed to Payment</a>
+            <button
+              onClick={async () => {
+                // Create campaign then navigate to payment
+                const audience = { location, age: ageRange, interests, gender };
+                try {
+                  await fetch('/api/sponsorship/campaigns', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      name: `Campaign • ${placements.find(p => p.key === placement)?.title}`,
+                      placement,
+                      budgetDaily: budget,
+                      durationDays: duration,
+                      audience
+                    })
+                  });
+                } catch {}
+                router.push(`/pay?context=sponsorship&amount=${(budget * duration).toFixed(2)}`);
+              }}
+              className="px-5 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700"
+            >
+              Proceed to Payment
+            </button>
           </div>
         </div>
       )}

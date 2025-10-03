@@ -14,7 +14,7 @@ type Campaign = {
   audience: { location: string; age: [number, number]; gender: string; interests: string[] };
 };
 
-const initialCampaigns: Campaign[] = [
+const initialCampaigns: Campaign[] = [];
   { id: '1', name: 'Baghdad Food Festival', status: 'active', placement: 'Featured', impressions: 15420, clicks: 892, budgetDaily: 50, duration: 14, audience: { location: 'Baghdad', age: [18, 45], gender: 'any', interests: ['Food', 'Events'] } },
   { id: '2', name: 'Tech Conference', status: 'paused', placement: 'Feed', impressions: 8934, clicks: 456, budgetDaily: 20, duration: 7, audience: { location: 'Erbil', age: [21, 40], gender: 'any', interests: ['Tech', 'Startups'] } },
   { id: '3', name: 'Cultural Event', status: 'completed', placement: 'Stories', impressions: 22100, clicks: 1340, budgetDaily: 30, duration: 10, audience: { location: 'Sulaymaniyah', age: [18, 60], gender: 'any', interests: ['Culture', 'Music'] } },
@@ -31,6 +31,22 @@ function Sparkline({ data }: { data: number[] }) {
 }
 
 export default function ManageCampaignsPage() {
+  // Load from API
+  React.useEffect(() => {
+    fetch('/api/sponsorship/campaigns')
+      .then(r => r.json())
+      .then((data) => setRows(Array.isArray(data) ? data.map((c: any) => ({
+        id: c.id,
+        name: c.name || 'Campaign',
+        status: (c.status || 'ACTIVE').toLowerCase(),
+        placement: c.placement,
+        impressions: c.impressions || 0,
+        clicks: c.clicks || 0,
+        budgetDaily: c.budgetDaily || 0,
+        duration: c.durationDays || 0,
+        audience: { location: '', age: [18,45], gender: 'any', interests: [] }
+      })) : []);
+  }, []);
   const [rows, setRows] = useState<Campaign[]>(initialCampaigns);
   const [editing, setEditing] = useState<string | null>(null);
 
@@ -40,11 +56,19 @@ export default function ManageCampaignsPage() {
     dailySpend: rows.reduce((s, r) => s + r.budgetDaily, 0),
   }), [rows]);
 
-  const toggleStatus = (id: string) => {
+const toggleStatus = async (id: string) => {
+    const target = rows.find(r => r.id === id);
+    const next = target?.status === 'active' ? 'PAUSED' : 'ACTIVE';
+    await fetch('/api/sponsorship/campaigns', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, status: next }) });
+    setRows(prev => prev.map(r => r.id === id ? { ...r, status: r.status === 'active' ? 'paused' : 'active' } : r));
+  };
     setRows(prev => prev.map(r => r.id === id ? { ...r, status: r.status === 'active' ? 'paused' : 'active' } : r));
   };
 
-  const deleteRow = (id: string) => {
+const deleteRow = async (id: string) => {
+    await fetch('/api/sponsorship/campaigns', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) });
+    setRows(prev => prev.filter(r => r.id !== id));
+  };
     setRows(prev => prev.filter(r => r.id !== id));
   };
 
@@ -96,14 +120,18 @@ export default function ManageCampaignsPage() {
                   <td className="px-6 py-3">{r.impressions.toLocaleString()}</td>
                   <td className="px-6 py-3">{r.clicks.toLocaleString()}</td>
                   <td className="px-6 py-3">
-                    {editing === r.id ? (
+{editing === r.id ? (
+                      <input type="number" className="w-24 rounded border px-2 py-1" value={r.budgetDaily} onChange={e => setRows(prev => prev.map(x => x.id === r.id ? { ...x, budgetDaily: Number(e.target.value) } : x))} onBlur={async ()=>{ await fetch('/api/sponsorship/campaigns', { method:'PATCH', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ id: r.id, budgetDaily: r.budgetDaily })}); setEditing(null); }} />
+                    ) : (
                       <input type="number" className="w-24 rounded border px-2 py-1" value={r.budgetDaily} onChange={e => setRows(prev => prev.map(x => x.id === r.id ? { ...x, budgetDaily: Number(e.target.value) } : x))} />
                     ) : (
                       <>${r.budgetDaily.toFixed(2)}</>
                     )}
                   </td>
                   <td className="px-6 py-3">
-                    {editing === r.id ? (
+{editing === r.id ? (
+                      <input type="number" className="w-20 rounded border px-2 py-1" value={r.duration} onChange={e => setRows(prev => prev.map(x => x.id === r.id ? { ...x, duration: Number(e.target.value) } : x))} onBlur={async ()=>{ await fetch('/api/sponsorship/campaigns', { method:'PATCH', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ id: r.id, durationDays: r.duration })}); setEditing(null); }} />
+                    ) : (
                       <input type="number" className="w-20 rounded border px-2 py-1" value={r.duration} onChange={e => setRows(prev => prev.map(x => x.id === r.id ? { ...x, duration: Number(e.target.value) } : x))} />
                     ) : (
                       <>{r.duration} days</>

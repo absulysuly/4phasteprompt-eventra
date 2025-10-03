@@ -35,6 +35,12 @@ model User {
   venues    Venue[]  // Multi-venue platform support
   resets    PasswordResetToken[]
   stories   Story[]
+  // Sponsorship & payments relations
+  campaigns SponsorshipCampaign[]
+  payments  PaymentRecord[]
+  vouchersRequested Voucher[]
+  vouchersRedeemed  Voucher[] @relation("VoucherRedeemedBy")
+  businessAccount   BusinessAccount?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
