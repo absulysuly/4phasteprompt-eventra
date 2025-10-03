@@ -580,6 +580,13 @@ export default function Home() {
       
       {/* Hero Carousel Section */}
       <div className="relative h-screen overflow-hidden">
+        {/* Animated background patterns */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-16 -left-16 w-80 h-80 bg-gradient-to-tr from-fuchsia-500/30 to-cyan-400/30 rounded-full blur-3xl animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-indigo-500/20 to-emerald-400/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '1.2s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-3 h-3 particle animate-breathe" style={{ animationDelay: '0.6s' }}></div>
+          <div className="absolute top-1/2 right-1/4 w-2 h-2 particle animate-breathe" style={{ animationDelay: '1.1s' }}></div>
+        </div>
         {/* Carousel Container */}
         <div 
           className="flex transition-transform duration-700 ease-in-out h-full"
@@ -628,21 +635,23 @@ export default function Home() {
               {/* Content */}
               <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
                 <div className={`max-w-4xl mx-auto transition-all duration-1000 ${currentSlide === index ? 'animate-fadeInScale' : 'opacity-50'}`}>
-                  <div className="mb-6 inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
+                  <div className="mb-6 inline-flex items-center gap-3 glass px-6 py-3 rounded-full">
                     <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
                     <span className="text-white/90 text-sm font-medium">{t('hero.liveEventPlatform')}</span>
                   </div>
                   
-                  <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent animate-shimmer">
-                      {slide.title}
-                    </span>
-                  </h1>
+                  <div className="mx-auto mb-6 glass rounded-3xl p-6 md:p-8 border border-white/30">
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-3 leading-tight">
+                      <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent animate-shimmer">
+                        {slide.title}
+                      </span>
+                    </h1>
+                    <p className="text-2xl text-white/90 font-light">
+                      {slide.subtitle}
+                    </p>
+                  </div>
                   
-                  <p className="text-2xl text-white/90 mb-4 font-light">
-                    {slide.subtitle}
-                  </p>
-                  <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">
+                  <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
                     {slide.description}
                   </p>
                   
@@ -816,11 +825,11 @@ export default function Home() {
                 <button
                   key={`category-grid-${index}`}
                   onClick={() => { setSelectedCategory(category.name); setCategoryPopup(category); }}
-                  className="aspect-square rounded-2xl bg-white/90 backdrop-blur-md hover:bg-white transition-all duration-300 hover:shadow-2xl group flex items-center justify-center text-center"
+                  className="aspect-square tile-morphic hover:glow-ring hover:rotate-[0.5deg] group flex items-center justify-center text-center focus-visible:glow-ring"
                 >
                   <div>
-                    <div className="text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
-                    <div className="text-gray-900 font-bold text-sm md:text-base max-w-[8rem] mx-auto leading-snug">{category.name}</div>
+                    <div className="text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300 animate-breathe">{category.icon}</div>
+                    <div className="text-white font-bold text-sm md:text-base max-w-[8rem] mx-auto leading-snug drop-shadow">{category.name}</div>
                   </div>
                 </button>
               ))}
