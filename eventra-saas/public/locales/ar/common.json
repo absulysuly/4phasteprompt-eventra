@@ -73,7 +73,8 @@
     "shareEvent": "مشاركة الفعالية",
     "organizer": "المنظم",
     "anonymousOrganizer": "منظم مجهول",
-    "noContactInfo": "لا توجد معلومات اتصال متاحة"
+    "noContactInfo": "لا توجد معلومات اتصال متاحة",
+    "didYouMean": "هل تقصد:"
   },
   "dashboard": {
     "welcomeBack": "مرحباً بعودتك، {name}!",

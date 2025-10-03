@@ -11,6 +11,10 @@ import ResponsiveButton from "./components/ResponsiveButton";
 import { useNetworkStatus, useImagePreloader, usePerformanceMonitor } from "./hooks/usePerformance";
 import { useTranslations } from "./hooks/useTranslations";
 import { useLanguage } from "./components/LanguageProvider";
+import StoriesStrip from "./components/StoriesStrip";
+import StoryPlayer from "./components/StoryPlayer";
+import VoiceSearchBar from "./components/VoiceSearchBar";
+import CategorySubgridModal from "./components/CategorySubgridModal";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,6 +24,14 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [showMainContent, setShowMainContent] = useState(false);
   const [events, setEvents] = useState<any[]>([]);
+  // Stories modal state
+  const [storiesOpen, setStoriesOpen] = useState(false);
+  const [storiesData, setStoriesData] = useState<any[]>([]);
+  const [storiesStartIndex, setStoriesStartIndex] = useState(0);
+  // Voice/NLP interpret result
+  const [interpretResult, setInterpretResult] = useState<any | null>(null);
+  // Category popup state
+  const [categoryPopup, setCategoryPopup] = useState<any | null>(null);
   
   // Performance and network hooks
   const { isOnline, connectionSpeed } = useNetworkStatus();
@@ -55,21 +67,171 @@ export default function Home() {
   
   const categories = [
     { name: t('common.allCategories'), icon: "🎉" },
-    { name: t('categories.technologyInnovation'), icon: "💻" },
-    { name: t('categories.businessNetworking'), icon: "💼" },
-    { name: t('categories.musicConcerts'), icon: "🎵" },
-    { name: t('categories.artsCulture'), icon: "🎨" },
-    { name: t('categories.sportsFitness'), icon: "⚽" },
-    { name: t('categories.foodDrink'), icon: "🍽️" },
-    { name: t('categories.learningDevelopment'), icon: "📚" },
-    { name: t('categories.healthWellness'), icon: "🏥" },
-    { name: t('categories.communitySocial'), icon: "👥" },
-    { name: t('categories.gamingEsports'), icon: "🎮" },
-    { name: t('categories.spiritualReligious'), icon: "🕌" },
-    { name: t('categories.familyKids'), icon: "👨‍👩‍👧‍👦" },
-    { name: t('categories.outdoorAdventure'), icon: "🏔️" },
-    { name: t('categories.virtualEvents'), icon: "📱" },
-    { name: t('categories.academicConferences'), icon: "🎓" }
+    { name: t('categories.technologyInnovation'), icon: "💻", subcategories: [
+      { name: 'AI & Machine Learning', icon: '🤖' },
+      { name: 'Cloud & DevOps', icon: '☁️' },
+      { name: 'Cybersecurity', icon: '🛡️' },
+      { name: 'Web & Mobile', icon: '📱' },
+      { name: 'Blockchain', icon: '⛓️' },
+      { name: 'IoT & Hardware', icon: '📡' },
+      { name: 'Data & Analytics', icon: '📊' },
+      { name: 'AR/VR', icon: '🕶️' },
+      { name: 'Product & UX', icon: '🎯' },
+    ] },
+    { name: t('categories.businessNetworking'), icon: "💼", subcategories: [
+      { name: 'Startups', icon: '🚀' },
+      { name: 'Investing', icon: '💹' },
+      { name: 'HR & Talent', icon: '🧑‍💼' },
+      { name: 'Marketing', icon: '📣' },
+      { name: 'Sales', icon: '🤝' },
+      { name: 'Leadership', icon: '🏆' },
+      { name: 'Operations', icon: '⚙️' },
+      { name: 'Finance', icon: '💳' },
+      { name: 'Legal', icon: '⚖️' },
+    ] },
+    { name: t('categories.musicConcerts'), icon: "🎵", subcategories: [
+      { name: 'Concerts', icon: '🎤' },
+      { name: 'Festivals', icon: '🎪' },
+      { name: 'Traditional', icon: '🪕' },
+      { name: 'Electronic', icon: '🎧' },
+      { name: 'Hip-Hop', icon: '🎧' },
+      { name: 'Rock', icon: '🎸' },
+      { name: 'Classical', icon: '🎼' },
+      { name: 'Choir', icon: '🎶' },
+      { name: 'Open Mic', icon: '🎙️' },
+    ] },
+    { name: t('categories.artsCulture'), icon: "🎨", subcategories: [
+      { name: 'Exhibitions', icon: '🖼️' },
+      { name: 'Theatre', icon: '🎭' },
+      { name: 'Film', icon: '🎬' },
+      { name: 'Workshops', icon: '🖌️' },
+      { name: 'Literature', icon: '📖' },
+      { name: 'Photography', icon: '📷' },
+      { name: 'Design', icon: '📐' },
+      { name: 'Calligraphy', icon: '✒️' },
+      { name: 'Handicrafts', icon: '🧵' },
+    ] },
+    { name: t('categories.sportsFitness'), icon: "⚽", subcategories: [
+      { name: 'Football', icon: '⚽' },
+      { name: 'Running', icon: '🏃' },
+      { name: 'Gym & Fitness', icon: '🏋️' },
+      { name: 'Martial Arts', icon: '🥋' },
+      { name: 'Cycling', icon: '🚴' },
+      { name: 'Yoga', icon: '🧘' },
+      { name: 'Swimming', icon: '🏊' },
+      { name: 'Basketball', icon: '🏀' },
+      { name: 'Volleyball', icon: '🏐' },
+    ] },
+    { name: t('categories.foodDrink'), icon: "🍽️", subcategories: [
+      { name: 'Restaurants', icon: '🍽️' },
+      { name: 'Cafés', icon: '☕' },
+      { name: 'Bars & Nightlife', icon: '🍹' },
+      { name: 'Street Food', icon: '🌯' },
+      { name: 'Bakeries', icon: '🥖' },
+      { name: 'Desserts', icon: '🍰' },
+      { name: 'Halal', icon: '🕌' },
+      { name: 'Events & Tastings', icon: '🍷' },
+      { name: 'Cooking Classes', icon: '👩‍🍳' },
+    ] },
+    { name: t('categories.learningDevelopment'), icon: "📚", subcategories: [
+      { name: 'Courses', icon: '🎓' },
+      { name: 'Workshops', icon: '🛠️' },
+      { name: 'Bootcamps', icon: '⛺' },
+      { name: 'Meetups', icon: '👥' },
+      { name: 'Webinars', icon: '💻' },
+      { name: 'Hackathons', icon: '💡' },
+      { name: 'Mentorship', icon: '🧭' },
+      { name: 'Language', icon: '🗣️' },
+      { name: 'Certifications', icon: '📜' },
+    ] },
+    { name: t('categories.healthWellness'), icon: "🏥", subcategories: [
+      { name: 'Clinics', icon: '🏥' },
+      { name: 'Wellness', icon: '🌿' },
+      { name: 'Mental Health', icon: '🧠' },
+      { name: 'Nutrition', icon: '🥗' },
+      { name: 'Fitness', icon: '💪' },
+      { name: 'Meditation', icon: '🧘' },
+      { name: 'Retreats', icon: '🏞️' },
+      { name: 'Non-profits', icon: '🤝' },
+      { name: 'Awareness', icon: '🔔' },
+    ] },
+    { name: t('categories.communitySocial'), icon: "👥", subcategories: [
+      { name: 'Community Events', icon: '🏘️' },
+      { name: 'Networking', icon: '🤝' },
+      { name: 'Volunteering', icon: '💗' },
+      { name: 'Fundraisers', icon: '🎗️' },
+      { name: 'Local Markets', icon: '🧺' },
+      { name: 'Cultural', icon: '🌍' },
+      { name: 'Student', icon: '🎓' },
+      { name: 'Women', icon: '👩' },
+      { name: 'Tech Communities', icon: '💻' },
+    ] },
+    { name: t('categories.gamingEsports'), icon: "🎮", subcategories: [
+      { name: 'Tournaments', icon: '🏆' },
+      { name: 'LAN Parties', icon: '🖥️' },
+      { name: 'PC Gaming', icon: '⌨️' },
+      { name: 'Console Gaming', icon: '🎮' },
+      { name: 'Mobile Gaming', icon: '📱' },
+      { name: 'Esports Teams', icon: '👥' },
+      { name: 'Speedrun', icon: '⚡' },
+      { name: 'Retro', icon: '🕹️' },
+      { name: 'VR', icon: '🕶️' },
+    ] },
+    { name: t('categories.spiritualReligious'), icon: "🕌", subcategories: [
+      { name: 'Prayers', icon: '🕌' },
+      { name: 'Lectures', icon: '📖' },
+      { name: 'Charity', icon: '🤲' },
+      { name: 'Holidays', icon: '🌙' },
+      { name: 'Youth', icon: '🧒' },
+      { name: 'Women', icon: '👩' },
+      { name: 'Interfaith', icon: '🕊️' },
+      { name: 'Pilgrimage', icon: '🕋' },
+      { name: 'Community', icon: '👥' },
+    ] },
+    { name: t('categories.familyKids'), icon: "👨‍👩‍👧‍👦", subcategories: [
+      { name: 'Kids Activities', icon: '🧸' },
+      { name: 'Family Trips', icon: '🚐' },
+      { name: 'Workshops', icon: '✂️' },
+      { name: 'Playgrounds', icon: '🏰' },
+      { name: 'Education', icon: '📚' },
+      { name: 'Sports', icon: '⚽' },
+      { name: 'Parks', icon: '🌳' },
+      { name: 'Weekend', icon: '🗓️' },
+      { name: 'Outdoor', icon: '⛰️' },
+    ] },
+    { name: t('categories.outdoorAdventure'), icon: "🏔️", subcategories: [
+      { name: 'Hiking', icon: '🥾' },
+      { name: 'Camping', icon: '🏕️' },
+      { name: 'Climbing', icon: '🧗' },
+      { name: 'Rafting', icon: '🚣' },
+      { name: 'Safari', icon: '🦌' },
+      { name: 'Road Trips', icon: '🚗' },
+      { name: 'Beaches', icon: '🏖️' },
+      { name: 'Photography', icon: '📸' },
+      { name: 'Guided Tours', icon: '🧭' },
+    ] },
+    { name: t('categories.virtualEvents'), icon: "📱", subcategories: [
+      { name: 'Webinars', icon: '🖥️' },
+      { name: 'Online Courses', icon: '🎓' },
+      { name: 'Livestreams', icon: '📺' },
+      { name: 'Workshops', icon: '🛠️' },
+      { name: 'Hackathons', icon: '💡' },
+      { name: 'Networking', icon: '🤝' },
+      { name: 'Meetups', icon: '👥' },
+      { name: 'Conferences', icon: '🏛️' },
+      { name: 'Demos', icon: '🧪' },
+    ] },
+    { name: t('categories.academicConferences'), icon: "🎓", subcategories: [
+      { name: 'Conferences', icon: '🏛️' },
+      { name: 'Seminars', icon: '🎙️' },
+      { name: 'Journals', icon: '📰' },
+      { name: 'Workshops', icon: '🛠️' },
+      { name: 'Thesis', icon: '📄' },
+      { name: 'Research', icon: '🔬' },
+      { name: 'Scholarships', icon: '🎓' },
+      { name: 'Student', icon: '🧑‍🎓' },
+      { name: 'Calls for Papers', icon: '📢' },
+    ] }
   ];
 
   const heroSlides = [
@@ -345,6 +507,19 @@ export default function Home() {
     loadEvents();
   }, [language, t]);
 
+  const filteredEvents = React.useMemo(() => {
+    const q = (searchQuery || '').toLowerCase();
+    const filters = interpretResult?.filters || {};
+    return (events || []).filter((e: any) => {
+      let ok = true;
+      if (q) ok = ok && ((e.title || '').toLowerCase().includes(q) || (e.location || '').toLowerCase().includes(q));
+      if (selectedCategory && selectedCategory !== t('common.allCategories')) ok = ok && ((e.category || '').toLowerCase().includes(selectedCategory.toLowerCase()));
+      if (selectedCity && selectedCity !== t('common.allCities')) ok = ok && ((e.location || '').toLowerCase().includes(selectedCity.toLowerCase()) || (e.city || '').toLowerCase().includes(selectedCity.toLowerCase()));
+      if (filters.city) ok = ok && ((e.location || '').toLowerCase().includes(String(filters.city).toLowerCase()) || (e.city || '').toLowerCase().includes(String(filters.city).toLowerCase()));
+      return ok;
+    });
+  }, [events, searchQuery, selectedCategory, selectedCity, interpretResult, t]);
+
   return (
     <>
       {/* Loading Screen */}
@@ -548,6 +723,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Stories Strip (Instagram-like) */}
+      <StoriesStrip onOpen={(stories, idx) => { setStoriesData(stories); setStoriesStartIndex(idx); setStoriesOpen(true); }} />
+
       {/* Scrolling Cities Section */}
       <div className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 py-16 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/50 to-orange-500/50"></div>
@@ -578,34 +756,71 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Scrolling Categories Section */}
+      {/* Voice-enabled Search above Categories */}
+      <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 py-10">
+        <div className="max-w-4xl mx-auto px-4">
+          <VoiceSearchBar
+            value={searchQuery}
+            onChange={setSearchQuery}
+            onInterpret={(res) => setInterpretResult(res)}
+            placeholder={t('events.searchPlaceholder')}
+          />
+          {interpretResult?.suggestions?.length > 0 && (
+            <div className="mt-3 text-white/90 text-sm">
+              <div className="opacity-80 mb-1">{t('events.didYouMean') || 'Did you mean:'}</div>
+              <div className="flex flex-wrap gap-2">
+                {interpretResult.suggestions.map((s: string, i: number) => (
+                  <button key={i} className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25" onClick={() => setSearchQuery(s)}>{s}</button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Categories 3x3 Grid Section */}
       <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 py-16 overflow-hidden relative">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10">
-          <div className="max-w-7xl mx-auto px-4 mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4 text-center">🎯 {t('homepage.exploreCategories')}</h2>
+          <div className="max-w-7xl mx-auto px-4 mb-10">
+            <h2 className="text-4xl font-bold text-white mb-3 text-center">🎯 {t('homepage.exploreCategories')}</h2>
             <p className="text-white/90 text-center text-lg">{t('homepage.exploreCategoriesSubtitle')}</p>
           </div>
-          
-          {/* Categories Scrolling Row (Right to Left) */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll-left gap-6 py-4">
-              {[...categories, ...categories, ...categories].map((category, index) => (
+
+      <div className="max-w-5xl mx-auto px-4">
+            <div className={`grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 transition-all duration-300 ${categoryPopup ? 'opacity-60 scale-95' : 'opacity-100 scale-100'}`}>
+              {categories.filter(c => c.name !== t('common.allCategories')).slice(0, 9).map((category, index) => (
                 <button
-                  key={`category-${index}`}
-                  className="flex-shrink-0 bg-white/90 backdrop-blur-md rounded-2xl p-6 hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-2xl group min-w-[200px]"
-                  onClick={() => setSelectedCategory(category.name)}
+                  key={`category-grid-${index}`}
+                  onClick={() => { setSelectedCategory(category.name); setCategoryPopup(category); }}
+                  className="aspect-square rounded-2xl bg-white/90 backdrop-blur-md hover:bg-white transition-all duration-300 hover:shadow-2xl group flex items-center justify-center text-center"
                 >
-                  <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                    {category.icon}
-                  </div>
-                  <div className="text-gray-900 font-bold text-lg text-center">
-                    {category.name}
+                  <div>
+                    <div className="text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
+                    <div className="text-gray-900 font-bold text-sm md:text-base max-w-[8rem] mx-auto leading-snug">{category.name}</div>
                   </div>
                 </button>
               ))}
             </div>
+            {/* Active filter indicator */}
+            {selectedCategory && selectedCategory !== t('common.allCategories') && (
+              <div className="text-center mt-6 text-white/90">
+                {t('events.exploreByCategory') || 'Explore by Category'}: <span className="font-semibold">{selectedCategory}</span>
+              </div>
+            )}
           </div>
+
+          {/* Subcategory Popup Modal */}
+          {categoryPopup && (
+            <CategorySubgridModal
+              category={categoryPopup}
+              onClose={() => setCategoryPopup(null)}
+              onSelect={(subcat: any) => {
+                // You can hook subcategory selection to filtering/navigation here
+                setCategoryPopup(null);
+              }}
+            />
+          )}
         </div>
       </div>
 
@@ -699,9 +914,9 @@ export default function Home() {
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto"></div>
                 <p className="text-white/80 mt-4">{t('homepage.loading')}</p>
               </div>
-            ) : events.length > 0 ? (
+            ) : filteredEvents.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {events.slice(0, 8).map((event) => (
+                {filteredEvents.slice(0, 8).map((event) => (
                     <Link
                       key={event.id}
                       href={`/${language}/event/${event.publicId}`}
@@ -875,6 +1090,10 @@ export default function Home() {
         </div>
       </div>
       </div>
+    {/* Story Player Modal */}
+      {storiesOpen && (
+        <StoryPlayer stories={storiesData} startIndex={storiesStartIndex} onClose={() => setStoriesOpen(false)} />
+      )}
     </>
   );
 }

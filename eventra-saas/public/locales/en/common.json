@@ -73,7 +73,8 @@
     "shareEvent": "Share Event",
     "organizer": "Organizer",
     "anonymousOrganizer": "Anonymous Organizer",
-    "noContactInfo": "No contact information available"
+    "noContactInfo": "No contact information available",
+    "didYouMean": "Did you mean:"
   },
   "dashboard": {
     "welcomeBack": "Welcome back, {name}!",

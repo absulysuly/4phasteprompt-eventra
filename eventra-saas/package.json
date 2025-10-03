@@ -46,6 +46,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.901.0",
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@prisma/client": "^6.16.2",
     "@upstash/ratelimit": "^2.0.6",

@@ -59,7 +59,8 @@
     "createEventSubtitle": "بۆنەکانی خۆت دروست بکە و لە پلاتفۆرمی بۆنەکانی عێراق بیکە بە بڵاو",
     "createYourEvent": "بۆنەکەت دروست بکە",
     "viewPublicPage": "بینینی پەڕەی گشتی",
-    "exploreByCategory": "گەڕان بەپێی پۆل"
+    "exploreByCategory": "گەڕان بەپێی پۆل",
+    "didYouMean": "ویستت ئەمانە بوون؟"
   },
   "dashboard": {
     "welcomeBack": "بەخێرهاتنەوە، {name}!",
